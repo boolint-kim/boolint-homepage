@@ -1,0 +1,3 @@
+# boolint.com 홈페이지 - Cloudflare Pages 설정
+name = "boolint-homepage"
+pages_build_output_dir = "./_site"
