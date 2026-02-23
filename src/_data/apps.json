@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "weather-korea",
+    "name": { "ko": "Weather Korea", "en": "Weather Korea" },
+    "description": { "ko": "한국 날씨", "en": "Korea Weather" },
+    "icon": "/assets/images/weather-korea/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "weather-taiwan",
+    "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
+    "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
+    "icon": "/assets/images/weather-taiwan/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "weather-norway",
+    "name": { "ko": "Weather Norway", "en": "Weather Norway" },
+    "description": { "ko": "노르웨이 날씨", "en": "Norway Weather" },
+    "icon": "/assets/images/weather-norway/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "capital-gains-tax",
+    "name": { "ko": "양도세", "en": "Capital Gains Tax" },
+    "description": { "ko": "양도소득세 계산", "en": "Capital Gains Tax Calculator" },
+    "icon": "/assets/images/capital-gains-tax/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "official-price",
+    "name": { "ko": "아파트 공시가격", "en": "Official Price" },
+    "description": { "ko": "아파트 공시가격 조회", "en": "Apartment Official Price Lookup" },
+    "icon": "/assets/images/official-price/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "brokerage",
+    "name": { "ko": "중개보수", "en": "Brokerage Fee" },
+    "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
+    "icon": "/assets/images/brokerage/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "acquisition-tax",
+    "name": { "ko": "취득세", "en": "Acquisition Tax" },
+    "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
+    "icon": "/assets/images/acquisition-tax/icon.png",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "agemap",
+    "name": { "ko": "AgeMap", "en": "AgeMap" },
+    "description": { "ko": "나이 계산기", "en": "Age Calculator" },
+    "icon": "/assets/images/agemap/icon.png",
+    "platform": ["android"],
+    "hasHelp": true
+  }
+]

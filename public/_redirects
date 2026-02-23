@@ -1,0 +1,2 @@
+# www → root 리다이렉트
+https://www.boolint.com/* https://boolint.com/:splat 301

@@ -1,0 +1,8 @@
+{# 공통 푸터 #}
+{% set t = i18n[lang or 'ko'] %}
+
+<footer class="footer">
+  <div class="footer__inner container">
+    <p class="footer__copyright">{{ t['footer.copyright'] | replace('{year}', site.year) }}</p>
+  </div>
+</footer>

@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+lang: ko
+title: "404"
+permalink: /404.html
+---
+{% set t = i18n.ko %}
+
+<div class="container">
+  <div class="not-found">
+    <div class="not-found__title">404</div>
+    <p class="not-found__message">{{ t['page.404.message'] }}</p>
+    <a href="/">{{ t['page.404.back'] }}</a>
+  </div>
+</div>

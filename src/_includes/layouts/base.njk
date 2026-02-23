@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ lang or 'ko' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {# 페이지 제목 #}
+  <title>{% if title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
+
+  {# SEO 메타 #}
+  <meta name="description" content="{{ description or i18n[lang or 'ko']['siteDescription'] }}">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+  {# Open Graph #}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ description or i18n[lang or 'ko']['siteDescription'] }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+
+  {# 다국어 alternate 링크 #}
+  {% if alternateLang %}
+  <link rel="alternate" hreflang="{{ alternateLang }}" href="{{ site.url }}{{ alternateUrl }}">
+  {% endif %}
+
+  {# CSS #}
+  <link rel="stylesheet" href="/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+
+  {% block head %}{% endblock %}
+</head>
+<body>
+  {% include "header.njk" %}
+
+  <main class="main">
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.njk" %}
+</body>
+</html>

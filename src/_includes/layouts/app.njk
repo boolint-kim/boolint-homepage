@@ -1,0 +1,32 @@
+---
+layout: layouts/base.njk
+---
+{# 앱 페이지 레이아웃 - 사이드바 네비게이션 포함 #}
+{% set t = i18n[lang or 'ko'] %}
+{% set prefix = '/en/' if lang == 'en' else '/' %}
+
+<div class="app-layout container">
+  <nav class="app-sidebar" aria-label="App navigation">
+    <h2 class="app-sidebar__title">{{ appName }}</h2>
+    <ul class="app-sidebar__menu">
+      <li>
+        <a href="{{ prefix }}{{ appSlug }}/"
+           class="app-sidebar__link {% if page.url == prefix + appSlug + '/' %}is-active{% endif %}">
+          {{ t['app.intro'] }}
+        </a>
+      </li>
+      {% if appHasHelp %}
+      <li>
+        <a href="{{ prefix }}{{ appSlug }}/help/"
+           class="app-sidebar__link {% if '/help' in page.url %}is-active{% endif %}">
+          {{ t['app.help'] }}
+        </a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <article class="app-content">
+    {{ content | safe }}
+  </article>
+</div>

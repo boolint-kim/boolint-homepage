@@ -1,0 +1,42 @@
+{
+  "ko": {
+    "siteTitle": "boolint",
+    "siteDescription": "boolint 개발자 홈페이지",
+    "nav.home": "홈",
+    "nav.help": "도움말",
+    "nav.intro": "소개",
+    "lang.switch": "English",
+    "lang.switchUrl": "/en/",
+    "app.intro": "소개",
+    "app.help": "도움말",
+    "app.backup": "백업/복원",
+    "app.platform.android": "Android",
+    "app.platform.ios": "iOS",
+    "app.learnMore": "자세히 보기",
+    "footer.copyright": "© {year} boolint. All rights reserved.",
+    "page.home.title": "앱 목록",
+    "page.404.title": "페이지를 찾을 수 없습니다",
+    "page.404.message": "요청하신 페이지가 존재하지 않습니다.",
+    "page.404.back": "홈으로 돌아가기"
+  },
+  "en": {
+    "siteTitle": "boolint",
+    "siteDescription": "boolint Developer Homepage",
+    "nav.home": "Home",
+    "nav.help": "Help",
+    "nav.intro": "About",
+    "lang.switch": "한국어",
+    "lang.switchUrl": "/",
+    "app.intro": "About",
+    "app.help": "Help",
+    "app.backup": "Backup & Restore",
+    "app.platform.android": "Android",
+    "app.platform.ios": "iOS",
+    "app.learnMore": "Learn More",
+    "footer.copyright": "© {year} boolint. All rights reserved.",
+    "page.home.title": "Apps",
+    "page.404.title": "Page Not Found",
+    "page.404.message": "The page you requested does not exist.",
+    "page.404.back": "Go to Home"
+  }
+}

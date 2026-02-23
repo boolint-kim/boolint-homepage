@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+lang: ko
+alternateLang: en
+alternateUrl: /en/
+---
+{# 한국어 홈 - 앱 목록 #}
+{% set t = i18n.ko %}
+
+<div class="container">
+  <h1 class="page-title">{{ t['page.home.title'] }}</h1>
+  <div class="app-grid">
+    {% for app in apps %}
+      {% set cardApp = app %}
+      {% set cardLang = 'ko' %}
+      {% include "app-card.njk" %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,13 @@
+{# 공통 헤더 #}
+{% set t = i18n[lang or 'ko'] %}
+{% set prefix = '/en/' if lang == 'en' else '/' %}
+
+<header class="header">
+  <div class="header__inner container">
+    <a href="{{ prefix }}" class="header__logo">{{ t['siteTitle'] }}</a>
+    <nav class="header__nav">
+      <a href="{{ prefix }}" class="header__link">{{ t['nav.home'] }}</a>
+      <a href="{{ t['lang.switchUrl'] }}" class="header__lang">{{ t['lang.switch'] }}</a>
+    </nav>
+  </div>
+</header>
