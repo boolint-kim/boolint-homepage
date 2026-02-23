@@ -244,6 +244,23 @@
   border-color: var(--color-primary);
 }
 
+/* 버튼 */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.btn:hover {
+  background: var(--color-primary-dark, #1d4ed8);
+  color: #fff;
+}
+
 /* 홈 타이틀 */
 .page-title {
   margin-bottom: var(--space-xl);
