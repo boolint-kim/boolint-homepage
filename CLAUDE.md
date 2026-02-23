@@ -187,17 +187,21 @@ homepage/
 | campx.boolint.com | Cloudflare 프록시 | 변경 없음 |
 
 ## 구현 순서
-1. 프로젝트 초기화 (npm init, 11ty 설치, .eleventy.js, .gitignore)
-2. 데이터 파일 (site.json, apps.json 플랫 배열, i18n.json)
-3. 레이아웃 & 공통 컴포넌트 (base.njk, app.njk, header, footer, app-card)
-4. CSS (global.css, components.css)
-5. 홈 페이지 (앱 카드 플랫 그리드, 404)
-6. AgeMap 페이지 (소개/도움말)
-7. Weather 앱 3개 + 부동산 앱 4개 간단 소개 페이지
-8. 영어 페이지 (en/ 하위 동일 구조)
-9. 배포 설정 (_headers, _redirects, robots.txt)
-10. Git & Cloudflare Pages 배포
-11. 배포 확인 후 apps.boolint.com DNS 삭제, Google Sites 삭제
+1. ~~프로젝트 초기화 (npm init, 11ty 설치, .eleventy.js, .gitignore)~~ ✅
+2. ~~데이터 파일 (site.json, apps.json 플랫 배열, i18n.json)~~ ✅
+3. ~~레이아웃 & 공통 컴포넌트 (base.njk, app.njk, header, footer, app-card)~~ ✅
+4. ~~CSS (global.css, components.css)~~ ✅
+5. ~~홈 페이지 (앱 카드 플랫 그리드, 404)~~ ✅
+6. ~~AgeMap 페이지 (소개/도움말)~~ ✅
+7. ~~Weather 앱 3개 + 부동산 앱 4개 간단 소개 페이지~~ ✅
+8. ~~영어 페이지 (en/ 하위 동일 구조)~~ ✅
+9. ~~배포 설정 (_headers, _redirects, robots.txt)~~ ✅
+10. ~~로컬 빌드 테스트 (23개 HTML, 0.06초 빌드 확인)~~ ✅
+11. ~~로컬 커밋~~ ✅
+12. GitHub 리포 생성 & 푸시 ← **다음 작업**
+13. Cloudflare Pages 프로젝트 생성 & GitHub 연결
+14. boolint.com 커스텀 도메인 연결
+15. 배포 확인 후 apps.boolint.com DNS 삭제, Google Sites 삭제
 ※ 개인정보처리방침은 배포 완료 후 별도 추가 (앱별이 아닌 한글/영문 각 1페이지)
 
 ## 검증
