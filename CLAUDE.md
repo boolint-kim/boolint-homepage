@@ -198,10 +198,10 @@ homepage/
 9. ~~배포 설정 (_headers, _redirects, robots.txt)~~ ✅
 10. ~~로컬 빌드 테스트 (23개 HTML, 0.06초 빌드 확인)~~ ✅
 11. ~~로컬 커밋~~ ✅
-12. GitHub 리포 생성 & 푸시 ← **다음 작업**
-13. Cloudflare Pages 프로젝트 생성 & GitHub 연결
-14. boolint.com 커스텀 도메인 연결
-15. 배포 확인 후 apps.boolint.com DNS 삭제, Google Sites 삭제
+12. ~~GitHub 리포 생성 & 푸시~~ ✅
+13. ~~Cloudflare Pages 프로젝트 생성 & GitHub 연결~~ ✅
+14. ~~boolint.com 커스텀 도메인 연결~~ ✅
+15. 배포 확인 후 apps.boolint.com DNS 삭제, Google Sites 삭제 ← **다음 작업**
 ※ 개인정보처리방침은 배포 완료 후 별도 추가 (앱별이 아닌 한글/영문 각 1페이지)
 
 ## 검증
