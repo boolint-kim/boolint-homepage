@@ -5,8 +5,11 @@
 
 <a href="{{ prefix }}{{ cardApp.slug }}/" class="app-card">
   <div class="app-card__icon">
-    {# 아이콘 이미지 (placeholder) #}
-    <div class="app-card__icon-placeholder">{{ cardApp.name[cl] | first }}</div>
+    {% if cardApp.iconReady %}
+      <img src="{{ cardApp.icon }}" alt="{{ cardApp.name[cl] }}" class="app-card__icon-img">
+    {% else %}
+      <div class="app-card__icon-placeholder">{{ cardApp.name[cl] | first }}</div>
+    {% endif %}
   </div>
   <div class="app-card__info">
     <h3 class="app-card__name">{{ cardApp.name[cl] }}</h3>

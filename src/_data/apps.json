@@ -60,6 +60,7 @@
     "name": { "ko": "AgeMap", "en": "AgeMap" },
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
+    "iconReady": true,
     "platform": ["android"],
     "hasHelp": true
   }
