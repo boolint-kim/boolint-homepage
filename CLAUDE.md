@@ -2,22 +2,21 @@
 
 ## 프로젝트 개요
 - boolint.com 개발자 홈페이지 (앱 목록 + 앱별 소개/도움말)
-- apps.boolint.com (Google Sites) 콘텐츠를 새로 작성하여 이전
-- 배포: GitHub → Cloudflare Pages 자동 배포
-- 도메인: boolint.com (Cloudflare DNS 관리)
+- 배포: GitHub(`boolint-kim/boolint-homepage`) → Cloudflare Pages 자동 배포
+- 도메인: boolint.com / www.boolint.com (Cloudflare DNS 관리)
 
-## 앱 목록 (총 8개, 그룹핑 없이 플랫 나열)
+## 앱 목록 (총 8개)
 
-| slug | 이름 | 설명 |
-|------|------|------|
-| weather-korea | Weather Korea | 한국 날씨 |
-| weather-taiwan | Weather Taiwan | 대만 날씨 |
-| weather-norway | Weather Norway | 노르웨이 날씨 |
-| capital-gains-tax | 양도세 | 양도소득세 계산 |
-| official-price | 아파트 공시가격 | 아파트 공시가격 조회 |
-| brokerage | 중개보수 | 부동산 중개보수 계산 |
-| acquisition-tax | 취득세 | 부동산 취득세 계산 |
-| agemap | AgeMap | 나이 계산기 |
+| slug | 이름 | 설명 | 도움말 |
+|------|------|------|--------|
+| weather-korea | Weather Korea | 한국 날씨 | - |
+| weather-taiwan | Weather Taiwan | 대만 날씨 | - |
+| weather-norway | Weather Norway | 노르웨이 날씨 | - |
+| capital-gains-tax | 양도세 | 양도소득세 계산 | - |
+| official-price | 아파트 공시가격 | 아파트 공시가격 조회 | - |
+| brokerage | 중개보수 | 부동산 중개보수 계산 | - |
+| acquisition-tax | 취득세 | 부동산 취득세 계산 | - |
+| agemap | AgeMap | 나이 계산기 | ✅ 6개 항목 |
 
 ## 기술 스택
 - SSG: Eleventy (11ty) v3
@@ -40,13 +39,18 @@
 
 ## URL 구조
 ```
-/                              → 개발자 홈 (앱 목록 카드, 플랫 나열) - 한국어
+/                              → 개발자 홈 (앱 목록 카드) - 한국어
 /en/                           → 개발자 홈 - 영어
 
-# AgeMap (소개 + 도움말)
+# AgeMap (소개 + 도움말 6개)
 /agemap/                       → AgeMap 소개
 /agemap/help/                  → 도움말 목차
-/agemap/help/backup/           → 백업/복원 안내
+/agemap/help/agemap-view/      → 나이맵 사용법
+/agemap/help/groups/           → 그룹 관리
+/agemap/help/family-tree/      → 가계도
+/agemap/help/birthday-alarm/   → 생일 알림
+/agemap/help/moments/          → 기념일 기록
+/agemap/help/backup/           → 백업/복원
 
 # Weather 앱들 (간단한 소개 페이지)
 /weather-korea/                → Weather Korea 소개
@@ -61,8 +65,13 @@
 
 # 영어 페이지 (동일 구조)
 /en/agemap/                    → AgeMap intro
-/en/agemap/help/               → Help
-/en/agemap/help/backup/        → Backup guide
+/en/agemap/help/               → Help index
+/en/agemap/help/agemap-view/   → Using the Age Map
+/en/agemap/help/groups/        → Group Management
+/en/agemap/help/family-tree/   → Family Tree
+/en/agemap/help/birthday-alarm/ → Birthday Reminders
+/en/agemap/help/moments/       → Moments
+/en/agemap/help/backup/        → Backup & Restore
 /en/weather-korea/             → Weather Korea
 ... (각 앱 동일 패턴)
 ```
@@ -71,11 +80,13 @@
 ```
 homepage/
 ├── .eleventy.js                 # 11ty 설정
+├── wrangler.toml                # Cloudflare Pages 빌드 설정
 ├── package.json
 ├── .gitignore
 ├── public/                      # 빌드 없이 그대로 복사
 │   ├── _headers
 │   ├── _redirects
+│   ├── app-ads.txt              # AdMob app-ads.txt
 │   └── robots.txt
 ├── src/
 │   ├── _includes/
@@ -84,30 +95,43 @@ homepage/
 │   │   │   └── app.njk         # 앱 페이지 레이아웃 (사이드바)
 │   │   ├── header.njk          # 공통 헤더 (네비게이션, 언어 전환)
 │   │   ├── footer.njk          # 공통 푸터
-│   │   └── app-card.njk        # 앱 카드 컴포넌트
+│   │   └── app-card.njk        # 앱 카드 컴포넌트 (아이콘 이미지 or placeholder)
 │   ├── _data/
 │   │   ├── site.json           # 사이트 메타 정보
-│   │   ├── apps.json           # 앱 목록 데이터 (플랫 배열)
+│   │   ├── apps.json           # 앱 목록 데이터 (iconReady: true면 아이콘 표시)
 │   │   └── i18n.json           # 다국어 UI 문자열
 │   ├── assets/
 │   │   ├── css/
 │   │   │   ├── global.css      # 리셋, CSS 변수, 타이포
-│   │   │   └── components.css  # 카드, 버튼, 사이드바
+│   │   │   └── components.css  # 카드, 버튼, 사이드바, 스크린샷
 │   │   └── images/
+│   │       └── agemap/         # AgeMap 이미지
+│   │           ├── icon.png              # 앱 아이콘 (카드용)
+│   │           ├── feature-banner.png    # 소개 페이지 배너
+│   │           ├── screenshot-groups.png # 나이맵+그룹 패널
+│   │           ├── screenshot-family-tree.png
+│   │           ├── screenshot-birthday.png
+│   │           ├── screenshot-person-detail.png
+│   │           └── screenshot-moments.png
 │   ├── index.njk               # / (한국어 홈)
 │   ├── 404.njk
 │   ├── agemap/                  # AgeMap (소개 + 도움말)
 │   │   ├── index.njk
 │   │   └── help/
-│   │       ├── index.njk
-│   │       └── backup.njk
-│   ├── weather-korea/           # Weather 앱들 (간단 소개)
+│   │       ├── index.njk       # 도움말 목차
+│   │       ├── agemap-view.njk # 나이맵 사용법
+│   │       ├── groups.njk      # 그룹 관리
+│   │       ├── family-tree.njk # 가계도
+│   │       ├── birthday-alarm.njk # 생일 알림
+│   │       ├── moments.njk     # 기념일 기록
+│   │       └── backup.njk      # 백업/복원
+│   ├── weather-korea/
 │   │   └── index.njk
 │   ├── weather-taiwan/
 │   │   └── index.njk
 │   ├── weather-norway/
 │   │   └── index.njk
-│   ├── capital-gains-tax/       # 부동산 앱들 (간단 소개)
+│   ├── capital-gains-tax/
 │   │   └── index.njk
 │   ├── official-price/
 │   │   └── index.njk
@@ -121,21 +145,15 @@ homepage/
 │       │   ├── index.njk
 │       │   └── help/
 │       │       ├── index.njk
+│       │       ├── agemap-view.njk
+│       │       ├── groups.njk
+│       │       ├── family-tree.njk
+│       │       ├── birthday-alarm.njk
+│       │       ├── moments.njk
 │       │       └── backup.njk
 │       ├── weather-korea/
 │       │   └── index.njk
-│       ├── weather-taiwan/
-│       │   └── index.njk
-│       ├── weather-norway/
-│       │   └── index.njk
-│       ├── capital-gains-tax/
-│       │   └── index.njk
-│       ├── official-price/
-│       │   └── index.njk
-│       ├── brokerage/
-│       │   └── index.njk
-│       └── acquisition-tax/
-│           └── index.njk
+│       ... (각 앱 동일 패턴)
 ```
 
 ## 레이아웃 계층
@@ -147,6 +165,7 @@ homepage/
 - 파일 2개: `global.css` (변수, 리셋, 타이포) + `components.css` (컴포넌트)
 - 모바일 퍼스트, 브레이크포인트: 768px, 1024px
 - 폰트: Pretendard (한국어), system-ui 폴백
+- 이미지: `.app-banner` (배너), `.app-screenshot` (스크린샷 max-width: 320px)
 - 프레임워크 없음
 
 ## Cloudflare Pages 배포 설정
@@ -155,56 +174,22 @@ homepage/
 - 환경변수: `NODE_VERSION=20`
 - GitHub 리포: `boolint-kim/boolint-homepage`
 
-## 기존 도메인 현황 및 영향 분석
+## 도메인 현황
 
-### boolint.com / www.boolint.com → 대체
-- 서버: NCP (115.85.180.241), nginx/1.14.0 Ubuntu
-- 내용: Bootstrap placeholder 페이지 (실질적 콘텐츠 없음)
-- 조치: Cloudflare Pages로 **완전 대체**. DNS A 레코드 → Pages CNAME으로 변경
-
-### apps.boolint.com → 폐기
-- 서버: Google Sites (CNAME → ghs.googlehosted.com)
-- 내용: "App Box" - Weather(Korea/Taiwan/Norway), 부동산(양도세/공시가격/중개보수/취득세)
-- 마지막 업데이트: 2023년 7월 (2년 이상 방치)
-- 조치: 새 홈페이지에 앱 콘텐츠를 새로 작성. DNS CNAME 레코드 삭제, Google Sites 삭제
-
-### campx.boolint.com → 유지 (영향 없음)
-- 서버: Cloudflare 프록시 (172.67.149.125 / 104.21.47.177) → az2 Azure 서버
-- 내용: CCTV 프록시 서버 (Node.js + PM2)
-- 조치: DNS 레코드 그대로 유지
-
-### agemap-api.boolint-kim.workers.dev → 유지 (영향 없음)
-- 서버: Cloudflare Workers + KV
-- 내용: AgeMap API
-- 조치: 별도 도메인이라 완전히 독립
-
-## DNS 변경 계획
-| 레코드 | 현재 | 변경 후 |
-|--------|------|---------|
-| boolint.com (A) | 115.85.180.241 (NCP) | Cloudflare Pages CNAME |
-| www.boolint.com | 115.85.180.241 (NCP) | boolint.com 301 리다이렉트 |
-| apps.boolint.com (CNAME) | ghs.googlehosted.com | DNS 레코드 삭제 |
-| campx.boolint.com | Cloudflare 프록시 | 변경 없음 |
-
-## 구현 순서
-1. ~~프로젝트 초기화 (npm init, 11ty 설치, .eleventy.js, .gitignore)~~ ✅
-2. ~~데이터 파일 (site.json, apps.json 플랫 배열, i18n.json)~~ ✅
-3. ~~레이아웃 & 공통 컴포넌트 (base.njk, app.njk, header, footer, app-card)~~ ✅
-4. ~~CSS (global.css, components.css)~~ ✅
-5. ~~홈 페이지 (앱 카드 플랫 그리드, 404)~~ ✅
-6. ~~AgeMap 페이지 (소개/도움말)~~ ✅
-7. ~~Weather 앱 3개 + 부동산 앱 4개 간단 소개 페이지~~ ✅
-8. ~~영어 페이지 (en/ 하위 동일 구조)~~ ✅
-9. ~~배포 설정 (_headers, _redirects, robots.txt)~~ ✅
-10. ~~로컬 빌드 테스트 (23개 HTML, 0.06초 빌드 확인)~~ ✅
-11. ~~로컬 커밋~~ ✅
-12. ~~GitHub 리포 생성 & 푸시~~ ✅
-13. ~~Cloudflare Pages 프로젝트 생성 & GitHub 연결~~ ✅
-14. ~~boolint.com 커스텀 도메인 연결~~ ✅
-15. 배포 확인 후 apps.boolint.com DNS 삭제, Google Sites 삭제 ← **다음 작업**
-※ 개인정보처리방침은 배포 완료 후 별도 추가 (앱별이 아닌 한글/영문 각 1페이지)
+| 도메인 | 상태 | 설명 |
+|--------|------|------|
+| boolint.com | ✅ Cloudflare Pages | 홈페이지 (메인) |
+| www.boolint.com | ✅ Cloudflare Pages | → boolint.com 301 리다이렉트 |
+| campx.boolint.com | ✅ Cloudflare 프록시 | CCTV 프록시 (az2 Azure, Node.js + PM2) |
+| agemap-api.boolint-kim.workers.dev | ✅ Cloudflare Workers + KV | AgeMap API |
+| apps.boolint.com | ❌ 폐기 예정 | Google Sites → DNS 삭제 필요 |
 
 ## 검증
 - 로컬: `npm run dev` → localhost:8080
-- 빌드: `npm run build` → `_site/` 확인
-- 배포 후: boolint.com 접속, HTTPS, 기존 서비스 영향 없음 확인
+- 빌드: `npm run build` → `_site/` 확인 (33개 HTML, 0.08초)
+- 배포: git push → Cloudflare Pages 자동 배포
+
+## 남은 작업
+- apps.boolint.com DNS CNAME 삭제 + Google Sites 삭제
+- NCP nginx 설정에서 boolint.com/www 서버 블록 제거
+- 개인정보처리방침 페이지 추가 (한글/영문 각 1페이지)

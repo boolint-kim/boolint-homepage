@@ -3,6 +3,10 @@
 
 <footer class="footer">
   <div class="footer__inner container">
-    <p class="footer__copyright">{{ t['footer.copyright'] | replace('{year}', site.year) }}</p>
+    <p class="footer__copyright">
+      {{ t['footer.copyright'] | replace('{year}', site.year) }}
+      <span class="footer__sep">|</span>
+      <a href="{% if lang == 'en' %}/en{% endif %}/privacy/" class="footer__link">{{ t['footer.privacy'] }}</a>
+    </p>
   </div>
 </footer>
