@@ -6,7 +6,7 @@
 <a href="{{ prefix }}{{ cardApp.slug }}/" class="app-card">
   <div class="app-card__icon">
     {% if cardApp.iconReady %}
-      <img src="{{ cardApp.icon }}" alt="{{ cardApp.name[cl] }}" class="app-card__icon-img">
+      <img src="{{ cardApp.icon }}" alt="{{ cardApp.name[cl] }}" class="app-card__icon-img" width="48" height="48">
     {% else %}
       <div class="app-card__icon-placeholder">{{ cardApp.name[cl] | first }}</div>
     {% endif %}
