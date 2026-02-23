@@ -313,11 +313,11 @@
 
 /* 일반 콘텐츠 페이지 */
 .page-content h1 {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-2xl);
 }
 
 .page-content h2 {
-  margin-top: var(--space-xl);
+  margin-top: var(--space-2xl);
   margin-bottom: var(--space-md);
 }
 
