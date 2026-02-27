@@ -21,7 +21,8 @@
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git status:*)",
-      "WebFetch(domain:boolint9.blogspot.com)"
+      "WebFetch(domain:boolint9.blogspot.com)",
+      "Bash(cd /Users/cgkim/server/homepage/src/assets/images && rm -f */preview.svg && echo \"삭제 완료\")"
     ]
   }
 }
