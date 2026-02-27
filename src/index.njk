@@ -10,7 +10,7 @@ alternateUrl: /en/
 <div class="container">
   <h1 class="page-title">{{ t['page.home.title'] }}</h1>
   <div class="app-grid">
-    {% for app in apps %}
+    {% for app in apps | sort(attribute="name.ko") %}
       {% set cardApp = app %}
       {% set cardLang = 'ko' %}
       {% include "app-card.njk" %}
