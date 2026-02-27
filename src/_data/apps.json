@@ -1,69 +1,77 @@
 [
   {
-    "slug": "weather-korea",
+    "slug": "satpic",
+    "packageName": "com.boolint.satpic",
     "name": { "ko": "Weather Korea", "en": "Weather Korea" },
     "description": { "ko": "한국 날씨", "en": "Korea Weather" },
-    "icon": "/assets/images/weather-korea/icon.png",
-    "preview": "/assets/images/weather-korea/preview.webp",
+    "icon": "/assets/images/satpic/icon.png",
+    "preview": "/assets/images/satpic/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "weather-taiwan",
+    "slug": "weathertw",
+    "packageName": "com.boolint.weathertw",
     "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
     "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
-    "icon": "/assets/images/weather-taiwan/icon.png",
-    "preview": "/assets/images/weather-taiwan/preview.webp",
+    "icon": "/assets/images/weathertw/icon.png",
+    "preview": "/assets/images/weathertw/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "weather-norway",
+    "slug": "weatherno",
+    "packageName": "com.boolint.weatherno",
     "name": { "ko": "Weather Norway", "en": "Weather Norway" },
     "description": { "ko": "노르웨이 날씨", "en": "Norway Weather" },
-    "icon": "/assets/images/weather-norway/icon.png",
-    "preview": "/assets/images/weather-norway/preview.webp",
+    "icon": "/assets/images/weatherno/icon.png",
+    "preview": "/assets/images/weatherno/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "capital-gains-tax",
+    "slug": "transtax",
+    "packageName": "com.boolint.transtax",
     "name": { "ko": "양도세", "en": "Capital Gains Tax" },
     "description": { "ko": "양도소득세 계산", "en": "Capital Gains Tax Calculator" },
-    "icon": "/assets/images/capital-gains-tax/icon.png",
-    "preview": "/assets/images/capital-gains-tax/preview.webp",
+    "icon": "/assets/images/transtax/icon.png",
+    "preview": "/assets/images/transtax/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "official-price",
+    "slug": "propertytax",
+    "packageName": "com.boolint.propertytax",
     "name": { "ko": "아파트 공시가격", "en": "Official Price" },
     "description": { "ko": "아파트 공시가격 조회", "en": "Apartment Official Price Lookup" },
-    "icon": "/assets/images/official-price/icon.png",
-    "preview": "/assets/images/official-price/preview.webp",
+    "icon": "/assets/images/propertytax/icon.png",
+    "preview": "/assets/images/propertytax/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "brokerage",
+    "slug": "realestatecal",
+    "packageName": "com.boolint.realestatecal",
     "name": { "ko": "중개보수", "en": "Brokerage Fee" },
     "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
-    "icon": "/assets/images/brokerage/icon.png",
-    "preview": "/assets/images/brokerage/preview.webp",
+    "icon": "/assets/images/realestatecal/icon.png",
+    "preview": "/assets/images/realestatecal/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
-    "slug": "acquisition-tax",
+    "slug": "acqtax",
+    "packageName": "com.boolint.acqtax",
     "name": { "ko": "취득세", "en": "Acquisition Tax" },
     "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
-    "icon": "/assets/images/acquisition-tax/icon.png",
-    "preview": "/assets/images/acquisition-tax/preview.webp",
+    "icon": "/assets/images/acqtax/icon.png",
+    "preview": "/assets/images/acqtax/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
   {
     "slug": "agemap",
+    "packageName": "com.boolint.agemap",
     "name": { "ko": "AgeMap", "en": "AgeMap" },
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
@@ -71,5 +79,205 @@
     "preview": "/assets/images/agemap/preview.webp",
     "platform": ["android"],
     "hasHelp": true
+  },
+  {
+    "slug": "weatheres",
+    "packageName": "com.boolint.weatheres",
+    "name": { "ko": "Weather Spain", "en": "Weather Spain" },
+    "description": { "ko": "스페인 날씨", "en": "Spain Weather" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "iconmixer",
+    "packageName": "com.boolint.iconmixer",
+    "name": { "ko": "Icon Mixer", "en": "Icon Mixer" },
+    "description": { "ko": "아이콘 믹서", "en": "Icon Mixer" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "weathermy",
+    "packageName": "com.boolint.weathermy",
+    "name": { "ko": "Weather Malaysia", "en": "Weather Malaysia" },
+    "description": { "ko": "말레이시아 날씨", "en": "Malaysia Weather" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "jpdramaeng",
+    "packageName": "com.boolint.jpdramaeng",
+    "name": { "ko": "일본드라마 영어", "en": "JP Drama English" },
+    "description": { "ko": "일본 드라마 영어자막", "en": "Japanese Drama English Subtitles" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "englishnumber",
+    "packageName": "com.boolint.englishnumber",
+    "name": { "ko": "영어 숫자", "en": "English Number" },
+    "description": { "ko": "영어 숫자 읽기", "en": "English Number Reading" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "mywatches",
+    "packageName": "com.boolint.mywatches",
+    "name": { "ko": "My Watches", "en": "My Watches" },
+    "description": { "ko": "내 시계", "en": "My Watches" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "thatsong",
+    "packageName": "com.boolint.thatsong",
+    "name": { "ko": "그 노래", "en": "That Song" },
+    "description": { "ko": "노래 찾기", "en": "Song Finder" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "patternmaker",
+    "packageName": "com.boolint.patternmaker",
+    "name": { "ko": "Pattern Maker", "en": "Pattern Maker" },
+    "description": { "ko": "패턴 메이커", "en": "Pattern Maker" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "finedustmap",
+    "packageName": "com.boolint.finedustmap",
+    "name": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
+    "description": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "myweather",
+    "packageName": "com.boolint.myweather",
+    "name": { "ko": "My Weather", "en": "My Weather" },
+    "description": { "ko": "내 날씨", "en": "My Weather" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "movingplan",
+    "packageName": "com.boolint.movingplan",
+    "name": { "ko": "이사 계획", "en": "Moving Plan" },
+    "description": { "ko": "이사 계획", "en": "Moving Plan" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "busanlife",
+    "packageName": "com.boolint.busanlife",
+    "name": { "ko": "부산 생활", "en": "Busan Life" },
+    "description": { "ko": "부산 생활 정보", "en": "Busan Life Info" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "parkinglot",
+    "packageName": "com.boolint.parkinglot",
+    "name": { "ko": "주차장", "en": "Parking Lot" },
+    "description": { "ko": "주차장 찾기", "en": "Parking Lot Finder" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "seoullife",
+    "packageName": "com.boolint.seoullife",
+    "name": { "ko": "서울 생활", "en": "Seoul Life" },
+    "description": { "ko": "서울 생활 정보", "en": "Seoul Life Info" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "snim",
+    "packageName": "com.boolint.snim",
+    "name": { "ko": "SNIM", "en": "SNIM" },
+    "description": { "ko": "SNIM", "en": "SNIM" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "apttradechart",
+    "packageName": "com.boolint.apttradechart",
+    "name": { "ko": "아파트 매매", "en": "Apt Trade Chart" },
+    "description": { "ko": "아파트 매매 차트", "en": "Apartment Trade Chart" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "aptrentchart",
+    "packageName": "com.boolint.aptrentchart",
+    "name": { "ko": "아파트 전세", "en": "Apt Rent Chart" },
+    "description": { "ko": "아파트 전세 차트", "en": "Apartment Rent Chart" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "financeproduct",
+    "packageName": "com.boolint.financeproduct",
+    "name": { "ko": "금융상품", "en": "Finance Product" },
+    "description": { "ko": "금융상품 정보", "en": "Finance Product Info" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "officetradechart",
+    "packageName": "com.boolint.officetradechart",
+    "name": { "ko": "오피스텔 매매", "en": "Office Trade Chart" },
+    "description": { "ko": "오피스텔 매매 차트", "en": "Office Trade Chart" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "camlocation",
+    "packageName": "com.boolint.camlocation",
+    "name": { "ko": "Cam Location", "en": "Cam Location" },
+    "description": { "ko": "카메라 위치", "en": "Camera Location" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "junsewolse",
+    "packageName": "com.boolint.junsewolse",
+    "name": { "ko": "전세월세", "en": "Jeonse Wolse" },
+    "description": { "ko": "전세/월세 계산", "en": "Jeonse/Wolse Calculator" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "gifttax",
+    "packageName": "com.boolint.gifttax",
+    "name": { "ko": "증여세", "en": "Gift Tax" },
+    "description": { "ko": "증여세 계산", "en": "Gift Tax Calculator" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "maskstore",
+    "packageName": "com.boolint.maskstore",
+    "name": { "ko": "마스크 스토어", "en": "Mask Store" },
+    "description": { "ko": "마스크 판매처", "en": "Mask Store" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "petblog",
+    "packageName": "com.boolint.petblog",
+    "name": { "ko": "펫 블로그", "en": "Pet Blog" },
+    "description": { "ko": "반려동물 블로그", "en": "Pet Blog" },
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
+    "slug": "jpdrama",
+    "packageName": "com.boolint.jpdrama",
+    "name": { "ko": "일본드라마", "en": "JP Drama" },
+    "description": { "ko": "일본 드라마 정보", "en": "Japanese Drama Info" },
+    "platform": ["android"],
+    "hasHelp": false
   }
 ]
