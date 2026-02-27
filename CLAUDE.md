@@ -174,6 +174,12 @@ homepage/
 - 환경변수: `NODE_VERSION=20`
 - GitHub 리포: `boolint-kim/boolint-homepage`
 
+### 캐시 주의사항
+- `public/_headers`에서 `/assets/*` 캐시 정책 관리
+- 고정 파일명(예: `components.css`)에 `immutable` 캐시 절대 사용 금지 → CSS/JS 변경이 반영되지 않음
+- `immutable`은 파일명에 해시가 포함된 경우(예: `app.a3f2b1.css`)에만 사용
+- 현재 설정: `max-age=3600` (1시간)
+
 ## 도메인 현황
 
 | 도메인 | 상태 | 설명 |
