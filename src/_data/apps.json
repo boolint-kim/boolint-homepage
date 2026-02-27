@@ -4,6 +4,7 @@
     "name": { "ko": "Weather Korea", "en": "Weather Korea" },
     "description": { "ko": "한국 날씨", "en": "Korea Weather" },
     "icon": "/assets/images/weather-korea/icon.png",
+    "preview": "/assets/images/weather-korea/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -12,6 +13,7 @@
     "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
     "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
     "icon": "/assets/images/weather-taiwan/icon.png",
+    "preview": "/assets/images/weather-taiwan/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -20,6 +22,7 @@
     "name": { "ko": "Weather Norway", "en": "Weather Norway" },
     "description": { "ko": "노르웨이 날씨", "en": "Norway Weather" },
     "icon": "/assets/images/weather-norway/icon.png",
+    "preview": "/assets/images/weather-norway/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -28,6 +31,7 @@
     "name": { "ko": "양도세", "en": "Capital Gains Tax" },
     "description": { "ko": "양도소득세 계산", "en": "Capital Gains Tax Calculator" },
     "icon": "/assets/images/capital-gains-tax/icon.png",
+    "preview": "/assets/images/capital-gains-tax/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -36,6 +40,7 @@
     "name": { "ko": "아파트 공시가격", "en": "Official Price" },
     "description": { "ko": "아파트 공시가격 조회", "en": "Apartment Official Price Lookup" },
     "icon": "/assets/images/official-price/icon.png",
+    "preview": "/assets/images/official-price/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -44,6 +49,7 @@
     "name": { "ko": "중개보수", "en": "Brokerage Fee" },
     "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
     "icon": "/assets/images/brokerage/icon.png",
+    "preview": "/assets/images/brokerage/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -52,6 +58,7 @@
     "name": { "ko": "취득세", "en": "Acquisition Tax" },
     "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
     "icon": "/assets/images/acquisition-tax/icon.png",
+    "preview": "/assets/images/acquisition-tax/preview.webp",
     "platform": ["android"],
     "hasHelp": false
   },
@@ -61,6 +68,7 @@
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
     "iconReady": true,
+    "preview": "/assets/images/agemap/preview.webp",
     "platform": ["android"],
     "hasHelp": true
   }

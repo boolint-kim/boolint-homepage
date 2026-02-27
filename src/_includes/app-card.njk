@@ -4,11 +4,11 @@
 {% set prefix = '/en/' if cl == 'en' else '/' %}
 
 <a href="{{ prefix }}{{ cardApp.slug }}/" class="app-card">
-  <div class="app-card__icon">
-    {% if cardApp.iconReady %}
-      <img src="{{ cardApp.icon }}" alt="{{ cardApp.name[cl] }}" class="app-card__icon-img" width="48" height="48">
+  <div class="app-card__preview">
+    {% if cardApp.preview %}
+      <img src="{{ cardApp.preview }}" alt="{{ cardApp.name[cl] }}" class="app-card__preview-img" width="1024" height="500" loading="lazy">
     {% else %}
-      <div class="app-card__icon-placeholder">{{ cardApp.name[cl] | first }}</div>
+      <div class="app-card__preview-placeholder">{{ cardApp.name[cl] | first }}</div>
     {% endif %}
   </div>
   <div class="app-card__info">
