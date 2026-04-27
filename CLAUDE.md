@@ -199,5 +199,8 @@ homepage/
 - apps.boolint.com DNS CNAME 삭제 + Google Sites 삭제
 - NCP nginx 설정에서 boolint.com/www 서버 블록 제거
 
+## Git
+- git push 허용
+
 ## 완료된 작업
 - ✅ 개인정보처리방침 페이지 추가 (한글/영문 각 1페이지)

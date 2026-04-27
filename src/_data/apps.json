@@ -72,12 +72,13 @@
   {
     "slug": "agemap",
     "packageName": "com.boolint.agemap",
-    "name": { "ko": "AgeMap", "en": "AgeMap" },
+    "name": { "ko": "에이지맵", "en": "AgeMap" },
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
     "iconReady": true,
     "preview": "/assets/images/agemap/preview.webp",
-    "platform": ["android"],
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
     "hasHelp": true
   },
   {
