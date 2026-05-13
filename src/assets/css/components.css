@@ -15,7 +15,7 @@
 }
 
 .header__logo {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--color-text);
   display: flex;
@@ -359,23 +359,15 @@
 .home-hero__banner {
   display: block;
   width: 100%;
-  max-width: 640px;
-  height: 140px;
-  object-fit: cover;
-  object-position: center;
+  max-width: 1024px;
+  height: auto;
+  aspect-ratio: 4 / 1;
   margin: 0 auto;
   border-radius: var(--radius);
 }
 
-@media (min-width: 768px) {
-  .home-hero__banner {
-    max-width: 760px;
-    height: 180px;
-  }
-}
-
 .home-section {
-  padding: var(--space-2xl) 0;
+  padding: var(--space-2xl) var(--space-lg);
   background: #ffffff;
 }
 
@@ -387,11 +379,10 @@
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-lg);
 }
 
 .home-section__title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--color-text);
   margin-bottom: var(--space-lg);
@@ -400,7 +391,7 @@
 
 @media (min-width: 768px) {
   .home-section__title {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
   }
 }
 
