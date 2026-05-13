@@ -1,5 +1,16 @@
 [
   {
+    "slug": "snapatlas",
+    "packageName": "com.boolint.snapatlas",
+    "name": { "ko": "스냅아틀라스", "en": "SnapAtlas" },
+    "description": { "ko": "사진을 시간과 장소로 다시 만나고, 자동 콜라주로 묶기", "en": "Rediscover photos by time & place, and auto-collage them" },
+    "icon": "/assets/images/snapatlas/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/snapatlas/preview.webp",
+    "platform": ["android"],
+    "hasHelp": false
+  },
+  {
     "slug": "satpic",
     "packageName": "com.boolint.satpic",
     "name": { "ko": "Weather Korea", "en": "Weather Korea" },
