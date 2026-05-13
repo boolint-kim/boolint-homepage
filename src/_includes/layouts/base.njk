@@ -22,6 +22,10 @@
   <link rel="alternate" hreflang="{{ alternateLang }}" href="{{ site.url }}{{ alternateUrl }}">
   {% endif %}
 
+  {# Favicon #}
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/favicon.png">
+
   {# CSS #}
   <link rel="stylesheet" href="/assets/css/global.css">
   <link rel="stylesheet" href="/assets/css/components.css">
@@ -31,7 +35,7 @@
 <body>
   {% include "header.njk" %}
 
-  <main class="main">
+  <main class="main {{ mainClass }}">
     {{ content | safe }}
   </main>
 

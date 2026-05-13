@@ -8,7 +8,8 @@
     "iconReady": true,
     "preview": "/assets/images/snapatlas/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "featured"
   },
   {
     "slug": "satpic",
@@ -18,7 +19,8 @@
     "icon": "/assets/images/satpic/icon.png",
     "preview": "/assets/images/satpic/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "weather"
   },
   {
     "slug": "weathertw",
@@ -28,7 +30,8 @@
     "icon": "/assets/images/weathertw/icon.png",
     "preview": "/assets/images/weathertw/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "weather"
   },
   {
     "slug": "weatherno",
@@ -38,7 +41,8 @@
     "icon": "/assets/images/weatherno/icon.png",
     "preview": "/assets/images/weatherno/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "weather"
   },
   {
     "slug": "transtax",
@@ -48,7 +52,9 @@
     "icon": "/assets/images/transtax/icon.png",
     "preview": "/assets/images/transtax/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate-tax"
   },
   {
     "slug": "propertytax",
@@ -58,7 +64,9 @@
     "icon": "/assets/images/propertytax/icon.png",
     "preview": "/assets/images/propertytax/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate-tax"
   },
   {
     "slug": "realestatecal",
@@ -68,7 +76,9 @@
     "icon": "/assets/images/realestatecal/icon.png",
     "preview": "/assets/images/realestatecal/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate-tax"
   },
   {
     "slug": "acqtax",
@@ -78,7 +88,9 @@
     "icon": "/assets/images/acqtax/icon.png",
     "preview": "/assets/images/acqtax/preview.webp",
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate-tax"
   },
   {
     "slug": "agemap",
@@ -90,7 +102,8 @@
     "preview": "/assets/images/agemap/preview.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
-    "hasHelp": true
+    "hasHelp": true,
+    "category": "featured"
   },
   {
     "slug": "weatheres",
@@ -98,7 +111,8 @@
     "name": { "ko": "Weather Spain", "en": "Weather Spain" },
     "description": { "ko": "스페인 날씨", "en": "Spain Weather" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "iconmixer",
@@ -106,7 +120,8 @@
     "name": { "ko": "Icon Mixer", "en": "Icon Mixer" },
     "description": { "ko": "아이콘 믹서", "en": "Icon Mixer" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "weathermy",
@@ -114,7 +129,8 @@
     "name": { "ko": "Weather Malaysia", "en": "Weather Malaysia" },
     "description": { "ko": "말레이시아 날씨", "en": "Malaysia Weather" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "jpdramaeng",
@@ -122,7 +138,8 @@
     "name": { "ko": "일본드라마 영어", "en": "JP Drama English" },
     "description": { "ko": "일본 드라마 영어자막", "en": "Japanese Drama English Subtitles" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "englishnumber",
@@ -130,7 +147,8 @@
     "name": { "ko": "영어 숫자", "en": "English Number" },
     "description": { "ko": "영어 숫자 읽기", "en": "English Number Reading" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "mywatches",
@@ -138,7 +156,8 @@
     "name": { "ko": "My Watches", "en": "My Watches" },
     "description": { "ko": "내 시계", "en": "My Watches" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "thatsong",
@@ -146,7 +165,8 @@
     "name": { "ko": "그 노래", "en": "That Song" },
     "description": { "ko": "노래 찾기", "en": "Song Finder" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "patternmaker",
@@ -154,7 +174,8 @@
     "name": { "ko": "Pattern Maker", "en": "Pattern Maker" },
     "description": { "ko": "패턴 메이커", "en": "Pattern Maker" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "finedustmap",
@@ -162,7 +183,8 @@
     "name": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
     "description": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "weather"
   },
   {
     "slug": "myweather",
@@ -170,7 +192,8 @@
     "name": { "ko": "My Weather", "en": "My Weather" },
     "description": { "ko": "내 날씨", "en": "My Weather" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "weather"
   },
   {
     "slug": "movingplan",
@@ -178,7 +201,8 @@
     "name": { "ko": "이사 계획", "en": "Moving Plan" },
     "description": { "ko": "이사 계획", "en": "Moving Plan" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "busanlife",
@@ -186,7 +210,8 @@
     "name": { "ko": "부산 생활", "en": "Busan Life" },
     "description": { "ko": "부산 생활 정보", "en": "Busan Life Info" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "parkinglot",
@@ -194,7 +219,8 @@
     "name": { "ko": "주차장", "en": "Parking Lot" },
     "description": { "ko": "주차장 찾기", "en": "Parking Lot Finder" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "seoullife",
@@ -202,7 +228,8 @@
     "name": { "ko": "서울 생활", "en": "Seoul Life" },
     "description": { "ko": "서울 생활 정보", "en": "Seoul Life Info" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "snim",
@@ -210,7 +237,8 @@
     "name": { "ko": "SNIM", "en": "SNIM" },
     "description": { "ko": "SNIM", "en": "SNIM" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "apttradechart",
@@ -218,7 +246,8 @@
     "name": { "ko": "아파트 매매", "en": "Apt Trade Chart" },
     "description": { "ko": "아파트 매매 차트", "en": "Apartment Trade Chart" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "aptrentchart",
@@ -226,7 +255,8 @@
     "name": { "ko": "아파트 전세", "en": "Apt Rent Chart" },
     "description": { "ko": "아파트 전세 차트", "en": "Apartment Rent Chart" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "financeproduct",
@@ -234,7 +264,8 @@
     "name": { "ko": "금융상품", "en": "Finance Product" },
     "description": { "ko": "금융상품 정보", "en": "Finance Product Info" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "officetradechart",
@@ -242,7 +273,8 @@
     "name": { "ko": "오피스텔 매매", "en": "Office Trade Chart" },
     "description": { "ko": "오피스텔 매매 차트", "en": "Office Trade Chart" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "camlocation",
@@ -250,7 +282,8 @@
     "name": { "ko": "Cam Location", "en": "Cam Location" },
     "description": { "ko": "카메라 위치", "en": "Camera Location" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "junsewolse",
@@ -258,7 +291,8 @@
     "name": { "ko": "전세월세", "en": "Jeonse Wolse" },
     "description": { "ko": "전세/월세 계산", "en": "Jeonse/Wolse Calculator" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true
   },
   {
     "slug": "gifttax",
@@ -266,15 +300,18 @@
     "name": { "ko": "증여세", "en": "Gift Tax" },
     "description": { "ko": "증여세 계산", "en": "Gift Tax Calculator" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate-tax"
   },
   {
     "slug": "maskstore",
     "packageName": "com.boolint.maskstore",
     "name": { "ko": "마스크 스토어", "en": "Mask Store" },
-    "description": { "ko": "마스크 판매처", "en": "Mask Store" },
+    "description": { "ko": "지도에서 병원·약국 찾기 (주말에 유용)", "en": "Find hospitals and pharmacies on the map" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "category": "tool"
   },
   {
     "slug": "petblog",
@@ -282,7 +319,8 @@
     "name": { "ko": "펫 블로그", "en": "Pet Blog" },
     "description": { "ko": "반려동물 블로그", "en": "Pet Blog" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "jpdrama",
@@ -290,6 +328,7 @@
     "name": { "ko": "일본드라마", "en": "JP Drama" },
     "description": { "ko": "일본 드라마 정보", "en": "Japanese Drama Info" },
     "platform": ["android"],
-    "hasHelp": false
+    "hasHelp": false,
+    "hidden": true
   }
 ]

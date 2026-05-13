@@ -1,129 +1,153 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: en
 title: "SnapAtlas — Rediscover your photos by time and place"
-appSlug: snapatlas
-appName: SnapAtlas
-appHasHelp: false
 alternateLang: ko
 alternateUrl: /snapatlas/
 ---
 
-<h1>SnapAtlas</h1>
-<img src="/assets/images/snapatlas/feature-banner-en.png" alt="SnapAtlas — Rediscover your photos by time and place" class="app-banner">
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>SnapAtlas</h1>
+    <p class="landing-hero__lead">SnapAtlas brings the thousands of photos buried in your gallery back to life — by time, by place, and by turning many shots into a single collage with one tap.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.snapatlas&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+    <img src="/assets/images/snapatlas/feature-banner-en.png" alt="SnapAtlas — Rediscover your photos by time and place" class="landing-hero__banner">
+  </div>
+</section>
 
-<p><strong>SnapAtlas brings the thousands of photos buried in your gallery back to life — by time, by place, and by turning many shots into a single collage with one tap.</strong></p>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Your old photos shouldn't stay buried</h2>
+    <p>The average phone holds thousands — sometimes tens of thousands — of photos. But every default gallery shows them as one endless reverse-chronological scroll. Once a photo scrolls past, it's gone for good.</p>
+    <ul>
+      <li>You want to see that trip from two springs ago, but you can't find it.</li>
+      <li>You remember taking pictures at <em>that</em> place — but where are they?</li>
+      <li>You'd love to turn a few shots into a single memory, but every collage app makes you pick them one by one.</li>
+      <li>New photos pile up. Old ones drift further away every day.</li>
+    </ul>
+    <p>SnapAtlas solves all three in one app — <strong>time-axis filtering</strong>, <strong>map-based recall</strong>, and <strong>automatic group collages</strong>.</p>
+  </div>
+</section>
 
-<p>
-  <a href="https://play.google.com/store/apps/details?id=com.boolint.snapatlas&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
-    Get it on Google Play
-  </a>
-</p>
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Rediscover photos by time</h2>
+    <img src="/assets/images/snapatlas/screenshots/en/01_gallery.png" alt="SnapAtlas gallery with pinch-zoom and multi-dimensional filters" class="app-screenshot">
+    <p>The endless scroll is replaced with <strong>eight precise filter dimensions</strong>. Combine them and a specific moment sharpens into focus.</p>
+    <ul>
+      <li><strong>Year</strong> — 2024 / 2023 / 2022 …</li>
+      <li><strong>Month</strong> — January through December</li>
+      <li><strong>Day-of-month range</strong> — 1–10 / 11–20 / 21–end</li>
+      <li><strong>Day of week</strong> — Monday through Sunday</li>
+      <li><strong>Time of day</strong> — Dawn / Morning / Noon / Afternoon / Evening / Night</li>
+      <li><strong>Orientation</strong> — Landscape / Portrait</li>
+      <li><strong>Source</strong> — Camera / Downloads / Screenshots, and more</li>
+      <li><strong>Custom date range</strong> — Pick your own start and end</li>
+    </ul>
+    <p>One combination like <em>"2023 + May + Sat–Sun + Afternoon"</em> instantly surfaces every weekend-afternoon shot from last spring. A slice like "Sunday afternoon" simply doesn't exist in a default gallery.</p>
+    <p>Browse in a staggered grid with pinch-zoom to change density on the fly. Long-press to enter multi-select for delete, share, or send-to-collage actions.</p>
+  </div>
+</section>
 
-<h2>Your old photos shouldn't stay buried</h2>
-<p>The average phone holds thousands — sometimes tens of thousands — of photos. But every default gallery shows them as one endless reverse-chronological scroll. Once a photo scrolls past, it's gone for good.</p>
-<ul>
-  <li>You want to see that trip from two springs ago, but you can't find it.</li>
-  <li>You remember taking pictures at <em>that</em> place — but where are they?</li>
-  <li>You'd love to turn a few shots into a single memory, but every collage app makes you pick them one by one.</li>
-  <li>New photos pile up. Old ones drift further away every day.</li>
-</ul>
-<p>SnapAtlas solves all three in one app — <strong>time-axis filtering</strong>, <strong>map-based recall</strong>, and <strong>automatic group collages</strong>.</p>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Rediscover photos by place</h2>
+    <img src="/assets/images/snapatlas/screenshots/en/02_map_satellite.png" alt="SnapAtlas map with photo location clusters" class="app-screenshot">
+    <p>Photos with GPS information appear automatically on Google Maps. Nearby shots <strong>cluster automatically</strong> based on zoom level — fifty photos from the same neighborhood become a single pin labeled "50".</p>
+    <img src="/assets/images/snapatlas/screenshots/en/03_place_detail.png" alt="Tap a cluster to see every photo taken at that spot" class="app-screenshot">
+    <p>Tap a cluster and <strong>every photo taken at that spot</strong> spreads out as a grid. It's far more intuitive than naming folders by location, and after a trip you'll find yourself naturally asking, "What did I shoot here?"</p>
+  </div>
+</section>
 
-<h2>Rediscover photos by time</h2>
-<img src="/assets/images/snapatlas/screenshots/en/01_gallery.png" alt="SnapAtlas gallery with pinch-zoom and multi-dimensional filters" class="app-screenshot">
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>One tap to bundle memories — Auto Collage</h2>
+    <img src="/assets/images/snapatlas/screenshots/en/04_select.png" alt="Select multiple photos from the gallery" class="app-screenshot">
+    <p>The biggest friction in collage apps is that you have to decide which photos go where. SnapAtlas removes that decision.</p>
+    <ol>
+      <li>Select several photos from your gallery.</li>
+      <li>The app <strong>auto-groups</strong> them by date (day, month, year, or weekday — your choice).</li>
+      <li>Each group gets <strong>an automatic layout</strong> — 1–8 photos per grid, 1–4 grids per canvas.</li>
+      <li>Swipe through the previews — <strong>multiple collages, generated in one shot</strong>.</li>
+    </ol>
+    <img src="/assets/images/snapatlas/screenshots/en/05_auto_collage.png" alt="Auto collage preview with style adjustments" class="app-screenshot">
+    <p>Style every aspect to taste:</p>
+    <ul>
+      <li><strong>Background color</strong> — White / Black / Gray / Beige / Sky / Charcoal (6 presets)</li>
+      <li><strong>Margin</strong> — Cell spacing from 0 to 40 px</li>
+      <li><strong>Rounded corners</strong> — 0 to 50 px</li>
+      <li><strong>Date labels</strong> — Show / hide, with a choice of four corner positions</li>
+      <li><strong>Place labels</strong> — Auto-shown when entering from a map cluster</li>
+      <li><strong>Decorative patterns</strong> — Add a background pattern with 4 density × 4 rotation steps</li>
+    </ul>
+  </div>
+</section>
 
-<p>The endless scroll is replaced with <strong>eight precise filter dimensions</strong>. Combine them and a specific moment sharpens into focus.</p>
-<ul>
-  <li><strong>Year</strong> — 2024 / 2023 / 2022 …</li>
-  <li><strong>Month</strong> — January through December</li>
-  <li><strong>Day-of-month range</strong> — 1–10 / 11–20 / 21–end</li>
-  <li><strong>Day of week</strong> — Monday through Sunday</li>
-  <li><strong>Time of day</strong> — Dawn / Morning / Noon / Afternoon / Evening / Night</li>
-  <li><strong>Orientation</strong> — Landscape / Portrait</li>
-  <li><strong>Source</strong> — Camera / Downloads / Screenshots, and more</li>
-  <li><strong>Custom date range</strong> — Pick your own start and end</li>
-</ul>
-<p>One combination like <em>"2023 + May + Sat–Sun + Afternoon"</em> instantly surfaces every weekend-afternoon shot from last spring. A slice like "Sunday afternoon" simply doesn't exist in a default gallery.</p>
-<p>Browse in a staggered grid with pinch-zoom to change density on the fly. Long-press to enter multi-select for delete, share, or send-to-collage actions.</p>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Collage Library</h2>
+    <img src="/assets/images/snapatlas/screenshots/en/06_collage_list.png" alt="Manage every collage you've made in one place" class="app-screenshot">
+    <p>Every collage you create is saved as a lightweight <strong>recipe</strong> — just the photo IDs and style parameters, so the library stays nimble no matter how many you keep. Inside the library you can:</p>
+    <ul>
+      <li><strong>Sort by recent or name</strong> at a glance</li>
+      <li><strong>Rename</strong> the ones that matter to bring them up top</li>
+      <li><strong>Duplicate</strong> to try "same photos, different style" in seconds</li>
+      <li><strong>Multi-select</strong> to delete several at once</li>
+    </ul>
+    <p>Open a saved collage later, tweak the background or roundness, and re-export — no need to start over.</p>
+  </div>
+</section>
 
-<h2>Rediscover photos by place</h2>
-<img src="/assets/images/snapatlas/screenshots/en/02_map_satellite.png" alt="SnapAtlas map with photo location clusters" class="app-screenshot">
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Export and share</h2>
+    <img src="/assets/images/snapatlas/screenshots/en/07_export.png" alt="Save to gallery or share directly to other apps" class="app-screenshot">
+    <p>Finished collages can be saved to your gallery as image files or shared instantly to messengers, social apps, and more. Canvases are 1080 px wide with height auto-fitted between 720 and 2160 px depending on the number of photos — sized for social uploads out of the box.</p>
+  </div>
+</section>
 
-<p>Photos with GPS information appear automatically on Google Maps. Nearby shots <strong>cluster automatically</strong> based on zoom level — fifty photos from the same neighborhood become a single pin labeled "50".</p>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>What makes SnapAtlas different</h2>
+    <ul>
+      <li><strong>Versus default galleries (Google Photos, Samsung Gallery)</strong> — Default galleries show photos as flat pins on a map. SnapAtlas uses a <em>cluster → grid view</em> flow tuned for recall, with 8-dimensional filter combinations on top.</li>
+      <li><strong>Versus other collage apps (PicCollage, Canva, etc.)</strong> — Those make you hand-pick and hand-arrange. SnapAtlas <em>turns one selection into many finished collages automatically</em>.</li>
+      <li><strong>Versus photo-cleaner apps (Slidebox, etc.)</strong> — Cleaners focus on deleting clutter. SnapAtlas focuses on <em>rediscovering the photos worth keeping</em>.</li>
+    </ul>
+  </div>
+</section>
 
-<img src="/assets/images/snapatlas/screenshots/en/03_place_detail.png" alt="Tap a cluster to see every photo taken at that spot" class="app-screenshot">
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Privacy — straight talk</h2>
+    <ul>
+      <li><strong>Your photos stay on your device.</strong> No cloud uploads.</li>
+      <li><strong>No account, no sign-in.</strong> Open the app and you're in.</li>
+      <li>Location data (photo EXIF and your current location) is processed locally for map features only.</li>
+      <li><strong>Ads disclosure</strong>: SnapAtlas is free to use and includes Google AdMob banner ads. The AdMob SDK sends your advertising ID and impression/click events to Google.</li>
+    </ul>
+  </div>
+</section>
 
-<p>Tap a cluster and <strong>every photo taken at that spot</strong> spreads out as a grid. It's far more intuitive than naming folders by location, and after a trip you'll find yourself naturally asking, "What did I shoot here?"</p>
-
-<h2>One tap to bundle memories — Auto Collage</h2>
-<img src="/assets/images/snapatlas/screenshots/en/04_select.png" alt="Select multiple photos from the gallery" class="app-screenshot">
-
-<p>The biggest friction in collage apps is that you have to decide which photos go where. SnapAtlas removes that decision.</p>
-
-<ol>
-  <li>Select several photos from your gallery.</li>
-  <li>The app <strong>auto-groups</strong> them by date (day, month, year, or weekday — your choice).</li>
-  <li>Each group gets <strong>an automatic layout</strong> — 1–8 photos per grid, 1–4 grids per canvas.</li>
-  <li>Swipe through the previews — <strong>multiple collages, generated in one shot</strong>.</li>
-</ol>
-
-<img src="/assets/images/snapatlas/screenshots/en/05_auto_collage.png" alt="Auto collage preview with style adjustments" class="app-screenshot">
-
-<p>Style every aspect to taste:</p>
-<ul>
-  <li><strong>Background color</strong> — White / Black / Gray / Beige / Sky / Charcoal (6 presets)</li>
-  <li><strong>Margin</strong> — Cell spacing from 0 to 40 px</li>
-  <li><strong>Rounded corners</strong> — 0 to 50 px</li>
-  <li><strong>Date labels</strong> — Show / hide, with a choice of four corner positions</li>
-  <li><strong>Place labels</strong> — Auto-shown when entering from a map cluster</li>
-  <li><strong>Decorative patterns</strong> — Add a background pattern with 4 density × 4 rotation steps</li>
-</ul>
-
-<h2>Collage Library</h2>
-<img src="/assets/images/snapatlas/screenshots/en/06_collage_list.png" alt="Manage every collage you've made in one place" class="app-screenshot">
-
-<p>Every collage you create is saved as a lightweight <strong>recipe</strong> — just the photo IDs and style parameters, so the library stays nimble no matter how many you keep. Inside the library you can:</p>
-<ul>
-  <li><strong>Sort by recent or name</strong> at a glance</li>
-  <li><strong>Rename</strong> the ones that matter to bring them up top</li>
-  <li><strong>Duplicate</strong> to try "same photos, different style" in seconds</li>
-  <li><strong>Multi-select</strong> to delete several at once</li>
-</ul>
-<p>Open a saved collage later, tweak the background or roundness, and re-export — no need to start over.</p>
-
-<h2>Export and share</h2>
-<img src="/assets/images/snapatlas/screenshots/en/07_export.png" alt="Save to gallery or share directly to other apps" class="app-screenshot">
-
-<p>Finished collages can be saved to your gallery as image files or shared instantly to messengers, social apps, and more. Canvases are 1080 px wide with height auto-fitted between 720 and 2160 px depending on the number of photos — sized for social uploads out of the box.</p>
-
-<h2>What makes SnapAtlas different</h2>
-<ul>
-  <li><strong>Versus default galleries (Google Photos, Samsung Gallery)</strong> — Default galleries show photos as flat pins on a map. SnapAtlas uses a <em>cluster → grid view</em> flow tuned for recall, with 8-dimensional filter combinations on top.</li>
-  <li><strong>Versus other collage apps (PicCollage, Canva, etc.)</strong> — Those make you hand-pick and hand-arrange. SnapAtlas <em>turns one selection into many finished collages automatically</em>.</li>
-  <li><strong>Versus photo-cleaner apps (Slidebox, etc.)</strong> — Cleaners focus on deleting clutter. SnapAtlas focuses on <em>rediscovering the photos worth keeping</em>.</li>
-</ul>
-
-<h2>Privacy — straight talk</h2>
-<ul>
-  <li><strong>Your photos stay on your device.</strong> No cloud uploads.</li>
-  <li><strong>No account, no sign-in.</strong> Open the app and you're in.</li>
-  <li>Location data (photo EXIF and your current location) is processed locally for map features only.</li>
-  <li><strong>Ads disclosure</strong>: SnapAtlas is free to use and includes Google AdMob banner ads. The AdMob SDK sends your advertising ID and impression/click events to Google.</li>
-</ul>
-
-<h2>App information</h2>
-<ul>
-  <li>Platform: Android</li>
-  <li>Minimum requirement: Android 8.0 or later</li>
-  <li>Languages: English / Korean (auto-detected from device settings)</li>
-  <li>Dark mode supported</li>
-  <li>Price: Free (ad-supported, no in-app purchases)</li>
-</ul>
-
-<h2>Start now</h2>
-<p>
-  <a href="https://play.google.com/store/apps/details?id=com.boolint.snapatlas&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
-    Get it on Google Play
-  </a>
-</p>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>App information</h2>
+    <ul>
+      <li>Platform: Android</li>
+      <li>Minimum requirement: Android 8.0 or later</li>
+      <li>Languages: English / Korean (auto-detected from device settings)</li>
+      <li>Dark mode supported</li>
+      <li>Price: Free (ad-supported, no in-app purchases)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.snapatlas&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+  </div>
+</section>

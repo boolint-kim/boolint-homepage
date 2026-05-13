@@ -1,19 +1,56 @@
 ---
 layout: layouts/base.njk
+mainClass: main--landing
 lang: en
 alternateLang: ko
 alternateUrl: /
 ---
-{# 영어 홈 - 앱 목록 #}
+{# 영어 홈 - 히어로 + 카테고리 섹션 #}
 {% set t = i18n.en %}
+{% set cardLang = 'en' %}
 
-<div class="container">
-  <h1 class="page-title">{{ t['page.home.title'] }}</h1>
-  <div class="app-grid">
-    {% for app in apps | sort(attribute="name.en") %}
-      {% set cardApp = app %}
-      {% set cardLang = 'en' %}
-      {% include "app-card.njk" %}
-    {% endfor %}
+<section class="home-hero">
+  <img src="/assets/images/home/banner.png" alt="{{ t['home.heroTitle'] }}" class="home-hero__banner">
+</section>
+
+<section class="home-section">
+  <div class="home-section__inner">
+    <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
+    <div class="app-grid app-grid--featured">
+      {% for app in apps %}
+        {% if app.category == 'featured' %}
+          {% set cardApp = app %}
+          {% include "app-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
-</div>
+</section>
+
+<section class="home-section home-section--alt">
+  <div class="home-section__inner">
+    <h2 class="home-section__title">{{ t['home.section.weather'] }}</h2>
+    <div class="app-grid app-grid--small">
+      {% for app in apps | sort(attribute="name.en") %}
+        {% if app.category == 'weather' %}
+          {% set cardApp = app %}
+          {% include "app-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="home-section__inner">
+    <h2 class="home-section__title">{{ t['home.section.tool'] }}</h2>
+    <div class="app-grid app-grid--small">
+      {% for app in apps | sort(attribute="name.en") %}
+        {% if app.category == 'tool' %}
+          {% set cardApp = app %}
+          {% include "app-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
