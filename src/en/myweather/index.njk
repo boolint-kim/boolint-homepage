@@ -1,0 +1,171 @@
+---
+layout: layouts/base.njk
+mainClass: main--landing
+lang: en
+title: "My Weather — Korean forecasts and road CCTVs in one app"
+alternateLang: ko
+alternateUrl: /myweather/
+---
+
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/en/">← All apps</a>
+  </p>
+</div>
+
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>My Weather</h1>
+    <p class="landing-hero__lead">From the Korea Meteorological Administration's neighborhood forecast to live traffic CCTVs — everything you need to check before stepping out, on one screen. Satellite, radar, air quality, pollen, and earthquakes too. No more bouncing between apps.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.myweather&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+    <img src="/assets/images/myweather/feature-banner.png" alt="My Weather — Korean forecasts and road CCTVs in one app" class="landing-hero__banner">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>How many apps does it take to leave the house?</h2>
+    <p>One app for the temperature, another for air quality, a maps app for traffic, and a news push for the latest earthquake — a 30-second check turns into 5 minutes, every day.</p>
+    <ul>
+      <li>The weather is fine, but the road might be jammed — and that means opening a different app to find out.</li>
+      <li>You head out for a run without realizing the fine dust is at hazardous levels today.</li>
+      <li>Your pollen allergy kicks in every spring, but you can never tell exactly when.</li>
+      <li>You learn about a major earthquake hours later from a news push.</li>
+    </ul>
+    <p>My Weather rolls <strong>KMA forecasts</strong>, <strong>UTIC road CCTVs</strong>, <strong>satellite &amp; radar</strong>, <strong>air quality / pollen / UV</strong>, and <strong>earthquake / typhoon</strong> into a single screen.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Weather right where you are — Home screen</h2>
+    <img src="/assets/images/myweather/screenshot-main.png" alt="Current temperature, humidity, wind, precipitation + air quality card" class="app-screenshot">
+    <p>Open the app and the essentials for your <strong>current location or a saved favorite</strong> are laid out at a glance — KMA-grade current conditions up top, then hourly and daily forecasts, air quality, and the precipitation map below.</p>
+    <ul>
+      <li><strong>Current weather</strong> — Temperature, humidity, wind, precipitation, UV index, feels-like</li>
+      <li><strong>Favorite locations</strong> — Register any number of neighborhoods and switch with a single chip tap</li>
+      <li><strong>Pull to refresh</strong> — Data older than 5 minutes auto-refreshes when the app returns from the background</li>
+    </ul>
+    <p>Because My Weather is built on KMA's grid (3,500+ neighborhoods across Korea), forecasts vary precisely from one neighborhood to the next within the same city.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>What to wear today — Hourly &amp; weekly forecast</h2>
+    <img src="/assets/images/myweather/screenshot-forecast.png" alt="Hourly and weekly forecast — temperature, sky condition, rain chance" class="app-screenshot">
+    <p>How warm at commute time, will it rain on the way home, do you need an umbrella this weekend — at a glance.</p>
+    <ul>
+      <li><strong>Hourly forecast</strong> — Temperature, sky condition, wind direction, and rain chance, by the hour</li>
+      <li><strong>Weekly forecast</strong> — High/low temperature graph and daily rain chance &amp; amount</li>
+      <li><strong>Ultra-short-term forecast</strong> — Finer-grained timing for the start and stop of rain within the next hour</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Is the road clear? — Nearby CCTVs</h2>
+    <img src="/assets/images/myweather/screenshot-cctv.png" alt="Live nearby road CCTVs with location names and distances" class="app-screenshot">
+    <p>Check the road you're about to drive with <strong>live video</strong>. My Weather aggregates road CCTVs from UTIC (Korea's Urban Traffic Information Center) and similar sources, sorted by distance from your current location. Tap a card and the feed expands.</p>
+    <ul>
+      <li><strong>HLS streaming</strong> — ExoPlayer-based smooth playback with pinch zoom and drag</li>
+      <li><strong>Distance label</strong> — Each card shows how many meters away the camera is</li>
+      <li><strong>Region filter</strong> — Filter by region (highways, Busan, Gyeonggi, Jeju, and more)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>One map for everything — Rain overlay + CCTVs</h2>
+    <img src="/assets/images/myweather/screenshot-map-cctv.png" alt="Naver map with rain/snow overlay and nearby CCTV markers" class="app-screenshot">
+    <p>Toggle rain and snow overlays to see where precipitation is headed right now. On the same map you can show <strong>nearby CCTV markers</strong>, so you can answer "what does the rainy road over there actually look like?" in one tap.</p>
+    <ul>
+      <li><strong>Rain / Snow toggle</strong> — Switch overlays with a tap</li>
+      <li><strong>Animation playback</strong> — Scrub through recent timesteps to see how the rain is moving</li>
+      <li><strong>Zoom &amp; pan</strong> — Standard map SDK interactions</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Where the clouds come from — Satellite imagery</h2>
+    <img src="/assets/images/myweather/screenshot-satellite.png" alt="Visible-light satellite imagery over the Korean peninsula" class="app-screenshot">
+    <p>Watch the Chollian satellite's view of cloud movement over the Korean peninsula in time-lapse. <strong>Visible light</strong> is free; <strong>infrared and water vapor</strong> imagery unlocks with a single rewarded ad — no in-app purchases.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>When will the rain stop? — Precipitation radar</h2>
+    <img src="/assets/images/myweather/screenshot-radar.png" alt="KMA precipitation radar with intensity color map" class="app-screenshot">
+    <p>KMA's precipitation radar, played back in time order. Darker colors (yellow, red) mean heavier rain; lighter ones (green) mean light rain. This is the fastest way to answer "will this stop in an hour?"</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Safe to go outside? — Air quality, pollen, UV</h2>
+    <ul>
+      <li><strong>Air quality (AQI)</strong> — PM10, PM2.5, and ultrafine particulates with a 5-level Good→Hazardous scale and a nationwide map</li>
+      <li><strong>Pollen (Health Weather Index)</strong> — Oak, pine, and weed pollen risk levels (concentrated Apr–Jun)</li>
+      <li><strong>UV index forecast</strong> — Hourly UV index with a 5-level Safe→Extreme scale</li>
+    </ul>
+    <p>Especially helpful if you have allergies, asthma, or sensitive skin — or if you head out with kids or older family members.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>If the ground shook — Earthquakes, typhoons, tsunamis</h2>
+    <img src="/assets/images/myweather/screenshot-earthquake.png" alt="Recent earthquakes — magnitude, location, depth, and time" class="app-screenshot">
+    <p>Recent earthquakes worldwide and in Korea are listed with magnitude, location, depth, and time, with the epicenter pinned on a map. Typhoon tracks and tsunami alerts surface on the same screen.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Home screen widgets (4×1 / 4×2)</h2>
+    <p>Two widgets let you check the weather without even opening the app.</p>
+    <ul>
+      <li><strong>4×1 widget</strong> — Current temperature and condition with a small precipitation-radar thumbnail</li>
+      <li><strong>4×2 widget</strong> — Precipitation radar map plus an hourly forecast strip</li>
+      <li><strong>Location picker</strong> — Use your current location or any registered favorite</li>
+      <li><strong>Background updates</strong> — Refreshed periodically via WorkManager, with cached data so something is always visible offline</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Privacy — straight talk</h2>
+    <ul>
+      <li><strong>No account, no sign-in.</strong> Open the app and you're in.</li>
+      <li><strong>Location</strong> is used only for current-location weather and nearby CCTV search, processed on-device.</li>
+      <li><strong>Ads disclosure</strong>: My Weather is free and includes Google AdMob banner ads. Some content (infrared/water vapor satellite imagery, additional CCTVs) unlocks with a <strong>single rewarded ad</strong>. There are no in-app purchases.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>App information</h2>
+    <ul>
+      <li>Platform: Android</li>
+      <li>Minimum requirement: Android 8.0 or later</li>
+      <li>Data sources: KMA (neighborhood forecast, ultra-short-term forecast, precipitation radar, satellite imagery), UTIC (road CCTVs), and others</li>
+      <li>Price: Free (banner ads + rewarded ads to unlock extra content)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.myweather&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+  </div>
+</section>

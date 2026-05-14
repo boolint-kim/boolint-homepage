@@ -1,49 +1,179 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "에이지맵"
-appSlug: agemap
-appName: 에이지맵
-appHasHelp: true
+title: "에이지맵 — 가족과 친구의 나이·생일을 한눈에"
 alternateLang: en
 alternateUrl: /en/agemap/
 ---
 
-<h1>에이지맵</h1>
-<img src="/assets/images/agemap/feature-banner.png" alt="에이지맵 배너" class="app-banner">
-<p>가족, 친구, 동료의 나이와 생일을 시각적으로 관리하는 앱입니다.</p>
-<p>사람들을 나이 순서대로 그래프에 배치하여 한눈에 파악하고, 가계도와 생일 알림까지 관리할 수 있습니다.</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h2>주요 기능</h2>
-<ul>
-  <li><strong>나이순</strong> — 사람들을 나이순으로 시각적 그래프에 배치. 핀치 줌과 팬 제스처 지원</li>
-  <li><strong>가계도</strong> — 부모-자녀, 배우자, 형제 관계를 그래픽으로 표시</li>
-  <li><strong>그룹 관리</strong> — 가족, 친구, 직장 등 그룹별로 분류하고 색상 지정</li>
-  <li><strong>생일 알림</strong> — D-30, D-7, D-1, D-day 푸시 알림으로 생일을 놓치지 않음</li>
-  <li><strong>기념일 기록</strong> — 선물이나 추억을 연도별로 기록하고 사진 첨부</li>
-  <li><strong>백업/복원</strong> — 인물, 관계, 사진, 설정을 ZIP 파일로 안전하게 보관</li>
-</ul>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>에이지맵</h1>
+    <p class="landing-hero__lead">가족, 친구, 동료의 나이와 생일을 시각적으로 관리하는 앱입니다. 사람들을 나이순으로 한 화면에 펼쳐 보고, 가계도와 생일 알림, 기념일 기록까지 한 곳에서 다룹니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+    <p style="font-size: 0.875rem; margin-top: var(--space-md);">
+      자세한 사용법이 궁금하시면 <a href="/agemap/help/">도움말</a>을 참고하세요.
+    </p>
+    <img src="/assets/images/agemap/feature-banner.png" alt="에이지맵 — 가족과 친구의 나이를 시각적으로 관리" class="landing-hero__banner">
+  </div>
+</section>
 
-<h2>상세 정보</h2>
-<ul>
-  <li>음력 생일 입력 지원 (양력 자동 변환)</li>
-  <li>별자리, 탄생석, 띠 정보 자동 표시</li>
-  <li>년/월/일 단위의 정확한 나이 계산</li>
-  <li>"나" 설정 시 모든 그룹에 자동 표시</li>
-</ul>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>이 사람이 지금 몇 살이더라?</h2>
+    <p>가족·친척·친구·동료의 나이와 생일을 매번 떠올리려고 하면 헷갈리기 마련입니다. 주소록은 이름과 전화번호 위주라, 정작 알고 싶은 정보는 빠져 있습니다.</p>
+    <ul>
+      <li>조카가 올해 몇 살이 됐는지, 부모님이 환갑까지 몇 년 남았는지 매번 셈해야 합니다.</li>
+      <li>가족·친척의 관계가 머릿속에서 정리되지 않습니다.</li>
+      <li>중요한 생일을 깜빡 잊고 지나칩니다.</li>
+      <li>예전에 어떤 선물을 주고받았는지 기억나지 않아 매번 새로 고민합니다.</li>
+    </ul>
+    <p>에이지맵은 <strong>나이 시각화</strong>, <strong>가계도</strong>, <strong>생일 알림</strong>, <strong>기념일 기록</strong> 네 가지를 한 앱에서 해결합니다.</p>
+  </div>
+</section>
 
-<h2>다운로드</h2>
-<p>
-  <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap" class="btn" target="_blank" rel="noopener">
-    Google Play에서 다운로드
-  </a>
-  <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
-    App Store에서 다운로드
-  </a>
-</p>
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>한 화면에 펼쳐지는 나이맵</h2>
+    <img src="/assets/images/agemap/screenshot-groups.png" alt="에이지맵 메인 — 나이순으로 펼쳐진 인물 카드와 그룹 패널" class="app-screenshot">
+    <p>등록한 사람들이 <strong>나이순으로 한 화면</strong>에 자동 배치됩니다. 위에는 어른, 아래로 내려갈수록 어립니다. 핀치 줌으로 화면 밀도를 조절하고, 손가락 하나로 끌어 옮기며, 카드를 탭하면 상세 정보가 펼쳐집니다.</p>
+    <ul>
+      <li><strong>핀치 줌</strong> — 두 손가락으로 확대·축소하여 한 화면에 보이는 인물 수 조정</li>
+      <li><strong>드래그·팬</strong> — 한 손가락으로 화면 이동</li>
+      <li><strong>탭</strong> — 인물 카드를 탭하면 하단에 상세 정보 표시</li>
+      <li><strong>가계도 모드 전환</strong> — 상단 버튼 한 번으로 가계도 뷰로 전환</li>
+    </ul>
+    <p>"지금 몇 살이지?"라는 질문이 사라집니다. 한 화면을 보는 순간 모두의 나이가 즉시 들어옵니다.</p>
+  </div>
+</section>
 
-<h2>앱 정보</h2>
-<ul>
-  <li>플랫폼: Android, iOS</li>
-  <li>최소 요구 버전: Android 8.0 이상</li>
-</ul>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>가족 관계를 한눈에 — 가계도</h2>
+    <img src="/assets/images/agemap/screenshot-family-tree.png" alt="에이지맵 가계도 — 세대별로 자동 정리된 관계도" class="app-screenshot">
+    <p>인물끼리 관계를 지정하면 <strong>세대별로 자동 정리된 가계도</strong>가 그려집니다. 조부모 → 부모 → 본인 → 자녀 → 손자녀가 위에서 아래로, 관계 연결선은 자동으로 그어집니다.</p>
+    <ul>
+      <li><strong>부모-자녀</strong> 관계</li>
+      <li><strong>배우자</strong> — 현재 배우자와 이전 배우자 구분</li>
+      <li><strong>형제자매</strong> 관계</li>
+      <li><strong>연인</strong> 관계</li>
+    </ul>
+    <p>상세 화면에서 관계 한 번 지정하면 끝입니다. 복잡한 관계도를 직접 그릴 필요가 없습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>가족·친구·직장을 따로 — 그룹</h2>
+    <p>모두를 한 화면에 펼치는 것이 답답할 때는 그룹별로 나눠 봅니다. 가족, 친구, 직장 동료, 동호회 — 자유롭게 그룹을 만들고 색을 지정하면, 나이맵에서 인물 카드가 <strong>해당 색상</strong>으로 표시됩니다.</p>
+    <ul>
+      <li><strong>다중 소속</strong> — 한 사람이 여러 그룹에 동시에 속할 수 있습니다.</li>
+      <li><strong>그룹 필터</strong> — 우측 패널의 체크박스로 보고 싶은 그룹만 켭니다.</li>
+      <li><strong>프리셋</strong> — 미리 구성된 그룹 템플릿을 불러와 빠르게 시작할 수 있습니다.</li>
+      <li><strong>순서 변경</strong> — 자주 보는 그룹을 위로 끌어올립니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>중요한 생일을 놓치지 않게 — 생일 알림</h2>
+    <img src="/assets/images/agemap/screenshot-birthday.png" alt="다가오는 생일 목록과 알림 설정" class="app-screenshot">
+    <p>설정한 시간에 푸시 알림으로 다가오는 생일을 알려줍니다. 미리 알아야 선물·축하 준비를 할 수 있는 사람을 위해 <strong>네 단계 알림</strong>을 제공합니다.</p>
+    <ul>
+      <li><strong>D-30</strong> — 30일 전, 선물을 준비할 시간</li>
+      <li><strong>D-7</strong> — 일주일 전, 약속을 잡을 시간</li>
+      <li><strong>D-1</strong> — 하루 전, 인사를 준비할 시간</li>
+      <li><strong>D-day</strong> — 당일, 축하의 순간</li>
+    </ul>
+    <p>네 단계를 모두 켜도 되고, 필요한 것만 골라도 됩니다. 앱을 종료해도 설정한 시간에 알림이 정확히 도착하고, <strong>음력 생일도 양력으로 자동 변환</strong>되어 올바른 날짜에 울립니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>주고받은 기억까지 — 기념일 기록</h2>
+    <img src="/assets/images/agemap/screenshot-moments.png" alt="연도별로 정리된 기념일과 선물 기록" class="app-screenshot">
+    <p>"작년 생일에 뭘 선물했더라?" 다시 헷갈리지 않게 합니다. 인물 상세 화면의 <strong>기념일(Moments)</strong> 섹션에 그때그때 기록해 두면 연도별로 깔끔하게 쌓입니다.</p>
+    <ul>
+      <li><strong>방향</strong> — 준 것 / 받은 것을 구분해 양쪽으로 정리</li>
+      <li><strong>아이콘</strong> — 🎁 선물, 💰 현금, ❤️ 하트, 🎂 케이크, 💌 편지 등 한눈에 보이는 아이콘</li>
+      <li><strong>사진 첨부</strong> — 선물 사진, 그날의 모습을 함께 보관</li>
+      <li><strong>연도별 정리</strong> — 같은 사람과의 추억이 시간 축으로 자동 정리</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>한국 사용자를 위한 세부 기능</h2>
+    <img src="/assets/images/agemap/screenshot-person-detail.png" alt="인물 상세 정보 — 정확한 나이, 별자리, 탄생석, 띠" class="app-screenshot">
+    <p>나이를 보여주는 데 그치지 않습니다. 인물 상세에는 한국 사용자가 자연스럽게 찾게 되는 정보가 함께 표시됩니다.</p>
+    <ul>
+      <li><strong>음력 생일 입력</strong> — 음력 스위치 한 번으로 양력 자동 변환, 생일 알림도 정확한 양력 날짜에 도착</li>
+      <li><strong>정확한 나이</strong> — 년/월/일 단위로 표시 ("44년 3개월 17일")</li>
+      <li><strong>다음 생일까지 D-day</strong> — 매번 셈할 필요 없이 즉시 확인</li>
+      <li><strong>별자리·탄생석·띠</strong> — 생년월일에서 자동 계산</li>
+      <li><strong>"나" 설정</strong> — 본인을 표시하면 모든 그룹에 자동 포함되어 기준점이 됩니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>데이터는 ZIP 한 개로 — 백업/복원</h2>
+    <p>등록한 사람, 그룹, 가족 관계, 프로필 사진, 기념일 기록, 알림 설정까지 <strong>모든 데이터를 ZIP 파일 하나</strong>로 백업합니다. 파일명은 <code>agemap_backup_날짜.zip</code> 형식으로 자동 생성됩니다.</p>
+    <ul>
+      <li><strong>새 기기로 이전</strong> — 기존 기기에서 백업 → Google Drive·이메일로 전송 → 새 기기에서 복원, 한 번에 모두 옮깁니다.</li>
+      <li><strong>외부 저장소 보관</strong> — Google Drive·이메일에 백업 파일을 두면 기기 분실에도 안전합니다.</li>
+      <li><strong>오프라인 관리</strong> — 회원가입·로그인 없이 기기 안에서 안전하게.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>프라이버시</h2>
+    <ul>
+      <li><strong>회원가입·로그인 없음.</strong> 앱을 열면 곧장 시작합니다.</li>
+      <li><strong>데이터는 기기에 머무릅니다.</strong> 자동 클라우드 업로드 없음 — 백업 파일을 직접 어디 둘지 사용자가 선택합니다.</li>
+      <li>생일 알림을 위해 시스템 알림 권한이 필요합니다. (Android 13 이상은 설치 후 권한 허용 필요)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android, iOS</li>
+      <li>최소 요구 버전: Android 8.0 이상</li>
+      <li>언어: 한국어 / 영어 (기기 설정에 따라 자동 분기)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+    <p style="text-align: center; font-size: 0.875rem; margin-top: var(--space-md);">
+      <a href="/agemap/help/">자세한 사용법 보기</a>
+    </p>
+  </div>
+</section>

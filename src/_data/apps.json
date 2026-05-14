@@ -6,7 +6,10 @@
     "description": { "ko": "사진을 시간과 장소로 다시 만나고, 자동 콜라주로 묶기", "en": "Rediscover photos by time & place, and auto-collage them" },
     "icon": "/assets/images/snapatlas/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/snapatlas/preview.webp",
+    "preview": {
+      "ko": "/assets/images/snapatlas/preview-ko.png",
+      "en": "/assets/images/snapatlas/preview-en.png"
+    },
     "platform": ["android"],
     "hasHelp": false,
     "category": "featured"
@@ -99,7 +102,7 @@
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/agemap/preview.webp",
+    "preview": "/assets/images/agemap/preview.png",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
     "hasHelp": true,
@@ -189,8 +192,11 @@
   {
     "slug": "myweather",
     "packageName": "com.boolint.myweather",
-    "name": { "ko": "My Weather", "en": "My Weather" },
-    "description": { "ko": "내 날씨", "en": "My Weather" },
+    "name": { "ko": "날씨비서", "en": "My Weather" },
+    "description": { "ko": "한국 날씨 + 도로 CCTV를 한 앱에", "en": "Korean forecasts and road CCTVs in one app" },
+    "icon": "/assets/images/myweather/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/myweather/preview.png",
     "platform": ["android"],
     "hasHelp": false,
     "category": "weather"

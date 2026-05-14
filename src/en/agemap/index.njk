@@ -1,50 +1,179 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: en
-title: "AgeMap"
-appSlug: agemap
-appName: AgeMap
-appHasHelp: true
+title: "AgeMap — See your family and friends by age, all at a glance"
 alternateLang: ko
 alternateUrl: /agemap/
 ---
 
-<h1>AgeMap</h1>
-<img src="/assets/images/agemap/feature-banner.png" alt="AgeMap Banner" class="app-banner">
-<p>A visual app for managing ages and birthdays of family, friends, and colleagues.</p>
-<p>Place people on a graph sorted by age, manage family trees, and get birthday reminders — all in one app.</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/en/">← All apps</a>
+  </p>
+</div>
 
-<h2>Key Features</h2>
-<ul>
-  <li><strong>By Age</strong> — Visualize people sorted by age on an interactive graph with pinch-zoom and pan</li>
-  <li><strong>Family Tree</strong> — Display parent-child, spouse, and sibling relationships graphically</li>
-  <li><strong>Groups</strong> — Organize people by family, friends, work, etc. with custom colors</li>
-  <li><strong>Birthday Reminders</strong> — Push notifications at D-30, D-7, D-1, and D-day</li>
-  <li><strong>Moments</strong> — Record gifts and memories by year with photo attachments</li>
-  <li><strong>Backup & Restore</strong> — Safely store people, relationships, photos, and settings as a ZIP file</li>
-</ul>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>AgeMap</h1>
+    <p class="landing-hero__lead">AgeMap is a visual app for managing the ages and birthdays of family, friends, and colleagues. See everyone laid out by age on a single screen, with family tree, birthday reminders, and gift records in one place.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+      <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
+    </p>
+    <p style="font-size: 0.875rem; margin-top: var(--space-md);">
+      Need step-by-step instructions? See the <a href="/en/agemap/help/">Help</a>.
+    </p>
+    <img src="/assets/images/agemap/feature-banner.png" alt="AgeMap — visualize ages and birthdays of the people who matter" class="landing-hero__banner">
+  </div>
+</section>
 
-<h2>Additional Details</h2>
-<ul>
-  <li>Lunar birthday input supported (auto-converted to solar)</li>
-  <li>Zodiac sign, birthstone, and oriental zodiac displayed automatically</li>
-  <li>Precise age calculation in years, months, and days</li>
-  <li>Set yourself as "Me" to appear in all groups automatically</li>
-</ul>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>How old is everyone right now?</h2>
+    <p>Trying to keep track of how old your family, relatives, friends, and colleagues are right now is harder than it sounds. Your contacts app stores names and phone numbers, but not the things you actually want to know.</p>
+    <ul>
+      <li>You catch yourself doing the math every time — how old is your niece now, how many years until your parents turn 60?</li>
+      <li>Family and relative connections blur in your head.</li>
+      <li>Birthdays you cared about slip past unnoticed.</li>
+      <li>You can't remember which gifts you've already given, so you start from zero every time.</li>
+    </ul>
+    <p>AgeMap solves all four in one app — <strong>visualize ages</strong>, <strong>family tree</strong>, <strong>birthday reminders</strong>, and <strong>moment records</strong>.</p>
+  </div>
+</section>
 
-<h2>Download</h2>
-<p>
-  <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap" class="btn" target="_blank" rel="noopener">
-    Get it on Google Play
-  </a>
-  <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
-    Download on the App Store
-  </a>
-</p>
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Everyone on one screen — by age</h2>
+    <img src="/assets/images/agemap/screenshot-groups.png" alt="AgeMap main view — people laid out by age with a group panel" class="app-screenshot">
+    <p>Everyone you've added is <strong>automatically placed on a single screen by age</strong>, oldest at the top, youngest at the bottom. Pinch to change density, drag with one finger to pan, tap a card and the details slide up from the bottom.</p>
+    <ul>
+      <li><strong>Pinch zoom</strong> — Adjust how many people fit on screen with two fingers</li>
+      <li><strong>Drag / pan</strong> — Move around the map with one finger</li>
+      <li><strong>Tap</strong> — Tap a person card to reveal details at the bottom</li>
+      <li><strong>Family tree mode</strong> — One tap at the top switches to the family tree view</li>
+    </ul>
+    <p>The question "wait, how old are they now?" simply stops happening. One glance and everyone's age is right there.</p>
+  </div>
+</section>
 
-<h2>App Info</h2>
-<ul>
-  <li>Platform: Android, iOS</li>
-  <li>Minimum requirement: Android 8.0 or later</li>
-</ul>
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>See the whole family at a glance — Family Tree</h2>
+    <img src="/assets/images/agemap/screenshot-family-tree.png" alt="AgeMap family tree — generations laid out top to bottom" class="app-screenshot">
+    <p>Once you set the relationships between people, AgeMap <strong>builds the family tree for you</strong>. Grandparents → Parents → Self → Children → Grandchildren are stacked top-to-bottom, and the connecting lines are drawn automatically.</p>
+    <ul>
+      <li><strong>Parent–Child</strong> relationships</li>
+      <li><strong>Spouse</strong> — current and former spouses tracked separately</li>
+      <li><strong>Siblings</strong></li>
+      <li><strong>Romantic</strong> partners</li>
+    </ul>
+    <p>Set the relationship once from the person detail screen and you're done. No drawing complicated diagrams by hand.</p>
+  </div>
+</section>
 
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Family, friends, work — Groups</h2>
+    <p>When everyone on one screen feels crowded, split them by group. Create Family, Friends, Work, Hobby — any group you like, with a color of your choice — and person cards on the map will show in <strong>that color</strong>.</p>
+    <ul>
+      <li><strong>Multiple memberships</strong> — One person can belong to several groups at once.</li>
+      <li><strong>Group filter</strong> — Use the right-panel checkboxes to show only the groups you want.</li>
+      <li><strong>Presets</strong> — Load pre-configured group templates to get started in seconds.</li>
+      <li><strong>Reorder</strong> — Drag the groups you check most often to the top.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Never miss the birthdays that matter</h2>
+    <img src="/assets/images/agemap/screenshot-birthday.png" alt="Upcoming birthdays list and reminder settings" class="app-screenshot">
+    <p>Push notifications arrive at the time you set, with <strong>four reminder steps</strong> so you get exactly the heads-up you need.</p>
+    <ul>
+      <li><strong>D-30</strong> — A month out, time to shop for a gift</li>
+      <li><strong>D-7</strong> — A week out, time to make plans</li>
+      <li><strong>D-1</strong> — The day before, time to prepare a greeting</li>
+      <li><strong>D-day</strong> — On the day itself</li>
+    </ul>
+    <p>Turn all four on, or pick only the ones you need. Reminders arrive at the set time even when the app is closed, and <strong>lunar birthdays are automatically converted to solar</strong> so they fire on the correct day.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Remember what you gave — Moments</h2>
+    <img src="/assets/images/agemap/screenshot-moments.png" alt="Moments — gift records organized by year" class="app-screenshot">
+    <p>"What did I give them last year?" — never that question again. Jot it down in the <strong>Moments</strong> section on the person's detail screen and it'll stack up neatly, year by year.</p>
+    <ul>
+      <li><strong>Direction</strong> — Given vs. Received, tracked separately</li>
+      <li><strong>Icons</strong> — 🎁 Gift, 💰 Cash, ❤️ Heart, 🎂 Cake, 💌 Letter, and more, at a glance</li>
+      <li><strong>Photo attachment</strong> — Save a picture of the gift or the moment</li>
+      <li><strong>Year-by-year view</strong> — All your shared memories with that person, organized on a timeline</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Beyond just numbers — Person details</h2>
+    <img src="/assets/images/agemap/screenshot-person-detail.png" alt="Person details — precise age, zodiac, birthstone, and oriental zodiac" class="app-screenshot">
+    <p>Age is just the start. The person detail screen also surfaces the things you naturally want to know next.</p>
+    <ul>
+      <li><strong>Lunar birthday input</strong> — Flip a switch and AgeMap auto-converts to solar; birthday reminders still fire on the correct solar date.</li>
+      <li><strong>Precise age</strong> — Down to years, months, and days ("44 years, 3 months, 17 days")</li>
+      <li><strong>Countdown to next birthday</strong> — No math required, just glance</li>
+      <li><strong>Zodiac sign · Birthstone · Oriental zodiac</strong> — Computed automatically from the date of birth</li>
+      <li><strong>"Me" marker</strong> — Mark yourself and you'll appear in every group as a reference point.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>One ZIP, everything inside — Backup &amp; Restore</h2>
+    <p>People, groups, family relationships, profile photos, moment records, and notification settings — <strong>everything ships in a single ZIP file</strong>. The filename is auto-generated as <code>agemap_backup_DATE.zip</code>.</p>
+    <ul>
+      <li><strong>Move to a new device</strong> — Back up on the old device → send via Google Drive or email → restore on the new device. Everything in one shot.</li>
+      <li><strong>Off-device safety</strong> — Keep the backup in Google Drive or email and you're covered against device loss.</li>
+      <li><strong>Offline-first</strong> — No account, no login, everything lives safely on your device.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Privacy</h2>
+    <ul>
+      <li><strong>No account, no sign-in.</strong> Open the app and you're in.</li>
+      <li><strong>Your data stays on your device.</strong> No automatic cloud uploads — backup files go wherever you choose.</li>
+      <li>Birthday reminders need system notification permission. (Android 13+ requires you to grant it after install.)</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>App information</h2>
+    <ul>
+      <li>Platform: Android, iOS</li>
+      <li>Minimum requirement: Android 8.0 or later</li>
+      <li>Languages: English / Korean (auto-detected from device settings)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.agemap&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+      <a href="https://apps.apple.com/us/app/agemap/id6760103080" class="btn" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
+    </p>
+    <p style="text-align: center; font-size: 0.875rem; margin-top: var(--space-md);">
+      <a href="/en/agemap/help/">See the full help</a>
+    </p>
+  </div>
+</section>
