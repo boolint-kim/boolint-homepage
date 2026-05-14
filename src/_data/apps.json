@@ -285,11 +285,19 @@
   {
     "slug": "camlocation",
     "packageName": "com.boolint.camlocation",
-    "name": { "ko": "Cam Location", "en": "Cam Location" },
-    "description": { "ko": "카메라 위치", "en": "Camera Location" },
-    "platform": ["android"],
+    "name": { "ko": "전국CCTV지도", "en": "Korea Traffic CCTV" },
+    "description": { "ko": "전국 도로 CCTV를 지도에서 한 번에, 기상 레이더까지", "en": "Korean road cameras on one map, with weather radar" },
+    "icon": "/assets/images/camlocation/icon.png",
+    "iconReady": true,
+    "preview": {
+      "ko": "/assets/images/camlocation/feature-banner-kr.png",
+      "en": "/assets/images/camlocation/feature-banner-en.png"
+    },
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/us/app/%EC%A0%84%EA%B5%AD-cctv-%EC%A7%80%EB%8F%84/id6473665999",
     "hasHelp": false,
-    "category": "tool"
+    "koreaOnly": true,
+    "category": "featured"
   },
   {
     "slug": "junsewolse",
