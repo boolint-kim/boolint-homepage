@@ -1,19 +1,203 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "취득세"
-appSlug: acqtax
-appName: 취득세
-appHasHelp: false
+title: "취득세 계산기 — 부동산 취득세를 한 화면에서"
 alternateLang: en
 alternateUrl: /en/acqtax/
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/">← 앱 목록</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h1>취득세</h1>
-<p>부동산 취득세 계산 앱입니다.</p>
-<p>부동산 취득 시 발생하는 취득세를 간편하게 계산할 수 있습니다.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>취득세 계산기</h1>
+    <p class="landing-hero__lead">주택·농지·그 외 부동산을 매매·상속·증여·신축으로 취득할 때 발생하는 취득세를, 입력 몇 번으로 한 화면에서 계산해 주는 부동산 취득세 전용 앱입니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.acqtax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>취득세, 왜 계산이 어려운가요?</h2>
+    <p>부동산을 취득할 때 내는 세금은 한 종류가 아닙니다. <strong>취득세 + 농어촌특별세 + 지방교육세</strong>가 함께 부과되고, 각각의 세율은 같은 부동산이라도 조건에 따라 크게 달라집니다.</p>
+    <ul>
+      <li><strong>주택 매매</strong>는 1·2·3·4주택자, 조정대상지역 여부, 법인 여부에 따라 1%에서 12%까지 분기됩니다.</li>
+      <li>1주택자라도 <strong>6억 / 9억</strong> 구간을 넘는 순간 세율이 1% → 변동 → 3%로 계단처럼 바뀝니다.</li>
+      <li>다주택자라도 <strong>공시가격 1억 이하</strong> 주택은 중과 제외 — 검색해 보면 옛 자료가 섞여 있어 헷갈립니다.</li>
+      <li>주택 <strong>증여</strong>는 증여자 주택수와 조정지역, 3억 룰까지 함께 판단해야 합니다.</li>
+      <li><strong>농지 자경농민 감면</strong>은 2026년 12월 31일까지 한시 적용입니다.</li>
+      <li>국민주택규모 <strong>85㎡</strong> 초과 여부에 따라 농특세가 붙고 빠집니다.</li>
+    </ul>
+    <p>이 모든 분기를 사용자가 외울 필요는 없습니다. 앱은 카테고리와 취득원인을 고른 뒤 가격과 조건만 체크하면 <strong>세 가지 세금의 합계</strong>를 한 번에 알려줍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>세 가지 카테고리 — 주택 / 농지 / 그 외</h2>
+    <img src="/assets/images/acqtax/screenshots/kr/01_main_kr.png" alt="취득세 계산기 메인 화면 — 주택/농지/그 외 선택" class="app-screenshot">
+    <p>첫 화면에서 부동산 종류를 고르면 그 카테고리에 맞는 입력 화면으로 바로 들어갑니다.</p>
+    <ul>
+      <li><strong>주택</strong> — 단독주택, 다가구주택, 아파트, 원룸, 공동주택. 상가주택은 주택면적과 상가면적을 각각 계산해야 합니다. 별장·고급주택은 중과세 대상입니다.</li>
+      <li><strong>농지</strong> — 논, 밭, 과수원, 목장용지. 농막·두엄간·못·늪·수로 등 부속도 포함됩니다. 2년 자경농지·도시지역 농지는 별도 계산이 필요합니다.</li>
+      <li><strong>그 외</strong> — 대지, 임야 등 토지와 오피스텔, 상가, 건물. 골프장·고급오락장은 중과세 대상입니다.</li>
+    </ul>
+    <p>모든 카테고리에서 취득원인은 <strong>매매 / 상속 / 증여 / 신축(원시취득)</strong> 네 가지로 나뉩니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>주택 매매 — 1·2·3·4주택자 × 조정대상지역</h2>
+    <img src="/assets/images/acqtax/screenshots/kr/02_house_buy_simple_kr.png" alt="주택 매매 — 1주택 6억 이하 단순 케이스" class="app-screenshot">
+    <p>주택 매매는 취득세에서 가장 분기가 많은 영역입니다. 앱이 자동으로 처리하는 규칙은 다음과 같습니다.</p>
+    <ul>
+      <li><strong>1주택자</strong> — 6억 이하 1%, 6~9억 구간은 (2/3 × 가격억수 − 3)%로 매끄럽게 변동, 9억 초과 3%.</li>
+      <li><strong>2주택자</strong> — 조정대상지역이면 8% 일괄, 일반 지역이면 1주택자와 동일.</li>
+      <li><strong>3주택자</strong> — 조정지역 12%, 일반 지역 8%.</li>
+      <li><strong>4주택 이상 / 법인</strong> — 일괄 12%.</li>
+      <li><strong>공시가격 1억 이하</strong> — 개인 다주택자라도 중과 제외 (1%로 떨어집니다). 법인은 "중과제외 대상" 직접 체크 + 공시가 2억 이하 가드.</li>
+      <li><strong>국민주택규모 85㎡ 이하</strong>면 농특세가 0%로 빠집니다.</li>
+    </ul>
+    <img src="/assets/images/acqtax/screenshots/kr/03_house_buy_heavy_kr.png" alt="다주택 + 조정대상지역 12% 중과 결과" class="app-screenshot">
+    <p>가격이 6억과 9억 사이에 있을 때 1주택자 세율은 1%에서 3% 사이로 매끄럽게 변하는데, 이 구간을 직접 계산하면 자주 틀립니다. 앱은 입력한 금액에 맞춰 소수점 둘째 자리까지 자동으로 산출합니다.</p>
+
+    <div class="case-box">
+      <p class="case-box__title">실제 계산 사례</p>
+      <h3>1주택자 · 85㎡ 이하 아파트 — 매매가 1억 차이로 세금은?</h3>
+      <ul>
+        <li><strong>6억 아파트</strong> — 취득세 1% + 농특세 0% + 교육세 0.1% = <strong>1.1%</strong> → <strong>660만원</strong></li>
+        <li><strong>8억 아파트</strong> — 취득세 2.33% + 농특세 0% + 교육세 0.233% = <strong>2.56%</strong> → <strong>2,050만원</strong></li>
+        <li><strong>10억 아파트</strong> — 취득세 3% + 농특세 0% + 교육세 0.3% = <strong>3.3%</strong> → <strong>3,300만원</strong></li>
+      </ul>
+      <p class="case-box__result">같은 1주택자라도 6~9억 구간은 가격에 따라 세율이 매끄럽게 변하고, 9억을 넘는 순간 3% 일괄로 점프합니다. 8억 → 9억 1천만원 한 발만 넘어도 세금이 약 <strong>700만원</strong> 더 붙습니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>주택 증여 — 12% 중과를 가르는 세 조건</h2>
+    <img src="/assets/images/acqtax/screenshots/kr/04_house_gift_kr.png" alt="주택 증여 — 증여자 주택수 1주택자/다주택자 선택" class="app-screenshot">
+    <p>주택을 증여로 받을 때는 기본 세율이 3.5%지만, 다음 세 조건이 모두 충족되면 <strong>12% 중과</strong>로 뛰어오릅니다.</p>
+    <ol>
+      <li>조정대상지역 소재 주택</li>
+      <li>증여자가 다주택자(2주택 이상)</li>
+      <li>주택 가격 3억 이상</li>
+    </ol>
+    <p>그래서 증여 선택 시에는 일반 매매와 달리 "증여자의 주택수"를 묻고, <em>1주택자 / 다주택자(2주택↑)</em> 두 가지로 단순하게 골라 입력합니다. 이 분기가 결과 세액에 수천만원 차이를 만들기 때문에 별도 UI로 분리되어 있습니다.</p>
+
+    <div class="case-box">
+      <p class="case-box__title">실제 계산 사례</p>
+      <h3>조정지역 4억 아파트(85㎡ 이하) 증여 — 증여자가 1주택자 vs 다주택자</h3>
+      <ul>
+        <li><strong>증여자가 1주택자</strong> — 취득세 3.5% + 농특세 0% + 교육세 0.3% = <strong>3.8%</strong> → <strong>1,520만원</strong></li>
+        <li><strong>증여자가 다주택자(2주택↑)</strong> — 취득세 12% + 농특세 0% + 교육세 0.4% = <strong>12.4%</strong> → <strong>4,960만원</strong></li>
+      </ul>
+      <p class="case-box__result">같은 아파트를 똑같이 증여해도 증여자의 주택수에 따라 세금이 <strong>3,440만원 차이</strong>가 납니다. 조정지역 + 다주택자 + 3억 이상이라는 세 조건이 동시에 충족될 때만 12% 중과가 작동하므로, 증여 시점·주택 처분 순서를 미리 시뮬레이션하는 것이 중요합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>농지 — 자경농민 감면 (2026.12.31까지)</h2>
+    <img src="/assets/images/acqtax/screenshots/kr/05_land_jagyung_kr.png" alt="농지 매매 — 자경농민 감면 적용 결과" class="app-screenshot">
+    <p>농지는 기본 세율이 매매 3%, 상속 2.3%, 증여 3.5%지만, <strong>자경농민 감면</strong>을 적용받으면 50% 가까이 줄어듭니다.</p>
+    <ul>
+      <li><strong>매매 자경</strong> 3% → 1.5%</li>
+      <li><strong>상속 자경</strong> 2.3% → 1.15%</li>
+      <li><strong>증여 자경</strong> 3.5% → 1.75%</li>
+    </ul>
+    <p>자경농민 감면 조건은 <em>2년 이상 직접 경작 + 농업 외 소득 연 3,700만원 미만</em>입니다. 미경작 시에는 감면된 세액이 추징되며, 본 감면은 <strong>2026년 12월 31일까지 한시 적용</strong>됩니다. 농지 신축(원시취득)은 자경 감면이 적용되지 않습니다.</p>
+
+    <div class="case-box">
+      <p class="case-box__title">실제 계산 사례</p>
+      <h3>5천만원짜리 농지를 매매로 취득 — 자경 감면 적용 vs 일반</h3>
+      <ul>
+        <li><strong>일반 매매</strong> — 취득세 3% + 농특세 0.2% + 교육세 0.2% = <strong>3.4%</strong> → <strong>170만원</strong></li>
+        <li><strong>자경농민 감면</strong> — 취득세 1.5% + 농특세 0% + 교육세 0.1% = <strong>1.6%</strong> → <strong>80만원</strong></li>
+      </ul>
+      <p class="case-box__result">자경 감면을 받으면 절반 이하로 떨어집니다. 다만 감면은 <strong>2026년 12월 31일까지</strong> 한시 적용이며, 취득 후 미경작 시 감면 세액이 추징된다는 점에 유의해야 합니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>그 외 — 대지·임야·오피스텔·상가·건물</h2>
+    <img src="/assets/images/acqtax/screenshots/kr/06_etc_result_kr.png" alt="그 외 부동산 — 결과 화면" class="app-screenshot">
+    <p>주택과 농지가 아닌 부동산은 취득원인 네 가지에 따라 다음과 같이 정해진 세율이 적용됩니다.</p>
+    <ul>
+      <li><strong>매매</strong> — 취득세 4% + 농특세 0.2% + 교육세 0.4%</li>
+      <li><strong>상속</strong> — 취득세 2.8% + 농특세 0.2% + 교육세 0.16%</li>
+      <li><strong>증여</strong> — 취득세 3.5% + 농특세 0.2% + 교육세 0.3%</li>
+      <li><strong>신축(원시취득)</strong> — 취득세 2.8% + 농특세 0.2% + 교육세 0.16%</li>
+    </ul>
+    <p>주택과 달리 주택수·조정지역 같은 분기가 없어, 매매가만 입력하면 곧바로 결과가 나옵니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>결과 — 합계와 한글 표기를 한 번에</h2>
+    <p>모든 계산 화면 상단에는 <strong>취득세 + 농특세 + 지방교육세</strong>의 합계가 큰 글씨로 표시되고, 그 아래에 각 세금의 세율과 금액이 분리되어 나옵니다. 매매가가 큰 숫자라 자리수 헷갈리는 일을 막기 위해 금액은 <strong>한글 단위</strong>로도 변환되어 표기됩니다 (예: <em>"일억 이천삼백사십오만 원"</em>).</p>
+    <p>입력값을 바꿀 때마다 결과가 즉시 다시 계산되므로, "매매가를 5천만원 올리면 세금이 얼마나 늘어나는가" 같은 구간 시뮬레이션이 자연스럽게 가능합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>주의사항 — 어디까지 참고하면 좋을까요?</h2>
+    <ul>
+      <li>본 계산기는 <strong>일반적인 부동산 취득세 규정</strong>에 따라 산출됩니다. 사용자 개별 사정(다주택 여부 판정, 일시적 2주택, 정비구역 소재, 지방세 감면 특례 등)을 모두 반영하지 못할 수 있습니다.</li>
+      <li>주택 매매의 <strong>공시가격 1억 이하 중과제외</strong>는 정비구역·소규모주택정비 사업시행구역 소재 주택은 제외됩니다. 해당 지역에 속하는지는 별도 확인이 필요합니다.</li>
+      <li>비수도권은 2025년 개정으로 <strong>공시가격 2억 이하</strong>까지 중과 제외 범위가 확대된 사례가 있습니다.</li>
+      <li>농지 자경농민 감면은 <strong>2026년 12월 31일까지 한시 적용</strong>되며, 미경작 시 감면세가 추징됩니다.</li>
+      <li>실제 신고·납부 시에는 반드시 <strong>관할 시·군·구청 또는 세무사</strong>와 상담하시기 바랍니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>프라이버시 — 정직하게 말씀드립니다</h2>
+    <ul>
+      <li><strong>회원가입·로그인 없음.</strong> 앱을 열면 곧장 계산할 수 있습니다.</li>
+      <li><strong>입력값은 기기에 머무릅니다.</strong> 매매가·주택수·지역 같은 정보는 서버로 전송되지 않습니다.</li>
+      <li>네트워크는 광고 표시 외에는 사용하지 않습니다.</li>
+      <li><strong>광고 고지</strong>: 무료 운영을 위해 Google AdMob 배너·전면 광고를 사용합니다. AdMob SDK는 광고 ID와 노출·클릭 데이터를 Google에 전송합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android / iOS</li>
+      <li>언어: 한국어</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.acqtax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>

@@ -90,7 +90,8 @@
     "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
     "icon": "/assets/images/acqtax/icon.png",
     "preview": "/assets/images/acqtax/preview.webp",
-    "platform": ["android"],
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219",
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate-tax"

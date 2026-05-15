@@ -525,6 +525,52 @@
   max-width: 480px;
 }
 
+/* 계산 사례 박스 (계산앱 소개 페이지용) */
+.case-box {
+  margin: var(--space-lg) 0;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-bg-alt);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 6px 6px 0;
+}
+
+.case-box__title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.case-box h3 {
+  font-size: 1.0625rem;
+  margin-bottom: var(--space-sm);
+  line-height: 1.4;
+}
+
+.case-box p,
+.case-box li {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.landing-section .case-box ul {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.case-box__result {
+  margin-top: var(--space-sm);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9375rem;
+}
+
+.case-box__result strong {
+  color: var(--color-primary);
+}
+
 @media (min-width: 768px) {
   .landing-hero {
     padding: 4rem 0 3rem;
