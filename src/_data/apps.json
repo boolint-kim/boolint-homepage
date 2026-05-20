@@ -255,20 +255,22 @@
   {
     "slug": "apttradechart",
     "packageName": "com.boolint.apttradechart",
-    "name": { "ko": "아파트 매매", "en": "Apt Trade Chart" },
-    "description": { "ko": "아파트 매매 차트", "en": "Apartment Trade Chart" },
+    "name": { "ko": "아파트 실거래가", "en": "Apartment Trade Records" },
+    "description": { "ko": "국토부 아파트 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment trade records as charts and map heatmaps" },
     "platform": ["android"],
     "hasHelp": false,
-    "koreaOnly": true
+    "koreaOnly": true,
+    "category": "realestate-chart"
   },
   {
     "slug": "aptrentchart",
     "packageName": "com.boolint.aptrentchart",
-    "name": { "ko": "아파트 전세", "en": "Apt Rent Chart" },
-    "description": { "ko": "아파트 전세 차트", "en": "Apartment Rent Chart" },
+    "name": { "ko": "아파트 전월세 실거래가", "en": "Apartment Rent Records" },
+    "description": { "ko": "국토부 아파트 전월세 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment jeonse/wolse records as charts and map heatmaps" },
     "platform": ["android"],
     "hasHelp": false,
-    "koreaOnly": true
+    "koreaOnly": true,
+    "category": "realestate-chart"
   },
   {
     "slug": "financeproduct",
@@ -282,11 +284,15 @@
   {
     "slug": "officetradechart",
     "packageName": "com.boolint.officetradechart",
-    "name": { "ko": "오피스텔 매매", "en": "Office Trade Chart" },
-    "description": { "ko": "오피스텔 매매 차트", "en": "Office Trade Chart" },
+    "name": { "ko": "오피스텔 실거래가", "en": "Officetel Trade Records" },
+    "description": { "ko": "오피스텔 매매·전세·월세 실거래가를 단지별 차트와 동별 순위로", "en": "Officetel deal, jeonse and wolse records by complex and district" },
+    "icon": "/assets/images/officetradechart/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/officetradechart/feature-banner-kr.png",
     "platform": ["android"],
     "hasHelp": false,
-    "koreaOnly": true
+    "koreaOnly": true,
+    "category": "realestate-chart"
   },
   {
     "slug": "camlocation",

@@ -57,6 +57,20 @@ alternateUrl: /en/
 
 <section class="home-section home-section--alt">
   <div class="home-section__inner">
+    <h2 class="home-section__title">{{ t['home.section.realestateChart'] }}</h2>
+    <div class="app-grid app-grid--small">
+      {% for app in apps | sort(attribute="name.ko") %}
+        {% if app.category == 'realestate-chart' %}
+          {% set cardApp = app %}
+          {% include "app-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="home-section__inner">
     <h2 class="home-section__title">{{ t['home.section.tool'] }}</h2>
     <div class="app-grid app-grid--small">
       {% for app in apps | sort(attribute="name.ko") %}
