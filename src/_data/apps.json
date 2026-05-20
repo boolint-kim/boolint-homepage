@@ -1,5 +1,20 @@
 [
   {
+    "slug": "universedaily",
+    "packageName": "com.boolint.universex",
+    "name": { "ko": "UniverseDaily", "en": "UniverseDaily" },
+    "description": {
+      "ko": "매일 다른 우주 — SDO 태양 라이브, 인터랙티브 3D 달, 태양계 30+ 본체와 오늘 밤 하늘",
+      "en": "A daily cosmos — live SDO Sun, interactive 3D Moon, 30+ Solar System bodies, and tonight's sky"
+    },
+    "icon": "/assets/images/universedaily/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/universedaily/feature-banner.png",
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "featured"
+  },
+  {
     "slug": "snapatlas",
     "packageName": "com.boolint.snapatlas",
     "name": { "ko": "스냅아틀라스", "en": "SnapAtlas" },

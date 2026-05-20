@@ -1,0 +1,204 @@
+---
+layout: layouts/base.njk
+mainClass: main--landing
+lang: en
+title: "UniverseDaily — A daily cosmos in one app"
+alternateLang: ko
+alternateUrl: /universedaily/
+---
+
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/en/">← Apps</a>
+  </p>
+</div>
+
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>UniverseDaily</h1>
+    <p class="landing-hero__lead">A daily curation app that gathers the cosmos that NASA, ESA, NOAA, and ESO openly publish each day, and lays it out so casual viewers can browse it without friction. Today's Sun and Moon, 30+ Solar System bodies as interactive 3D models, and tonight's sky at your location — all in one screen.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.universex" class="btn" target="_blank" rel="noopener">
+        Download on Google Play
+      </a>
+    </p>
+    <img src="/assets/images/universedaily/feature-banner.png" alt="UniverseDaily — A daily cosmos in one app" class="landing-hero__banner">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>A different cosmos, every day</h2>
+    <p>NASA, ESA, NOAA, and ESO release a huge amount of observation data every day, but it's scattered across many sites, mostly in English, and wrapped in jargon — which makes it hard for non-specialists to enjoy as part of daily life.</p>
+    <ul>
+      <li>SDO publishes 19 Sun channels, but nothing tells you which channel shows what.</li>
+      <li>Figuring out which planets are visible from where you are tonight, when the next eclipse is, or whether the aurora will be visible means hopping between separate sites.</li>
+      <li>NASA's 3D lunar terrain data is public, but no one has built an interactive experience for general users.</li>
+    </ul>
+    <p>UniverseDaily pulls these sources together into four tabs: <strong>Today · Sky · Explore · Gallery</strong>. You can enjoy it just by scrolling, and if you want to go deeper, every channel, landmark, and texture is labeled with its source.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Today — a day's cosmos in one scroll</h2>
+    <img src="/assets/images/universedaily/screenshots/en/01_today_sun.png" alt="Today tab — SDO live Sun + Today's Space + four tabs" class="app-screenshot">
+    <p>Open the app and the very first thing you see is <strong>The Sun Now</strong>. The latest frame NASA SDO (Solar Dynamics Observatory) just took — e.g. AIA 171 Å · 07:12 UTC in the screenshot — with its metadata.</p>
+    <p>Scroll down and the same rhythm continues.</p>
+    <ul>
+      <li><strong>Today's Space (APOD)</strong> — NASA Astronomy Picture of the Day, curated and explained.</li>
+      <li><strong>Hubble · JWST · ESO Latest</strong> — the latest publicly released images from the three observatories.</li>
+      <li><strong>Mars Rover · Surface</strong> — surface photos from Curiosity and Perseverance.</li>
+      <li><strong>Earth</strong> — DSCOVR EPIC's view from Lagrange L1, with a 48-hour timelapse.</li>
+      <li><strong>Today's Moon</strong> — phase, illumination, age, distance from Earth, and the next full Moon.</li>
+    </ul>
+    <p>The bottom row — <strong>Today · Sky · Explore · Gallery</strong> — is the spine of the whole app.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Sun — a star in 19 channels</h2>
+    <img src="/assets/images/universedaily/screenshots/en/04_sun_timelapse.png" alt="Sun fullscreen — AIA 171 Å, 24h timelapse playback" class="app-screenshot">
+    <p>Tap the Sun card to enter the fullscreen viewer. The header shows the current channel and its label (e.g. <em>"AIA 171 Å · 0.6 MK · quiet corona · coronal loops"</em>), and the bottom has a <strong>24-hour timelapse</strong> control. Hourly frames are stitched smoothly so you can watch flares and coronal loops actually move.</p>
+
+    <img src="/assets/images/universedaily/screenshots/en/05_sun_channels.png" alt="Sun channel picker — AIA / HMI / Composite groups" class="app-screenshot">
+    <p>The channel picker organizes the <strong>19 SDO channels</strong> into three groups.</p>
+    <ul>
+      <li><strong>AIA (UV) — 9 channels</strong>, coronal layers at different temperatures by wavelength: 94 Å (6 MK · flares), 131 Å (0.4–10 MK · transition + flares), 171 Å (0.6 MK · quiet corona), 193 Å (1.2 MK · coronal holes), 211 Å (2 MK · active regions), 304 Å (50 kK · chromosphere + transition), 335 Å (2.5 MK), 1600 Å (10 kK), 1700 Å (5 kK · photosphere).</li>
+      <li><strong>HMI (visible) — 6 channels</strong>: photosphere and magnetic field — magnetogram (white=N / black=S), color magnetogram, continuum (sunspots), color continuum, flat continuum (limb-darkening removed), Dopplergram (line-of-sight velocity red/blue shift).</li>
+      <li><strong>Composite — 4 channels</strong>, multiple wavelengths combined as RGB: 211·193·171 corona, 304·211·171 chromosphere + corona, 94·335·193 hottest regions, HMI magnetogram + AIA 171 active-region mapping.</li>
+    </ul>
+    <p>A high-resolution option (1024 px, ~576 MB memory, 3 GB+ RAM recommended) is available in Settings, and so is a toggle for auto-downloading timelapses on cellular (~10 MB per channel).</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Earth — our planet from Lagrange L1</h2>
+    <img src="/assets/images/universedaily/screenshots/en/06_earth.png" alt="Earth — DSCOVR EPIC fullscreen with UTC time" class="app-screenshot">
+    <p>The Earth feed uses the <strong>NASA DSCOVR EPIC</strong> camera at the Earth-Sun L1 Lagrange point, about 1.5 million km away. Unlike geostationary satellites it always frames the <strong>full day-side disk</strong> at once, so clouds and continents read as a single natural view rather than a mosaic.</p>
+    <p>Fullscreen, a <strong>48-hour timelapse</strong> shows you what one full rotation of Earth looks like — cloud bands, typhoons, and the seasonal ITCZ all sliding by. Switch to night mode (Black Marble 2016 · Suomi NPP VIIRS composite) and you see city lights, fishing fleets, fires, and gas flares of the night side instead.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Moon — interactive 3D, from Apollo to SLIM</h2>
+    <img src="/assets/images/universedaily/screenshots/en/07_moon_3d.png" alt="Moon 3D viewer — phase / illumination / age / distance + phase simulation" class="app-screenshot">
+    <p>The Moon isn't a photo — it's an <strong>interactive 3D model</strong>. Built on the actual terrain measured by NASA LRO·LROC·LOLA and textured with SVS CGI Moon Kit, you can spin it freely and play back rotation and phase simulations.</p>
+    <p>The state panel summarizes the day in one line: <em>"New Moon · 4% lit / Age 30.8 d · 358,572 km from Earth · Supermoon range / Next full in 13 d · Rise 06:59 / Set 21:27"</em>.</p>
+    <p>The control column on the right lets you toggle:</p>
+    <ul>
+      <li><strong>Full light</strong> — flat-light the surface to read terrain without shadows.</li>
+      <li><strong>Lat/Lon grid</strong> — locate places on the surface.</li>
+      <li><strong>Auto rotate</strong>.</li>
+      <li><strong>Landmark pins</strong> — 20 pins on the surface.</li>
+    </ul>
+    <p>Landmarks are sorted into four kinds, each with location, coordinates, year, and description.</p>
+    <ul>
+      <li><strong>Apollo crewed landings — 6</strong> (11, 12, 14, 15, 16, 17).</li>
+      <li><strong>Craters — 5</strong> (Tycho, Copernicus, Plato, Aristarchus, Clavius).</li>
+      <li><strong>Maria — 5</strong> (Imbrium, Serenitatis, Tranquillitatis, Crisium, Procellarum).</li>
+      <li><strong>Modern uncrewed missions — 4</strong>: Chang'e 4 (first far-side landing), Chang'e 5 (sample return after a 44-year gap), Chandrayaan-3 (first south-polar landing), SLIM (JAXA pinpoint landing).</li>
+    </ul>
+    <p>A <strong>phase simulation</strong> drawer at the bottom auto-plays the change toward Full Moon, and the credit line — <em>"NASA LROC · LOLA · SVS CGI Moon Kit · astronomy-engine"</em> — is always visible.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Explore — 30+ Solar System bodies, interactive</h2>
+    <img src="/assets/images/universedaily/screenshots/en/03_explore.png" alt="Solar System Explore — inner / outer concentric maps with a time slider" class="app-screenshot">
+    <p>The Explore tab lays out the <strong>whole Solar System</strong> as two concentric maps (inner / outer planets). Drag the time slider in the middle and the planets move along their real-scale orbits, so "where the planets are today" and "where they'll be 100 days from now" become visible immediately.</p>
+    <p>The body list below covers <strong>30+ Solar System bodies</strong>.</p>
+    <ul>
+      <li><strong>Star</strong> — Sun</li>
+      <li><strong>Planets &amp; moons</strong> — Mercury, Venus, Earth (Moon), Mars (Phobos, Deimos), Jupiter (Io, Europa, Ganymede, Callisto), Saturn (Mimas, Enceladus, Tethys, Dione, Rhea, Titan, Iapetus), Uranus (Miranda, Ariel, Umbriel, Titania), Neptune (Triton)</li>
+      <li><strong>Dwarf planet</strong> — Pluto (Charon)</li>
+    </ul>
+    <img src="/assets/images/universedaily/screenshots/en/08_saturn.png" alt="Saturn 3D body viewer — magnitude, distance, apparent diameter, rise/set" class="app-screenshot">
+    <p>Tap a body and a <strong>3D model viewer</strong> opens, with that body's current state summarized. Saturn, for example: <em>"Saturn · mag +0.8 / 1,517,652,621 km · 10.145 AU from Earth / Apparent 15.8″ · rises 03:12 / sets 15:29"</em>. Textures combine Solar System Scope (CC BY 4.0) and NASA/USGS data; astronomy is computed by the astronomy-engine library.</p>
+
+    <img src="/assets/images/universedaily/screenshots/en/09_pluto.png" alt="Pluto 3D body viewer — New Horizons texture" class="app-screenshot">
+    <p>Distant, dim bodies like Pluto (e.g. mag +14.5, distance 35.128 AU) use the same interactive viewer. Each body's info page lists discovery year and discoverer, key missions, and a short description, so context arrives naturally as you spin the model.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Sky — what's visible at your location tonight</h2>
+    <img src="/assets/images/universedaily/screenshots/en/02_sky.png" alt="Tonight's Sky — sun rise/set, Moon, next eclipses, planet rise/set" class="app-screenshot">
+    <p>The Sky tab collects tonight's celestial events <strong>at your current location</strong>. Location is auto-detected from IP — no GPS permission required.</p>
+    <ul>
+      <li><strong>Sun</strong> — sunrise / sunset, and civil / nautical / astronomical twilight windows.</li>
+      <li><strong>Moon</strong> — phase, illumination, age, moonrise / moonset.</li>
+      <li><strong>Next event</strong> — next lunar / solar eclipse with kind (penumbral / partial / total / annular / hybrid) and a <em>"Visible here / Not visible here"</em> verdict.</li>
+      <li><strong>Next meteor shower</strong> — annual static catalog (Perseids, Geminids, …) with peak date and ZHR.</li>
+      <li><strong>Aurora</strong> — NOAA Kp now, 3-day max forecast, and a visibility verdict at your location (excellent / likely / marginal / very unlikely).</li>
+      <li><strong>Planets</strong> — Mercury through Neptune, with magnitude, rise/set times, and a visibility icon (🌙 night / 🌞 daytime / ─ invisible today).</li>
+    </ul>
+    <p>The astronomy is calculated by the <strong>astronomy-engine</strong> library, so what you see is computed for your actual location, not just a generic table.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Gallery — Hubble · JWST · ESO Latest</h2>
+    <img src="/assets/images/universedaily/screenshots/en/10_gallery.png" alt="Gallery tab — Hubble / JWST / ESO Latest sections" class="app-screenshot">
+    <p>When the small cards in Today aren't enough, the <strong>Gallery</strong> tab takes you deeper.</p>
+    <ul>
+      <li><strong>Hubble Latest</strong> — recent public releases from the Hubble Space Telescope.</li>
+      <li><strong>JWST Latest</strong> — James Webb's infrared universe.</li>
+      <li><strong>ESO Latest (ground telescopes / Chile)</strong> — VLT and other ground-based giants.</li>
+    </ul>
+    <p>Tap any card to open the fullscreen viewer, with a <em>"View original"</em> button that jumps to the original source page.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Sources &amp; credits</h2>
+    <p>UniverseDaily is a curation app over public observation data, and every screen labels its original source.</p>
+    <ul>
+      <li><strong>Sun</strong> — NASA SDO (AIA · HMI)</li>
+      <li><strong>Today's Space</strong> — NASA APOD</li>
+      <li><strong>Earth</strong> — NASA DSCOVR EPIC (Lagrange L1); night composite: NASA SVS · Suomi NPP VIIRS · Black Marble 2016</li>
+      <li><strong>Moon</strong> — NASA LRO · LROC · LOLA · SVS CGI Moon Kit</li>
+      <li><strong>Telescope images</strong> — Hubble (NASA/ESA), JWST (NASA/ESA/CSA), ESO (European Southern Observatory)</li>
+      <li><strong>Mars surface</strong> — Curiosity / Perseverance rovers (NASA/JPL-Caltech)</li>
+      <li><strong>Solar System body textures</strong> — Solar System Scope (CC BY 4.0) · NASA · USGS</li>
+      <li><strong>Astronomy</strong> — astronomy-engine open-source library</li>
+      <li><strong>Aurora</strong> — NOAA Kp index</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Privacy — straight talk</h2>
+    <ul>
+      <li><strong>No account, no login.</strong> Open the app and start.</li>
+      <li><strong>No location permission.</strong> The location used for tonight's sky is auto-estimated from your IP; no precise GPS coordinates are read.</li>
+      <li>Network usage is limited to fetching public data from NASA, ESA, NOAA, and ESO, and to ad delivery. Because some downloads (especially Sun timelapses) are large, automatic downloads on cellular can be turned off in Settings.</li>
+      <li>On Android 12+ you can opt into <strong>Material You</strong> (system wallpaper-based accents). Default is brand indigo.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>App info</h2>
+    <ul>
+      <li>Platform: Android</li>
+      <li>Languages: Korean / English / Japanese (auto by device locale)</li>
+      <li>High-res Sun timelapse: 1024 px, ~576 MB memory (3 GB+ RAM recommended)</li>
+      <li>Price: Free (with ads, no in-app purchases)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.universex" class="btn" target="_blank" rel="noopener">
+        Download on Google Play
+      </a>
+    </p>
+  </div>
+</section>
