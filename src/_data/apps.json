@@ -17,11 +17,16 @@
   {
     "slug": "satpic",
     "packageName": "com.boolint.satpic",
-    "name": { "ko": "Weather Korea", "en": "Weather Korea" },
-    "description": { "ko": "한국 날씨", "en": "Korea Weather" },
+    "name": { "ko": "날씨위성영상 라이브", "en": "Weather Satellite Live" },
+    "description": { "ko": "기상위성·강수레이더·태풍·도로 CCTV를 한 앱에서", "en": "Satellite, radar, typhoon and road CCTV in one app" },
     "icon": "/assets/images/satpic/icon.png",
-    "preview": "/assets/images/satpic/preview.webp",
-    "platform": ["android"],
+    "iconReady": true,
+    "preview": {
+      "ko": "/assets/images/satpic/feature-banner-kr.png",
+      "en": "/assets/images/satpic/feature-banner-en.png"
+    },
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937",
     "hasHelp": false,
     "category": "weather"
   },

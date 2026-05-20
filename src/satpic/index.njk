@@ -1,19 +1,212 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "Weather Korea"
-appSlug: satpic
-appName: Weather Korea
-appHasHelp: false
+title: "날씨위성영상 라이브 — 위성·레이더·태풍·도로 CCTV를 한 앱에서"
 alternateLang: en
 alternateUrl: /en/satpic/
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/">← 앱 목록</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h1>Weather Korea</h1>
-<p>한국 날씨 앱입니다.</p>
-<p>전국 날씨 정보를 빠르고 간편하게 확인할 수 있습니다.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>날씨위성영상 라이브</h1>
+    <p class="landing-hero__lead">기상청 위성·강수레이더·태풍·황사·기온분포도, 그리고 도로 CCTV까지 — 하늘에서 도로까지 한 앱에서 시간순으로 재생하며 확인합니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.satpic" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+    <img src="/assets/images/satpic/feature-banner-kr.png" alt="날씨위성영상 라이브 — 위성·레이더·태풍·도로 CCTV를 한 앱에서" class="landing-hero__banner">
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>구름이 어디로 흐르는지, 한 화면에서</h2>
+    <p>기상청 페이지를 열면 위성 / 레이더 / 태풍 / 황사 / 기온 / 동네 예보가 모두 다른 메뉴에 흩어져 있습니다. 그래서 막상 "지금 비구름이 어디까지 왔지?"를 알고 싶을 때, 여러 탭을 왔다 갔다 하다 보면 시간이 다 지나가 버립니다.</p>
+    <p>날씨위성영상 라이브는 이 자료들을 <strong>한 앱의 그리드 메뉴</strong>로 모아두고, 어디를 누르든 <strong>최신 이미지부터 자동 시간순 재생</strong>이 시작되도록 만들었습니다.</p>
+    <ul>
+      <li><strong>위성</strong> — 가시광선·적외선·수증기 × 한국·동아시아·지구 9가지 조합</li>
+      <li><strong>레이더</strong> — 한국·주변국·상세·적외선 합성에 더해 지역 레이더 9곳 개별 조회</li>
+      <li><strong>강수·기온·예보 지도</strong>, <strong>태풍</strong>, <strong>황사</strong></li>
+      <li><strong>도로 CCTV</strong>: 전국 고속도로·국도와 제주 도로를 지도 위에서 실시간 시청</li>
+    </ul>
+    <img src="/assets/images/satpic/screenshots/01_main_menu.png" alt="앱 메인 메뉴 — 위성·레이더·태풍·황사·CCTV 12개 채널 그리드" class="app-screenshot">
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>위성 영상 — 가시광선·적외선·수증기 × 한국·동아시아·지구</h2>
+    <img src="/assets/images/satpic/screenshots/02_visible_korea.png" alt="가시광선 한국 위성 영상 — 시간순 자동 재생" class="app-screenshot">
+    <p>천리안 2A호(GEO-KOMPSAT-2A) 기반의 위성 영상을 <strong>채널 × 영역</strong>의 9가지 조합으로 제공합니다.</p>
+    <ul>
+      <li><strong>가시광선(Visible)</strong> — 낮 시간대 구름의 형태와 두께를 가장 직관적으로 보여줍니다.</li>
+      <li><strong>적외선(Infrared)</strong> — 밤에도 구름 분포 확인 가능, 구름 상부 온도로 발달 정도 판단</li>
+      <li><strong>수증기(Water Vapor)</strong> — 대류권 상층의 수증기 흐름 — 폭우/태풍 발달 흐름을 미리 읽을 때</li>
+    </ul>
+    <p>각각의 채널은 <strong>한국 / 동아시아 / 지구</strong> 세 영역으로 줌 단위가 다릅니다. 한반도 인근의 좁은 구름 발달을 볼지, 동아시아 전체 흐름을 볼지, 적도 부근까지 펼쳐서 볼지 선택할 수 있습니다.</p>
+    <img src="/assets/images/satpic/screenshots/03_visible_eastasia.png" alt="가시광선 동아시아 — 한반도 주변 광역 영상" class="app-screenshot">
+    <img src="/assets/images/satpic/screenshots/04_visible_earth.png" alt="가시광선 지구 — 적도 부근까지 전 지구 영상" class="app-screenshot">
+    <img src="/assets/images/satpic/screenshots/05_infrared_eastasia.png" alt="적외선 동아시아 — 야간에도 구름 분포 확인" class="app-screenshot">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>최신부터 자동 재생, 핀치 줌·팬</h2>
+    <p>모든 영상 화면은 동일한 조작 방식으로 동작합니다.</p>
+    <ul>
+      <li><strong>최신 이미지부터</strong> 표시한 뒤 <strong>시간순 자동 재생</strong>으로 구름·강수의 이동을 한눈에 보여줍니다.</li>
+      <li>화면 하단에 <strong>일시정지 / 재생</strong>과 줌인·줌아웃 버튼이 있어 특정 시점에서 멈춰 자세히 볼 수 있습니다.</li>
+      <li><strong>핀치 줌 / 드래그 팬</strong>으로 관심 지역만 확대 — 한반도 영상에서 수도권만 보거나, 지구 영상에서 일본 부근만 따로 볼 수 있습니다.</li>
+      <li>각 프레임 상단에 <strong>관측 시각</strong>(KST)이 함께 표시되어 어느 시점의 영상인지 명확합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>강수 레이더 — 비구름이 지금 어디까지</h2>
+    <img src="/assets/images/satpic/screenshots/06_radar_korea.png" alt="레이더 한국 — 강수 분포를 시간순 애니메이션으로 재생" class="app-screenshot">
+    <p>기상청 강수레이더 합성 이미지를 받아와 시간순으로 재생합니다. 강수 강도가 색상으로 구분되어, 한반도 어디에 폭우 지역이 형성됐는지 한눈에 들어옵니다.</p>
+    <ul>
+      <li><strong>레이더 한국</strong> — 한반도 표준 강수레이더 합성</li>
+      <li><strong>레이더 주변국</strong> — 일본·중국 일부까지 포함한 광역 영상</li>
+      <li><strong>레이더 상세</strong> — 한반도를 더 가까이 확대한 해상도</li>
+      <li><strong>레이더 적외선 합성</strong> — 위성 적외선과 레이더를 합쳐 구름 분포와 강수 분포를 동시에 표현</li>
+    </ul>
+    <img src="/assets/images/satpic/screenshots/07_radar_infrared.png" alt="레이더 적외선 합성 — 구름과 강수 분포를 동시에" class="app-screenshot">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>지역 레이더 — 백령도부터 제주까지 9곳</h2>
+    <img src="/assets/images/satpic/screenshots/08_radar_local_list.png" alt="지역 레이더 목록 — 백령도·화천·강릉·서울·군산·청송·진도·부산·제주" class="app-screenshot">
+    <p>전국 9곳의 <strong>지역 기상레이더 사이트</strong>를 개별로 골라 볼 수 있습니다. 합성 영상에서는 보이지 않는 <strong>가까운 거리의 자세한 강수 분포</strong>를 확인할 때 유용합니다.</p>
+    <ul>
+      <li>백령도 · 화천(광덕산) · 강릉 · 서울(관악산) · 군산(오성산) · 청송(면봉산) · 진도 · 부산(구덕산) · 제주(고산·성산)</li>
+      <li>각 레이더는 본인 위치 인근의 강수를 <strong>원형 도플러 패턴</strong>으로 가장 선명하게 보여줍니다.</li>
+      <li>출퇴근 동선이나 거주지에 가까운 레이더 한 곳만 골라두면, 합성 영상보다 빠르게 비구름 진입을 확인할 수 있습니다.</li>
+    </ul>
+    <img src="/assets/images/satpic/screenshots/09_radar_local_seoul.png" alt="서울 관악산 지역 레이더 — 수도권 강수 상세" class="app-screenshot">
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>태풍 시계열 — 진로를 미리 읽기</h2>
+    <img src="/assets/images/satpic/screenshots/10_typhoon.png" alt="태풍 — 위성 적외선 시계열 재생으로 진로 확인" class="app-screenshot">
+    <p>태풍이 발생하면 <strong>위성 적외선 시계열</strong>을 받아와 시간순 애니메이션으로 재생합니다. 어디서 발생해서 어디로 이동 중인지, 어느 속도로 다가오는지를 직접 눈으로 따라갈 수 있습니다.</p>
+    <ul>
+      <li>위성 영상이라서 태풍의 <strong>눈 구조</strong>와 외곽 구름대까지 그대로 보입니다.</li>
+      <li>관측 시각이 표시되어, 발생부터 현재까지의 이동 폭을 가늠하기 쉽습니다.</li>
+    </ul>
+    <p>황사가 발생하는 시기에는 <strong>황사 영상</strong>으로 같은 방식으로 확인할 수 있어, 미세먼지 유입 경로를 미리 읽을 때 도움이 됩니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>기온 분포도 · 강수 / 강설 지도 · 예보 지도</h2>
+    <img src="/assets/images/satpic/screenshots/11_temperature_map.png" alt="기온 분포도 — 한반도 전체 기온을 색상 지도로 표시" class="app-screenshot">
+    <p>위성·레이더 외에도, 의사결정에 바로 쓰이는 지도형 자료를 함께 제공합니다.</p>
+    <ul>
+      <li><strong>기온 분포도</strong> — 한반도 전체 기온을 색상으로 — 외출 전 옷차림 판단에 직관적</li>
+      <li><strong>강수·강설 지도</strong> — 현재 시점의 비/눈 분포를 한 지도에서</li>
+      <li><strong>예보 지도</strong> — 단기 예보를 지도 위에 펼친 형태로</li>
+      <li><strong>일기도 / 일기예보 텍스트</strong> — 기상청 공식 자료 그대로</li>
+    </ul>
+    <p>지도 우측에 <strong>색상 범례</strong>가 함께 표시되어, 수치를 직접 읽을 수 있도록 했습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>도로 CCTV — 같은 앱에서 도로 상황까지</h2>
+    <img src="/assets/images/satpic/screenshots/12_radar_cctv.png" alt="레이더 CCTV — 지도에 강수 레이더와 도로 CCTV 마커 결합" class="app-screenshot">
+    <p>날씨만으로는 부족할 때가 있습니다. "비가 오는 건 알겠는데, 우리 동네 도로 상황은?" — 그래서 같은 앱에 <strong>전국 도로 CCTV</strong>를 넣었습니다.</p>
+    <ul>
+      <li><strong>레이더 CCTV</strong>: 지도에 강수 레이더를 겹친 위에 CCTV 마커가 표시 — 비 오는 지역의 도로를 바로 클릭해 확인</li>
+      <li>지도 한 화면에서 <strong>주변 CCTV들을 미니 영상으로 동시에</strong> 펼쳐 볼 수 있습니다.</li>
+    </ul>
+    <img src="/assets/images/satpic/screenshots/13_radar_cctv_multi.png" alt="지도에 주변 CCTV 영상을 동시에 펼쳐 표시" class="app-screenshot">
+    <img src="/assets/images/satpic/screenshots/14_cctv_single.png" alt="CCTV 단일 영상 재생 — 영동선 이목동" class="app-screenshot">
+    <p>마커를 탭하면 단일 영상으로 확대 재생됩니다. 제주 도로 CCTV는 별도 채널로도 제공합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>동네 예보 · 즐겨찾는 지역</h2>
+    <ul>
+      <li><strong>현재 위치 기반 단기 예보</strong> — 위치 권한을 허용하면 우리 동네 예보 캐스트가 즉시 표시</li>
+      <li><strong>주소 검색</strong>으로 다른 지역도 조회</li>
+      <li>자주 보는 지역은 <strong>즐겨찾기</strong>로 저장 — 출퇴근지·여행지·부모님 댁 등 여러 곳을 묶어두고 한 번에 점검</li>
+      <li>현재 기온·풍향·풍속·습도와 <strong>강수 확률 / 강수량 / 적설</strong>까지 동시에 표기</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>다른 날씨 앱과 무엇이 다를까요?</h2>
+    <ul>
+      <li><strong>기상청 공식 앱과 다른 점</strong> — 같은 데이터 출처지만, 위성·레이더·태풍·CCTV·예보를 <em>한 메뉴 그리드</em>에 모아두고, 어떤 화면이든 <em>최신부터 자동 시간순 재생</em>이 기본입니다.</li>
+      <li><strong>일반 날씨 앱과 다른 점</strong> — 기온·강수 확률 같은 숫자가 아니라, <em>구름과 비구름의 실제 위치·이동</em>을 영상으로 본다는 점에서 출발 전 의사결정에 더 직접적입니다.</li>
+      <li><strong>레이더 전용 앱과 다른 점</strong> — 강수 레이더에 더해 <em>위성 가시·적외·수증기 채널</em>까지 같이 — 비구름이 어디서 생기고 어디로 가는지를 한 단계 윗 그림에서 봅니다.</li>
+      <li><strong>도로 CCTV와 함께 보는 흐름</strong> — 비 오는 시간대 우회 판단을 위성 → 레이더 → CCTV 순으로 같은 앱에서 끝낼 수 있습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>프라이버시</h2>
+    <ul>
+      <li><strong>회원가입·로그인 없음.</strong> 앱을 열면 곧장 시작합니다.</li>
+      <li>위치 권한은 <strong>현재 위치 기반 동네 예보</strong>에만 사용되며, 기기에서만 처리됩니다.</li>
+      <li>이미지와 영상은 공공 Open API와 기상청 사이트에서 직접 받아 와 화면에 표시하며, 앱이 별도로 저장하지 않습니다.</li>
+      <li><strong>광고 고지</strong>: 무료 운영을 위해 Google AdMob 광고를 사용합니다. AdMob SDK는 광고 ID와 노출·클릭 데이터를 Google에 전송합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>안전 안내</h2>
+    <p>안전을 위해 차량 운행 중에는 사용을 자제해 주세요. <strong>출발 전</strong>이나 <strong>정차 후</strong>, 또는 <strong>동승자가 사용</strong>해 주시기 바랍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android / iOS</li>
+      <li>최소 요구 버전: Android 8.0 이상</li>
+      <li>언어: 한국어 / 영어 / 일본어 / 중국어 (간/번) — 기기 설정에 따라 자동 분기</li>
+      <li>다크 모드 지원</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+      <li>데이터 출처: 기상청 (위성·레이더·예보·태풍·황사), 경찰청 UTIC, 국토부 ITS, 제주 Open API</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.satpic" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
