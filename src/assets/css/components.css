@@ -351,20 +351,33 @@
   color: var(--color-text-muted);
 }
 
-/* 홈 페이지 (히어로 배너 + 카테고리 섹션) */
+/* 홈 페이지 (히어로 텍스트 + 카테고리 섹션) */
 .home-hero {
   background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-2xl) var(--space-lg);
 }
 
-.home-hero__banner {
-  display: block;
-  width: 100%;
+.home-hero__inner {
   max-width: 1024px;
-  height: auto;
-  aspect-ratio: 4 / 1;
   margin: 0 auto;
-  border-radius: var(--radius);
+  text-align: center;
+}
+
+.home-hero__title {
+  font-size: clamp(1.75rem, 5vw, 2.75rem);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm);
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+.home-hero__subtitle {
+  font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  color: var(--color-text-muted);
+  margin: 0;
+  letter-spacing: 0.04em;
 }
 
 .home-section {
