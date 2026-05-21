@@ -5,7 +5,8 @@ lang: ko
 alternateLang: en
 alternateUrl: /en/
 ---
-{# 한국어 홈 - 히어로 + 카테고리 섹션 #}
+{# 한국어 홈 - 히어로 + featured + 4개 카테고리 섹션 #}
+{# 카테고리 내부 정렬: apps.json 배열 순서 (sort 없음) #}
 {% set t = i18n.ko %}
 {% set cardLang = 'ko' %}
 
@@ -18,7 +19,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
     <div class="app-grid app-grid--featured">
       {% for app in apps %}
-        {% if app.category == 'featured' %}
+        {% if app.featured and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -29,10 +30,10 @@ alternateUrl: /en/
 
 <section class="home-section home-section--alt">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.weather'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.weatherRoad'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.ko") %}
-        {% if app.category == 'weather' %}
+      {% for app in apps %}
+        {% if app.category == 'weather-road' and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -43,10 +44,10 @@ alternateUrl: /en/
 
 <section class="home-section">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.realestateTax'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.realestate'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.ko") %}
-        {% if app.category == 'realestate-tax' %}
+      {% for app in apps %}
+        {% if app.category == 'realestate' and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -57,10 +58,10 @@ alternateUrl: /en/
 
 <section class="home-section home-section--alt">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.realestateChart'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.dailyTool'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.ko") %}
-        {% if app.category == 'realestate-chart' %}
+      {% for app in apps %}
+        {% if app.category == 'daily-tool' and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -71,10 +72,10 @@ alternateUrl: /en/
 
 <section class="home-section">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.tool'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.learning'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.ko") %}
-        {% if app.category == 'tool' %}
+      {% for app in apps %}
+        {% if app.category == 'learning' and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}

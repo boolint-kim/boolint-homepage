@@ -1,35 +1,5 @@
 [
   {
-    "slug": "universedaily",
-    "packageName": "com.boolint.universex",
-    "name": { "ko": "UniverseDaily", "en": "UniverseDaily" },
-    "description": {
-      "ko": "매일 다른 우주 — SDO 태양 라이브, 인터랙티브 3D 달, 태양계 30+ 본체와 오늘 밤 하늘",
-      "en": "A daily cosmos — live SDO Sun, interactive 3D Moon, 30+ Solar System bodies, and tonight's sky"
-    },
-    "icon": "/assets/images/universedaily/icon.png",
-    "iconReady": true,
-    "preview": "/assets/images/universedaily/feature-banner.png",
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "featured"
-  },
-  {
-    "slug": "snapatlas",
-    "packageName": "com.boolint.snapatlas",
-    "name": { "ko": "스냅아틀라스", "en": "SnapAtlas" },
-    "description": { "ko": "사진을 시간과 장소로 다시 만나고, 자동 콜라주로 묶기", "en": "Rediscover photos by time & place, and auto-collage them" },
-    "icon": "/assets/images/snapatlas/icon.png",
-    "iconReady": true,
-    "preview": {
-      "ko": "/assets/images/snapatlas/preview-ko.png",
-      "en": "/assets/images/snapatlas/preview-en.png"
-    },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "featured"
-  },
-  {
     "slug": "satpic",
     "packageName": "com.boolint.satpic",
     "name": { "ko": "날씨위성영상 라이브", "en": "Weather Satellite Live" },
@@ -43,271 +13,11 @@
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937",
     "hasHelp": false,
-    "category": "weather"
-  },
-  {
-    "slug": "weathertw",
-    "packageName": "com.boolint.weathertw",
-    "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
-    "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
-    "icon": "/assets/images/weathertw/icon.png",
-    "preview": "/assets/images/weathertw/preview.webp",
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "weather"
-  },
-  {
-    "slug": "weatherno",
-    "packageName": "com.boolint.weatherno",
-    "name": { "ko": "Weather Norway", "en": "Weather Norway" },
-    "description": { "ko": "노르웨이 날씨", "en": "Norway Weather" },
-    "icon": "/assets/images/weatherno/icon.png",
-    "preview": "/assets/images/weatherno/preview.webp",
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "weather"
-  },
-  {
-    "slug": "transtax",
-    "packageName": "com.boolint.transtax",
-    "name": { "ko": "양도세", "en": "Capital Gains Tax" },
-    "description": { "ko": "양도소득세 계산", "en": "Capital Gains Tax Calculator" },
-    "icon": "/assets/images/transtax/icon.png",
-    "preview": "/assets/images/transtax/preview.webp",
-    "platform": ["android"],
-    "hasHelp": false,
     "koreaOnly": true,
-    "category": "realestate-tax"
-  },
-  {
-    "slug": "propertytax",
-    "packageName": "com.boolint.propertytax",
-    "name": { "ko": "아파트 공시가격", "en": "Official Price" },
-    "description": { "ko": "아파트 공시가격 조회", "en": "Apartment Official Price Lookup" },
-    "icon": "/assets/images/propertytax/icon.png",
-    "preview": "/assets/images/propertytax/preview.webp",
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-tax"
-  },
-  {
-    "slug": "realestatecal",
-    "packageName": "com.boolint.realestatecal",
-    "name": { "ko": "중개보수", "en": "Brokerage Fee" },
-    "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
-    "icon": "/assets/images/realestatecal/icon.png",
-    "preview": "/assets/images/realestatecal/preview.webp",
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-tax"
-  },
-  {
-    "slug": "acqtax",
-    "packageName": "com.boolint.acqtax",
-    "name": { "ko": "취득세", "en": "Acquisition Tax" },
-    "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
-    "icon": "/assets/images/acqtax/icon.png",
-    "preview": "/assets/images/acqtax/feature-banner-kr.png",
-    "platform": ["android", "ios"],
-    "appStoreUrl": "https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219",
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-tax"
-  },
-  {
-    "slug": "agemap",
-    "packageName": "com.boolint.agemap",
-    "name": { "ko": "에이지맵", "en": "AgeMap" },
-    "description": { "ko": "나이 계산기", "en": "Age Calculator" },
-    "icon": "/assets/images/agemap/icon.png",
-    "iconReady": true,
-    "preview": "/assets/images/agemap/preview.png",
-    "platform": ["android", "ios"],
-    "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
-    "hasHelp": true,
-    "category": "featured"
-  },
-  {
-    "slug": "weatheres",
-    "packageName": "com.boolint.weatheres",
-    "name": { "ko": "Weather Spain", "en": "Weather Spain" },
-    "description": { "ko": "스페인 날씨", "en": "Spain Weather" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "iconmixer",
-    "packageName": "com.boolint.iconmixer",
-    "name": { "ko": "Icon Mixer", "en": "Icon Mixer" },
-    "description": { "ko": "아이콘 믹서", "en": "Icon Mixer" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "tool"
-  },
-  {
-    "slug": "weathermy",
-    "packageName": "com.boolint.weathermy",
-    "name": { "ko": "Weather Malaysia", "en": "Weather Malaysia" },
-    "description": { "ko": "말레이시아 날씨", "en": "Malaysia Weather" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "jpdramaeng",
-    "packageName": "com.boolint.jpdramaeng",
-    "name": { "ko": "일본드라마 영어", "en": "JP Drama English" },
-    "description": { "ko": "일본 드라마 영어자막", "en": "Japanese Drama English Subtitles" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "englishnumber",
-    "packageName": "com.boolint.englishnumber",
-    "name": { "ko": "영어 숫자", "en": "English Number" },
-    "description": { "ko": "영어 숫자 읽기", "en": "English Number Reading" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "tool"
-  },
-  {
-    "slug": "mywatches",
-    "packageName": "com.boolint.mywatches",
-    "name": { "ko": "My Watches", "en": "My Watches" },
-    "description": { "ko": "내 시계", "en": "My Watches" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "tool"
-  },
-  {
-    "slug": "thatsong",
-    "packageName": "com.boolint.thatsong",
-    "name": { "ko": "그 노래", "en": "That Song" },
-    "description": { "ko": "노래 찾기", "en": "Song Finder" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "patternmaker",
-    "packageName": "com.boolint.patternmaker",
-    "name": { "ko": "Pattern Maker", "en": "Pattern Maker" },
-    "description": { "ko": "패턴 메이커", "en": "Pattern Maker" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "tool"
-  },
-  {
-    "slug": "finedustmap",
-    "packageName": "com.boolint.finedustmap",
-    "name": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
-    "description": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "weather"
-  },
-  {
-    "slug": "myweather",
-    "packageName": "com.boolint.myweather",
-    "name": { "ko": "날씨비서", "en": "My Weather" },
-    "description": { "ko": "한국 날씨 + 도로 CCTV를 한 앱에", "en": "Korean forecasts and road CCTVs in one app" },
-    "icon": "/assets/images/myweather/icon.png",
-    "iconReady": true,
-    "preview": "/assets/images/myweather/preview.png",
-    "platform": ["android"],
-    "hasHelp": false,
-    "category": "weather"
-  },
-  {
-    "slug": "movingplan",
-    "packageName": "com.boolint.movingplan",
-    "name": { "ko": "이사 계획", "en": "Moving Plan" },
-    "description": { "ko": "이사 계획", "en": "Moving Plan" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "busanlife",
-    "packageName": "com.boolint.busanlife",
-    "name": { "ko": "부산 생활", "en": "Busan Life" },
-    "description": { "ko": "부산 생활 정보", "en": "Busan Life Info" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true
-  },
-  {
-    "slug": "parkinglot",
-    "packageName": "com.boolint.parkinglot",
-    "name": { "ko": "주차장", "en": "Parking Lot" },
-    "description": { "ko": "주차장 찾기", "en": "Parking Lot Finder" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true
-  },
-  {
-    "slug": "seoullife",
-    "packageName": "com.boolint.seoullife",
-    "name": { "ko": "서울 생활", "en": "Seoul Life" },
-    "description": { "ko": "서울 생활 정보", "en": "Seoul Life Info" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true
-  },
-  {
-    "slug": "snim",
-    "packageName": "com.boolint.snim",
-    "name": { "ko": "SNIM", "en": "SNIM" },
-    "description": { "ko": "SNIM", "en": "SNIM" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "hidden": true
-  },
-  {
-    "slug": "apttradechart",
-    "packageName": "com.boolint.apttradechart",
-    "name": { "ko": "아파트 실거래가", "en": "Apartment Trade Records" },
-    "description": { "ko": "국토부 아파트 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment trade records as charts and map heatmaps" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-chart"
-  },
-  {
-    "slug": "aptrentchart",
-    "packageName": "com.boolint.aptrentchart",
-    "name": { "ko": "아파트 전월세 실거래가", "en": "Apartment Rent Records" },
-    "description": { "ko": "국토부 아파트 전월세 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment jeonse/wolse records as charts and map heatmaps" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-chart"
-  },
-  {
-    "slug": "financeproduct",
-    "packageName": "com.boolint.financeproduct",
-    "name": { "ko": "금융상품", "en": "Finance Product" },
-    "description": { "ko": "금융상품 정보", "en": "Finance Product Info" },
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true
-  },
-  {
-    "slug": "officetradechart",
-    "packageName": "com.boolint.officetradechart",
-    "name": { "ko": "오피스텔 실거래가", "en": "Officetel Trade Records" },
-    "description": { "ko": "오피스텔 매매·전세·월세 실거래가를 단지별 차트와 동별 순위로", "en": "Officetel deal, jeonse and wolse records by complex and district" },
-    "icon": "/assets/images/officetradechart/icon.png",
-    "iconReady": true,
-    "preview": "/assets/images/officetradechart/feature-banner-kr.png",
-    "platform": ["android"],
-    "hasHelp": false,
-    "koreaOnly": true,
-    "category": "realestate-chart"
+    "showInEnglish": true,
+    "category": "weather-road",
+    "featured": true,
+    "featuredEn": true
   },
   {
     "slug": "camlocation",
@@ -324,16 +34,84 @@
     "appStoreUrl": "https://apps.apple.com/us/app/%EC%A0%84%EA%B5%AD-cctv-%EC%A7%80%EB%8F%84/id6473665999",
     "hasHelp": false,
     "koreaOnly": true,
-    "category": "featured"
+    "showInEnglish": true,
+    "category": "weather-road",
+    "featured": true,
+    "featuredEn": true
   },
   {
-    "slug": "junsewolse",
-    "packageName": "com.boolint.junsewolse",
-    "name": { "ko": "전세월세", "en": "Jeonse Wolse" },
-    "description": { "ko": "전세/월세 계산", "en": "Jeonse/Wolse Calculator" },
+    "slug": "transtax",
+    "packageName": "com.boolint.transtax",
+    "name": { "ko": "양도세", "en": "Capital Gains Tax" },
+    "description": { "ko": "양도소득세 계산", "en": "Capital Gains Tax Calculator" },
+    "icon": "/assets/images/transtax/icon.png",
+    "preview": "/assets/images/transtax/preview.webp",
     "platform": ["android"],
     "hasHelp": false,
-    "koreaOnly": true
+    "koreaOnly": true,
+    "category": "realestate",
+    "featured": true
+  },
+  {
+    "slug": "myweather",
+    "packageName": "com.boolint.myweather",
+    "name": { "ko": "날씨비서", "en": "My Weather" },
+    "description": { "ko": "한국 날씨 + 도로 CCTV를 한 앱에", "en": "Korean forecasts and road CCTVs in one app" },
+    "icon": "/assets/images/myweather/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/myweather/preview.png",
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "showInEnglish": true,
+    "category": "weather-road"
+  },
+  {
+    "slug": "weathertw",
+    "packageName": "com.boolint.weathertw",
+    "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
+    "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
+    "icon": "/assets/images/weathertw/icon.png",
+    "preview": "/assets/images/weathertw/preview.webp",
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "weather-road",
+    "featured": true,
+    "featuredEn": true
+  },
+  {
+    "slug": "myweathertw",
+    "packageName": "com.boolint.myweathertw",
+    "name": { "ko": "날씨비서 (대만)", "en": "My Weather Taiwan" },
+    "description": {
+      "ko": "대만 날씨 + 도로 CCTV를 한 앱에",
+      "en": "Taiwan forecasts and road CCTVs in one app"
+    },
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "weather-road"
+  },
+  {
+    "slug": "finedustmap",
+    "packageName": "com.boolint.finedustmap",
+    "name": { "ko": "미세먼지 지도", "en": "Fine Dust Map" },
+    "description": { "ko": "전 세계 대기질을 지도에서 한 눈에", "en": "Worldwide air quality on one map" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "weather-road"
+  },
+  {
+    "slug": "acqtax",
+    "packageName": "com.boolint.acqtax",
+    "name": { "ko": "취득세", "en": "Acquisition Tax" },
+    "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
+    "icon": "/assets/images/acqtax/icon.png",
+    "preview": "/assets/images/acqtax/feature-banner-kr.png",
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219",
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
   },
   {
     "slug": "gifttax",
@@ -343,7 +121,226 @@
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
-    "category": "realestate-tax"
+    "category": "realestate"
+  },
+  {
+    "slug": "propertytax",
+    "packageName": "com.boolint.propertytax",
+    "name": { "ko": "아파트 공시가격", "en": "Official Price" },
+    "description": { "ko": "아파트 공시가격 조회", "en": "Apartment Official Price Lookup" },
+    "icon": "/assets/images/propertytax/icon.png",
+    "preview": "/assets/images/propertytax/preview.webp",
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate",
+    "featured": true
+  },
+  {
+    "slug": "junsewolse",
+    "packageName": "com.boolint.junsewolse",
+    "name": { "ko": "전세월세", "en": "Jeonse Wolse" },
+    "description": { "ko": "전세/월세 계산", "en": "Jeonse/Wolse Calculator" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
+    "slug": "realestatecal",
+    "packageName": "com.boolint.realestatecal",
+    "name": { "ko": "중개보수", "en": "Brokerage Fee" },
+    "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
+    "icon": "/assets/images/realestatecal/icon.png",
+    "preview": "/assets/images/realestatecal/preview.webp",
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
+    "slug": "seoullife",
+    "packageName": "com.boolint.seoullife",
+    "name": { "ko": "서울 생활", "en": "Seoul Life" },
+    "description": { "ko": "서울 생활 정보", "en": "Seoul Life Info" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate",
+    "featured": true
+  },
+  {
+    "slug": "busanlife",
+    "packageName": "com.boolint.busanlife",
+    "name": { "ko": "부산 생활", "en": "Busan Life" },
+    "description": { "ko": "부산 생활 정보", "en": "Busan Life Info" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
+    "slug": "apttradechart",
+    "packageName": "com.boolint.apttradechart",
+    "name": { "ko": "아파트 실거래가", "en": "Apartment Trade Records" },
+    "description": { "ko": "국토부 아파트 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment trade records as charts and map heatmaps" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
+    "slug": "officetradechart",
+    "packageName": "com.boolint.officetradechart",
+    "name": { "ko": "오피스텔 실거래가", "en": "Officetel Trade Records" },
+    "description": { "ko": "오피스텔 매매·전세·월세 실거래가를 단지별 차트와 동별 순위로", "en": "Officetel deal, jeonse and wolse records by complex and district" },
+    "icon": "/assets/images/officetradechart/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/officetradechart/feature-banner-kr.png",
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
+    "slug": "agemap",
+    "packageName": "com.boolint.agemap",
+    "name": { "ko": "에이지맵", "en": "AgeMap" },
+    "description": { "ko": "나이 계산기", "en": "Age Calculator" },
+    "icon": "/assets/images/agemap/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/agemap/preview.png",
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
+    "hasHelp": true,
+    "category": "daily-tool"
+  },
+  {
+    "slug": "snapatlas",
+    "packageName": "com.boolint.snapatlas",
+    "name": { "ko": "스냅아틀라스", "en": "SnapAtlas" },
+    "description": { "ko": "사진을 시간과 장소로 다시 만나고, 자동 콜라주로 묶기", "en": "Rediscover photos by time & place, and auto-collage them" },
+    "icon": "/assets/images/snapatlas/icon.png",
+    "iconReady": true,
+    "preview": {
+      "ko": "/assets/images/snapatlas/preview-ko.png",
+      "en": "/assets/images/snapatlas/preview-en.png"
+    },
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "daily-tool"
+  },
+  {
+    "slug": "iconmixer",
+    "packageName": "com.boolint.iconmixer",
+    "name": { "ko": "Icon Mixer", "en": "Icon Mixer" },
+    "description": { "ko": "아이콘을 섞어 나만의 이미지를 만드는 도구", "en": "Mix icons to craft your own image" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "daily-tool"
+  },
+  {
+    "slug": "universedaily",
+    "packageName": "com.boolint.universex",
+    "name": { "ko": "UniverseDaily", "en": "UniverseDaily" },
+    "description": {
+      "ko": "매일 다른 우주 — SDO 태양 라이브, 인터랙티브 3D 달, 태양계 30+ 본체와 오늘 밤 하늘",
+      "en": "A daily cosmos — live SDO Sun, interactive 3D Moon, 30+ Solar System bodies, and tonight's sky"
+    },
+    "icon": "/assets/images/universedaily/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/universedaily/feature-banner.png",
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "learning",
+    "featuredEn": true
+  },
+  {
+    "slug": "englishnumber",
+    "packageName": "com.boolint.englishnumber",
+    "name": { "ko": "영어 숫자", "en": "English Number" },
+    "description": {
+      "ko": "영어 숫자 읽기 연습",
+      "en": "Practice reading numbers in English (for Korean learners)"
+    },
+    "platform": ["android"],
+    "hasHelp": false,
+    "category": "learning"
+  },
+  {
+    "slug": "weatherno",
+    "packageName": "com.boolint.weatherno",
+    "name": { "ko": "Weather Norway", "en": "Weather Norway" },
+    "description": { "ko": "노르웨이 날씨", "en": "Norway Weather" },
+    "icon": "/assets/images/weatherno/icon.png",
+    "preview": "/assets/images/weatherno/preview.webp",
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "weatheres",
+    "packageName": "com.boolint.weatheres",
+    "name": { "ko": "Weather Spain", "en": "Weather Spain" },
+    "description": { "ko": "스페인 날씨", "en": "Spain Weather" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "weathermy",
+    "packageName": "com.boolint.weathermy",
+    "name": { "ko": "Weather Malaysia", "en": "Weather Malaysia" },
+    "description": { "ko": "말레이시아 날씨", "en": "Malaysia Weather" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "aptrentchart",
+    "packageName": "com.boolint.aptrentchart",
+    "name": { "ko": "아파트 전월세 실거래가", "en": "Apartment Rent Records" },
+    "description": { "ko": "국토부 아파트 전월세 실거래가를 차트와 지도 히트맵으로", "en": "MOLIT apartment jeonse/wolse records as charts and map heatmaps" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "hidden": true
+  },
+  {
+    "slug": "jpdramaeng",
+    "packageName": "com.boolint.jpdramaeng",
+    "name": { "ko": "일본드라마 영어", "en": "JP Drama English" },
+    "description": { "ko": "일본 드라마 영어자막", "en": "Japanese Drama English Subtitles" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "jpdrama",
+    "packageName": "com.boolint.jpdrama",
+    "name": { "ko": "일본드라마", "en": "JP Drama" },
+    "description": { "ko": "일본 드라마 정보", "en": "Japanese Drama Info" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "mywatches",
+    "packageName": "com.boolint.mywatches",
+    "name": { "ko": "My Watches", "en": "My Watches" },
+    "description": { "ko": "내 시계", "en": "My Watches" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "patternmaker",
+    "packageName": "com.boolint.patternmaker",
+    "name": { "ko": "Pattern Maker", "en": "Pattern Maker" },
+    "description": { "ko": "패턴 메이커", "en": "Pattern Maker" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "maskstore",
@@ -352,7 +349,45 @@
     "description": { "ko": "지도에서 병원·약국 찾기 (주말에 유용)", "en": "Find hospitals and pharmacies on the map" },
     "platform": ["android"],
     "hasHelp": false,
-    "category": "tool"
+    "hidden": true
+  },
+  {
+    "slug": "parkinglot",
+    "packageName": "com.boolint.parkinglot",
+    "name": { "ko": "주차장", "en": "Parking Lot" },
+    "description": { "ko": "주차장 찾기", "en": "Parking Lot Finder" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "hidden": true
+  },
+  {
+    "slug": "financeproduct",
+    "packageName": "com.boolint.financeproduct",
+    "name": { "ko": "금융상품", "en": "Finance Product" },
+    "description": { "ko": "금융상품 정보", "en": "Finance Product Info" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "koreaOnly": true,
+    "hidden": true
+  },
+  {
+    "slug": "snim",
+    "packageName": "com.boolint.snim",
+    "name": { "ko": "SNIM", "en": "SNIM" },
+    "description": { "ko": "SNIM", "en": "SNIM" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
+  },
+  {
+    "slug": "thatsong",
+    "packageName": "com.boolint.thatsong",
+    "name": { "ko": "그 노래", "en": "That Song" },
+    "description": { "ko": "노래 찾기", "en": "Song Finder" },
+    "platform": ["android"],
+    "hasHelp": false,
+    "hidden": true
   },
   {
     "slug": "petblog",
@@ -364,10 +399,10 @@
     "hidden": true
   },
   {
-    "slug": "jpdrama",
-    "packageName": "com.boolint.jpdrama",
-    "name": { "ko": "일본드라마", "en": "JP Drama" },
-    "description": { "ko": "일본 드라마 정보", "en": "Japanese Drama Info" },
+    "slug": "movingplan",
+    "packageName": "com.boolint.movingplan",
+    "name": { "ko": "이사 계획", "en": "Moving Plan" },
+    "description": { "ko": "이사 계획", "en": "Moving Plan" },
     "platform": ["android"],
     "hasHelp": false,
     "hidden": true

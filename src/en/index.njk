@@ -5,7 +5,8 @@ lang: en
 alternateLang: ko
 alternateUrl: /
 ---
-{# 영어 홈 - 히어로 + 카테고리 섹션 #}
+{# 영어 홈 - 히어로 + featuredEn + 3개 카테고리 섹션 (realestate 제외) #}
+{# showInEnglish 기본값 규칙: 명시값 우선, 미지정 시 koreaOnly의 반대 (inEnglishHome 필터) #}
 {% set t = i18n.en %}
 {% set cardLang = 'en' %}
 
@@ -18,7 +19,7 @@ alternateUrl: /
     <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
     <div class="app-grid app-grid--featured">
       {% for app in apps %}
-        {% if app.category == 'featured' %}
+        {% if app.featuredEn and not app.hidden %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -29,10 +30,10 @@ alternateUrl: /
 
 <section class="home-section home-section--alt">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.weather'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.weatherRoad'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.en") %}
-        {% if app.category == 'weather' %}
+      {% for app in apps %}
+        {% if app.category == 'weather-road' and not app.hidden and (app | inEnglishHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -43,10 +44,24 @@ alternateUrl: /
 
 <section class="home-section">
   <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.tool'] }}</h2>
+    <h2 class="home-section__title">{{ t['home.section.dailyTool'] }}</h2>
     <div class="app-grid app-grid--small">
-      {% for app in apps | sort(attribute="name.en") %}
-        {% if app.category == 'tool' %}
+      {% for app in apps %}
+        {% if app.category == 'daily-tool' and not app.hidden and (app | inEnglishHome) %}
+          {% set cardApp = app %}
+          {% include "app-card.njk" %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="home-section home-section--alt">
+  <div class="home-section__inner">
+    <h2 class="home-section__title">{{ t['home.section.learning'] }}</h2>
+    <div class="app-grid app-grid--small">
+      {% for app in apps %}
+        {% if app.category == 'learning' and not app.hidden and (app | inEnglishHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
