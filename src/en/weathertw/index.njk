@@ -1,19 +1,135 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: en
-title: "Weather Taiwan"
-appSlug: weathertw
-appName: Weather Taiwan
-appHasHelp: false
+title: "Weather Satellite Taiwan — CWA imagery in one app"
 alternateLang: ko
 alternateUrl: /weathertw/
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/en/">← All apps</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/en/">← All apps</a>
+  </p>
+</div>
 
-<h1>Weather Taiwan</h1>
-<p>A Taiwan weather app.</p>
-<p>Check weather information across Taiwan quickly and easily.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>Weather Satellite Taiwan</h1>
+    <p class="landing-hero__lead">A Taiwan-only weather imagery app that pulls satellite, radar, temperature, and precipitation maps from Taiwan's Central Weather Administration (CWA) and plays each one as a time-lapse animation. Known on the device as <strong>天氣衛星圖 / Weather Satellite</strong>, it opens 18 imagery feeds from a single menu grid.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.weathertw" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+    <img src="/assets/images/weathertw/hero.png" alt="Weather Satellite Taiwan — 天氣衛星圖" class="landing-hero__banner">
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Taiwan's official weather imagery, in one place</h2>
+    <p>The <strong>Central Weather Administration (中央氣象署)</strong> publishes Taiwan's satellite, radar, temperature, and rainfall maps as open imagery, but the feeds are split across pages and you have to hop between them to compare the same time slice.</p>
+    <p>Weather Satellite Taiwan groups everything onto one menu and, for each feed, automatically downloads the <strong>most recent 15 frames</strong> and plays them back at roughly 300 ms per frame. Instead of a single still image, you see <em>where the clouds and rain are coming from and where they are going</em> in one gesture.</p>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160033_framed.png" alt="Main menu — 18 weather imagery tiles in one grid" class="app-screenshot">
+    <p>The main menu lays out all 18 feeds as a single grid. Each tile shows the latest thumbnail fetched from the server (cached for about five minutes), so as soon as the app opens you already have a rough read on Taiwan's sky for the day.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Satellite — Infrared, Infrared Tone, and Visible × Taiwan / East Asia / Earth</h2>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160118_framed.png" alt="Infrared satellite — Taiwan, cloud distribution with timestamp and playback controls" class="app-screenshot">
+    <p>Three satellite channels are each offered at three coverage levels — <strong>Taiwan / East Asia / Earth</strong>.</p>
+    <ul>
+      <li><strong>Infrared</strong> — Cloud-top temperature as a grayscale image. The standard satellite view that works at night.</li>
+      <li><strong>Infrared Tone</strong> — Cloud tops with the coldest (highest, most convective) areas highlighted in red and magenta. A quick read on where heavy rain is most likely.</li>
+      <li><strong>Visible</strong> — Daytime imagery that looks closer to natural color. Relies on sunlight, so it goes dark at night.</li>
+    </ul>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160138_framed.png" alt="Infrared Tone — Taiwan, strong convective clouds picked out in red and magenta" class="app-screenshot">
+    <p>Each feed opens in a fullscreen viewer with the <strong>publish timestamp</strong> shown explicitly at the top (e.g. <em>"2026/05/21 14:30"</em>). The bottom row plays the 15-frame loop at about 300 ms per frame; the two middle buttons zoom in and out, and the left button toggles fullscreen.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Radar — wide, map-overlay, and three local stations</h2>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160201_framed.png" alt="Radar Map — Google Maps with rainfall intensity overlay and opacity slider" class="app-screenshot">
+    <p>Six radar feeds are included, each shaped for a different reading.</p>
+    <ul>
+      <li><strong>Radar Map (Taiwan)</strong> — A Google Maps base with rainfall intensity overlaid on top. A bottom slider sets the <strong>overlay opacity</strong>, so you can read map and rain together or push the rain forward. The current location pin makes "is it raining where I am?" a single glance.</li>
+      <li><strong>Radar (Taiwan)</strong> — Composite radar covering all of Taiwan. Colors run from blue → green → yellow → red as intensity rises.</li>
+      <li><strong>Radar (neighbor)</strong> — Composite extended to the East Asia region, so you catch incoming systems a step earlier than the Taiwan-only view.</li>
+      <li><strong>Three local radars</strong> — Single-site feeds for 樹林 (ShuLin), 南屯 (NanTun), and 林園 (LinYuan). Useful for zooming in on local storms whose fine structure isn't clear on the composite.</li>
+    </ul>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160213_framed.png" alt="Composite radar — Taiwan-wide rainfall intensity" class="app-screenshot">
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160226_framed.png" alt="Radar — neighbor view, catching East Asia systems approaching Taiwan" class="app-screenshot">
+    <p>Every radar feed runs the same <strong>15-frame loop</strong> as the satellite views. A natural reading flow: read the macro shape on the composite, find yourself on the map overlay, then zoom into a local station if something nearby looks intense.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Temperature and rain — distribution maps and a quantitative forecast</h2>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160246_framed.png" alt="Temperature distribution — Taiwan-wide color map with right-side scale bar" class="app-screenshot">
+    <p>The <strong>Temperature</strong> map colors Taiwan-wide air temperature with a scale bar on the right side covering roughly 8–33 °C. You can compare north vs. south, mountain vs. coast on the same timestamp (recent 7 frames, ~500 ms per frame).</p>
+    <img src="/assets/images/weathertw/screenshots/shot_20260521_160259_framed.png" alt="Quantitative Precipitation Forecast — next 0–12h and 12–24h, stacked for comparison" class="app-screenshot">
+    <p>The <strong>Quantitative Precipitation Forecast (QPF)</strong> is a forecast, not an observation. The next 24 hours are split into <strong>0–12 h</strong> and <strong>12–24 h</strong> blocks, and the two rainfall maps are stacked vertically so you can compare "the next 12 hours" against "the 12 after that" without scrolling between pages.</p>
+    <p>An <strong>accumulated daily rainfall</strong> feed is also on the main menu — a look-back at where and how much it actually rained over the past day.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Reading aids — loop, zoom, dark mode, localization</h2>
+    <ul>
+      <li><strong>15-frame loop</strong> — Satellite and radar feeds load 15 frames; QPF loads 2–7. No setup — the play button on each viewer just works.</li>
+      <li><strong>Zoom and fullscreen</strong> — Pinch to zoom, or use the ⊕ / ⊖ buttons. The left-most button toggles fullscreen.</li>
+      <li><strong>Explicit timestamps</strong> — On top of the timestamp baked into the imagery itself, the viewer overlays its own ("2026/05/21 14:30") so you always see the publish moment, even when working across time zones.</li>
+      <li><strong>Dark mode</strong> — Follows the system setting and slightly desaturates menu icons in dark mode so the imagery underneath stays the focal point.</li>
+      <li><strong>Localization</strong> — English (default) and Traditional Chinese (zh-rTW) resources. The UI switches automatically based on the device locale.</li>
+      <li><strong>Cache cleanup</strong> — Once cached imagery exceeds 300 files, the app cleans up automatically, so storage usage stays bounded.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Sources and credits</h2>
+    <p>The app is a viewer for public imagery; every feed shows its source on the screen itself.</p>
+    <ul>
+      <li><strong>Satellite / Radar / Temperature / Rainfall</strong> — Central Weather Administration (CWA, Taiwan · 中央氣象署), open data</li>
+      <li><strong>Map base</strong> — Google Maps (used only on the Radar Map screen)</li>
+    </ul>
+    <p>Refresh cadence and publish timing follow CWA's own schedule (about 10 minutes for satellite and composite radar, 6-hour blocks for QPF, etc.).</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Privacy — straight talk</h2>
+    <ul>
+      <li><strong>No sign-up, no login.</strong> Open the app and you're in the imagery.</li>
+      <li><strong>No location permission requested.</strong> The "you are here" pin on the radar map is rendered by Google Maps itself; the app does not store your coordinates.</li>
+      <li>Network access is used to fetch CWA's public imagery and to serve ads.</li>
+      <li><strong>Ads</strong>: the app is free to use and is supported by Google AdMob banner and interstitial ads. The AdMob SDK sends ad ID and impression/click data to Google.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>App info</h2>
+    <ul>
+      <li>Platform: Android</li>
+      <li>Languages: English (default) / Traditional Chinese — auto-selected by device locale</li>
+      <li>Price: free, with ads, no in-app purchases</li>
+      <li>Coverage: Taiwan only — the underlying CWA feeds are Taiwan-specific by definition</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.weathertw" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+    </p>
+  </div>
+</section>

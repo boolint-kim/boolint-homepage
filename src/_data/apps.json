@@ -69,8 +69,8 @@
   {
     "slug": "weathertw",
     "packageName": "com.boolint.weathertw",
-    "name": { "ko": "Weather Taiwan", "en": "Weather Taiwan" },
-    "description": { "ko": "대만 날씨", "en": "Taiwan Weather" },
+    "name": { "ko": "대만 위성영상", "en": "Weather Satellite Taiwan" },
+    "description": { "ko": "대만 중앙기상서 위성·레이더·강수 자료를 한 앱에", "en": "Taiwan CWA satellite, radar, and rainfall imagery in one app" },
     "icon": "/assets/images/weathertw/icon.png",
     "preview": "/assets/images/weathertw/preview.webp",
     "platform": ["android"],
