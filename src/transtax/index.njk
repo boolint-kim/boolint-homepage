@@ -1,19 +1,196 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "양도세"
-appSlug: transtax
-appName: 양도세
-appHasHelp: false
-alternateLang: en
-alternateUrl: /en/transtax/
+title: "양도세 계산기 — 주택·건물·토지·분양권 양도소득세를 직접 계산"
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/">← 앱 목록</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h1>양도세</h1>
-<p>양도소득세 계산 앱입니다.</p>
-<p>부동산 양도 시 발생하는 양도소득세를 간편하게 계산할 수 있습니다.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>양도세 계산기</h1>
+    <p class="landing-hero__lead">주택·건물·토지·분양권의 양도소득세를 직접 입력해 계산하고, 같은 매물을 증여·저가양도했을 때의 세금과 취득세까지 한 화면에서 비교하는 부동산 세금 계산기입니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.transtax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+    <img src="/assets/images/transtax/feature-banner-kr.png" alt="양도세 계산기 — 팔기 전에 미리 계산하는 양도세" class="landing-hero__banner">
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>팔기 전에, 세금이 궁금할 때</h2>
+    <p>부동산을 정리할 때 가장 먼저 떠오르는 질문은 "그래서 세금이 얼마나 나오지?"입니다. 그런데 양도소득세는 변수가 많습니다.</p>
+    <ul>
+      <li>취득·양도 시점, 가액, 필요경비에 따라 <strong>양도차익</strong>이 달라집니다.</li>
+      <li>보유·거주 기간에 따라 <strong>장기보유특별공제율</strong>이 바뀝니다.</li>
+      <li>주택 수와 조정대상지역 여부에 따라 <strong>중과세</strong>가 적용될 수 있습니다.</li>
+      <li>때로는 그냥 파는 것보다 <strong>증여</strong>하거나 자녀에게 <strong>저가양도</strong>하는 편이 세금이 적습니다.</li>
+    </ul>
+    <p>양도세 계산기는 이 변수들을 직접 입력해 결과를 즉시 확인하고, <strong>양도 · 증여 · 저가양도</strong>를 같은 조건에서 비교할 수 있게 합니다. 회원가입 없이 앱을 열면 바로 계산을 시작합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>자산 종류별 전용 계산</h2>
+    <img src="/assets/images/transtax/screenshots/01_main_menu.png" alt="분양권·주택·건물·토지 자산 종류 선택 메인 화면" class="app-screenshot">
+    <p>양도하는 자산의 성격에 따라 적용되는 세율과 공제가 다릅니다. 메인 화면에서 자산 종류를 고르면, 종류에 맞춘 입력 화면으로 들어갑니다.</p>
+    <ul>
+      <li><strong>분양권</strong> — 보유기간별 단기 세율(1년 미만·1년 이상)을 반영</li>
+      <li><strong>주택</strong> — 1세대 1주택 비과세 특례, 주택 수·조정대상지역 중과, 거주요건 장기보유특별공제까지 반영</li>
+      <li><strong>건물</strong> — 상가·일반 건물 등 주택 외 부동산</li>
+      <li><strong>토지</strong> — 비사업용 토지 여부에 따른 가산세율까지 구분</li>
+    </ul>
+    <p>상단의 차트 아이콘으로는 <strong>실거래가 통계</strong>를, <strong>국세청 국세상담</strong> 버튼으로는 국세청 상담 페이지를 바로 열 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>취득부터 양도까지 — 입력은 간단하게</h2>
+    <img src="/assets/images/transtax/screenshots/02_house_input.png" alt="취득일·취득가액·양도일·양도가액 입력 화면" class="app-screenshot">
+    <p>가지고 있는 거래 내역만 그대로 옮겨 적으면 됩니다.</p>
+    <ul>
+      <li><strong>취득일 / 양도일</strong> — 직접 입력하거나 달력에서 선택, 보유·거주 기간이 자동 계산</li>
+      <li><strong>취득가액 / 양도가액</strong> — 숫자를 입력하면 <strong>"8억원", "15억원"</strong>처럼 한글 금액이 바로 표시되어 0의 개수를 헷갈릴 일이 없습니다.</li>
+      <li><strong>취득비용 / 양도비용</strong> — 취득세·중개비·세무사비 등 필요경비 입력</li>
+      <li><strong>거주기간</strong> — 버튼으로 거주 연수를 손쉽게 조절</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>주택 수 · 공제 · 조정대상지역</h2>
+    <img src="/assets/images/transtax/screenshots/03_house_options.png" alt="기본공제·주택수·조정대상지역 선택 화면" class="app-screenshot">
+    <p>양도세를 좌우하는 핵심 조건을 단계별로 선택합니다.</p>
+    <ul>
+      <li><strong>기본공제</strong> — 단독명의(250만원) / 공동명의(2인 500만원) / 기본공제 없음</li>
+      <li><strong>주택 수</strong> — 1세대 1주택 비과세 특례, 1세대 1주택·일시적 2주택, 1세대 2주택, 1세대 3주택 이상</li>
+      <li><strong>조정대상지역</strong> 체크 한 번으로 다주택 중과세 적용 여부 반영</li>
+    </ul>
+    <p>입력을 마치면 <strong>양도세 결과보기</strong>로 바로 계산하거나, <strong>저가 양도</strong> 버튼으로 자녀 매매 시뮬레이션으로 넘어갑니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>계산 결과를 한눈에 — 산출 과정까지</h2>
+    <img src="/assets/images/transtax/screenshots/04_result_house.png" alt="양도세 계산 결과 — 과세표준·세율·양도세 합계" class="app-screenshot">
+    <p>최종 세액만 던져 주는 게 아니라, <strong>세금이 어떻게 나왔는지 과정 전체를 표로</strong> 보여 줍니다.</p>
+    <ul>
+      <li>양도차익 → <strong>장기보유특별공제</strong>(공제율 명시, 예: 6년 보유·0년 거주 12%) → 양도소득금액</li>
+      <li>기본공제액 → <strong>과세표준</strong> → 적용 <strong>세율</strong>(예: 일반과세 42%) → 누진공제</li>
+      <li><strong>산출세액</strong>과 <strong>지방교육세</strong>를 더한 <strong>양도세 합계</strong></li>
+    </ul>
+    <p>어느 단계에서 세금이 늘고 줄었는지 그대로 드러나기 때문에, 보유·거주 기간을 조금 바꿔 보며 절세 시점을 가늠하기에 좋습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>양도가액 분석 차트</h2>
+    <img src="/assets/images/transtax/screenshots/05_result_chart.png" alt="양도가액 비중 도넛 차트와 시간에 따른 양도세 변화 그래프" class="app-screenshot">
+    <p>숫자만으로는 감이 잘 안 올 때, 결과 화면을 그래프로도 볼 수 있습니다.</p>
+    <ul>
+      <li><strong>양도가액 분석 도넛</strong> — 양도가액에서 취득가액 · 총경비 · 손익 · 양도세가 차지하는 비중을 한눈에</li>
+      <li><strong>시간에 따른 양도세 변화</strong> — 보유 기간이 길어질수록 장기보유특별공제로 세금이 어떻게 줄어드는지 선 그래프로 표시</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>증여하면 세금이 얼마나 다를까 — "증여 해보기"</h2>
+    <img src="/assets/images/transtax/screenshots/06_gift.png" alt="증여 해보기 — 증여자 관계와 증여재산가액 입력" class="app-screenshot">
+    <p>결과 화면의 <strong>증여 해보기</strong> 버튼을 누르면, 같은 매물을 파는 대신 증여했을 때의 증여세를 바로 계산해 비교할 수 있습니다.</p>
+    <ul>
+      <li><strong>증여자 관계</strong> — 배우자 / 직계존속 / 직계비속 / 그 외 친족 / 기타에 따라 증여재산공제 자동 적용</li>
+      <li><strong>증여재산가액</strong>, <strong>부담부증여 채무액</strong>, <strong>혼인·출산 공제</strong>까지 입력</li>
+      <li>미성년자 여부, 세대생략 할증, 10년 내 사전증여 합산 등 실제 변수를 반영</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>자녀에게 싸게 팔면? — "저가양도" 시뮬레이션</h2>
+    <img src="/assets/images/transtax/screenshots/07_selftrade_table.png" alt="저가양도 계산표 — 금액대별 양도세·증여세·취득세·세금합계 비교" class="app-screenshot">
+    <p>자녀 등에게 시세보다 낮은 가격으로 파는 <strong>저가양도</strong>는, 양도세·증여세·취득세가 함께 얽히는 까다로운 영역입니다. 이 앱은 가격대별로 세 가지 세금을 한 표에서 비교해 줍니다.</p>
+    <ul>
+      <li><strong>자녀공제(5천만원)</strong> / <strong>혼인·출산 공제(1억 5천만원)</strong> 적용 토글</li>
+      <li>가격 간격(1,000 / 2,000 / 5,000만원)을 바꿔 가며 금액대별 비교</li>
+      <li>각 금액마다 <strong>양도세 · 증여세 · 취득세 · 세금 합계</strong>를 한 줄로 표시하고, 직전 금액 대비 증감을 화살표로 표기</li>
+      <li><strong>부당행위계산 부인</strong>이 적용되는 구간은 별도 아이콘으로 경고</li>
+    </ul>
+    <img src="/assets/images/transtax/screenshots/08_selftrade_detail.png" alt="저가양도 상세 — 부모가 납부할 양도세 산출 내역" class="app-screenshot">
+    <p>표에서 특정 금액을 탭하면, 그 가격에 팔았을 때 <strong>부모가 납부할 양도세 산출 내역</strong>이 상세하게 펼쳐집니다. "얼마에 넘기는 게 세금까지 합쳐 가장 유리한가"를 직접 따져 볼 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>실거래가 통계 인포그래픽</h2>
+    <p>메인 화면의 차트 아이콘에서는 자체 수집한 국토부 실거래 데이터를 바탕으로 한 통계를 볼 수 있습니다.</p>
+    <ul>
+      <li>아파트 · 분양권 · 단독주택 · 연립다세대 · 오피스텔 · 건물 · 공장 · 토지의 <strong>월별 매매가격 추이</strong></li>
+      <li>최근 <strong>신고가</strong> 거래와 <strong>거래 취소율</strong> 지표</li>
+    </ul>
+    <p>양도 시점을 고민할 때 시장 흐름을 함께 참고할 수 있습니다. (실거래가 통계는 시범 운영 중입니다.)</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>결과 공유 · 인쇄</h2>
+    <ul>
+      <li>계산 결과를 <strong>이미지로 복사하거나 공유</strong>해 가족·세무사와 바로 나눌 수 있습니다.</li>
+      <li>결과 화면 상단의 <strong>인쇄</strong> 아이콘으로 출력본을 만들 수 있습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>다른 계산기와 무엇이 다를까요?</h2>
+    <ul>
+      <li><strong>최종 세액만 보여주는 계산기와 다른 점</strong> — 양도차익부터 장기보유특별공제, 과세표준, 세율, 누진공제까지 <em>산출 과정 전체</em>를 표로 펼쳐 보여 줍니다.</li>
+      <li><strong>양도세만 보는 계산기와 다른 점</strong> — 같은 매물을 <em>양도 · 증여 · 저가양도</em>했을 때를 한 흐름에서 비교해, 어느 쪽이 유리한지 판단할 수 있습니다.</li>
+      <li><strong>단순 세율표와 다른 점</strong> — 주택 수, 조정대상지역, 거주요건, 비사업용 토지 등 <em>실제 중과·공제 조건</em>을 반영합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>참고 안내</h2>
+    <p>본 계산기의 결과는 일반적인 세법 기준에 따른 <strong>참고용</strong>이며, 개인별 특수한 사정을 모두 반영하지는 못합니다. 정확한 세액과 신고는 반드시 <strong>전문 세무사와 상담</strong>하시기 바랍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android</li>
+      <li>최소 요구 버전: Android 8.0 이상</li>
+      <li>언어: 한국어 (대한민국 세법 기준)</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.transtax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
+</content>
+</invoke>
