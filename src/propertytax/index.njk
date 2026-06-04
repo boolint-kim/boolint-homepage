@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 mainClass: main--landing
 lang: ko
-title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재산세 자동 계산"
+title: "아파트 공시가격 — 전국 아파트 공시가격을 동·호별로 조회"
 ---
 
 <div class="container" style="padding-top: var(--space-md);">
@@ -14,26 +14,26 @@ title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재�
 <section class="landing-hero">
   <div class="landing-hero__inner">
     <h1>아파트 공시가격</h1>
-    <p class="landing-hero__lead">전국 아파트의 동·호별 공시가격을 연도별로 조회하고, 그 공시가격으로 올해 재산세까지 한 화면에서 자동 계산해 보여 주는 앱입니다. 현 위치·지도·지번 주소·아파트 이름, 네 가지 방법으로 우리 집을 바로 찾습니다.</p>
+    <p class="landing-hero__lead">전국 아파트의 동·호별 공시가격을 연도별로 조회하고, 같은 단지의 전용면적별 평균 공시가격까지 한 화면에서 비교해 보여 주는 앱입니다. 현 위치·지도·지번 주소·아파트 이름, 네 가지 방법으로 우리 집을 바로 찾습니다.</p>
     <p>
       <a href="https://play.google.com/store/apps/details?id=com.boolint.propertytax" class="btn" target="_blank" rel="noopener">
         Google Play에서 다운로드
       </a>
     </p>
-    <img src="/assets/images/propertytax/preview.webp" alt="아파트 공시가격 — 공시가격 조회와 재산세 계산" class="landing-hero__banner">
+    <img src="/assets/images/propertytax/preview.webp" alt="아파트 공시가격 — 동·호별 공시가격 조회" class="landing-hero__banner">
   </div>
 </section>
 
 <section class="landing-section landing-section--alt">
   <div class="landing-section__inner">
     <h2>우리 집 공시가격, 지금 얼마일까</h2>
-    <p>공시가격은 재산세·종합부동산세·건강보험료의 기준이 되는 중요한 숫자입니다. 그런데 막상 확인하려면 부동산공시가격알리미에 들어가 주소를 단계별로 입력해야 해서 번거롭습니다.</p>
+    <p>공시가격은 정부가 매년 발표하는 공식 가격으로, 우리 집 자산 가치를 가늠하는 기준이 됩니다. 그런데 막상 확인하려면 부동산공시가격알리미에 들어가 주소를 단계별로 입력해야 해서 번거롭습니다.</p>
     <ul>
       <li>내가 사는 동·호의 <strong>공시가격이 올해 얼마인지</strong> 궁금할 때</li>
       <li>작년 대비 <strong>얼마나 오르고 내렸는지</strong> 추이가 보고 싶을 때</li>
-      <li>이 공시가격이면 <strong>재산세가 얼마나 나올지</strong> 미리 가늠하고 싶을 때</li>
+      <li>같은 단지에서 <strong>면적대별로 가격이 어떻게 다른지</strong> 비교하고 싶을 때</li>
     </ul>
-    <p>이 앱은 공공데이터(부동산 공시가격 Open API)를 그대로 받아와, 검색 한 번이면 동·호별 공시가격과 연도별 추이, 그리고 올해 재산세 추정액까지 한 화면에 정리해 줍니다. 회원가입 없이 앱을 열면 바로 검색을 시작합니다.</p>
+    <p>이 앱은 공공데이터(부동산 공시가격 Open API)를 그대로 받아와, 검색 한 번이면 동·호별 공시가격과 연도별 추이, 전용면적별 평균 공시가격까지 한 화면에 정리해 줍니다. 회원가입 없이 앱을 열면 바로 검색을 시작합니다.</p>
   </div>
 </section>
 
@@ -76,7 +76,7 @@ title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재�
 <section class="landing-section landing-section--alt">
   <div class="landing-section__inner">
     <h2>동·호별 공시가격과 연도별 추이</h2>
-    <img src="/assets/images/propertytax/screenshots/04_price_tax.png" alt="동·호 선택과 연도별 공시가격·상승률 표, 재산세 요약" class="app-screenshot">
+    <img src="/assets/images/propertytax/screenshots/04_price_table.png" alt="동·호 선택과 연도별 공시가격·상승률 표" class="app-screenshot">
     <p>단지를 고른 뒤 <strong>동</strong>과 <strong>호</strong>를 선택하면, 그 세대의 공시가격이 연도별로 펼쳐집니다.</p>
     <ul>
       <li><strong>전용면적</strong>을 함께 표시 (예: 전용면적 84.89㎡)</li>
@@ -89,16 +89,15 @@ title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재�
 
 <section class="landing-section">
   <div class="landing-section__inner">
-    <h2>공시가격으로 계산하는 올해 재산세</h2>
-    <img src="/assets/images/propertytax/screenshots/05_tax_detail.png" alt="재산세 세부담 상한 안내와 전용면적별 평균 공시가격 표" class="app-screenshot">
-    <p>공시가격 아래에는 그 가격을 기준으로 한 <strong>올해 재산세 추정액</strong>이 이어집니다. 별도 입력 없이 조회한 공시가격으로 바로 계산됩니다.</p>
+    <h2>전용면적별 평균 공시가격</h2>
+    <img src="/assets/images/propertytax/screenshots/05_avg_price.png" alt="전용면적별 평균 공시가격 표" class="app-screenshot">
+    <p>같은 단지라도 전용면적에 따라 공시가격은 크게 달라집니다. 공시가격 화면 아래에는 그 단지의 <strong>전용면적별 평균 공시가격</strong>을 표로 정리해 줍니다.</p>
     <ul>
-      <li><strong>과세표준</strong> = 공시가격 × 60% (공정시장가액비율)</li>
-      <li>과세표준 구간별 누진세율로 산출한 <strong>재산세</strong></li>
-      <li><strong>지방교육세 · 도시지역분</strong>까지 더한 세액 합계</li>
-      <li><strong>세부담 상한제</strong> 안내 — 공시가격에 따라 전년도 세액의 105% · 110% · 130%로 인상 폭을 제한</li>
+      <li>면적 종류별로 그 해 전체 세대의 <strong>평균 공시가격</strong>을 계산</li>
+      <li>전용면적 <strong>오름차순</strong>으로 정렬해 한눈에 비교</li>
+      <li>우리 집 면적이 단지 안에서 어느 수준인지 가늠</li>
     </ul>
-    <p>같은 화면에서 <strong>전용면적별 평균 공시가격</strong> 표도 제공해, 같은 단지 안에서 면적대별로 가격이 어떻게 다른지 비교할 수 있습니다.</p>
+    <p>비슷한 면적의 다른 세대와 우리 집을 견주거나, 매물을 살펴볼 때 면적대별 가격 감을 잡는 데 참고할 수 있습니다.</p>
   </div>
 </section>
 
@@ -130,7 +129,7 @@ title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재�
     <p>우리 집, 부모님 집, 관심 있는 매물처럼 자주 확인하는 세대는 <strong>즐겨찾기</strong>에 저장해 둘 수 있습니다.</p>
     <ul>
       <li>아파트 단위가 아니라 <strong>동·호 세대 단위</strong>로 저장</li>
-      <li>저장한 세대를 누르면 검색 없이 바로 공시가격·재산세 화면으로</li>
+      <li>저장한 세대를 누르면 검색 없이 바로 공시가격 화면으로</li>
       <li>목록에서 삭제 한 번으로 정리</li>
     </ul>
   </div>
@@ -150,7 +149,7 @@ title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재�
 <section class="landing-section landing-section--alt">
   <div class="landing-section__inner">
     <h2>참고 안내</h2>
-    <p>재산세 계산 결과는 조회된 공시가격을 바탕으로 한 <strong>참고용 추정액</strong>입니다. 실제 부과 세액은 지자체의 부과 기준, 감면·특례, 세부담 상한 적용 등에 따라 달라질 수 있으므로, 정확한 금액은 관할 지자체 고지서를 기준으로 확인하시기 바랍니다.</p>
+    <p>표시되는 공시가격은 정부 공공데이터(부동산 공시가격 Open API)를 조회한 값으로, 데이터 갱신 시점에 따라 최신 고시 내용과 차이가 있을 수 있습니다. 공식적인 확인이 필요할 때는 부동산공시가격알리미를 함께 참고하시기 바랍니다.</p>
   </div>
 </section>
 
