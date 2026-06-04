@@ -1,19 +1,172 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "아파트 공시가격"
-appSlug: propertytax
-appName: 아파트 공시가격
-appHasHelp: false
-alternateLang: en
-alternateUrl: /en/propertytax/
+title: "아파트 공시가격 — 전국 아파트 공시가격 조회와 재산세 자동 계산"
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/">← 앱 목록</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h1>아파트 공시가격</h1>
-<p>아파트 공시가격 조회 앱입니다.</p>
-<p>전국 아파트 공시가격을 빠르게 조회할 수 있습니다.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>아파트 공시가격</h1>
+    <p class="landing-hero__lead">전국 아파트의 동·호별 공시가격을 연도별로 조회하고, 그 공시가격으로 올해 재산세까지 한 화면에서 자동 계산해 보여 주는 앱입니다. 현 위치·지도·지번 주소·아파트 이름, 네 가지 방법으로 우리 집을 바로 찾습니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.propertytax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+    <img src="/assets/images/propertytax/preview.webp" alt="아파트 공시가격 — 공시가격 조회와 재산세 계산" class="landing-hero__banner">
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>우리 집 공시가격, 지금 얼마일까</h2>
+    <p>공시가격은 재산세·종합부동산세·건강보험료의 기준이 되는 중요한 숫자입니다. 그런데 막상 확인하려면 부동산공시가격알리미에 들어가 주소를 단계별로 입력해야 해서 번거롭습니다.</p>
+    <ul>
+      <li>내가 사는 동·호의 <strong>공시가격이 올해 얼마인지</strong> 궁금할 때</li>
+      <li>작년 대비 <strong>얼마나 오르고 내렸는지</strong> 추이가 보고 싶을 때</li>
+      <li>이 공시가격이면 <strong>재산세가 얼마나 나올지</strong> 미리 가늠하고 싶을 때</li>
+    </ul>
+    <p>이 앱은 공공데이터(부동산 공시가격 Open API)를 그대로 받아와, 검색 한 번이면 동·호별 공시가격과 연도별 추이, 그리고 올해 재산세 추정액까지 한 화면에 정리해 줍니다. 회원가입 없이 앱을 열면 바로 검색을 시작합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>우리 집을 찾는 네 가지 방법</h2>
+    <img src="/assets/images/propertytax/screenshots/01_main_menu.png" alt="현 위치·지도·지번 주소·아파트 이름 검색과 즐겨찾기 메인 화면" class="app-screenshot">
+    <p>주소를 정확히 몰라도, 상황에 맞는 방법으로 아파트를 찾을 수 있습니다.</p>
+    <ul>
+      <li><strong>현 위치 검색</strong> — 지금 있는 곳 주변의 아파트를 자동으로 찾아 줍니다.</li>
+      <li><strong>지도에서 지정하여 검색</strong> — 지도를 움직여 원하는 위치를 콕 찍으면 그 자리의 아파트를 찾습니다.</li>
+      <li><strong>지번 주소로 검색</strong> — 시/도 · 시/군/구 · 읍/면/동을 고르고 본번·부번을 넣어 정확히 조회합니다.</li>
+      <li><strong>아파트 이름으로 검색</strong> — 단지 이름 일부만 입력해도 전국에서 후보를 찾아 줍니다.</li>
+    </ul>
+    <p>자주 보는 세대는 <strong>즐겨찾기</strong>에 저장해 다음에 한 번에 열 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>지금 있는 곳에서 바로 — 현 위치 검색</h2>
+    <img src="/assets/images/propertytax/screenshots/02_find_here.png" alt="현 위치 주변 아파트 검색 결과 목록" class="app-screenshot">
+    <p>외출 중에 지나가다 본 아파트가 궁금할 때, 주소를 몰라도 됩니다. 현재 위치를 기준으로 주변을 훑어 가까운 공동주택을 목록으로 보여 줍니다.</p>
+    <ul>
+      <li>GPS로 현재 주소를 잡고 주변 일대를 검색</li>
+      <li>아파트 이름과 지번 주소를 함께 표시</li>
+      <li>목록에서 원하는 단지를 누르면 바로 공시가격 화면으로 이동</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>지도를 보며 콕 찍어 검색</h2>
+    <img src="/assets/images/propertytax/screenshots/03_find_map.png" alt="지도에서 위치를 지정해 아파트를 찾는 화면" class="app-screenshot">
+    <p>지도를 움직여 보고 싶은 동네로 이동한 뒤, 원하는 위치를 지정하면 그 자리의 아파트를 찾아 줍니다. 위치를 눈으로 확인하며 검색하고 싶을 때 편리합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>동·호별 공시가격과 연도별 추이</h2>
+    <img src="/assets/images/propertytax/screenshots/04_price_tax.png" alt="동·호 선택과 연도별 공시가격·상승률 표, 재산세 요약" class="app-screenshot">
+    <p>단지를 고른 뒤 <strong>동</strong>과 <strong>호</strong>를 선택하면, 그 세대의 공시가격이 연도별로 펼쳐집니다.</p>
+    <ul>
+      <li><strong>전용면적</strong>을 함께 표시 (예: 전용면적 84.89㎡)</li>
+      <li><strong>기준연도별 공시가격</strong>을 최근 6년치까지 한 표로</li>
+      <li>전년 대비 <strong>상승률(%)</strong>을 ▲ 상승 · ▼ 하락 화살표로 한눈에</li>
+    </ul>
+    <p>몇 년 사이 우리 집 공시가격이 어떻게 움직였는지, 표만 봐도 흐름이 잡힙니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>공시가격으로 계산하는 올해 재산세</h2>
+    <img src="/assets/images/propertytax/screenshots/05_tax_detail.png" alt="재산세 세부담 상한 안내와 전용면적별 평균 공시가격 표" class="app-screenshot">
+    <p>공시가격 아래에는 그 가격을 기준으로 한 <strong>올해 재산세 추정액</strong>이 이어집니다. 별도 입력 없이 조회한 공시가격으로 바로 계산됩니다.</p>
+    <ul>
+      <li><strong>과세표준</strong> = 공시가격 × 60% (공정시장가액비율)</li>
+      <li>과세표준 구간별 누진세율로 산출한 <strong>재산세</strong></li>
+      <li><strong>지방교육세 · 도시지역분</strong>까지 더한 세액 합계</li>
+      <li><strong>세부담 상한제</strong> 안내 — 공시가격에 따라 전년도 세액의 105% · 110% · 130%로 인상 폭을 제한</li>
+    </ul>
+    <p>같은 화면에서 <strong>전용면적별 평균 공시가격</strong> 표도 제공해, 같은 단지 안에서 면적대별로 가격이 어떻게 다른지 비교할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>주소를 알 때 — 지번 주소로 정확히</h2>
+    <img src="/assets/images/propertytax/screenshots/06_find_address.png" alt="시도·시군구·읍면동 선택과 본번·부번 입력 지번 검색 화면" class="app-screenshot">
+    <p>주소를 정확히 알고 있다면 지번 검색이 가장 빠릅니다.</p>
+    <ul>
+      <li><strong>시/도 · 시/군/구 · 읍/면/동</strong>을 차례로 선택</li>
+      <li><strong>본번 - 부번</strong>을 입력하고 조회</li>
+      <li>해당 지번의 공동주택을 목록으로 표시</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>이름만 알아도 — 아파트 이름으로 검색</h2>
+    <img src="/assets/images/propertytax/screenshots/07_find_name.png" alt="아파트 단지 이름으로 전국 후보를 찾는 검색 화면" class="app-screenshot">
+    <p>"자이", "푸르지오"처럼 단지 이름 일부만 입력해도 전국의 해당 단지들을 찾아 줍니다. 정확한 주소를 모를 때 가장 쉬운 방법입니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>자주 보는 집은 즐겨찾기에</h2>
+    <img src="/assets/images/propertytax/screenshots/08_favorites.png" alt="동·호 단위로 저장한 즐겨찾기 목록" class="app-screenshot">
+    <p>우리 집, 부모님 집, 관심 있는 매물처럼 자주 확인하는 세대는 <strong>즐겨찾기</strong>에 저장해 둘 수 있습니다.</p>
+    <ul>
+      <li>아파트 단위가 아니라 <strong>동·호 세대 단위</strong>로 저장</li>
+      <li>저장한 세대를 누르면 검색 없이 바로 공시가격·재산세 화면으로</li>
+      <li>목록에서 삭제 한 번으로 정리</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>데이터 출처</h2>
+    <p>공시가격은 정부가 제공하는 <strong>부동산 공시가격 공공데이터(Open API)</strong>를 그대로 조회해 보여 줍니다. 별도로 가공하지 않은 공식 데이터입니다.</p>
+    <ul>
+      <li>대상: 전국 <strong>공동주택</strong>(아파트·연립·다세대 등)</li>
+      <li>주소 검색은 정부 도로명주소 데이터를 사용</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>참고 안내</h2>
+    <p>재산세 계산 결과는 조회된 공시가격을 바탕으로 한 <strong>참고용 추정액</strong>입니다. 실제 부과 세액은 지자체의 부과 기준, 감면·특례, 세부담 상한 적용 등에 따라 달라질 수 있으므로, 정확한 금액은 관할 지자체 고지서를 기준으로 확인하시기 바랍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android</li>
+      <li>최소 요구 버전: Android 7.0 이상</li>
+      <li>지역: 대한민국 (전국 공동주택)</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.propertytax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
