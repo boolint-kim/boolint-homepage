@@ -1,19 +1,167 @@
 ---
-layout: layouts/app.njk
+layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "중개보수"
-appSlug: realestatecal
-appName: 중개보수
-appHasHelp: false
-alternateLang: en
-alternateUrl: /en/realestatecal/
+title: "중개보수 — 매매·전세·월세 부동산 중개수수료를 바로 계산"
 ---
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/">← 앱 목록</a>
-</p>
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/">← 앱 목록</a>
+  </p>
+</div>
 
-<h1>중개보수</h1>
-<p>부동산 중개보수 계산 앱입니다.</p>
-<p>매매, 전세, 월세 거래 시 중개보수를 간편하게 계산할 수 있습니다.</p>
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>중개보수</h1>
+    <p class="landing-hero__lead">부동산 중개수수료(중개보수)를 매매·전세·월세별로 바로 계산해 주는 앱입니다. 지역과 물건 유형, 거래 금액만 넣으면 법정 상한요율을 자동으로 적용해 중개보수와 부가세 포함 금액까지 한 번에 보여 줍니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.realestatecal" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+    <img src="/assets/images/realestatecal/preview.webp" alt="중개보수 — 매매·전세·월세 중개수수료 계산" class="landing-hero__banner">
+  </div>
+</section>
 
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>중개보수, 정확히 얼마일까</h2>
+    <p>집을 사거나 전·월세 계약을 맺을 때 내야 하는 중개보수는 거래 금액과 물건 종류에 따라 구간별 상한요율이 정해져 있습니다. 그런데 막상 직접 계산하려면 구간을 찾아 요율을 곱하고 한도액까지 따져야 해서 헷갈리기 쉽습니다.</p>
+    <ul>
+      <li>계약 전에 <strong>중개보수가 대략 얼마</strong> 나올지 미리 알고 싶을 때</li>
+      <li>중개사가 제시한 금액이 <strong>법정 상한을 넘지 않는지</strong> 확인하고 싶을 때</li>
+      <li><strong>부가세까지 포함</strong>한 실제 지불액이 궁금할 때</li>
+    </ul>
+    <p>이 앱은 현행 부동산 중개보수 요율표를 그대로 담아, 금액만 넣으면 해당 구간의 상한요율·한도액을 자동으로 적용해 계산해 줍니다. 회원가입 없이 앱을 열면 바로 계산을 시작합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>지역·유형·금액만 넣으면 끝</h2>
+    <img src="/assets/images/realestatecal/screenshots/01_main_buy.png" alt="지역·물건유형·거래유형 선택과 매매가 입력, 중개보수·부가세 포함 결과 메인 화면" class="app-screenshot">
+    <p>한 화면에서 거래 조건을 고르고 금액만 입력하면 중개보수가 바로 계산됩니다.</p>
+    <ul>
+      <li><strong>지역</strong> — 시/도를 선택 (지역에 맞는 요율 기준 적용)</li>
+      <li><strong>물건 유형</strong> — 주택 · 주거용 오피스텔 · 그 외(토지 등)</li>
+      <li><strong>거래 유형</strong> — 매매 · 전세 · 월세</li>
+      <li>금액을 입력하면 <strong>적용 요율과 중개보수</strong>를 즉시 표시</li>
+    </ul>
+    <p>예를 들어 9억 원 매매(주택)는 0.5% 구간이 적용되어 중개보수 450만 원, 부가세 10%를 더한 495만 원으로 계산됩니다. 입력값을 바꾸면 결과도 실시간으로 다시 계산됩니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>전세는 보증금만 넣으면</h2>
+    <img src="/assets/images/realestatecal/screenshots/02_jeonse.png" alt="전세 보증금 입력과 중개보수 계산 결과 화면" class="app-screenshot">
+    <p>전세는 보증금 한 가지만 입력하면 됩니다. 임대차 거래에 맞는 요율 구간이 적용됩니다.</p>
+    <ul>
+      <li>보증금을 만원 단위로 입력하면 <strong>억/만원 단위로 환산해 표시</strong></li>
+      <li>임대차 상한요율(예: 1억~6억 구간 0.3%)을 자동 적용</li>
+      <li>중개보수와 부가세 포함 금액을 함께 확인</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>월세는 보증금과 월세를 자동 환산</h2>
+    <img src="/assets/images/realestatecal/screenshots/03_wolse.png" alt="월세 보증금과 월세를 함께 입력해 환산 보증금으로 중개보수를 계산하는 화면" class="app-screenshot">
+    <p>월세 거래는 <strong>보증금 + 월세</strong>를 함께 입력합니다. 앱이 환산보증금(보증금 + 월세 × 100)을 자동으로 계산해 그 금액에 맞는 요율을 적용합니다.</p>
+    <ul>
+      <li>보증금과 월세를 각각 입력하면 <strong>환산보증금으로 자동 계산</strong></li>
+      <li>환산액이 5천만 원 미만이면 <strong>월세 × 70</strong>으로 다시 환산 (규정 반영)</li>
+      <li>복잡한 월세 환산을 손으로 따질 필요 없이 결과만 확인</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>주거용 오피스텔도 따로 계산</h2>
+    <img src="/assets/images/realestatecal/screenshots/04_officetel.png" alt="주거용 오피스텔 매매 중개보수 계산 화면" class="app-screenshot">
+    <p>주거용 오피스텔은 주택과 요율 체계가 다릅니다. 물건 유형에서 <strong>주거용 오피스텔</strong>을 고르면 그에 맞는 요율(매매 0.5%, 임대차 0.4%)로 계산됩니다.</p>
+    <ul>
+      <li>매매·임대차에 각각 정해진 오피스텔 요율 적용</li>
+      <li>주택과 헷갈리기 쉬운 구분을 앱이 자동으로 처리</li>
+    </ul>
+    <p>주거용 오피스텔이란 전용면적 85㎡ 이하로 전용 입식부엌·화장실·목욕시설을 갖춘 경우에 한합니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>토지·상가 등 그 외 물건</h2>
+    <img src="/assets/images/realestatecal/screenshots/05_etc.png" alt="그 외(토지 등) 물건의 중개보수 계산 화면" class="app-screenshot">
+    <p>주택·오피스텔이 아닌 토지, 상가 등 그 외 물건은 <strong>거래 금액의 0.9% 이내에서 협의</strong>로 정합니다. 앱은 상한 기준인 0.9%로 계산해 줍니다.</p>
+    <ul>
+      <li>물건 유형에서 <strong>그 외(토지 등)</strong> 선택</li>
+      <li>매매·임대차 모두 0.9% 상한 기준으로 산정</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>요율을 직접 적용 — 사용자 요율</h2>
+    <img src="/assets/images/realestatecal/screenshots/06_custom_rate.png" alt="요율입력 토글을 켜고 사용자가 직접 요율을 입력해 계산하는 화면" class="app-screenshot">
+    <p>중개보수는 상한요율 안에서 중개사와 협의해 정할 수 있습니다. <strong>요율입력</strong> 토글을 켜면 법정 상한 대신 실제 협의한 요율을 직접 넣어 계산할 수 있습니다.</p>
+    <ul>
+      <li>토글 하나로 <strong>자동 요율 ↔ 직접 입력</strong> 전환</li>
+      <li>협의한 요율(예: 0.4%)을 넣으면 그 값으로 즉시 재계산</li>
+      <li>실제 계약 조건에 맞춘 금액을 확인할 때 유용</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>부가세까지 포함한 실지불액</h2>
+    <img src="/assets/images/realestatecal/screenshots/07_result.png" alt="지역·물건유형·거래유형·상한요율·한도금액·중개보수·부가세·합계가 정리된 계산 결과 화면" class="app-screenshot">
+    <p>중개사무소가 일반과세자인 경우 중개보수에 <strong>부가세 10%</strong>가 더해집니다. 앱은 화면 상단에서 부가세율을 선택할 수 있어, 중개보수와 부가세, 그리고 둘을 합한 <strong>실제 지불 금액</strong>까지 한눈에 보여 줍니다.</p>
+    <ul>
+      <li>상단 <strong>부가세 10%</strong> 선택으로 부가세 적용 여부·비율 지정</li>
+      <li>계산 결과에서 <strong>지역 · 물건유형 · 거래유형 · 상한요율 · 한도금액 · 중개보수 · 부가세 · 합계</strong>를 표로 정리</li>
+      <li><strong>복사 · 공유</strong> 버튼으로 결과를 메모하거나 상대방에게 바로 전달</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>요율 기준과 지역 안내</h2>
+    <p>중개보수 상한요율은 거래 금액 구간별로 정해져 있으며, 앱은 현행 요율표를 그대로 담고 있습니다.</p>
+    <ul>
+      <li><strong>주택 매매</strong> — 5천만 원 미만 0.6%(한도 25만), 5천만~2억 0.5%(한도 80만), 2억~9억 0.4%, 9억~12억 0.5%, 12억~15억 0.6%, 15억 이상 0.7%</li>
+      <li><strong>주택 임대차</strong> — 5천만 원 미만 0.5%(한도 20만), 5천만~1억 0.4%(한도 30만), 1억~6억 0.3%, 6억~12억 0.4%, 12억~15억 0.5%, 15억 이상 0.6%</li>
+      <li><strong>주거용 오피스텔</strong> — 매매 0.5% · 임대차 0.4%</li>
+      <li><strong>그 외(토지 등)</strong> — 0.9% 이내 협의</li>
+    </ul>
+    <p>지역(시/도)을 선택하면 해당 지자체 조례에서 정한 요율 기준을 함께 확인할 수 있습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>참고 안내</h2>
+    <p>이 계산기의 결과는 참고용입니다. 실제 중개보수는 상한요율 범위 안에서 중개사와 협의해 정해지며, 원룸 등은 건축물대장에 기재된 용도에 따라 적용 요율이 달라질 수 있습니다. 정확한 금액은 거래하는 공인중개사 및 해당 지자체 요율표를 함께 확인하시기 바랍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android</li>
+      <li>지역: 대한민국 (전국 중개보수 요율 기준)</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.realestatecal" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
