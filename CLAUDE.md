@@ -89,8 +89,8 @@
 ```
 
 ### 랜딩 페이지 깊이
-- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, propertytax, realestatecal, transtax (히어로 + 다단 섹션 + 스크린샷)
-- **stub**: gifttax, junsewolse, seoullife, busanlife, myweathertw, finedustmap, iconmixer, englishnumber (이름 + 한 줄 + Play Store 링크). 추후 풀랜딩으로 확장 예정.
+- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, propertytax, realestatecal, transtax, seoullife (히어로 + 다단 섹션 + 스크린샷)
+- **stub**: gifttax, junsewolse, busanlife, myweathertw, finedustmap, iconmixer, englishnumber (이름 + 한 줄 + Play Store 링크). 추후 풀랜딩으로 확장 예정.
 
 ## 디렉토리 구조
 ```

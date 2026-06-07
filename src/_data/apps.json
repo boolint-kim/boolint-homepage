@@ -161,8 +161,10 @@
   {
     "slug": "seoullife",
     "packageName": "com.boolint.seoullife",
-    "name": { "ko": "서울 생활", "en": "Seoul Life" },
-    "description": { "ko": "서울 생활 정보", "en": "Seoul Life Info" },
+    "name": { "ko": "재개발 재건축", "en": "Redevelopment" },
+    "description": { "ko": "수도권 재개발·재건축·건설공사 정보", "en": "Metro Redevelopment Info" },
+    "icon": "/assets/images/seoullife/icon.png",
+    "preview": "/assets/images/seoullife/feature-banner-kr.png",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
