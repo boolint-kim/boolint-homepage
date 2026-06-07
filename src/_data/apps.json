@@ -174,8 +174,10 @@
   {
     "slug": "busanlife",
     "packageName": "com.boolint.busanlife",
-    "name": { "ko": "부산 생활", "en": "Busan Life" },
-    "description": { "ko": "부산 생활 정보", "en": "Busan Life Info" },
+    "name": { "ko": "부산 재개발·재건축", "en": "Busan Redevelopment" },
+    "description": { "ko": "부산 재개발·재건축·건설공사 정보", "en": "Busan Redevelopment Info" },
+    "icon": "/assets/images/busanlife/icon.png",
+    "preview": "/assets/images/busanlife/feature-banner-kr.png",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
