@@ -139,8 +139,10 @@
   {
     "slug": "junsewolse",
     "packageName": "com.boolint.junsewolse",
-    "name": { "ko": "전세월세", "en": "Jeonse Wolse" },
-    "description": { "ko": "전세/월세 계산", "en": "Jeonse/Wolse Calculator" },
+    "name": { "ko": "전월세 임대계산기", "en": "Jeonse Wolse" },
+    "description": { "ko": "전세·월세 전환부터 임대 수익률까지", "en": "Jeonse/Wolse Calculator" },
+    "icon": "/assets/images/junsewolse/icon.png",
+    "preview": "/assets/images/junsewolse/preview.webp",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
