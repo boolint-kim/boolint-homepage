@@ -143,7 +143,8 @@
     "description": { "ko": "전세·월세 전환부터 임대 수익률까지", "en": "Jeonse/Wolse Calculator" },
     "icon": "/assets/images/junsewolse/icon.png",
     "preview": "/assets/images/junsewolse/preview.webp",
-    "platform": ["android"],
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6785770045",
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate"
