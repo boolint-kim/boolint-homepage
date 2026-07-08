@@ -270,12 +270,19 @@
   {
     "slug": "englishnumber",
     "packageName": "com.boolint.englishnumber",
-    "name": { "ko": "영어 숫자", "en": "English Number" },
+    "name": { "ko": "영어 숫자", "en": "Korean Numbers" },
     "description": {
-      "ko": "영어 숫자 읽기 연습",
-      "en": "Practice reading numbers in English (for Korean learners)"
+      "ko": "큰 수·서수·분수·날짜·시간을 영어로 듣기",
+      "en": "Hear every number in Korean and English"
     },
-    "platform": ["android"],
+    "icon": "/assets/images/englishnumber/icon.png",
+    "iconReady": true,
+    "preview": {
+      "ko": "/assets/images/englishnumber/feature-banner-kr.png",
+      "en": "/assets/images/englishnumber/feature-banner-en.png"
+    },
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6788215158",
     "hasHelp": false,
     "category": "learning"
   },
