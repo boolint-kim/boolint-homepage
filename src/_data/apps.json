@@ -261,7 +261,8 @@
     "icon": "/assets/images/universedaily/icon.png",
     "iconReady": true,
     "preview": "/assets/images/universedaily/feature-banner.png",
-    "platform": ["android"],
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6784567518",
     "hasHelp": false,
     "category": "learning",
     "featuredEn": true
