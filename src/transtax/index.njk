@@ -14,7 +14,7 @@ title: "양도세 계산기 — 주택·건물·토지·분양권 양도소득�
 <section class="landing-hero">
   <div class="landing-hero__inner">
     <h1>양도세 계산기</h1>
-    <p class="landing-hero__lead">주택·건물·토지·분양권의 양도소득세를 직접 입력해 계산하고, 같은 매물을 증여·저가양도했을 때의 세금과 취득세까지 한 화면에서 비교하는 부동산 세금 계산기입니다.</p>
+    <p class="landing-hero__lead">주택·건물·토지·분양권의 양도소득세를 직접 입력해 계산하고, 세금이 어떻게 나왔는지 산출 과정·구성·시뮬레이션 그래프로 풀어 보여 줍니다. 같은 매물을 증여하거나 자녀에게 저가양도했을 때의 세금·취득세까지 한 화면에서 비교하는 부동산 세금 계산기입니다.</p>
     <p>
       <a href="https://play.google.com/store/apps/details?id=com.boolint.transtax" class="btn" target="_blank" rel="noopener">
         Google Play에서 다운로드
@@ -86,26 +86,52 @@ title: "양도세 계산기 — 주택·건물·토지·분양권 양도소득�
 
 <section class="landing-section landing-section--alt">
   <div class="landing-section__inner">
-    <h2>계산 결과를 한눈에 — 산출 과정까지</h2>
-    <img src="/assets/images/transtax/screenshots/04_result_house.png" alt="양도세 계산 결과 — 과세표준·세율·양도세 합계" class="app-screenshot">
-    <p>최종 세액만 던져 주는 게 아니라, <strong>세금이 어떻게 나왔는지 과정 전체를 표로</strong> 보여 줍니다.</p>
+    <h2>계산 결과, 핵심부터 — "왜 이렇게 계산됐나요?"</h2>
+    <img src="/assets/images/transtax/screenshots/04_result_summary.png" alt="양도세 결과 요약 카드 — 납부세액·실효세율·순손익·보유기간과 계산 근거 설명" class="app-screenshot">
+    <p>결과 화면 맨 위에서 <strong>납부할 양도소득세(지방소득세 포함) 합계</strong>를 큰 숫자로 먼저 보여 주고, 판단에 필요한 지표를 아래에 정리합니다.</p>
     <ul>
-      <li>양도차익 → <strong>장기보유특별공제</strong>(공제율 명시, 예: 6년 보유·0년 거주 12%) → 양도소득금액</li>
-      <li>기본공제액 → <strong>과세표준</strong> → 적용 <strong>세율</strong>(예: 일반과세 42%) → 누진공제</li>
-      <li><strong>산출세액</strong>과 <strong>지방교육세</strong>를 더한 <strong>양도세 합계</strong></li>
+      <li>적용된 과세 방식을 <strong>뱃지</strong>로 표시 (예: 일반과세 · 2주택)</li>
+      <li><strong>실효세율 · 순손익 · 보유기간</strong>을 한 줄 요약으로 제시</li>
+      <li><strong>왜 이렇게 계산됐나요?</strong> — 취득·양도 시점, 장기보유특별공제율, 과세표준과 세율·누진공제, 기본공제, 지방소득세 포함까지 세액이 나온 근거를 문장으로 풀어 설명</li>
     </ul>
-    <p>어느 단계에서 세금이 늘고 줄었는지 그대로 드러나기 때문에, 보유·거주 기간을 조금 바꿔 보며 절세 시점을 가늠하기에 좋습니다.</p>
   </div>
 </section>
 
 <section class="landing-section">
   <div class="landing-section__inner">
-    <h2>양도가액 분석 차트</h2>
-    <img src="/assets/images/transtax/screenshots/05_result_chart.png" alt="양도가액 비중 도넛 차트와 시간에 따른 양도세 변화 그래프" class="app-screenshot">
-    <p>숫자만으로는 감이 잘 안 올 때, 결과 화면을 그래프로도 볼 수 있습니다.</p>
+    <h2>산출 과정을 표로 — 한 줄씩 따라가기</h2>
+    <img src="/assets/images/transtax/screenshots/05_result_process.png" alt="양도세 계산 과정 표 — 양도가액에서 양도세 합계까지 단계별 금액" class="app-screenshot">
+    <p>최종 세액만 던져 주는 게 아니라, <strong>세금이 어떻게 나왔는지 과정 전체를 표로</strong> 보여 줍니다.</p>
     <ul>
-      <li><strong>양도가액 분석 도넛</strong> — 양도가액에서 취득가액 · 총경비 · 손익 · 양도세가 차지하는 비중을 한눈에</li>
-      <li><strong>시간에 따른 양도세 변화</strong> — 보유 기간이 길어질수록 장기보유특별공제로 세금이 어떻게 줄어드는지 선 그래프로 표시</li>
+      <li>양도가액 − 취득가액 − 필요경비 = <strong>양도차익</strong></li>
+      <li>양도차익 − <strong>장기보유특별공제</strong>(보유·거주 연수와 공제율 명시) = 양도소득금액</li>
+      <li>− 기본공제 = <strong>과세표준</strong> × <strong>세율</strong> − 누진공제 = 산출세액</li>
+      <li>산출세액 + <strong>지방소득세</strong> = <strong>양도세 합계</strong></li>
+    </ul>
+    <p>어느 단계에서 세금이 늘고 줄었는지 그대로 드러나, 보유·거주 기간을 조금 바꿔 보며 절세 시점을 가늠하기에 좋습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>세금이 어디로 가는지 — 구성 · 흐름 차트</h2>
+    <img src="/assets/images/transtax/screenshots/06_result_composition.png" alt="양도가액 구성 막대와 양도차익에서 세금까지 워터폴 차트" class="app-screenshot">
+    <p>숫자만으로는 감이 잘 안 올 때, 결과를 그래프로도 볼 수 있습니다.</p>
+    <ul>
+      <li><strong>양도가액은 어디로 가나요?</strong> — 양도가액을 <strong>취득가액 · 양도세(지방소득세 포함) · 내 손익</strong>으로 나눠 비중(%)과 함께 한 막대에 표시</li>
+      <li><strong>차익에서 세금까지</strong> — 양도차익이 <strong>장기보유특별공제 → 기본공제 → 과세표준 → 세금</strong>으로 줄어드는 과정을 워터폴 막대로 시각화</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>조건을 바꿔보며 — 시뮬레이션</h2>
+    <img src="/assets/images/transtax/screenshots/07_result_simulation.png" alt="보유기간별 세금 변화 선그래프와 양도가에 따른 세금 시뮬레이션" class="app-screenshot">
+    <p>지금 조건뿐 아니라 "다르게 하면 어떻게 될까"를 그래프로 미리 봅니다.</p>
+    <ul>
+      <li><strong>보유기간별 변화</strong> — 보유 연수가 길어질수록 장기보유특별공제로 <strong>양도세 · 내 손익 · 공제액</strong>이 어떻게 달라지는지 선그래프로 표시</li>
+      <li><strong>양도가에 따라 세금은?</strong> — 변동폭(1천만 · 2천만 · 5천만 · 1억)을 골라, 양도가를 올리고 내렸을 때 세금과 손익이 어떻게 바뀌는지 <strong>현재가 기준선</strong>과 함께 비교</li>
     </ul>
   </div>
 </section>
@@ -113,28 +139,28 @@ title: "양도세 계산기 — 주택·건물·토지·분양권 양도소득�
 <section class="landing-section landing-section--alt">
   <div class="landing-section__inner">
     <h2>증여하면 세금이 얼마나 다를까 — "증여 해보기"</h2>
-    <img src="/assets/images/transtax/screenshots/06_gift.png" alt="증여 해보기 — 증여자 관계와 증여재산가액 입력" class="app-screenshot">
-    <p>결과 화면의 <strong>증여 해보기</strong> 버튼을 누르면, 같은 매물을 파는 대신 증여했을 때의 증여세를 바로 계산해 비교할 수 있습니다.</p>
+    <img src="/assets/images/transtax/screenshots/08_gift.png" alt="증여 해보기 결과 — 증여세와 증여 취득세를 합친 총 세부담" class="app-screenshot">
+    <p>결과 화면의 <strong>증여 해보기</strong>를 누르면, 같은 매물을 파는 대신 증여했을 때의 세금을 계산해 비교할 수 있습니다. 핵심은 <strong>증여세와 증여 취득세를 합친 총 세부담</strong>을 한 번에 보여 준다는 점입니다.</p>
     <ul>
-      <li><strong>증여자 관계</strong> — 배우자 / 직계존속 / 직계비속 / 그 외 친족 / 기타에 따라 증여재산공제 자동 적용</li>
-      <li><strong>증여재산가액</strong>, <strong>부담부증여 채무액</strong>, <strong>혼인·출산 공제</strong>까지 입력</li>
-      <li>미성년자 여부, 세대생략 할증, 10년 내 사전증여 합산 등 실제 변수를 반영</li>
+      <li><strong>총 세부담 = 증여세 + 증여 취득세</strong>를 큰 숫자로 먼저 제시 (예: 7,110만원 = 증여세 3,880만원 + 증여 취득세 3,230만원)</li>
+      <li><strong>증여세 산출 내역</strong>을 국세청 신고서 항목번호(증여재산가액 · 증여세과세가액 · 증여재산공제 · 혼인출산공제 등)까지 표로 상세 표시</li>
+      <li>증여자 관계별 <strong>증여재산공제</strong>, 부담부증여 <strong>채무액</strong>, 미성년·세대생략 할증, 10년 내 사전증여 합산 등 실제 변수를 반영</li>
     </ul>
   </div>
 </section>
 
 <section class="landing-section">
   <div class="landing-section__inner">
-    <h2>자녀에게 싸게 팔면? — "저가양도" 시뮬레이션</h2>
-    <img src="/assets/images/transtax/screenshots/07_selftrade_table.png" alt="저가양도 계산표 — 금액대별 양도세·증여세·취득세·세금합계 비교" class="app-screenshot">
+    <h2>자녀에게 싸게 팔면? — "저가양도" 계산표</h2>
+    <img src="/assets/images/transtax/screenshots/09_selftrade_table.png" alt="저가양도 계산표 — 금액대별 양도세·증여세·취득세·세금합계 비교" class="app-screenshot">
     <p>자녀 등에게 시세보다 낮은 가격으로 파는 <strong>저가양도</strong>는, 양도세·증여세·취득세가 함께 얽히는 까다로운 영역입니다. 이 앱은 가격대별로 세 가지 세금을 한 표에서 비교해 줍니다.</p>
     <ul>
       <li><strong>자녀공제(5천만원)</strong> / <strong>혼인·출산 공제(1억 5천만원)</strong> 적용 토글</li>
       <li>가격 간격(1,000 / 2,000 / 5,000만원)을 바꿔 가며 금액대별 비교</li>
       <li>각 금액마다 <strong>양도세 · 증여세 · 취득세 · 세금 합계</strong>를 한 줄로 표시하고, 직전 금액 대비 증감을 화살표로 표기</li>
-      <li><strong>부당행위계산 부인</strong>이 적용되는 구간은 별도 아이콘으로 경고</li>
+      <li><strong>세금 합계가 가장 낮은 구간</strong>은 색으로 강조하고, <strong>양도소득세 · 증여세 부당행위계산 부인</strong>이 적용되는 구간은 점 표시로 경고</li>
     </ul>
-    <img src="/assets/images/transtax/screenshots/08_selftrade_detail.png" alt="저가양도 상세 — 부모가 납부할 양도세 산출 내역" class="app-screenshot">
+    <img src="/assets/images/transtax/screenshots/10_selftrade_detail.png" alt="저가양도 상세 — 부모가 납부할 양도세 산출 내역" class="app-screenshot">
     <p>표에서 특정 금액을 탭하면, 그 가격에 팔았을 때 <strong>부모가 납부할 양도세 산출 내역</strong>이 상세하게 펼쳐집니다. "얼마에 넘기는 게 세금까지 합쳐 가장 유리한가"를 직접 따져 볼 수 있습니다.</p>
   </div>
 </section>
@@ -165,8 +191,9 @@ title: "양도세 계산기 — 주택·건물·토지·분양권 양도소득�
   <div class="landing-section__inner">
     <h2>다른 계산기와 무엇이 다를까요?</h2>
     <ul>
+      <li><strong>세액만 아니라 "왜"까지</strong> — 산출 과정 표에 더해, 계산 근거를 문장으로 풀어 주는 <em>자연어 설명</em>과 구성·워터폴·시뮬레이션 <em>그래프</em>로 세금이 나온 이유와 조건을 바꾸면 어떻게 달라지는지까지 보여 줍니다.</li>
       <li><strong>최종 세액만 보여주는 계산기와 다른 점</strong> — 양도차익부터 장기보유특별공제, 과세표준, 세율, 누진공제까지 <em>산출 과정 전체</em>를 표로 펼쳐 보여 줍니다.</li>
-      <li><strong>양도세만 보는 계산기와 다른 점</strong> — 같은 매물을 <em>양도 · 증여 · 저가양도</em>했을 때를 한 흐름에서 비교해, 어느 쪽이 유리한지 판단할 수 있습니다.</li>
+      <li><strong>양도세만 보는 계산기와 다른 점</strong> — 같은 매물을 <em>양도 · 증여 · 저가양도</em>했을 때를 한 흐름에서 비교하고, 증여는 <em>취득세까지 합친 총 세부담</em>으로 어느 쪽이 유리한지 판단할 수 있습니다.</li>
       <li><strong>단순 세율표와 다른 점</strong> — 주택 수, 조정대상지역, 거주요건, 비사업용 토지 등 <em>실제 중과·공제 조건</em>을 반영합니다.</li>
     </ul>
   </div>
