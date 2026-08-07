@@ -40,6 +40,20 @@
     "featuredEn": true
   },
   {
+    "slug": "mysalary",
+    "packageName": "com.boolint.mysalary",
+    "name": { "ko": "연봉 실수령액", "en": "Korea Salary Calculator" },
+    "description": { "ko": "4대보험·소득세 빼고 남는 내 월급", "en": "Net pay after Korean taxes and insurance" },
+    "icon": "/assets/images/mysalary/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/mysalary/preview.webp",
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6792970077",
+    "hasHelp": false,
+    "koreaOnly": true,
+    "category": "realestate"
+  },
+  {
     "slug": "transtax",
     "packageName": "com.boolint.transtax",
     "name": { "ko": "양도세", "en": "Capital Gains Tax" },

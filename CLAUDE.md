@@ -7,21 +7,21 @@
 
 ## 앱 노출 정책
 
-쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 21개 + hidden 15개 = 36개**.
+쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 22개 + hidden 15개 = 37개**.
 
 ### 카테고리 (4개)
 
 | 키 | 한국 홈 | 영어 홈 | 노출 수 (ko / en) |
 |---|---|---|---|
 | `weather-road` | 날씨·도로 라이브 | Weather & Road Live | 6 / 6 |
-| `realestate` | 부동산·세금 | (영어 홈 제외) | 10 / 0 |
+| `realestate` | 부동산·세금 | (영어 홈 제외) | 11 / 0 |
 | `daily-tool` | 일상 도구·만들기 | Daily Tools & Maker | 3 / 3 |
 | `learning` | 학습·교양 | Learning & Knowledge | 2 / 2 |
 
-### 노출 앱 21개 (apps.json 배열 순서 = 홈 표시 순서)
+### 노출 앱 22개 (apps.json 배열 순서 = 홈 표시 순서)
 
 **weather-road** (6): satpic, camlocation, myweather, weathertw, myweathertw, finedustmap
-**realestate** (10): transtax, acqtax, gifttax, propertytax, junsewolse, realestatecal, seoullife, busanlife, apttradechart, officetradechart
+**realestate** (11): mysalary, transtax, acqtax, gifttax, propertytax, junsewolse, realestatecal, seoullife, busanlife, apttradechart, officetradechart
 **daily-tool** (3): agemap, snapatlas, iconmixer
 **learning** (2): universedaily, englishnumber
 
@@ -70,7 +70,7 @@
 /en/                           → 영어 홈
 
 # 노출 앱별 페이지 (slug = apps.json의 slug)
-/{slug}/                       → 한국어 소개 (21개)
+/{slug}/                       → 한국어 소개 (22개)
 /en/{slug}/                    → 영어 소개 (11개, 영어 홈 노출 앱만)
 
 # AgeMap 도움말 (한·영 동일 구조)
@@ -89,7 +89,7 @@
 ```
 
 ### 랜딩 페이지 깊이
-- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber (히어로 + 다단 섹션 + 스크린샷)
+- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary (히어로 + 다단 섹션 + 스크린샷)
 - **stub**: gifttax, myweathertw, finedustmap, iconmixer (이름 + 한 줄 + Play Store 링크). 추후 풀랜딩으로 확장 예정.
 
 ## 디렉토리 구조
@@ -107,7 +107,7 @@ homepage/
 │   │   └── app-card.njk        # 홈 카드 (preview 이미지 or 첫글자 placeholder)
 │   ├── _data/
 │   │   ├── site.json
-│   │   ├── apps.json           # 36개 앱 (노출 21 + hidden 15)
+│   │   ├── apps.json           # 37개 앱 (노출 22 + hidden 15)
 │   │   └── i18n.json
 │   ├── assets/
 │   │   ├── css/{global,components}.css
@@ -116,7 +116,7 @@ homepage/
 │   ├── en/index.njk            # 영어 홈 (featuredEn + 3 카테고리, realestate 제외)
 │   ├── 404.njk, sitemap.njk
 │   ├── privacy/                # 개인정보처리방침 (ko)
-│   ├── {slug}/index.njk        # 노출 21개 한국어 페이지
+│   ├── {slug}/index.njk        # 노출 22개 한국어 페이지
 │   └── en/
 │       ├── privacy/
 │       └── {slug}/index.njk    # 영어 노출 11개 페이지
@@ -158,7 +158,7 @@ homepage/
 
 ## 검증
 - 로컬: `npm run dev` → localhost:8080
-- 빌드: `npm run build` → `_site/` 확인 (55개 파일, ~0.2초)
+- 빌드: `npm run build` → `_site/` 확인 (56개 파일, ~0.3초)
 - 배포: git push → Cloudflare Pages 자동 배포
 
 ## 남은 작업
