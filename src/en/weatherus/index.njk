@@ -1,0 +1,163 @@
+---
+layout: layouts/base.njk
+mainClass: main--landing
+lang: en
+title: "Weather Radar USA — NEXRAD radar, alerts, and GOES satellite"
+description: "Animated 2-hour radar loops, National Weather Service watches and warnings, and live GOES satellite imagery for the United States. Free, no account."
+---
+
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
+    <a href="/en/">← All apps</a>
+  </p>
+</div>
+
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>Weather Radar USA</h1>
+    <p class="landing-hero__lead">A radar and satellite viewer for the United States. Open it and you are already looking at an animated <strong>2-hour radar loop</strong>; one tap switches to <strong>live GOES satellite imagery</strong>. Watches and warnings from the National Weather Service sit on the same map, and tapping any point reads out the full alert for that spot. No account, no sign up.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.weatherus" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+      <a href="https://apps.apple.com/app/id6807286457" class="btn" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
+    </p>
+    <img src="/assets/images/weatherus/hero.png" alt="Weather Radar USA — radar, alerts, satellite" class="landing-hero__banner">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>The map answers first, the menu comes later</h2>
+    <p>Most of the time the question is simple: <em>is it raining on me, and is it about to?</em> Weather Radar USA opens straight onto the radar map at the position you left it, and starts filling in the last two hours of echoes while the map is still settling. There is no splash screen, no sign-in, and no start-up questionnaire.</p>
+    <img src="/assets/images/weatherus/screenshots/01_radar.webp" alt="Radar map — animated NEXRAD loop over Louisiana with alerts-nearby chip and playback bar" class="app-screenshot">
+    <p>The loop is <strong>12 frames at 10-minute steps, covering 2 hours</strong>, built from the NOAA MRMS reflectivity mosaic. Playback keeps running while you pan and zoom, so you never have to stop the animation to look somewhere else. The timestamp under the map is the frame's own valid time, along with how long ago that was.</p>
+    <p>The base map is a custom dark, desaturated style. That is a deliberate choice rather than a theme: on a standard color map, green and yellow echoes fight with green parks and yellow highways. Toned down, the storm is the only bright thing on the screen while state lines and city labels stay readable. The color legend is one tap away and stays collapsed until you want it, because a legend panel parked over the map costs you a strip of the country every time you open the app.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Watches and warnings, on the same map</h2>
+    <img src="/assets/images/weatherus/screenshots/02_hazards.webp" alt="Warnings mode — National Weather Service watch and warning polygons across the Mississippi valley" class="app-screenshot">
+    <p>A toggle at the bottom of the radar screen switches between <strong>Radar</strong> and <strong>Warnings</strong>. Warnings mode draws every active National Weather Service alert polygon — severe thunderstorm, tornado, flood, winter storm, heat, marine, all of the types — so you can see the shape and reach of what has been issued rather than a list of county names.</p>
+    <p>The two layers are deliberately exclusive. Drawing radar frames and alert polygons at once means the heavy radar tiles hog the queue and the lightweight alert shapes arrive late, over and over, every time you change zoom. Switching modes keeps both instant.</p>
+    <p>On the radar side, an <strong>alerts nearby</strong> chip sits at the top of the screen with a count for your surroundings, and turns red when one of them is a warning rather than a watch. If location permission has not been granted, it uses the center of the map instead of asking again.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Tap the map, read the whole alert</h2>
+    <img src="/assets/images/weatherus/screenshots/03_hazard_sheet.webp" alt="Alert detail sheet — Tropical Storm Warning with what, where, when and safety instructions" class="app-screenshot">
+    <p>Tap any point in Warnings mode and the sheet gives you the alert text as issued, not a summary: the headline and issuing office, when it expires, and the <strong>WHAT / WHERE / WHEN / IMPACTS</strong> breakdown followed by the precautionary and preparedness instructions.</p>
+    <p>This is the part most radar apps leave out. Knowing that a polygon covers your county is only half the information — the wind speeds, the wave heights, and the advice on what to actually do are in the text, and the app shows all of it. If several alerts overlap where you tapped, they are all in the sheet.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Live GOES satellite, one tap away</h2>
+    <img src="/assets/images/weatherus/screenshots/04_satellite.webp" alt="Satellite screen — GOES-19 East GeoColor imagery of the continental United States" class="app-screenshot">
+    <p>The satellite icon in the toolbar opens the imagery side of the app: current loops from <strong>GOES East and GOES West</strong>, again as a 2-hour animation. The image fills the entire screen with the toolbar and controls floating over it on a soft scrim, so a double tap really does fill the display.</p>
+    <p>Where radar tells you what is falling right now, satellite tells you what is on the way — the shape of a frontal band, the spin of a tropical system, the line of storms still a state away. The two screens remember which one you were on, and you can set either as the start screen from the overflow menu.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Zoom in on any storm</h2>
+    <img src="/assets/images/weatherus/screenshots/05_zoom.webp" alt="Zoomed satellite imagery — pinch and double tap to inspect cloud structure" class="app-screenshot">
+    <p>Pinch to zoom freely, double tap to step in by 2x around the point you touched, and flick to send the image gliding with real inertia. The pan boundary is generous by design: any edge or corner of the image can be dragged to the center of the screen, so nothing you want to look at ends up stuck behind the toolbar or the playback bar.</p>
+    <p>Zoom survives the loop. Frames keep advancing at whatever magnification you set, which is the whole point when you are watching a single cell rotate. Pinching in past the fit boundary and letting go snaps back to the full view — a quick way to start over without hunting for a reset button.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>9 imagery channels</h2>
+    <img src="/assets/images/weatherus/screenshots/06_channels.webp" alt="Channel picker — GeoColor, infrared, water vapor, visible, air mass, sandwich, dust, fire temperature, day/night cloud" class="app-screenshot">
+    <p>The channel picker is a grid of live thumbnails, so you pick by what the image looks like rather than by the name of a spectral band.</p>
+    <ul>
+      <li><strong>GeoColor</strong> — true-color by day, and an infrared blend with city lights at night. The default, and the one to use if you only ever use one.</li>
+      <li><strong>Infrared</strong> — cloud-top temperature; works around the clock and picks out the tallest, coldest storm tops.</li>
+      <li><strong>Water vapor</strong> — moisture in the middle atmosphere, which is where you can see the jet stream and dry slots.</li>
+      <li><strong>Visible</strong> — plain reflected sunlight, sharpest daytime detail.</li>
+      <li><strong>Air mass</strong>, <strong>Sandwich</strong>, <strong>Day/night cloud</strong> — composite products that separate warm and cold air masses and cloud types by color.</li>
+      <li><strong>Dust</strong> and <strong>Fire temperature</strong> — for blowing dust events and active fire hot spots.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>22 regions, one tap away</h2>
+    <img src="/assets/images/weatherus/screenshots/07_regions.webp" alt="Region picker — search by state, my location, and a map of available sectors" class="app-screenshot">
+    <p>Coverage follows NOAA's own sectors rather than a home-made grid: the continental US as a whole, nine mainland regions, plus Alaska, Hawaii, Puerto Rico and the Caribbean, and full-disk views from both satellites — <strong>22 views in all</strong>.</p>
+    <p>Nobody thinks in sector names, though, so the picker also takes a <strong>state name</strong>. Type Texas and it takes you to the sector that covers Texas. There is a map you can tap, a list of the wide-area views, and a <strong>My location</strong> shortcut that picks the nearest sector for where you are.</p>
+    <p>The region list is fetched from the server rather than baked into the app, so when NOAA reshuffles a sector the app follows without waiting for an update.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Simple by design</h2>
+    <ul>
+      <li><strong>No account, no sign up.</strong> Install it and you are looking at radar.</li>
+      <li><strong>Pick your start screen</strong> — radar, satellite, or whichever you saw last (the default).</li>
+      <li><strong>Image quality setting</strong> for slower connections, so a 12-frame loop stays quick on a weak signal.</li>
+      <li><strong>Phones and tablets, portrait and landscape.</strong> Rotating keeps the spot you were looking at.</li>
+      <li>The map remembers where you left it, and the tiles for that area are already cached the next time you open the app.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>Where the data comes from</h2>
+    <p>Everything in the app is public United States weather data:</p>
+    <ul>
+      <li><strong>Radar</strong> — MRMS reflectivity mosaic (NOAA), 10-minute frames covering the last 2 hours</li>
+      <li><strong>Watches and warnings</strong> — National Weather Service alerts, including the full issued text</li>
+      <li><strong>Satellite</strong> — GOES East and GOES West imagery (NOAA / NESDIS)</li>
+      <li><strong>Map base</strong> — Google Maps, on the radar screen only</li>
+    </ul>
+    <p>Requests go through a caching proxy rather than straight to the source, which is what keeps the screen from going blank when an upstream server has a bad day, and what lets the app get a frame list instead of scraping a directory page on your phone.</p>
+    <p><strong>This app is not affiliated with NOAA or the National Weather Service.</strong> It is an independent viewer for imagery and alerts those agencies publish openly. For official warnings and safety guidance, follow your local NWS office and local emergency management.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>Privacy — straight talk</h2>
+    <ul>
+      <li><strong>No sign-up, no login, no profile.</strong></li>
+      <li><strong>Location is optional.</strong> It is used to center the map and to pick the nearest satellite sector. Decline it and everything still works from the map center; nothing is uploaded or stored on a server.</li>
+      <li>Network access fetches public NOAA imagery and alerts, and serves ads.</li>
+      <li><strong>Ads</strong>: the app is free and supported by Google AdMob banner and interstitial ads. The AdMob SDK sends advertising ID and impression data to Google. In the EEA, UK, and Switzerland a consent form appears on first launch, and the choice can be changed later from the overflow menu.</li>
+    </ul>
+    <p><a href="/en/privacy/">Read the full privacy policy →</a></p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>App info</h2>
+    <ul>
+      <li>Platform: Android · iOS</li>
+      <li>Language: English</li>
+      <li>Price: free, with ads, no in-app purchases</li>
+      <li>Coverage: United States, including Alaska, Hawaii, Puerto Rico and the Caribbean</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.weatherus" class="btn" target="_blank" rel="noopener">
+        Get it on Google Play
+      </a>
+      <a href="https://apps.apple.com/app/id6807286457" class="btn" target="_blank" rel="noopener">
+        Download on the App Store
+      </a>
+    </p>
+  </div>
+</section>

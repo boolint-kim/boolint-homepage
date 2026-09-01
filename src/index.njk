@@ -22,7 +22,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
     <div class="app-grid app-grid--featured">
       {% for app in apps %}
-        {% if app.featured and not app.hidden %}
+        {% if app.featured and not app.hidden and (app | inKoreanHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -36,7 +36,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.weatherRoad'] }}</h2>
     <div class="app-grid app-grid--small">
       {% for app in apps %}
-        {% if app.category == 'weather-road' and not app.hidden %}
+        {% if app.category == 'weather-road' and not app.hidden and (app | inKoreanHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -50,7 +50,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.realestate'] }}</h2>
     <div class="app-grid app-grid--small">
       {% for app in apps %}
-        {% if app.category == 'realestate' and not app.hidden %}
+        {% if app.category == 'realestate' and not app.hidden and (app | inKoreanHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -64,7 +64,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.dailyTool'] }}</h2>
     <div class="app-grid app-grid--small">
       {% for app in apps %}
-        {% if app.category == 'daily-tool' and not app.hidden %}
+        {% if app.category == 'daily-tool' and not app.hidden and (app | inKoreanHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}
@@ -78,7 +78,7 @@ alternateUrl: /en/
     <h2 class="home-section__title">{{ t['home.section.learning'] }}</h2>
     <div class="app-grid app-grid--small">
       {% for app in apps %}
-        {% if app.category == 'learning' and not app.hidden %}
+        {% if app.category == 'learning' and not app.hidden and (app | inKoreanHome) %}
           {% set cardApp = app %}
           {% include "app-card.njk" %}
         {% endif %}

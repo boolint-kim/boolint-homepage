@@ -7,28 +7,30 @@
 
 ## 앱 노출 정책
 
-쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 22개 + hidden 15개 = 37개**.
+쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 23개(ko 22 + 영문 전용 1) + hidden 15개 = 38개**.
 
 ### 카테고리 (4개)
 
 | 키 | 한국 홈 | 영어 홈 | 노출 수 (ko / en) |
 |---|---|---|---|
-| `weather-road` | 날씨·도로 라이브 | Weather & Road Live | 6 / 6 |
+| `weather-road` | 날씨·도로 라이브 | Weather & Road Live | 6 / 7 |
 | `realestate` | 부동산·세금 | (영어 홈 제외) | 11 / 0 |
 | `daily-tool` | 일상 도구·만들기 | Daily Tools & Maker | 3 / 3 |
 | `learning` | 학습·교양 | Learning & Knowledge | 2 / 2 |
 
-### 노출 앱 22개 (apps.json 배열 순서 = 홈 표시 순서)
+### 노출 앱 (apps.json 배열 순서 = 홈 표시 순서)
 
-**weather-road** (6): satpic, camlocation, myweather, weathertw, myweathertw, finedustmap
+**weather-road**: satpic, camlocation, myweather, weathertw, **weatherus**(영어 홈만), myweathertw, finedustmap
 **realestate** (11): mysalary, transtax, acqtax, gifttax, propertytax, junsewolse, realestatecal, seoullife, busanlife, apttradechart, officetradechart
 **daily-tool** (3): agemap, snapatlas, iconmixer
 **learning** (2): universedaily, englishnumber
 
+- **weatherus(Weather Radar USA)는 영문 전용 앱** — 한국어 페이지가 없어 `showInKorean: false` 로 한국 홈에서만 뺐다(hidden 이 아니다. hidden 은 영어 홈까지 막는다).
+
 ### Featured 섹션
 
 - 한국 홈 (6, 2×3): satpic, camlocation, transtax, weathertw, propertytax, seoullife
-- 영어 홈 (4, 2×2): satpic, camlocation, weathertw, universedaily
+- 영어 홈 (5): satpic, camlocation, weathertw, weatherus, universedaily — 2열 그리드라 마지막 1개가 홀로 남는 3행 구조
 - featured 앱은 자기 카테고리 섹션에도 그대로 표시 (중복 노출 OK).
 
 ## 기술 스택
@@ -57,21 +59,22 @@
 | `category` | string | weather-road / realestate / daily-tool / learning |
 | `koreaOnly` | boolean | 데이터·시장이 한국 한정인지 (메타데이터, 노출과 무관) |
 | `showInEnglish` | boolean | 영어 홈 노출 여부. 미지정 시 `!koreaOnly` (즉 `koreaOnly:true`면 기본 숨김, 명시로 강제 노출 가능). 필터: `.eleventy.js`의 `inEnglishHome` |
+| `showInKorean` | boolean | 한국 홈 노출 여부. 미지정 시 노출. 영문 전용 앱(한국어 페이지 없음)만 `false`. 필터: `.eleventy.js`의 `inKoreanHome` |
 | `featured` | boolean | 한국 홈 featured 섹션 노출 |
 | `featuredEn` | boolean | 영어 홈 featured 섹션 노출 (featured와 독립) |
 | `hidden` | boolean | 홈페이지 전체 미노출 (카테고리·featured 모두 제외) |
 
 ## URL 구조
 
-각 노출 앱마다 `/{slug}/` 한국어 페이지가 있고, 영어 홈에 노출되는 11개는 `/en/{slug}/`도 있음. AgeMap만 도움말(`/agemap/help/...`) 7페이지 추가.
+각 노출 앱마다 `/{slug}/` 한국어 페이지가 있고, 영어 홈에 노출되는 12개는 `/en/{slug}/`도 있음. weatherus 는 영문 전용이라 `/en/weatherus/` 만 있다. AgeMap만 도움말(`/agemap/help/...`) 7페이지 추가.
 
 ```
 /                              → 한국어 홈
 /en/                           → 영어 홈
 
 # 노출 앱별 페이지 (slug = apps.json의 slug)
-/{slug}/                       → 한국어 소개 (22개)
-/en/{slug}/                    → 영어 소개 (11개, 영어 홈 노출 앱만)
+/{slug}/                       → 한국어 소개 (22개, weatherus 제외)
+/en/{slug}/                    → 영어 소개 (12개, 영어 홈 노출 앱만)
 
 # AgeMap 도움말 (한·영 동일 구조)
 /agemap/help/                  → 도움말 목차
@@ -89,13 +92,13 @@
 ```
 
 ### 랜딩 페이지 깊이
-- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary (히어로 + 다단 섹션 + 스크린샷)
+- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, weatherus, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary (히어로 + 다단 섹션 + 스크린샷)
 - **stub**: gifttax, myweathertw, finedustmap, iconmixer (이름 + 한 줄 + Play Store 링크). 추후 풀랜딩으로 확장 예정.
 
 ## 디렉토리 구조
 ```
 homepage/
-├── .eleventy.js                 # 11ty 설정 + inEnglishHome 필터
+├── .eleventy.js                 # 11ty 설정 + inEnglishHome/inKoreanHome 필터
 ├── wrangler.toml
 ├── package.json
 ├── public/                      # 빌드 없이 그대로 복사
@@ -107,7 +110,7 @@ homepage/
 │   │   └── app-card.njk        # 홈 카드 (preview 이미지 or 첫글자 placeholder)
 │   ├── _data/
 │   │   ├── site.json
-│   │   ├── apps.json           # 37개 앱 (노출 22 + hidden 15)
+│   │   ├── apps.json           # 38개 앱 (노출 23 + hidden 15)
 │   │   └── i18n.json
 │   ├── assets/
 │   │   ├── css/{global,components}.css
@@ -119,7 +122,7 @@ homepage/
 │   ├── {slug}/index.njk        # 노출 22개 한국어 페이지
 │   └── en/
 │       ├── privacy/
-│       └── {slug}/index.njk    # 영어 노출 11개 페이지
+│       └── {slug}/index.njk    # 영어 노출 12개 페이지
 ```
 
 ## 레이아웃 계층
@@ -158,7 +161,7 @@ homepage/
 
 ## 검증
 - 로컬: `npm run dev` → localhost:8080
-- 빌드: `npm run build` → `_site/` 확인 (56개 파일, ~0.3초)
+- 빌드: `npm run build` → `_site/` 확인 (57개 파일, ~0.3초)
 - 배포: git push → Cloudflare Pages 자동 배포
 
 ## 남은 작업
@@ -170,4 +173,5 @@ homepage/
 
 ## 완료된 작업
 - ✅ 개인정보처리방침 페이지 추가 (한글/영문 각 1페이지)
+- ✅ 2026-09-01 WeatherUs(Weather Radar USA) 영문 전용 랜딩 추가 — `/en/weatherus/`, 영어 홈 카테고리+featuredEn 노출, `showInKorean` 플래그 신설
 - ✅ 2026-05-21 홈 재구조: 8개 → 21개 앱 노출, 4개 카테고리(weather-road / realestate / daily-tool / learning), featured/featuredEn boolean 분리, showInEnglish 기본값 규칙 (RESTRUCTURE_SPEC.md 참조)

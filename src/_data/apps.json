@@ -96,6 +96,22 @@
     "featuredEn": true
   },
   {
+    "slug": "weatherus",
+    "packageName": "com.boolint.weatherus",
+    "name": { "ko": "Weather Radar USA", "en": "Weather Radar USA" },
+    "description": { "ko": "미국 NEXRAD 레이더·기상특보·GOES 위성영상", "en": "NEXRAD radar, NWS alerts, and GOES satellite loops for the USA" },
+    "icon": "/assets/images/weatherus/icon.png",
+    "iconReady": true,
+    "preview": "/assets/images/weatherus/preview.webp",
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/app/id6807286457",
+    "hasHelp": false,
+    "showInKorean": false,
+    "showInEnglish": true,
+    "category": "weather-road",
+    "featuredEn": true
+  },
+  {
     "slug": "myweathertw",
     "packageName": "com.boolint.myweathertw",
     "name": { "ko": "날씨비서 (대만)", "en": "My Weather Taiwan" },

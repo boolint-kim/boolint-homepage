@@ -12,6 +12,13 @@ module.exports = function(eleventyConfig) {
     return !(app && app.koreaOnly);
   });
 
+  // 한국 홈 노출 여부 (showInKorean 명시값 우선, 미지정 시 노출)
+  // 영문 전용 앱(한국어 페이지가 없는 앱)은 showInKorean: false 로 뺀다
+  eleventyConfig.addFilter("inKoreanHome", function(app) {
+    if (app && app.showInKorean !== undefined) return !!app.showInKorean;
+    return true;
+  });
+
   return {
     dir: {
       input: "src",
