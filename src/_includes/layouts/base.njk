@@ -31,7 +31,8 @@
   <link rel="stylesheet" href="/assets/css/global.css?v=20260513b">
   <link rel="stylesheet" href="/assets/css/components.css?v=20260513b">
 
-  {% block head %}{% endblock %}
+  {# 페이지 전용 CSS — 프론트매터에 pageCss 를 준 페이지만 (예: /trend/) #}
+  {% if pageCss %}<link rel="stylesheet" href="{{ pageCss }}">{% endif %}
 </head>
 <body>
   {% include "header.njk" %}
@@ -41,5 +42,8 @@
   </main>
 
   {% include "footer.njk" %}
+
+  {# 페이지 전용 JS — defer 라 DOM 이 준비된 뒤 실행된다 #}
+  {% if pageJs %}<script src="{{ pageJs }}" defer></script>{% endif %}
 </body>
 </html>
