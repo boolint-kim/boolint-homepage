@@ -367,7 +367,36 @@
 
   // ─────────────────────────────────────────────────────────── 셀프배너
   // 안드로이드·iOS 는 SelfBanner 라이브러리를 쓰지만 웹은 없어서 직접 그린다.
-  // 데이터·도메인은 같으므로 통계가 한쪽으로 모인다.
+  // 데이터·도메인이 같아 Cloudflare Analytics 통계가 한쪽으로 모인다.
+  //
+  // banners.json 에는 링크 필드가 없다 — packageName(안드로이드)과 iosUrl 로 조립한다.
+  // title/description 은 문자열이 아니라 {ko,en} 객체다.
+  var BANNER_ROTATE_MS = 7000;
+
+  function isIos() {
+    var ua = navigator.userAgent || "";
+    // 아이패드는 iPadOS 13+ 부터 데스크톱 사파리로 위장한다 — 터치 지원으로 함께 판별
+    return /iPad|iPhone|iPod/.test(ua) ||
+      (/Macintosh/.test(ua) && typeof document.ontouchend !== "undefined");
+  }
+
+  // 이 페이지를 보는 사람이 한국인지. 배너의 targetCountries 를 거르는 데만 쓴다.
+  function isKorean() {
+    var lang = navigator.language || "";
+    if (lang.toLowerCase().indexOf("ko") === 0) return true;
+    try {
+      return Intl.DateTimeFormat().resolvedOptions().timeZone === "Asia/Seoul";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function bannerLink(banner, ios) {
+    if (ios) return banner.iosUrl || null; // iOS 판이 없는 앱은 아이폰에서 띄우지 않는다
+    if (!banner.packageName) return null;
+    return "https://play.google.com/store/apps/details?id=" + banner.packageName;
+  }
+
   TrendApp.prototype.loadBanner = function () {
     var self = this;
     fetch(BANNER_URL)
@@ -375,25 +404,65 @@
         return res.ok ? res.json() : null;
       })
       .then(function (data) {
-        var list = (data && (data.banners || data)) || [];
+        var list = (data && data.banners) || [];
         if (!Array.isArray(list) || !list.length) return;
 
-        var pick = list[Math.floor(Math.random() * list.length)];
-        var url = pick.linkUrl || pick.link || pick.url;
-        var image = pick.imageUrl || pick.image;
-        if (!url || !image) return;
+        var ios = isIos();
+        var korean = isKorean();
 
+        var usable = list.filter(function (b) {
+          if (b.enabled === false) return false;
+          if (!b.image) return false;
+          if (!bannerLink(b, ios)) return false;
+          // 자기 자신은 띄우지 않는다
+          if (b.packageName === "com.boolint.trendvideo") return false;
+          var countries = b.targetCountries || ["ALL"];
+          if (countries.indexOf("ALL") !== -1) return true;
+          return korean && countries.indexOf("KR") !== -1;
+        });
+        if (!usable.length) return;
+
+        // banners.json 의 image 는 통짜 배너가 아니라 512x512 앱 아이콘이다.
+        // 네이티브 라이브러리처럼 아이콘 + 제목 + 설명을 여기서 조립한다.
         var slot = self.$("banner");
+        slot.appendChild(el("p", "tv-banner__label", "boolint 의 다른 앱"));
+
         var a = el("a", "tv-banner");
-        a.href = url;
         a.target = "_blank";
         a.rel = "noopener";
-        var img = el("img");
-        img.src = image;
-        img.alt = pick.title || "";
-        img.loading = "lazy";
-        a.appendChild(img);
+
+        var icon = el("img", "tv-banner__icon");
+        icon.loading = "lazy";
+        icon.width = 56;
+        icon.height = 56;
+        icon.alt = "";
+
+        var text = el("div", "tv-banner__text");
+        var title = el("strong", "tv-banner__title");
+        var desc = el("span", "tv-banner__desc");
+        text.appendChild(title);
+        text.appendChild(desc);
+
+        a.appendChild(icon);
+        a.appendChild(text);
+        a.appendChild(el("span", "tv-banner__go", "열기"));
         slot.appendChild(a);
+
+        // 앱 라이브러리(loadAndStart)처럼 돌아가며 보여준다. 한 장만 띄우면
+        // 25개 중 하나만 노출돼 크로스프로모션 값어치가 크게 줄어든다.
+        var lang = isKorean() ? "ko" : "en";
+        var i = Math.floor(Math.random() * usable.length);
+        function show() {
+          var b = usable[i % usable.length];
+          icon.src = b.image;
+          title.textContent = (b.title && (b.title[lang] || b.title.ko || b.title.en)) || "";
+          desc.textContent =
+            (b.description && (b.description[lang] || b.description.ko || b.description.en)) || "";
+          a.href = bannerLink(b, ios);
+          i++;
+        }
+        show();
+        if (usable.length > 1) setInterval(show, BANNER_ROTATE_MS);
       })
       .catch(function () {
         /* 배너는 없어도 그만이다 */
