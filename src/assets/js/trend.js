@@ -371,7 +371,8 @@
   //
   // banners.json 에는 링크 필드가 없다 — packageName(안드로이드)과 iosUrl 로 조립한다.
   // title/description 은 문자열이 아니라 {ko,en} 객체다.
-  var BANNER_ROTATE_MS = 7000;
+  // 라이브러리(SelfBanner.java DEFAULT_INTERVAL)와 같은 10초
+  var BANNER_ROTATE_MS = 10000;
 
   function isIos() {
     var ua = navigator.userAgent || "";
@@ -380,15 +381,23 @@
       (/Macintosh/.test(ua) && typeof document.ontouchend !== "undefined");
   }
 
-  // 이 페이지를 보는 사람이 한국인지. 배너의 targetCountries 를 거르는 데만 쓴다.
-  function isKorean() {
+  // 라이브러리는 Locale.getDefault().getCountry() 로 "KR"·"TW"·"US" 를 얻는다.
+  // 웹에는 그런 API 가 없어 navigator.language 의 지역 서브태그를 쓰고,
+  // 언어만 있는 경우(예: "ko")를 위해 타임존으로 한 번 더 본다.
+  function deviceCountry() {
     var lang = navigator.language || "";
-    if (lang.toLowerCase().indexOf("ko") === 0) return true;
+    var m = /[-_]([A-Za-z]{2})$/.exec(lang);
+    if (m) return m[1].toUpperCase();
     try {
-      return Intl.DateTimeFormat().resolvedOptions().timeZone === "Asia/Seoul";
+      if (Intl.DateTimeFormat().resolvedOptions().timeZone === "Asia/Seoul") return "KR";
     } catch (e) {
-      return false;
+      /* 구형 브라우저 */
     }
+    return lang.toLowerCase().indexOf("ko") === 0 ? "KR" : "";
+  }
+
+  function isKorean() {
+    return deviceCountry() === "KR";
   }
 
   function bannerLink(banner, ios) {
@@ -408,19 +417,32 @@
         if (!Array.isArray(list) || !list.length) return;
 
         var ios = isIos();
-        var korean = isKorean();
+        var country = deviceCountry();
 
+        // 라이브러리(SelfBanner.java filterBanners)와 같은 규칙.
+        // 단 "이미 설치된 앱 제외"는 웹에서 알 방법이 없어 빠진다 —
+        // 브라우저는 설치된 앱 목록을 주지 않는다.
         var usable = list.filter(function (b) {
           if (b.enabled === false) return false;
           if (!b.image) return false;
           if (!bannerLink(b, ios)) return false;
-          // 자기 자신은 띄우지 않는다
-          if (b.packageName === "com.boolint.trendvideo") return false;
-          var countries = b.targetCountries || ["ALL"];
-          if (countries.indexOf("ALL") !== -1) return true;
-          return korean && countries.indexOf("KR") !== -1;
+          if (b.packageName === "com.boolint.trendvideo") return false; // 자기 자신
+          var countries = b.targetCountries && b.targetCountries.length
+            ? b.targetCountries
+            : ["ALL"];
+          return countries.indexOf("ALL") !== -1 ||
+            (country !== "" && countries.indexOf(country) !== -1);
         });
         if (!usable.length) return;
+
+        // 라이브러리는 Collections.shuffle 로 섞고 순서대로 돈다.
+        // 임의 위치에서 시작하는 것보다 노출이 고르게 퍼진다.
+        for (var s = usable.length - 1; s > 0; s--) {
+          var j = Math.floor(Math.random() * (s + 1));
+          var tmp = usable[s];
+          usable[s] = usable[j];
+          usable[j] = tmp;
+        }
 
         // banners.json 의 image 는 통짜 배너가 아니라 512x512 앱 아이콘이다.
         // 네이티브 라이브러리처럼 아이콘 + 제목 + 설명을 여기서 조립한다.
@@ -451,7 +473,7 @@
         // 앱 라이브러리(loadAndStart)처럼 돌아가며 보여준다. 한 장만 띄우면
         // 25개 중 하나만 노출돼 크로스프로모션 값어치가 크게 줄어든다.
         var lang = isKorean() ? "ko" : "en";
-        var i = Math.floor(Math.random() * usable.length);
+        var i = 0;
         function show() {
           var b = usable[i % usable.length];
           icon.src = b.image;
