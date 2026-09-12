@@ -172,6 +172,12 @@ homepage/
 - git push 허용
 
 ## 완료된 작업
+- ✅ 2026-09-12 스페인어 개인정보처리방침 추가 — `/es/privacy/` 한 페이지뿐인 로케일.
+  WeatherEs(El tiempo Radar) 앱이 법적 고지에서 직접 링크로 들어오는 자리다.
+  스페인어 홈은 없어서 `header.njk` 의 prefix 가 es 를 **영어 홈**으로 보내고,
+  `i18n.json` 의 `es` 는 템플릿이 실제로 쓰는 **7개 키만** 있다
+  (스페인어 페이지를 더 만들면 키를 채울 것 — 없는 키는 조용히 빈 문자열로 렌더된다).
+  ⚠️ ko·en·es 세 판은 같은 방침이다. **한 판만 고치지 말 것**
 - ✅ 개인정보처리방침 페이지 추가 (한글/영문 각 1페이지)
 - ✅ 2026-09-01 WeatherUs(Weather Radar USA) 영문 전용 랜딩 추가 — `/en/weatherus/`, 영어 홈 카테고리+featuredEn 노출, `showInKorean` 플래그 신설
 - ✅ 2026-05-21 홈 재구조: 8개 → 21개 앱 노출, 4개 카테고리(weather-road / realestate / daily-tool / learning), featured/featuredEn boolean 분리, showInEnglish 기본값 규칙 (RESTRUCTURE_SPEC.md 참조)

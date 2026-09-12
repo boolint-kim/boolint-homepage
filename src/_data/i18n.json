@@ -53,5 +53,14 @@
     "page.404.title": "Page Not Found",
     "page.404.message": "The page you requested does not exist.",
     "page.404.back": "Go to Home"
+  },
+  "es": {
+    "siteTitle": "Boolint Apps",
+    "siteDescription": "Página del desarrollador boolint",
+    "nav.home": "Inicio",
+    "lang.switch": "English",
+    "lang.switchUrl": "/en/privacy/",
+    "footer.copyright": "© {year} boolint. Todos los derechos reservados.",
+    "footer.privacy": "Política de Privacidad"
   }
 }

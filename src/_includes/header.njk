@@ -1,6 +1,8 @@
 {# 공통 헤더 #}
 {% set t = i18n[lang or 'ko'] %}
-{% set prefix = '/en/' if lang == 'en' else '/' %}
+{# es 는 개인정보처리방침 한 페이지뿐이라 스페인어 홈이 없다 → 영어 홈으로 보낸다.
+   여기서 빼면 스페인어 페이지의 로고·홈 링크가 한국어 홈으로 간다. #}
+{% set prefix = '/en/' if lang == 'en' or lang == 'es' else '/' %}
 
 <header class="header">
   <div class="header__inner container">
