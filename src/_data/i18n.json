@@ -62,5 +62,14 @@
     "lang.switchUrl": "/en/privacy/",
     "footer.copyright": "© {year} boolint. Todos los derechos reservados.",
     "footer.privacy": "Política de Privacidad"
+  },
+  "cs": {
+    "siteTitle": "Boolint Apps",
+    "siteDescription": "Stránka vývojáře boolint",
+    "nav.home": "Domů",
+    "lang.switch": "English",
+    "lang.switchUrl": "/en/privacy/",
+    "footer.copyright": "© {year} boolint. Všechna práva vyhrazena.",
+    "footer.privacy": "Zásady ochrany osobních údajů"
   }
 }

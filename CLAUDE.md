@@ -172,6 +172,9 @@ homepage/
 - git push 허용
 
 ## 완료된 작업
+- ✅ 2026-10-01 체코어 개인정보처리방침 추가 — `/cs/privacy/`. es 와 같은 구조(한 페이지뿐인 로케일, 홈 링크는 영어 홈,
+  `i18n.json` 의 `cs` 는 7개 키만). WeatherCz(Radar srážek) 출처 시트가 직접 링크한다. 번역은 Claude — 원어민 검토 전.
+  ⚠️ 이제 **ko·en·es·cs 네 판**이 같은 방침이다. **한 판만 고치지 말 것**
 - ✅ 2026-09-12 스페인어 개인정보처리방침 추가 — `/es/privacy/` 한 페이지뿐인 로케일.
   WeatherEs(El tiempo Radar) 앱이 법적 고지에서 직접 링크로 들어오는 자리다.
   스페인어 홈은 없어서 `header.njk` 의 prefix 가 es 를 **영어 홈**으로 보내고,
