@@ -7,8 +7,8 @@
     "icon": "/assets/images/satpic/icon.png",
     "iconReady": true,
     "preview": {
-      "ko": "/assets/images/satpic/feature-banner-kr.png",
-      "en": "/assets/images/satpic/feature-banner-en.png"
+      "ko": "/assets/images/satpic/feature-banner-kr.webp",
+      "en": "/assets/images/satpic/feature-banner-en.webp"
     },
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937",
@@ -27,8 +27,8 @@
     "icon": "/assets/images/camlocation/icon.png",
     "iconReady": true,
     "preview": {
-      "ko": "/assets/images/camlocation/feature-banner-kr.png",
-      "en": "/assets/images/camlocation/feature-banner-en.png"
+      "ko": "/assets/images/camlocation/feature-banner-kr.webp",
+      "en": "/assets/images/camlocation/feature-banner-en.webp"
     },
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/us/app/%EC%A0%84%EA%B5%AD-cctv-%EC%A7%80%EB%8F%84/id6473665999",
@@ -74,7 +74,7 @@
     "description": { "ko": "한국 날씨 + 도로 CCTV를 한 앱에", "en": "Korean forecasts and road CCTVs in one app" },
     "icon": "/assets/images/myweather/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/myweather/preview.png",
+    "preview": "/assets/images/myweather/preview.webp",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
@@ -138,7 +138,7 @@
     "name": { "ko": "취득세", "en": "Acquisition Tax" },
     "description": { "ko": "부동산 취득세 계산", "en": "Real Estate Acquisition Tax Calculator" },
     "icon": "/assets/images/acqtax/icon.png",
-    "preview": "/assets/images/acqtax/feature-banner-kr.png",
+    "preview": "/assets/images/acqtax/feature-banner-kr.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/us/app/%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0%EA%B8%B0/id6452676219",
     "hasHelp": false,
@@ -201,7 +201,7 @@
     "name": { "ko": "수도권 재개발·재건축", "en": "Redevelopment" },
     "description": { "ko": "수도권 재개발·재건축·건설공사 정보", "en": "Metro Redevelopment Info" },
     "icon": "/assets/images/seoullife/icon.png",
-    "preview": "/assets/images/seoullife/feature-banner-kr.png",
+    "preview": "/assets/images/seoullife/feature-banner-kr.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/id6792970077",
     "hasHelp": false,
@@ -215,7 +215,7 @@
     "name": { "ko": "부산 재개발·재건축", "en": "Busan Redevelopment" },
     "description": { "ko": "부산 재개발·재건축·건설공사 정보", "en": "Busan Redevelopment Info" },
     "icon": "/assets/images/busanlife/icon.png",
-    "preview": "/assets/images/busanlife/feature-banner-kr.png",
+    "preview": "/assets/images/busanlife/feature-banner-kr.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/id6793005706",
     "hasHelp": false,
@@ -239,7 +239,7 @@
     "description": { "ko": "오피스텔 매매·전세·월세 실거래가를 단지별 차트와 동별 순위로", "en": "Officetel deal, jeonse and wolse records by complex and district" },
     "icon": "/assets/images/officetradechart/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/officetradechart/feature-banner-kr.png",
+    "preview": "/assets/images/officetradechart/feature-banner-kr.webp",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
@@ -252,7 +252,7 @@
     "description": { "ko": "나이 계산기", "en": "Age Calculator" },
     "icon": "/assets/images/agemap/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/agemap/preview.png",
+    "preview": "/assets/images/agemap/preview.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/us/app/agemap/id6760103080",
     "hasHelp": true,
@@ -266,8 +266,8 @@
     "icon": "/assets/images/snapatlas/icon.png",
     "iconReady": true,
     "preview": {
-      "ko": "/assets/images/snapatlas/preview-ko.png",
-      "en": "/assets/images/snapatlas/preview-en.png"
+      "ko": "/assets/images/snapatlas/preview-ko.webp",
+      "en": "/assets/images/snapatlas/preview-en.webp"
     },
     "platform": ["android"],
     "hasHelp": false,
@@ -292,7 +292,7 @@
     },
     "icon": "/assets/images/universedaily/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/universedaily/feature-banner.png",
+    "preview": "/assets/images/universedaily/feature-banner.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/id6784567518",
     "hasHelp": false,
@@ -310,8 +310,8 @@
     "icon": "/assets/images/englishnumber/icon.png",
     "iconReady": true,
     "preview": {
-      "ko": "/assets/images/englishnumber/feature-banner-kr.png",
-      "en": "/assets/images/englishnumber/feature-banner-en.png"
+      "ko": "/assets/images/englishnumber/feature-banner-kr.webp",
+      "en": "/assets/images/englishnumber/feature-banner-en.webp"
     },
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/kr/app/id6788215158",
@@ -465,7 +465,7 @@
     "description": { "ko": "카테고리별로 지금 뜨는 유튜브 영상, 안 본 것만 골라 보기", "en": "Korea's YouTube by category, so you can spot what you haven't seen" },
     "icon": "/assets/images/trendvideo/icon.png",
     "iconReady": true,
-    "preview": "/assets/images/trendvideo/preview.png",
+    "preview": "/assets/images/trendvideo/preview.webp",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
