@@ -1,21 +1,198 @@
 ---
 layout: layouts/base.njk
+mainClass: main--landing
 lang: ko
-title: "증여세 계산기"
+title: "증여세 계산기 — 증여세·취득세·양도세를 한 번에"
+description: "부동산·현금 증여 시 내야 하는 증여세, 증여 취득세, 부담부증여 양도세와 양도 취득세를 한 번의 입력으로 계산하고 세금 합계까지 보여 주는 앱."
 ---
 
-<div class="container" style="padding-top: var(--space-md); padding-bottom: var(--space-2xl);">
-  <p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
+<div class="container" style="padding-top: var(--space-md);">
+  <p style="font-size: 0.875rem;">
     <a href="/">← 앱 목록</a>
   </p>
-  <h1>증여세</h1>
-  <p>부동산·현금 증여 시 발생하는 증여세를 간편하게 계산합니다. 증여재산가액, 공제, 누진세율을 자동 적용해 결과를 한눈에 확인할 수 있습니다.</p>
-  <p style="margin-top: var(--space-xl);">
-    <a href="https://play.google.com/store/apps/details?id=com.boolint.gifttax" class="btn" target="_blank" rel="noopener">
-      Google Play에서 다운로드
-    </a>
-    <a href="https://apps.apple.com/kr/app/id6818410547" class="btn" target="_blank" rel="noopener">
-      App Store에서 다운로드
-    </a>
-  </p>
 </div>
+
+<section class="landing-hero">
+  <div class="landing-hero__inner">
+    <h1>증여세 계산기</h1>
+    <p class="landing-hero__lead">현금이나 부동산을 증여할 때 생기는 세금을 한 번에 계산합니다. 증여세만이 아니라 <strong>증여 취득세</strong>, 전세보증금·대출을 함께 넘기는 <strong>부담부증여의 양도세와 양도 취득세</strong>까지 계산해 마지막에 세금 합계로 보여 주는 증여 전용 계산기입니다.</p>
+    <p>
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.gifttax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/kr/app/id6818410547" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+    <img src="/assets/images/gifttax/feature-banner-kr.webp" alt="증여세 계산기 — 증여세·취득세·양도세 한 번에 계산" class="landing-hero__banner" width="1024" height="500">
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>증여할 때 내는 세금, 증여세만이 아닙니다</h2>
+    <p>부동산을 증여하면 세금이 여러 갈래로 생기고, 내는 사람도 다릅니다.</p>
+    <ul>
+      <li><strong>증여세</strong> — 받는 사람(수증자)이 냅니다. 관계에 따라 공제가 다르고, 10% ~ 50% 누진세율이 붙습니다.</li>
+      <li><strong>증여 취득세</strong> — 부동산을 받은 사람이 냅니다. 주택은 조정대상지역·증여자 주택 수·공시가격에 따라 중과 여부가 갈립니다.</li>
+      <li><strong>양도세</strong> — 부담부증여라면 넘겨받은 채무만큼은 <em>판 것</em>으로 보아 <strong>주는 사람(증여자)</strong>이 냅니다.</li>
+      <li><strong>양도 취득세</strong> — 같은 채무 부분에 대해 받는 사람이 유상 취득세를 냅니다.</li>
+    </ul>
+    <p>이 네 가지를 따로 계산하면 기준 금액이 서로 엇갈려 헷갈리기 쉽습니다. 앱은 한 번 입력한 내용으로 네 세금을 모두 계산하고, 결과 맨 아래에 <strong>세금 합계</strong>를 보여 줍니다.</p>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>증여자만 고르면 공제는 자동</h2>
+    <img src="/assets/images/gifttax/screenshots/01_input.png" alt="증여세 계산기 입력 화면 — 증여자 선택, 혼인출산 공제, 세대생략 할증, 미성년자" class="app-screenshot" loading="lazy">
+    <p>첫 화면에서 증여하는 사람과의 관계를 버튼으로 고르면 증여재산공제가 자동으로 적용됩니다.</p>
+    <ul>
+      <li><strong>배우자</strong> — 6억원</li>
+      <li><strong>직계존속</strong>(부모가 자녀에게 등) — 5천만원, 받는 사람이 미성년자면 2천만원</li>
+      <li><strong>직계비속</strong>(자녀가 부모에게 등) — 5천만원</li>
+      <li><strong>그 외 친족</strong>(6촌 이내 혈족, 4촌 이내 인척) — 1천만원</li>
+    </ul>
+    <p>여기에 <strong>혼인·출산 공제</strong>(직계존속에게서 혼인 전후 2년 또는 자녀 출생 후 2년 이내에 받으면 최대 1억원), 조부모가 손자녀에게 바로 주는 <strong>세대생략 할증</strong>, 기한 내 신고 시 <strong>신고세액공제 3%</strong>까지 반영합니다. 10년 이내 같은 사람에게서 받은 증여재산 합산과 이미 낸 세금 공제도 입력할 수 있습니다.</p>
+
+    <div class="case-box">
+      <p class="case-box__title">실제 계산 사례</p>
+      <h3>부모가 결혼하는 자녀에게 현금 1억 5천만원 — 혼인 공제가 있을 때와 없을 때</h3>
+      <ul>
+        <li><strong>혼인 공제 없이</strong> — 과세표준 1억(1억 5천 − 공제 5천) × 10% = 1,000만원 → 신고세액공제 3% 후 <strong>970만원</strong></li>
+        <li><strong>혼인 공제 1억 적용</strong> — 1억 5천 − 5천 − 1억 = 과세표준 0원 → <strong>0원</strong></li>
+      </ul>
+      <p class="case-box__result">혼인 신고 전후 2년 안에 받으면 같은 금액에서 세금이 <strong>970만원 → 0원</strong>이 됩니다. 이 공제는 출산 공제와 합쳐 평생 1억원이 한도입니다.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>큰 금액도 틀리지 않게 입력</h2>
+    <img src="/assets/images/gifttax/screenshots/02_amount.png" alt="증여재산가액 입력 시트 — 한글 금액 표시와 빠른 입력 버튼" class="app-screenshot" loading="lazy">
+    <p>증여 금액은 0이 많아 자릿수를 틀리기 쉽습니다. 금액 입력 창은 이렇게 도와줍니다.</p>
+    <ul>
+      <li>입력한 숫자를 <strong>"5억 원"</strong>, <strong>"3억 5000만 원"</strong>처럼 한글 금액으로 바로 표시</li>
+      <li><strong>지우기 · +1천만 · +1억 · +10억</strong> 빠른 입력 버튼</li>
+      <li>공제 한도를 넘는 값을 넣으면 바로 알려 줌</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>부동산 증여 — 취득세 중과 판정까지</h2>
+    <img src="/assets/images/gifttax/screenshots/03_realestate.png" alt="부동산 증여 입력 — 부동산 종류, 증여자 주택수, 조정대상지역, 공시가격, 채무액" class="app-screenshot" loading="lazy">
+    <p>증여재산으로 부동산을 고르면 취득세 계산에 필요한 항목이 이어서 나옵니다.</p>
+    <ul>
+      <li><strong>부동산 종류</strong> — 주택 / 건물 / 토지 / 농지</li>
+      <li><strong>증여자의 주택 수</strong>와 <strong>조정대상지역</strong> 여부 — 조정지역 + 증여자 다주택 + 공시가격 3억 이상이면 증여 취득세가 12%로 중과됩니다</li>
+      <li><strong>주택 공시가격</strong> — 중과 판정 기준. 비워 두면 증여가액으로 판정합니다</li>
+      <li><strong>국민주택규모(85㎡) 초과</strong> 여부 — 농어촌특별세가 붙는지 결정</li>
+      <li><strong>채무액(부담부증여)</strong> — 임대보증금·대출 등 함께 넘기는 채무</li>
+      <li><strong>받는 사람의 주택 수</strong> — 채무 부분 유상 취득세율 결정</li>
+      <li>영농자녀 증여, 감정평가 수수료 공제</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>부담부증여 — 양도세까지 이어서 계산</h2>
+    <img src="/assets/images/gifttax/screenshots/04_trans.png" alt="부담부증여 양도세 입력 — 취득일, 취득가액, 취득비용, 증여일, 양도비용, 거주기간" class="app-screenshot" loading="lazy">
+    <p>채무액을 넣으면 다음 단계에서 증여자가 그 집을 샀을 때의 정보를 받습니다. 넘겨받는 채무는 세법상 <strong>양도</strong>이기 때문에, 증여자에게 양도소득세가 생깁니다.</p>
+    <ul>
+      <li>취득일 · 취득가액 · 취득비용, 증여일 · 양도비용, 거주기간 입력</li>
+      <li>채무 비율만큼 취득가액을 나누는 <strong>환산취득가액</strong> 자동 계산</li>
+      <li><strong>1세대 1주택 비과세</strong>, <strong>다주택 중과</strong>, <strong>장기보유특별공제</strong>(보유·거주기간) 자동 적용</li>
+      <li>과세표준 → 세율 → 누진공제 → 지방소득세까지 단계별 표시</li>
+    </ul>
+    <img src="/assets/images/gifttax/screenshots/07_transresult.png" alt="양도세 결과 — 환산취득가액, 장기보유특별공제, 과세표준, 세율, 지방소득세" class="app-screenshot" loading="lazy">
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>결과 — 신고서 순서 그대로, 계산식까지</h2>
+    <img src="/assets/images/gifttax/screenshots/05_result.png" alt="증여세 결과 — 신고서 항목 번호 순서의 표" class="app-screenshot" loading="lazy">
+    <p>증여세 결과는 국세청 <strong>증여세 신고서와 같은 항목 번호</strong>((17) 증여재산가액, (24) 증여세과세가액, (30) 과세표준, (32) 산출세액 …)로 정리됩니다. 신고서를 옆에 두고 그대로 옮겨 적을 수 있습니다.</p>
+    <img src="/assets/images/gifttax/screenshots/06_detail.png" alt="자세히 보기 — 항목별 계산식과 적용 근거" class="app-screenshot" loading="lazy">
+    <p>오른쪽 위 <strong>자세히</strong>를 누르면 각 항목 아래에 계산식과 적용 근거(예: <em>24-25-혼인출산-29</em>, <em>5억 이하</em>, <em>직계존속</em>)가 표시됩니다. <strong>간단히</strong>를 누르면 금액만 남습니다.</p>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>세금 합계 — 누가 얼마를 내는지 한눈에</h2>
+    <img src="/assets/images/gifttax/screenshots/08_total.png" alt="세금 합계 — 증여세, 증여 취득세, 양도세, 양도 취득세와 합계" class="app-screenshot" loading="lazy">
+    <p>결과 맨 아래에는 네 가지 세금과 합계가 한 표로 나옵니다. 부담부증여를 할지, 채무 없이 증여할지 비교할 때 이 숫자를 보면 됩니다.</p>
+
+    <div class="case-box">
+      <p class="case-box__title">실제 계산 사례</p>
+      <h3>부모가 자녀에게 5억 주택 증여 — 전세보증금 2억을 함께 넘기면?</h3>
+      <p>조건: 비조정지역 · 85㎡ 이하 · 공시가격 3억 5천 · 증여자 2주택 · 자녀 무주택(이 집 포함 1주택) · 증여자는 2015년에 3억에 취득해 5년 거주</p>
+      <ul>
+        <li><strong>부담부증여(보증금 2억 인수)</strong> — 증여세 3,880만 + 증여 취득세 1,140만 + 양도세 824만 + 양도 취득세 220만 = <strong>6,064만원</strong></li>
+        <li><strong>채무 없이 증여</strong> — 증여세 7,760만(과세표준 4억 5천 × 20% − 1천만, 신고세액공제 3%) + 증여 취득세 1,900만(5억 × 3.8%) = <strong>9,660만원</strong></li>
+      </ul>
+      <p class="case-box__result">이 조건에서는 부담부증여가 세금 합계로 약 <strong>3,600만원</strong> 적습니다. 대신 자녀가 보증금 2억을 갚을 의무를 실제로 떠안고, 국세청이 채무 상환을 사후 관리합니다. 증여자의 양도세는 보유 주택 수와 취득가에 따라 크게 달라지므로 꼭 직접 넣어 보세요.</p>
+    </div>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>이런 분께 필요합니다</h2>
+    <ul>
+      <li>자녀에게 아파트나 현금을 증여하려는 부모님</li>
+      <li>전세를 낀 채로 집을 증여할 때 세금이 얼마인지 궁금한 분</li>
+      <li>배우자 증여, 혼인·출산 공제 효과를 미리 따져 보고 싶은 분</li>
+      <li>세무 상담 전에 대략의 세금 규모를 알고 싶은 분</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>주의사항 — 어디까지 참고하면 좋을까요?</h2>
+    <ul>
+      <li>이 계산기는 <strong>일반적인 증여세·취득세·양도세 규정</strong>에 따라 산출합니다. 증여재산 평가(유사매매사례가액·감정가), 일시적 2주택, 조세특례 감면 등 개별 사정은 모두 반영하지 못할 수 있습니다.</li>
+      <li>부동산 증여가액은 <strong>증여일 현재의 시가</strong>가 원칙입니다. 시가를 알기 어려우면 신고 전에 평가 방법부터 확인하세요.</li>
+      <li>부담부증여의 채무는 <strong>실제로 받는 사람이 인수·상환해야</strong> 인정됩니다. 나중에 증여자가 대신 갚으면 그 금액은 다시 증여로 봅니다.</li>
+      <li>증여세 신고 기한은 증여일이 속한 달의 말일부터 <strong>3개월</strong>입니다. 기한 안에 신고해야 신고세액공제 3%를 받습니다.</li>
+      <li>실제 신고·납부는 반드시 <strong>세무사 또는 관할 세무서</strong>와 상담하시기 바랍니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section">
+  <div class="landing-section__inner">
+    <h2>프라이버시 — 정직하게 말씀드립니다</h2>
+    <ul>
+      <li><strong>회원가입·로그인 없음.</strong> 앱을 열면 곧장 계산할 수 있습니다.</li>
+      <li><strong>입력값은 기기에 머무릅니다.</strong> 증여 금액·주택 수·취득가액 같은 정보는 서버로 전송되지 않습니다.</li>
+      <li>네트워크는 광고 표시 외에는 사용하지 않습니다.</li>
+      <li><strong>광고 고지</strong>: 무료 운영을 위해 Google AdMob 광고를 사용합니다. AdMob SDK는 광고 ID와 노출·클릭 데이터를 Google에 전송합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="landing-section landing-section--alt">
+  <div class="landing-section__inner">
+    <h2>앱 정보</h2>
+    <ul>
+      <li>플랫폼: Android / iOS</li>
+      <li>언어: 한국어</li>
+      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+    </ul>
+    <p style="margin-top: var(--space-xl); text-align: center;">
+      <a href="https://play.google.com/store/apps/details?id=com.boolint.gifttax" class="btn" target="_blank" rel="noopener">
+        Google Play에서 다운로드
+      </a>
+      <a href="https://apps.apple.com/kr/app/id6818410547" class="btn" target="_blank" rel="noopener">
+        App Store에서 다운로드
+      </a>
+    </p>
+  </div>
+</section>
