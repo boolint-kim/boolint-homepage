@@ -48,7 +48,7 @@
     "iconReady": true,
     "preview": "/assets/images/mysalary/preview.webp",
     "platform": ["android", "ios"],
-    "appStoreUrl": "https://apps.apple.com/kr/app/id6792970077",
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6798994043",
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate"
@@ -150,7 +150,8 @@
     "packageName": "com.boolint.gifttax",
     "name": { "ko": "증여세", "en": "Gift Tax" },
     "description": { "ko": "증여세 계산", "en": "Gift Tax Calculator" },
-    "platform": ["android"],
+    "platform": ["android", "ios"],
+    "appStoreUrl": "https://apps.apple.com/kr/app/id6818410547",
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate"
