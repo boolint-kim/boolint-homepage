@@ -280,8 +280,14 @@
   {
     "slug": "iconmixer",
     "packageName": "com.boolint.iconmixer",
-    "name": { "ko": "Icon Mixer", "en": "Icon Mixer" },
-    "description": { "ko": "아이콘을 섞어 나만의 이미지를 만드는 도구", "en": "Mix icons to craft your own image" },
+    "name": { "ko": "아이콘 메이커", "en": "Icon Maker" },
+    "description": { "ko": "레이어 3장으로 나만의 앱 아이콘·로고 만들기", "en": "Make your own app icon or logo in three layers" },
+    "icon": "/assets/images/iconmixer/icon.png",
+    "iconReady": true,
+    "preview": {
+      "ko": "/assets/images/iconmixer/feature-banner-ko.webp",
+      "en": "/assets/images/iconmixer/feature-banner-en.webp"
+    },
     "platform": ["android"],
     "hasHelp": false,
     "category": "daily-tool"
