@@ -3,7 +3,7 @@
 ## ⏩ 다음 세션 시작점 (2026-10-15 — v2 전면 재설계 진행 중)
 
 - **정본: `docs/REDESIGN_V2_SPEC.md`** — 목표·결정·디자인 시스템·홈/앱 페이지 규격·매크로 계약·Phase 계획·검증·함정이 전부 거기 있다. **시작 전에 끝까지 읽을 것.**
-- 브랜치 **`redesign`**. **Phase 0·1·2 완료** — 홈과 대표 앱 8개가 v2 다. **다음은 Phase 3(나머지 앱, acqtax 먼저)**, 본보기는 `src/satpic/index.njk`. 쪽마다 검증 통과 시 커밋하고 계속(사용자 지시).
+- 브랜치 **`redesign`**. **Phase 0~3 완료** — 홈과 모든 앱 소개 페이지가 v2 다. **다음은 Phase 4(privacy·404·agemap 도움말·/trend/·옛 파일 정리)**, 앱 페이지 본보기는 `src/satpic/index.njk`. 쪽마다 검증 통과 시 커밋하고 계속(사용자 지시).
 - v2 파일: `src/_includes/layouts/v2.njk`, `src/_includes/v2/{header,footer,macros,home}.njk`, `src/assets/css/v2.css`. 옛 레이아웃·CSS 는 미이전 페이지가 남아 있는 동안 유지한다.
 - 아래 "기술 스택·디렉토리·CSS 전략" 절은 **옛 구조 기준**이다. Phase 4 에서 갱신한다.
 

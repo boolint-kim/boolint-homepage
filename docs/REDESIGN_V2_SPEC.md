@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |---|---|
 | 브랜치 | `redesign` (main 에서 분기. 시안은 커밋 `3a89ed2`) |
-| 진행 | **Phase 0·1·2 완료(2026-10-15)**. v2 페이지: 홈 ko/en + satpic·camlocation·weathertw·universedaily ko/en + transtax·propertytax·seoullife ko + weatherus en. **다음은 Phase 3** |
+| 진행 | **Phase 0~3 완료(2026-10-15)** — 홈과 모든 앱 소개 페이지가 v2. 옛 레이아웃을 쓰는 것은 privacy 4판·404·agemap 도움말 14쪽·/trend/ 뿐. **다음은 Phase 4** |
 | 시안이 건드리지 않은 것 | 기존 페이지 전부. 옛 `base.njk`·`global.css`·`components.css` 는 그대로 살아 있다 |
 | 사용자 확인 | 2026-10-15 Phase 0 에서 사용자가 브라우저로 두 시안 확인 → **변경 없이 OK** |
 
@@ -273,7 +273,7 @@ for p in sys.argv[1:]:
 순서대로: camlocation ko·en → transtax ko(⚠️ 옛 페이지에 case-box 가 없어 `.case` 는 **Phase 3 의 acqtax 로 미룸**) → weathertw ko·en → propertytax ko → seoullife ko → weatherus en → universedaily ko·en.
 각 쪽은 §9 체크리스트. 끝나면 커밋 제안. **이 시점에 사용자가 원하면 main 병합·배포 가능**(옛 페이지와 새 페이지가 섞여도 깨지지 않는다 — 헤더·푸터만 다르게 보인다. 사용자에게 그 점을 말하고 결정을 받는다).
 
-### Phase 3 — 나머지 앱 (2~3 세션, 분야별 묶음)
+### Phase 3 — 나머지 앱 (2~3 세션, 분야별 묶음) — ✅ 2026-10-15 완료
 - realestate ko 8 (**acqtax 를 먼저** — `.case` 컴포넌트를 여기서 추가. case-box 를 쓰는 옛 페이지는 mysalary·acqtax·gifttax 셋): mysalary, acqtax, gifttax, junsewolse, realestatecal, busanlife, apttradechart, officetradechart
 - weather-road: myweather ko·en, myweathertw ko·en(stub), finedustmap ko·en(stub)
 - daily-tool: agemap ko·en(도움말 7×2 쪽은 Phase 4), snapatlas ko·en, iconmixer ko·en
@@ -389,6 +389,13 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 | 2026-10-15 | 사용자 | 영어 홈 학습 분야 한 줄 English numbers → **Korean numbers** | §4.2 |
 | 2026-10-15 | 사용자 | 영어 홈 '만드는 방식' 첫 카드는 기관명 직역 대신 일반화 문장 유지 | en/index.njk |
 | 2026-10-15 | Claude | 시안 satpic 의 광고 고지가 줄어 있던 것을 §9 규칙대로 옛 문장으로 복원 | satpic ko |
+| 2026-10-15 | 사용자 | apttradechart 는 스크린샷 없이 글로(plain 히어로 + 3단 카드). aptrentchart 도 같은 구성 준용 | 두 페이지 |
+| 2026-10-15 | 사용자 | 아이콘 추가 승인 — acqtax(`AndroidStudioProjectsData/AcqTax(취득세)/playstore/main512.png`), apttradechart(`…/AptTradeChart(아파트실거래가)/image/main512.png`) | apps.json iconReady |
+| 2026-10-15 | Claude | realestatecal·myweathertw 아이콘은 propertytax 와 같은 경로 규칙(`app/src/main/ic_launcher-playstore.png`)에서 확인 후 추가. finedustmap 은 원본 못 찾음 → 첫 글자 | apps.json |
+| 2026-10-15 | Claude | myweather 옛 스크린샷이 288px 라 흐림 → `AndroidStudioProjectsData/날씨비서/screenshot/framed`(2026-05, 베젤·광고 없음)에서 가져옴 | myweather/screenshots/ |
+| 2026-10-15 | Claude | 옛 페이지에 가격 정보가 없는 앱(agemap·weatherno)은 "무료" 표기를 넣지 않음 | 두 앱 |
+| 2026-10-15 | Claude | weatherno 는 사이드바(app.njk) 메뉴가 "소개" 하나뿐이라 `.doc-layout` 없이 stub 으로 이전 | weatherno ko/en |
+| 2026-10-15 | Claude | 계산 사례가 있는 3쪽(acqtax·mysalary·gifttax)에 `m.case` 사용, 조건 문단용 `note` 추가 | macros |
 | 2026-10-15 | 사용자 | Phase 2 부터 "특별한 문제가 없으면 커밋하고 계속" — 쪽마다 검증 통과 시 커밋 | 쪽당 커밋 1개 |
 | 2026-10-15 | Claude | transtax 에 case-box 가 없어 `.case` 를 Phase 3 acqtax 로 미룸 | §8 |
 | 2026-10-15 | Claude | universedaily 영어 스크린샷 파일명 어긋남 발견 → 화면 기준으로 매핑, 파일명은 그대로 | §11 |
