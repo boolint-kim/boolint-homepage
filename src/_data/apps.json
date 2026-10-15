@@ -202,6 +202,7 @@
     "name": { "ko": "중개보수", "en": "Brokerage Fee" },
     "description": { "ko": "부동산 중개보수 계산", "en": "Real Estate Brokerage Fee Calculator" },
     "icon": "/assets/images/realestatecal/icon.png",
+    "iconReady": true,
     "preview": "/assets/images/realestatecal/preview.webp",
     "platform": ["android", "ios"],
     "appStoreUrl": "https://apps.apple.com/app/id6446818325",
