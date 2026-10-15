@@ -1,88 +1,43 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: ko
 alternateLang: en
 alternateUrl: /en/
 ---
-{# 한국어 홈 - 히어로 + featured + 4개 카테고리 섹션 #}
-{# 카테고리 내부 정렬: apps.json 배열 순서 (sort 없음) #}
-{% set t = i18n.ko %}
-{% set cardLang = 'ko' %}
-
-<section class="home-hero">
-  <div class="home-hero__inner">
-    <h1 class="home-hero__title">{{ t['home.heroTitle'] }}</h1>
-    <p class="home-hero__subtitle">{{ t['home.heroSubtitle'] }}</p>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
-    <div class="app-grid app-grid--featured">
-      {% for app in apps %}
-        {% if app.featured and not app.hidden and (app | inKoreanHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section home-section--alt">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.weatherRoad'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'weather-road' and not app.hidden and (app | inKoreanHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.realestate'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'realestate' and not app.hidden and (app | inKoreanHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section home-section--alt">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.dailyTool'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'daily-tool' and not app.hidden and (app | inKoreanHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.learning'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'learning' and not app.hidden and (app | inKoreanHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{# 한국어 홈 — 본문은 v2/home.njk 공용. 여기서는 문구만 정한다
+   카테고리 내부 정렬: apps.json 배열 순서 (sort 없음) #}
+{% set shotDir = '/assets/images/' %}
+{% set copy = {
+  h1: '쏠만한 앱 하나쯤은<br>분명 있을 거예요',
+  lead: '위성·레이더 날씨와 도로 CCTV, 부동산 세금 계산기, 사진 지도까지. 공공 데이터로 만들고 열면 바로 쓰는 앱 {n}개를 만들고 있습니다.',
+  btnFeatured: '대표 앱 보기',
+  btnAll: '전체 앱 {n}개',
+  statApps: '출시 앱',
+  statPlatforms: '플랫폼 · Android, iOS',
+  statAreas: '분야 · 날씨, 부동산, 도구, 학습',
+  heroShots: [
+    { src: shotDir + 'camlocation/screenshots/01_map_overview.webp', w: 720, h: 1524 },
+    { src: shotDir + 'satpic/screenshots/06_radar_korea.webp', w: 720, h: 1533 },
+    { src: shotDir + 'transtax/screenshots/04_result_summary.webp', w: 720, h: 1505 }
+  ],
+  featuredH2: '먼저 열어 보면 좋은 여섯 가지',
+  featuredSub: '가장 많이 쓰이고, 가장 오래 다듬어 온 앱들입니다.',
+  linkAll: '전체 앱 보기 →',
+  allH2: '분야별로 모았습니다',
+  allSub: '하나하나가 한 가지 일을 합니다. 필요한 것만 골라 쓰세요.',
+  chipsLabel: '분야 바로가기',
+  cats: [
+    { key: 'weather-road', desc: '위성·레이더 영상과 도로 CCTV 를 시간순으로' },
+    { key: 'realestate',   desc: '세금 계산기부터 실거래 차트, 재개발 정보까지' },
+    { key: 'daily-tool',   desc: '생일 관리, 사진 지도, 아이콘 메이커' },
+    { key: 'learning',     desc: '태양계 3D 크기 비교와 영어 숫자 읽기' }
+  ],
+  howEyebrow: '만드는 방식',
+  howH2: '작게, 정확하게, 바로 쓰이게',
+  cards: [
+    { icon: 'shield', title: '공식 데이터만 씁니다', text: '기상청, 국토교통부, 경찰청 UTIC 같은 공공 출처의 자료를 가공 없이 보여주고, 출처를 앱 안에 표기합니다.' },
+    { icon: 'bolt', title: '열면 바로 씁니다', text: '회원가입과 로그인이 없습니다. 위치 같은 권한은 그 기능을 쓰는 순간에만 묻습니다.' },
+    { icon: 'devices', title: '두 플랫폼을 함께', text: '주요 앱은 Android 와 iOS 를 같이 만들고, 같은 데이터와 같은 계산식으로 결과를 맞춥니다.' }
+  ]
+} %}
+{% include "v2/home.njk" %}

@@ -15,6 +15,12 @@
     "app.learnMore": "자세히 보기",
     "footer.copyright": "© {year} boolint. All rights reserved.",
     "footer.privacy": "개인정보처리방침",
+    "nav.featured": "대표 앱",
+    "nav.all": "전체 앱",
+    "footer.tagline": "공공 데이터로 만든, 열면 바로 쓰는 작은 앱들을 만듭니다.",
+    "footer.categories": "분야",
+    "footer.info": "정보",
+    "footer.platforms": "Android · iOS",
     "page.home.title": "앱 목록",
     "home.heroTitle": "쏠만한 앱 하나쯤은 분명 있을 거예요",
     "home.heroSubtitle": "Boolint Apps",
@@ -43,6 +49,12 @@
     "app.learnMore": "Learn More",
     "footer.copyright": "© {year} boolint. All rights reserved.",
     "footer.privacy": "Privacy Policy",
+    "nav.featured": "Featured",
+    "nav.all": "All apps",
+    "footer.tagline": "Small, focused apps built on public data. Open and use, no sign-up.",
+    "footer.categories": "Categories",
+    "footer.info": "Info",
+    "footer.platforms": "Android · iOS",
     "page.home.title": "Apps",
     "home.heroTitle": "Find one worth keeping",
     "home.heroSubtitle": "Boolint Apps",
@@ -61,7 +73,13 @@
     "lang.switch": "English",
     "lang.switchUrl": "/en/privacy/",
     "footer.copyright": "© {year} boolint. Todos los derechos reservados.",
-    "footer.privacy": "Política de Privacidad"
+    "footer.privacy": "Política de Privacidad",
+    "nav.featured": "Destacadas",
+    "nav.all": "Todas las apps",
+    "footer.tagline": "Apps pequeñas y concretas creadas con datos públicos. Ábrelas y úsalas, sin registro.",
+    "footer.categories": "Categorías",
+    "footer.info": "Información",
+    "footer.platforms": "Android · iOS"
   },
   "cs": {
     "siteTitle": "Boolint Apps",
@@ -70,6 +88,12 @@
     "lang.switch": "English",
     "lang.switchUrl": "/en/privacy/",
     "footer.copyright": "© {year} boolint. Všechna práva vyhrazena.",
-    "footer.privacy": "Zásady ochrany osobních údajů"
+    "footer.privacy": "Zásady ochrany osobních údajů",
+    "nav.featured": "Doporučené",
+    "nav.all": "Všechny aplikace",
+    "footer.tagline": "Malé, praktické aplikace postavené na veřejných datech. Otevřete a používejte, bez registrace.",
+    "footer.categories": "Kategorie",
+    "footer.info": "Informace",
+    "footer.platforms": "Android · iOS"
   }
 }

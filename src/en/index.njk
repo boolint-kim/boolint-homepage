@@ -1,74 +1,42 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: en
 alternateLang: ko
 alternateUrl: /
 ---
-{# 영어 홈 - 히어로 + featuredEn + 3개 카테고리 섹션 (realestate 제외) #}
-{# showInEnglish 기본값 규칙: 명시값 우선, 미지정 시 koreaOnly의 반대 (inEnglishHome 필터) #}
-{% set t = i18n.en %}
-{% set cardLang = 'en' %}
-
-<section class="home-hero">
-  <div class="home-hero__inner">
-    <h1 class="home-hero__title">{{ t['home.heroTitle'] }}</h1>
-    <p class="home-hero__subtitle">{{ t['home.heroSubtitle'] }}</p>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.featured'] }}</h2>
-    <div class="app-grid app-grid--featured">
-      {% for app in apps %}
-        {% if app.featuredEn and not app.hidden %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section home-section--alt">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.weatherRoad'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'weather-road' and not app.hidden and (app | inEnglishHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.dailyTool'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'daily-tool' and not app.hidden and (app | inEnglishHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="home-section home-section--alt">
-  <div class="home-section__inner">
-    <h2 class="home-section__title">{{ t['home.section.learning'] }}</h2>
-    <div class="app-grid app-grid--small">
-      {% for app in apps %}
-        {% if app.category == 'learning' and not app.hidden and (app | inEnglishHome) %}
-          {% set cardApp = app %}
-          {% include "app-card.njk" %}
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</section>
+{# 영어 홈 — 본문은 v2/home.njk 공용. realestate 분야는 영어 홈에서 내지 않는다
+   showInEnglish 기본값 규칙: 명시값 우선, 미지정 시 koreaOnly의 반대 (visibleIn 필터) #}
+{% set shotDir = '/assets/images/' %}
+{% set copy = {
+  h1: 'Find one worth keeping',
+  lead: 'Live weather radar and road cameras, a 3D solar system, a photo atlas. Small apps built on public data — open and use, no sign-up.',
+  btnFeatured: 'See featured',
+  btnAll: 'All {n} apps',
+  statApps: 'Apps',
+  statPlatforms: 'Platforms · Android, iOS',
+  statAreas: 'Areas · Weather, tools, learning',
+  heroShots: [
+    { src: shotDir + 'camlocation/screenshots/01_map_overview.webp', w: 720, h: 1524 },
+    { src: shotDir + 'satpic/screenshots/06_radar_korea.webp', w: 720, h: 1533 },
+    { src: shotDir + 'universedaily/screenshots/en/01_today_sun.webp', w: 720, h: 1454 }
+  ],
+  featuredH2: 'Start with these',
+  featuredSub: 'The most used, and the longest refined.',
+  linkAll: 'All apps →',
+  allH2: 'Grouped by what they do',
+  allSub: 'Each one does a single job. Pick what you need.',
+  chipsLabel: 'Jump to category',
+  cats: [
+    { key: 'weather-road', desc: 'Satellite and radar loops, plus road cameras' },
+    { key: 'daily-tool',   desc: 'Birthdays, a photo map, an icon maker' },
+    { key: 'learning',     desc: 'A 3D solar system and Korean numbers' }
+  ],
+  howEyebrow: 'How we build',
+  howH2: 'Small, accurate, ready to use',
+  cards: [
+    { icon: 'shield', title: 'Official data only', text: 'We show data from public sources such as national weather and transport agencies as published, and credit the source inside the app.' },
+    { icon: 'bolt', title: 'Open and use', text: 'No sign-up, no login. Permissions like location are asked only when you use that feature.' },
+    { icon: 'devices', title: 'Both platforms', text: 'Our main apps are built for Android and iOS together, using the same data and the same formulas so results match.' }
+  ]
+} %}
+{% include "v2/home.njk" %}

@@ -1,7 +1,7 @@
-{# v2 공통 헤더 — 반투명 고정 바. homeUrl 은 시안 기간에 /v2/ 를 가리키게 하려고 둔 변수 #}
+{# v2 공통 헤더 — 반투명 고정 바 #}
 {% set t = i18n[lang or 'ko'] %}
-{% set prefix = '/en/' if lang == 'en' or lang == 'es' or lang == 'cs' else '/' %}
-{% set home = homeUrl or prefix %}
+{# es·cs 는 개인정보처리방침 한 페이지뿐이라 그 언어 홈이 없다 → 영어 홈으로 보낸다 #}
+{% set home = '/en/' if lang == 'en' or lang == 'es' or lang == 'cs' else '/' %}
 
 <header class="header">
   <div class="wrap header__inner">
@@ -9,9 +9,9 @@
       <img src="/favicon-192.png" alt="" width="28" height="28">
       <span>Boolint</span>
     </a>
-    <nav class="header__nav" aria-label="주 메뉴">
-      <a href="{{ home }}#featured" class="header__link">{{ 'Featured' if lang == 'en' else '대표 앱' }}</a>
-      <a href="{{ home }}#apps" class="header__link">{{ 'All apps' if lang == 'en' else '전체 앱' }}</a>
+    <nav class="header__nav" aria-label="{{ t['nav.home'] }}">
+      <a href="{{ home }}#featured" class="header__link">{{ t['nav.featured'] }}</a>
+      <a href="{{ home }}#apps" class="header__link">{{ t['nav.all'] }}</a>
       <a href="{{ t['lang.switchUrl'] }}" class="header__lang">{{ t['lang.switch'] }}</a>
     </nav>
   </div>

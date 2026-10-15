@@ -1,4 +1,20 @@
-{# v2 매크로 모음 — import 해서 쓴다: {% import "v2/macros.njk" as m %} #}
+{# v2 매크로 모음 — import 해서 쓴다: {% import "v2/macros.njk" as m %}
+   페이지는 내용만 채우고, 마크업·클래스는 전부 여기서 정한다 #}
+
+{# ── 공통 ──────────────────────────────────────────────────── #}
+
+{# 카드 아이콘 — db | lock | warn | shield | bolt | devices #}
+{% macro icon(name) %}
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  {%- if name == 'db' -%}<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>
+  {%- elif name == 'lock' -%}<rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+  {%- elif name == 'warn' -%}<path d="M12 3l9.5 17h-19L12 3z"/><path d="M12 10v4"/><path d="M12 17h0"/>
+  {%- elif name == 'shield' -%}<path d="M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/>
+  {%- elif name == 'bolt' -%}<path d="M13 2L4 14h7l-1 8 9-12h-7l1-8z"/>
+  {%- elif name == 'devices' -%}<rect x="3" y="4" width="11" height="17" rx="2"/><rect x="15" y="8" width="6" height="13" rx="1.5"/><path d="M8.5 18h0"/>
+  {%- endif -%}
+</svg>
+{% endmacro %}
 
 {# 스토어 공식 배지 (Google Play PNG 는 투명 여백이 있어 CSS 에서 높이를 보정한다) #}
 {% macro badges(playUrl, appStoreUrl, lang='ko') %}
@@ -16,6 +32,31 @@
 </div>
 {% endmacro %}
 
+{# ── 홈 ────────────────────────────────────────────────────── #}
+
+{# 대표 앱 벤토 타일 — app.tile 이 없으면 스크린샷 없이 렌더한다(빌드를 깨지 않는다) #}
+{% macro tile(app, lang='ko', prefix='/', catName='', large=false) %}
+{% set tl = app.tile or {} %}
+<a class="tile tile--{{ tl.tint or 'sky' }}{% if large %} tile--large{% endif %}" href="{{ prefix }}{{ app.slug }}/">
+  <div class="tile__text">
+    <div class="tile__head">
+      {% if app.iconReady %}
+      <span class="tile__icon"><img src="{{ app.icon }}" alt="" width="52" height="52" loading="lazy"></span>
+      {% else %}
+      <span class="tile__icon tile__icon--ph" aria-hidden="true">{{ app.name[lang] | first }}</span>
+      {% endif %}
+      <div>
+        <div class="tile__cat">{{ catName }}</div>
+        <h3 class="tile__name">{{ app.name[lang] }}</h3>
+      </div>
+    </div>
+    <p class="tile__desc">{{ app.description[lang] }}</p>
+  </div>
+  {% if large %}<span class="tile__cta">{{ 'Learn more →' if lang == 'en' else '자세히 보기 →' }}</span>{% endif %}
+  {% if tl.shot %}<img class="tile__shot" src="{{ tl.shot }}" alt="" width="{{ tl.w }}" height="{{ tl.h }}" loading="lazy">{% endif %}
+</a>
+{% endmacro %}
+
 {# 전체 앱 목록의 한 줄 아이템 — 아이콘(없으면 첫 글자) + 이름 + 한 줄 + 플랫폼 #}
 {% macro appItem(app, lang='ko', prefix='/') %}
 <a class="app-item" href="{{ prefix }}{{ app.slug }}/" data-cat="{{ app.category }}">
@@ -30,4 +71,140 @@
     <span class="app-item__meta">{{ 'Android · iOS' if 'ios' in app.platform else 'Android' }}</span>
   </span>
 </a>
+{% endmacro %}
+
+{# ── 앱 페이지 ─────────────────────────────────────────────── #}
+
+{# 1. 히어로 — shots 1~2개: 첫 장이 가운데(phone--c), 둘째가 오른쪽(phone--r). shots 가 비면 app-hero--plain #}
+{% macro appHero(o) %}
+{% set en = o.lang == 'en' %}
+{% set shots = o.shots or [] %}
+<section class="app-hero{% if not shots.length %} app-hero--plain{% endif %} dark">
+  <div class="wrap">
+    <a href="{{ o.home or ('/en/' if en else '/') }}" class="back">{{ '← All apps' if en else '← 모든 앱' }}</a>
+    <div class="app-hero__grid">
+      <div>
+        <div class="app-hero__id">
+          {% if o.app.iconReady %}<img class="app-hero__icon" src="{{ o.app.icon }}" alt="" width="72" height="72">{% endif %}
+          <div class="app-hero__meta">
+            <span class="tag tag--brand">{{ o.category }}</span>
+            {% for tg in o.tags or [] %}<span class="tag">{{ tg }}</span>{% endfor %}
+          </div>
+        </div>
+        <h1 class="app-hero__title">{{ o.title | safe }}</h1>
+        <p class="lead app-hero__lead">{{ o.lead | safe }}</p>
+        {{ badges(o.playUrl, o.appStoreUrl, o.lang) }}
+        <ul class="app-hero__facts">
+          {% for f in o.facts or [] %}<li>{{ f }}</li>{% endfor %}
+        </ul>
+      </div>
+      {% if shots.length %}
+      <div class="app-hero__visual" aria-hidden="true">
+        <div class="phones">
+          {% if shots[1] %}<img class="phone phone--r" src="{{ shots[1].src }}" alt="" width="{{ shots[1].w }}" height="{{ shots[1].h }}">{% endif %}
+          <img class="phone phone--c" src="{{ shots[0].src }}" alt="" width="{{ shots[0].w }}" height="{{ shots[0].h }}">
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{# 2. 숫자 띠 — 정확히 4개 [{ num, label }] #}
+{% macro facts(items) %}
+<div class="facts">
+  <div class="wrap facts__grid">
+    {% for f in items %}<div class="fact"><span class="fact__num">{{ f.num }}</span><span class="fact__label">{{ f.label }}</span></div>{% endfor %}
+  </div>
+</div>
+{% endmacro %}
+
+{# 3. 기능 행 — {% call m.feat({ eyebrow, title, flip, soft, shots:[{src,alt,w,h}] }) %} 문단 + .checks {% endcall %}
+   shots 가 2장이면 duo #}
+{% macro feat(o) %}
+{% set shots = o.shots or [] %}
+<section class="feat{% if o.soft %} feat--soft{% endif %}{% if o.flip %} feat--flip{% endif %}">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">{{ o.eyebrow }}</p>
+      <h2>{{ o.title | safe }}</h2>
+      {{ caller() }}
+    </div>
+    <div class="feat__media{% if shots.length > 1 %} feat__media--duo{% endif %}">
+      {% for s in shots %}<img class="shot" src="{{ s.src }}" alt="{{ s.alt }}" width="{{ s.w }}" height="{{ s.h }}" loading="lazy">{% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{# 4. 비교 — { eyebrow, title, cards:[{ vs, title, text }] } 3장 #}
+{% macro compare(o) %}
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">{{ o.eyebrow }}</p>
+      <h2>{{ o.title | safe }}</h2>
+    </div>
+    <div class="cards3">
+      {% for c in o.cards %}
+      <div class="card">
+        <p class="card__vs">{{ c.vs }}</p>
+        <h3>{{ c.title }}</h3>
+        <p>{{ c.text | safe }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{# 5. 접힌 전체 기능 — {% call m.more('모든 기능 보기', '요약') %} <div><h4>…</h4><ul>…</ul></div> … {% endcall %} #}
+{% macro more(summary, hint='') %}
+<section class="section">
+  <div class="wrap">
+    <details class="more">
+      <summary>{{ summary }}{% if hint %} <small>{{ hint }}</small>{% endif %}</summary>
+      <div class="more__body">
+        {{ caller() }}
+      </div>
+    </details>
+  </div>
+</section>
+{% endmacro %}
+
+{# 6. 신뢰 — [{ icon, title, items:[…] } 또는 { icon, title, text }] #}
+{% macro trust(cards) %}
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="cards3">
+      {% for c in cards %}
+      <div class="card">
+        <div class="card__icon">{{ icon(c.icon) }}</div>
+        <h3>{{ c.title }}</h3>
+        {% if c.items %}
+        <ul>
+          {% for it in c.items %}<li>{{ it | safe }}</li>{% endfor %}
+        </ul>
+        {% else %}
+        <p>{{ c.text | safe }}</p>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endmacro %}
+
+{# 7. 마지막 CTA — { app, lang, title, lead, playUrl, appStoreUrl, note } #}
+{% macro cta(o) %}
+<section class="cta dark">
+  <div class="wrap">
+    {% if o.app.iconReady %}<img class="cta__icon" src="{{ o.app.icon }}" alt="" width="80" height="80">{% endif %}
+    <h2>{{ o.title | safe }}</h2>
+    <p class="lead">{{ o.lead | safe }}</p>
+    {{ badges(o.playUrl, o.appStoreUrl, o.lang) }}
+    {% if o.note %}<p class="cta__note">{{ o.note }}</p>{% endif %}
+  </div>
+</section>
 {% endmacro %}

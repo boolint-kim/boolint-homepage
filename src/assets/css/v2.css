@@ -257,6 +257,16 @@ button { font: inherit; }
 .tile--large:hover .tile__shot { transform: translateY(-10px); }
 .tile:not(.tile--large) .tile__shot { left: 50%; top: 56%; width: min(66%, 220px); transform: translateX(-50%); }
 .tile:not(.tile--large):hover .tile__shot { transform: translate(-50%, -10px); }
+/* 4열(≥1100)의 작은 타일은 이름 칸이 좁다 → 아이콘을 위로 올려 이름이 타일 폭을 다 쓰게 한다
+   (영문 이름 "UniverseDaily" 가 단어 중간에서 끊기던 문제) */
+@media (min-width: 1100px) {
+  .tile:not(.tile--large) .tile__head { flex-direction: column; align-items: flex-start; gap: .75rem; }
+  /* 머리가 높아진 만큼 타일을 늘리고, 설명은 2줄까지만 (스크린샷과 겹치지 않게) */
+  .tile:not(.tile--large) { min-height: 440px; }
+  .tile:not(.tile--large) .tile__desc {
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden;
+  }
+}
 @media (max-width: 639px) {
   .tile--large .tile__text { max-width: none; }
   .tile--large .tile__shot { left: 50%; right: auto; top: 56%; width: min(66%, 220px); transform: translateX(-50%); }
@@ -272,6 +282,14 @@ button { font: inherit; }
 .tile--sand { --tile-bg: #f5eee3; --tile-accent: #92400e; }
 .tile--rose { --tile-bg: #feeaea; --tile-accent: #be123c; }
 .tile--violet { --tile-bg: #efeaff; --tile-accent: #6d28d9; }
+/* 벤토의 빈 칸을 채우는 "전체 앱 보기" 타일 (영어 홈) */
+.tile--more {
+  align-items: center; justify-content: center; text-align: center;
+  background: var(--bg-soft); border: 1px solid var(--line);
+  font-weight: 700; font-size: 1.125rem; color: var(--ink-2);
+}
+.tile--more:hover { color: var(--brand); }
+@media (max-width: 639px) { .tile--more { min-height: 120px; } }
 
 /* 전체 앱 목록 ------------------------------------------------------------ */
 .chips { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: clamp(8px, 2vw, 16px); }
@@ -383,6 +401,12 @@ button { font: inherit; }
   .app-hero__visual .phone--r { width: 46%; }
 }
 
+/* 스크린샷 없는 앱(stub) — 1열, 비주얼 없음 */
+.app-hero--plain { padding-bottom: clamp(48px, 7vw, 88px); }
+.app-hero--plain .app-hero__grid { grid-template-columns: 1fr; }
+.app-hero--plain .app-hero__grid > div { max-width: 40rem; }
+.app-hero--plain .app-hero__facts { padding-bottom: 0; }
+
 /* 숫자 띠 — 히어로 아래 겹쳐 올라온다 */
 .facts { position: relative; z-index: 2; margin-top: -40px; }
 .facts__grid { display: grid; gap: 12px; grid-template-columns: repeat(2, 1fr); }
@@ -444,3 +468,18 @@ button { font: inherit; }
 .cta .lead { max-width: 30rem; margin: 0 auto 2rem; }
 .cta .badges { justify-content: center; margin-bottom: 1.5rem; }
 .cta__note { font-size: var(--fs-xs); color: var(--on-dark-muted); }
+
+/* 본문 페이지 (개인정보처리방침·404 등) ------------------------------------ */
+.prose { max-width: 760px; margin-inline: auto; padding: clamp(40px, 6vw, 72px) var(--gutter); color: var(--ink-2); }
+.prose h1 { font-size: var(--fs-h1); color: var(--ink); margin-bottom: 1.25rem; }
+.prose h2 { font-size: 1.375rem; color: var(--ink); margin: 2.5rem 0 .75rem; }
+.prose h3 { font-size: 1.125rem; color: var(--ink); margin: 1.75rem 0 .5rem; }
+.prose p { margin-bottom: 1rem; }
+.prose ul, .prose ol { margin: 0 0 1rem 1.25rem; }
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { margin-bottom: .375rem; }
+.prose a { color: var(--brand); text-decoration: underline; text-underline-offset: 2px; }
+.prose table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: var(--fs-sm); }
+.prose th, .prose td { border: 1px solid var(--line); padding: .5rem .75rem; text-align: left; vertical-align: top; }
+.prose th { background: var(--bg-soft); color: var(--ink); }

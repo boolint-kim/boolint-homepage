@@ -17,7 +17,8 @@
     "showInEnglish": true,
     "category": "weather-road",
     "featured": true,
-    "featuredEn": true
+    "featuredEn": true,
+    "tile": { "tint": "navy", "shot": "/assets/images/satpic/screenshots/06_radar_korea.webp", "w": 720, "h": 1533 }
   },
   {
     "slug": "camlocation",
@@ -37,7 +38,8 @@
     "showInEnglish": true,
     "category": "weather-road",
     "featured": true,
-    "featuredEn": true
+    "featuredEn": true,
+    "tile": { "tint": "sky", "shot": "/assets/images/camlocation/screenshots/01_map_overview.webp", "w": 720, "h": 1524 }
   },
   {
     "slug": "mysalary",
@@ -66,7 +68,8 @@
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate",
-    "featured": true
+    "featured": true,
+    "tile": { "tint": "amber", "shot": "/assets/images/transtax/screenshots/04_result_summary.webp", "w": 720, "h": 1505 }
   },
   {
     "slug": "myweather",
@@ -95,7 +98,8 @@
     "hasHelp": false,
     "category": "weather-road",
     "featured": true,
-    "featuredEn": true
+    "featuredEn": true,
+    "tile": { "tint": "mint", "shot": "/assets/images/weathertw/screenshots/shot_20260521_160033_framed.webp", "w": 720, "h": 1505 }
   },
   {
     "slug": "weatherus",
@@ -111,7 +115,8 @@
     "showInKorean": false,
     "showInEnglish": true,
     "category": "weather-road",
-    "featuredEn": true
+    "featuredEn": true,
+    "tile": { "tint": "violet", "shot": "/assets/images/weatherus/screenshots/01_radar.webp", "w": 960, "h": 2080 }
   },
   {
     "slug": "myweathertw",
@@ -174,7 +179,8 @@
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate",
-    "featured": true
+    "featured": true,
+    "tile": { "tint": "sand", "shot": "/assets/images/propertytax/screenshots/03_find_map.webp", "w": 720, "h": 1434 }
   },
   {
     "slug": "junsewolse",
@@ -216,7 +222,8 @@
     "hasHelp": false,
     "koreaOnly": true,
     "category": "realestate",
-    "featured": true
+    "featured": true,
+    "tile": { "tint": "rose", "shot": "/assets/images/seoullife/screenshots/02_construct_list.webp", "w": 720, "h": 1473 }
   },
   {
     "slug": "busanlife",
@@ -313,7 +320,8 @@
     "appStoreUrl": "https://apps.apple.com/kr/app/id6784567518",
     "hasHelp": false,
     "category": "learning",
-    "featuredEn": true
+    "featuredEn": true,
+    "tile": { "tint": "sand", "shot": "/assets/images/universedaily/screenshots/en/01_today_sun.webp", "w": 720, "h": 1454 }
   },
   {
     "slug": "englishnumber",

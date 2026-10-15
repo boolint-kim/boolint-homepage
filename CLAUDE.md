@@ -2,10 +2,9 @@
 
 ## ⏩ 다음 세션 시작점 (2026-10-15 — v2 전면 재설계 진행 중)
 
-- **정본: `docs/REDESIGN_V2_SPEC.md`** — 목표·결정 4가지·디자인 시스템·홈/앱 페이지 규격·매크로 계약·Phase 0~4 계획·검증·함정이 전부 거기 있다. **시작 전에 끝까지 읽을 것.**
-- 브랜치 **`redesign`** (main 에서 분기, 시안 세션은 커밋하지 않았다 → `git status` 로 작업 트리부터 확인).
-- 시안: `npm run dev` → http://localhost:8080/v2/ (홈) · http://localhost:8080/v2/satpic/ (앱 페이지). 사용자는 아직 브라우저로 안 봤다 → **Phase 0 에서 먼저 보여 주고 피드백을 받는다.**
-- 새 파일: `src/_includes/layouts/v2.njk`, `src/_includes/v2/*`, `src/assets/css/v2.css`, `src/assets/images/badges/`, `src/v2/`. 옛 레이아웃·CSS 는 미이전 페이지가 남아 있는 동안 유지한다.
+- **정본: `docs/REDESIGN_V2_SPEC.md`** — 목표·결정·디자인 시스템·홈/앱 페이지 규격·매크로 계약·Phase 계획·검증·함정이 전부 거기 있다. **시작 전에 끝까지 읽을 것.**
+- 브랜치 **`redesign`**. **Phase 0·1 완료** — `/`, `/en/`, `/satpic/`, `/en/satpic/` 이 v2 다. **다음은 Phase 2(대표 앱 8쪽)**, 본보기는 `src/satpic/index.njk`.
+- v2 파일: `src/_includes/layouts/v2.njk`, `src/_includes/v2/{header,footer,macros,home}.njk`, `src/assets/css/v2.css`. 옛 레이아웃·CSS 는 미이전 페이지가 남아 있는 동안 유지한다.
 - 아래 "기술 스택·디렉토리·CSS 전략" 절은 **옛 구조 기준**이다. Phase 4 에서 갱신한다.
 
 

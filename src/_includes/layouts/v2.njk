@@ -34,9 +34,12 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 
   {# v2 디자인 시스템 — 옛 global/components.css 와 독립 #}
-  <link rel="stylesheet" href="/assets/css/v2.css?v=20261015a">
+  <link rel="stylesheet" href="/assets/css/v2.css?v=20261015d">
+
+  {# 페이지 전용 CSS — 프론트매터에 pageCss 를 준 페이지만 (예: /trend/) #}
+  {% if pageCss %}<link rel="stylesheet" href="{{ pageCss }}">{% endif %}
 </head>
-<body>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   {% include "v2/header.njk" %}
 
   <main class="main">
@@ -44,5 +47,8 @@
   </main>
 
   {% include "v2/footer.njk" %}
+
+  {# 페이지 전용 JS — defer 라 DOM 이 준비된 뒤 실행된다 #}
+  {% if pageJs %}<script src="{{ pageJs }}" defer></script>{% endif %}
 </body>
 </html>

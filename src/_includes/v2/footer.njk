@@ -1,8 +1,9 @@
 {# v2 공통 푸터 — 브랜드 한 줄 + 분야 링크 + 정보 #}
 {% set t = i18n[lang or 'ko'] %}
-{% set prefix = '/en/' if lang == 'en' or lang == 'es' or lang == 'cs' else '/' %}
-{% set home = homeUrl or prefix %}
-{% set en = lang == 'en' %}
+{# es·cs 는 홈이 없어 영어 홈으로 보낸다 → 분야 이름도 영어 홈 것을 쓴다 #}
+{% set homeLang = 'ko' if (lang or 'ko') == 'ko' else 'en' %}
+{% set home = '/' if homeLang == 'ko' else '/en/' %}
+{% set h = i18n[homeLang] %}
 
 <footer class="footer">
   <div class="wrap">
@@ -12,28 +13,29 @@
           <img src="/favicon-192.png" alt="" width="28" height="28">
           <span>Boolint</span>
         </a>
-        <p class="footer__tag">{{ 'Small, focused apps built on public data. Open and use, no sign-up.' if en else '공공 데이터로 만든, 열면 바로 쓰는 작은 앱들을 만듭니다.' }}</p>
+        <p class="footer__tag">{{ t['footer.tagline'] }}</p>
       </div>
       <div>
-        <h2 class="footer__title">{{ 'Categories' if en else '분야' }}</h2>
+        <h2 class="footer__title">{{ t['footer.categories'] }}</h2>
         <ul class="footer__links">
-          <li><a href="{{ home }}#cat-weather-road">{{ 'Weather & Road Live' if en else '날씨·도로 라이브' }}</a></li>
-          {% if not en %}<li><a href="{{ home }}#cat-realestate">부동산·세금</a></li>{% endif %}
-          <li><a href="{{ home }}#cat-daily-tool">{{ 'Daily Tools & Maker' if en else '일상 도구·만들기' }}</a></li>
-          <li><a href="{{ home }}#cat-learning">{{ 'Learning & Knowledge' if en else '학습·교양' }}</a></li>
+          {# 앵커 #cat-<key> 는 홈 템플릿의 분야 id 와 짝이다 #}
+          <li><a href="{{ home }}#cat-weather-road">{{ h['home.section.weatherRoad'] }}</a></li>
+          {% if homeLang == 'ko' %}<li><a href="{{ home }}#cat-realestate">{{ h['home.section.realestate'] }}</a></li>{% endif %}
+          <li><a href="{{ home }}#cat-daily-tool">{{ h['home.section.dailyTool'] }}</a></li>
+          <li><a href="{{ home }}#cat-learning">{{ h['home.section.learning'] }}</a></li>
         </ul>
       </div>
       <div>
-        <h2 class="footer__title">{{ 'Info' if en else '정보' }}</h2>
+        <h2 class="footer__title">{{ t['footer.info'] }}</h2>
         <ul class="footer__links">
-          <li><a href="{% if en %}/en{% endif %}/privacy/">{{ t['footer.privacy'] }}</a></li>
+          <li><a href="{% if lang == 'en' %}/en{% elif lang == 'es' %}/es{% elif lang == 'cs' %}/cs{% endif %}/privacy/">{{ t['footer.privacy'] }}</a></li>
           <li><a href="{{ t['lang.switchUrl'] }}">{{ t['lang.switch'] }}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer__bottom">
       <span>{{ t['footer.copyright'] | replace('{year}', site.year) }}</span>
-      <span>Android · iOS</span>
+      <span>{{ t['footer.platforms'] }}</span>
     </div>
   </div>
 </footer>

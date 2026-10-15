@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |---|---|
 | 브랜치 | `redesign` (main 에서 분기. 시안은 커밋 `3a89ed2`) |
-| 시안 URL | `npm run dev` → http://localhost:8080/v2/ (홈 ko) · http://localhost:8080/v2/satpic/ (앱 페이지 ko) |
+| 진행 | **Phase 0·1 완료(2026-10-15)**. v2 가 실제 경로에 들어갔다: `/` `/en/` `/satpic/` `/en/satpic/`. `src/v2/` 시안은 삭제. **다음은 Phase 2** |
 | 시안이 건드리지 않은 것 | 기존 페이지 전부. 옛 `base.njk`·`global.css`·`components.css` 는 그대로 살아 있다 |
 | 사용자 확인 | 2026-10-15 Phase 0 에서 사용자가 브라우저로 두 시안 확인 → **변경 없이 OK** |
 
@@ -47,8 +47,9 @@ src/_includes/v2/footer.njk         브랜드 + 분야 링크 + 정보. 문자�
 src/_includes/v2/macros.njk         badges(playUrl, appStoreUrl, lang) · appItem(app, lang, prefix)
 src/assets/css/v2.css               단독 스타일시트 436줄. 옛 CSS 와 독립. 클래스 카탈로그는 §3
 src/assets/images/badges/           google-play-{ko,en}.png (646×250, 투명 여백 포함) · app-store-{ko,en}.svg (공식)
-src/v2/index.njk                    홈 시안(ko). 대표 앱 타일의 tint·shot 이 템플릿 안에 하드코딩 → apps.json 으로 옮길 것
-src/v2/satpic/index.njk             앱 페이지 시안(ko). 섹션 HTML 이 펼쳐져 있음 → 매크로로 재작성할 것
+src/_includes/v2/home.njk           (Phase 1) 홈 본문 ko/en 공용. 페이지는 `copy` 문구 묶음만 set 하고 include
+src/index.njk · src/en/index.njk    (Phase 1) v2 홈. 시안 src/v2/ 는 삭제됨
+src/satpic/ · src/en/satpic/        (Phase 1) 매크로로 쓴 첫 앱 페이지 — 다음 앱의 본보기
 .eleventy.js                        필터 추가됨: bySlug(apps, slug) · visibleIn(apps, lang) · inCategory(apps, cat)
 src/_data/apps.json                 transtax·weathertw·junsewolse·seoullife·busanlife 에 iconReady:true 추가(아이콘 파일이 이미 있었음)
 ```
@@ -83,7 +84,7 @@ src/_data/apps.json                 transtax·weathertw·junsewolse·seoullife·
 
 **스크린샷 규칙** — `src/assets/images/<slug>/screenshots/*.png` 는 **에뮬레이터 베젤이 이미 박혀 있고 모서리가 투명**하다. CSS 폰 프레임을 덧씌우지 않는다. 그림자는 `filter: drop-shadow()` 만(`box-shadow` 는 네모로 보인다). 이미 `.phone` `.tile__shot` `.shot` 에 걸려 있다.
 
-**Phase 1 에서 CSS 에 추가할 것**
+**Phase 1 에서 CSS 에 추가할 것** — ✅ 2026-10-15 앞의 셋 추가. 덧붙여 ≥1100 작은 타일은 아이콘을 위로 올리고(column) 설명 2줄 clamp·min-height 440 (영문 긴 이름이 단어 중간에서 끊기던 문제)
 - `.tile--more` — 영어 홈 벤토의 빈 칸을 채우는 "전체 앱 보기" 타일(연회색 바탕, 가운데 화살표 텍스트, 점선 테두리 금지·실선 `--line`).
 - `.app-hero--plain` — 스크린샷 없는 stub 용. 1열, 글 max-width 40rem, 비주얼 없음.
 - `.prose` — 개인정보처리방침·404 같은 본문 페이지용 타이포(h1/h2/p/ul 간격). 옛 `.page-content` 를 대체.
@@ -122,7 +123,7 @@ src/_data/apps.json                 transtax·weathertw·junsewolse·seoullife·
   - 버튼 `See featured` · `All N apps`
   - 대표 앱 머리 eyebrow `Featured` / H2 `Six to open first` → 영어는 5개이므로 `Start with these` / sub `The most used, and the longest refined.`
   - 전체 앱 머리 `All apps` / `Grouped by what they do` / `Each one does a single job. Pick what you need.`
-  - 분야 한 줄: weather-road `Satellite and radar loops, plus road cameras` · daily-tool `Birthdays, a photo map, an icon maker` · learning `A 3D solar system and English numbers`
+  - 분야 한 줄: weather-road `Satellite and radar loops, plus road cameras` · daily-tool `Birthdays, a photo map, an icon maker` · learning `A 3D solar system and Korean numbers` (영어 홈의 앱 이름이 Korean Numbers 라 Phase 1 에서 고침)
   - 만드는 방식 `How we build` / `Small, accurate, ready to use` — 카드: `Official data only` / `Open and use` / `Both platforms` (본문은 한국어 카드를 직역, 2문장 이내)
 - 스크린샷은 `screenshots/en/` 폴더가 있으면 그것을, 없으면 한국어 세트를 쓴다(satpic·camlocation 은 en 세트가 없다).
 
@@ -192,6 +193,8 @@ src/_data/apps.json                 transtax·weathertw·junsewolse·seoullife·
 구현 메모
 - `title` 에 `<br>` 이 들어가므로 매크로 안에서 `{{ opts.title | safe }}`.
 - `{% call %}` 본문은 매크로 안에서 `{{ caller() }}` 로 출력한다(Nunjucks 지원).
+- (Phase 1 구현) `trust` 의 items·text, `compare` 의 text, `cta` 의 title·lead 도 `| safe` — `<strong>` 을 넣을 수 있다. 아이콘은 `m.icon(name)` 으로 따로도 쓴다. 홈 타일은 `m.tile(app, lang, prefix, catName, large)`.
+- (Phase 1 구현) 영어 페이지 Play 링크는 옛 페이지처럼 `+ '&hl=en&gl=US'` 를 붙였다.
 - `icon` 은 `db | lock | warn | shield | bolt | devices` 여섯 개를 매크로 안 인라인 SVG 로 둔다(시안 HTML 에 있는 path 를 옮긴다).
 - `playUrl` 은 페이지에서 `'https://play.google.com/store/apps/details?id=' + app.packageName` 로 만든다. iOS 가 없으면(`'ios' not in app.platform`) `appStoreUrl` 을 넘기지 않는다.
 - 영어 페이지는 `lang: 'en'` 을 넘기면 뒤로가기 문구·배지 언어·`home` 이 바뀐다. 매크로 안에서 `'← All apps' if lang == 'en' else '← 모든 앱'`.
@@ -255,7 +258,7 @@ for p in sys.argv[1:]:
 - [x] `npm run dev` 띄우고 사용자에게 두 시안 URL 을 보여 준다. 피드백(색·간격·문구)을 받아 이 문서 §13 "피드백 로그"에 적고 반영한다.
 - [x] "회원가입·로그인 없음" 문구에 예외 앱이 있는지, 아파트 공시가격 아이콘 원본 위치를 묻는다.
 
-### Phase 1 — 기반 확정 (한 세션)
+### Phase 1 — 기반 확정 (한 세션) — ✅ 2026-10-15 완료
 1. `v2.njk` 에 `pageCss`/`pageJs` 지원(옛 `base.njk` 와 같은 방식)과 `bodyClass` 변수 추가.
 2. `macros.njk` 에 §5.2 매크로 7개 구현. `src/v2/satpic/index.njk` 를 매크로 호출로 재작성 → 빌드 결과 HTML 이 재작성 전과 **구조적으로 동일**(클래스·순서)한지 diff 로 확인.
 3. `apps.json` 에 `tile` 필드(§6) → 홈 템플릿의 하드코딩 제거. `site.json` year 2026.
@@ -377,6 +380,11 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 | 2026-10-15 | 사용자 | 톤·범위·진행·깊이 4개 결정(§0) | 시안에 반영 |
 | 2026-10-15 | 사용자 | Phase 0: 두 시안 그대로 OK(색·간격·문구 변경 없음) | — |
 | 2026-10-15 | 사용자 | "회원가입·로그인 없음" 예외 앱 **없음** → 홈 카피 그대로 | — |
+| 2026-10-15 | 사용자 | 영어 홈 히어로 오른쪽 폰·universedaily 타일 = `universedaily/screenshots/en/01_today_sun`, weatherus 타일 = `01_radar.webp`(이미 WebP 960×2080, 베젤 없음) | apps.json `tile` |
+| 2026-10-15 | 사용자 | ≥1100 작은 타일: 아이콘을 위로(영문 이름 끊김 해결) | v2.css |
+| 2026-10-15 | 사용자 | 영어 홈 학습 분야 한 줄 English numbers → **Korean numbers** | §4.2 |
+| 2026-10-15 | 사용자 | 영어 홈 '만드는 방식' 첫 카드는 기관명 직역 대신 일반화 문장 유지 | en/index.njk |
+| 2026-10-15 | Claude | 시안 satpic 의 광고 고지가 줄어 있던 것을 §9 규칙대로 옛 문장으로 복원 | satpic ko |
 | 2026-10-15 | 사용자 | propertytax 아이콘 원본 = `~/AndroidStudioProjects/PropertyTax/app/src/main/ic_launcher-playstore.png` (512) | `images/propertytax/icon.png` 복사 + `iconReady:true` |
 
 ---

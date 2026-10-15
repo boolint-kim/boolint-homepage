@@ -1,212 +1,143 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: en
 title: "Weather Satellite Live — Satellite, radar, typhoon and road CCTV in one app"
+description: "Korea Meteorological Administration satellite, precipitation radar, typhoon and yellow-dust imagery plus nationwide road CCTV in one app, auto-playing from the latest frame."
 alternateLang: ko
 alternateUrl: /satpic/
 ---
+{# 앱 소개(영어) — 한국어 /satpic/ 과 같은 구조. 원고는 옛 영어 페이지 본문 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('satpic') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName + '&hl=en&gl=US' %}
+{% set shots = '/assets/images/satpic/screenshots/' %}
 
-<div class="container" style="padding-top: var(--space-md);">
-  <p style="font-size: 0.875rem;">
-    <a href="/en/">← All apps</a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'en',
+  category: 'Weather & Road Live', tags: ['Android · iOS', 'Free'],
+  title: 'Weather Satellite Live',
+  lead: 'Korea Meteorological Administration satellite, radar and typhoon imagery plus nationwide road CCTV in one app, auto-playing from the latest frame. Watch where rain clouds form and where they are heading.',
+  playUrl: playUrl, appStoreUrl: app.appStoreUrl,
+  facts: ['No sign-up', 'Android 8.0 or later', 'English · Korean · Japanese · Chinese', 'Dark mode'],
+  shots: [
+    { src: shots + '02_visible_korea.webp', w: 720, h: 1533 },
+    { src: shots + '06_radar_korea.webp', w: 720, h: 1533 }
+  ]
+}) }}
 
-<section class="landing-hero">
-  <div class="landing-hero__inner">
-    <h1>Weather Satellite Live</h1>
-    <p class="landing-hero__lead">Korea Meteorological Administration satellite, precipitation radar, typhoon, yellow dust, and temperature maps — plus road CCTV — all in one app, with every channel auto-playing as a time-lapse from sky to road.</p>
-    <p>
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.satpic&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
-        Get it on Google Play
-      </a>
-      <a href="https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937" class="btn" target="_blank" rel="noopener">
-        Download on the App Store
-      </a>
-    </p>
-    <img src="/assets/images/satpic/feature-banner-en.webp" alt="Weather Satellite Live — Satellite, radar, typhoon and road CCTV in one app" class="landing-hero__banner">
-  </div>
-</section>
+{{ m.facts([
+  { num: '9', label: 'Satellite views · visible, infrared, water vapor × Korea, East Asia, Earth' },
+  { num: '13', label: 'Radar · 4 composites + 9 local radar sites' },
+  { num: 'Typhoon · dust', label: 'Satellite time-lapse of the track' },
+  { num: 'Nationwide', label: 'Road CCTV · expressways, national highways, Jeju' }
+]) }}
 
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>See where the clouds are moving — on one screen</h2>
-    <p>Open the Meteorological Agency site and satellite, radar, typhoon, yellow dust, temperature, and local forecasts all live in separate menus. By the time you've clicked through every tab to answer "how far have the rain clouds reached?", the moment has already passed.</p>
-    <p>Weather Satellite Live gathers these sources into <strong>a single grid menu</strong>, and any channel you tap starts <strong>auto-playing from the latest image as a time-lapse</strong>.</p>
+{% call m.feat({ eyebrow: 'One screen', title: 'Scattered weather data,<br>gathered in one grid',
+  shots: [ { src: shots + '01_main_menu.webp', alt: 'App main menu — 12-channel grid for satellite, radar, typhoon, yellow dust, and CCTV', w: 720, h: 1533 } ] }) %}
+  <p>On the Meteorological Agency site, satellite, radar, typhoon, yellow dust, temperature and local forecasts each live in separate menus. Weather Satellite Live gathers them into a single grid menu, and any channel you tap starts auto-playing from the latest image as a time-lapse.</p>
+  <ul class="checks">
+    <li><strong>12 channels</strong> — satellite, radar, typhoon, yellow dust and CCTV on one screen</li>
+    <li><strong>Auto-play from the latest frame</strong>, with pause and zoom at the bottom</li>
+    <li>Every frame shows its <strong>observation time (KST)</strong></li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Satellite', title: 'Visible, infrared, water vapor:<br>three ways to see the sky', soft: true, flip: true,
+  shots: [
+    { src: shots + '02_visible_korea.webp', alt: 'Visible Korea satellite — auto-playing time-lapse', w: 720, h: 1533 },
+    { src: shots + '04_visible_earth.webp', alt: 'Visible Earth — full disc imagery down toward the equator', w: 720, h: 1533 }
+  ] }) %}
+  <p>Imagery from the GEO-KOMPSAT-2A satellite comes in nine channel × region combinations. Pick a tight view of cloud development near the peninsula, a wider East Asia flow, or pull all the way out to near-equator scale.</p>
+  <ul class="checks">
+    <li><strong>Visible</strong> shows cloud shape and thickness by day; <strong>infrared</strong> shows clouds even at night</li>
+    <li><strong>Water vapor</strong> shows upper-level moisture flow — read heavy rain and typhoon buildup ahead of time</li>
+    <li>Korea · East Asia · Earth, with <strong>pinch zoom and drag pan</strong> to focus on one area</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Radar', title: 'Where the rain is,<br>right now',
+  shots: [ { src: shots + '06_radar_korea.webp', alt: 'Radar Korea — composite precipitation radar replayed as a time-lapse', w: 720, h: 1533 } ] }) %}
+  <p>Composite precipitation radar from the Meteorological Agency, replayed in time order. Rainfall intensity is color-coded, so heavy-rain zones across the peninsula are visible at a glance.</p>
+  <ul class="checks">
+    <li><strong>Korea · Neighbors · Detail · Infrared composite</strong></li>
+    <li><strong>9 local radar sites</strong> from Baengnyeongdo to Jeju for rain close to home</li>
+    <li>Satellite IR blended with radar shows <strong>clouds and rainfall together</strong></li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Typhoon · Yellow dust', title: 'Read the track<br>before it arrives', soft: true, flip: true,
+  shots: [ { src: shots + '10_typhoon.webp', alt: 'Typhoon — satellite infrared time-lapse to read the storm\'s track', w: 720, h: 1533 } ] }) %}
+  <p>When a typhoon is active, the app plays a satellite infrared time-lapse so you can follow where it formed, where it's heading, and how fast it's closing in. In dust season, the same time-lapse shows incoming yellow-dust paths.</p>
+  <ul class="checks">
+    <li>Satellite imagery shows the <strong>storm's eye and outer cloud bands</strong> as they look</li>
+    <li>Observation timestamps let you gauge <strong>how far it has traveled</strong></li>
+    <li>Yellow-dust imagery shows <strong>incoming fine-dust paths</strong></li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Road CCTV', title: 'After the sky, the road',
+  shots: [
+    { src: shots + '12_radar_cctv.webp', alt: 'Radar CCTV — precipitation radar and road camera markers on one map', w: 720, h: 1533 },
+    { src: shots + '13_radar_cctv_multi.webp', alt: 'Multiple nearby CCTV streams shown over the map at the same time', w: 720, h: 1533 }
+  ] }) %}
+  <p>"I know it's raining, but what does the road actually look like?" That's why nationwide road CCTV is built into the same app. Satellite, then radar, then CCTV — the pre-departure decision ends in one app.</p>
+  <ul class="checks">
+    <li><strong>CCTV markers</strong> over precipitation radar — tap a camera in the rainy zone</li>
+    <li><strong>Several nearby cameras as small videos at once</strong> on one map</li>
+    <li>Tap a marker for a single live feed; <strong>Jeju roads</strong> have their own channel</li>
+  </ul>
+{% endcall %}
+
+{{ m.compare({ eyebrow: 'Versus other weather apps', title: 'What makes it different', cards: [
+  { vs: 'Versus the official agency app', title: 'Same source, shorter path', text: 'Satellite, radar, typhoon, CCTV and forecasts live in one grid menu, and every screen auto-plays from the latest frame.' },
+  { vs: 'Versus generic weather apps', title: 'Imagery, not just numbers', text: 'Instead of temperature and rain probability, you watch where clouds and rain bands actually are and where they are going.' },
+  { vs: 'Versus radar-only apps', title: 'One level above radar', text: 'Satellite visible, infrared and water-vapor channels sit next to radar, so you can read where weather forms and where it heads.' }
+] }) }}
+
+{% call m.more('See all features', 'Local radar · Map data · Local forecast · Controls') %}
+  <div>
+    <h4>9 local radar sites</h4>
     <ul>
-      <li><strong>Satellite</strong> — Visible, Infrared, Water Vapor × Korea, East Asia, Earth (9 combinations)</li>
-      <li><strong>Radar</strong> — Korea, neighboring countries, detail, infrared composite, plus 9 individual local radar sites</li>
-      <li><strong>Precipitation, temperature, forecast maps</strong>, <strong>typhoon</strong> and <strong>yellow dust</strong></li>
-      <li><strong>Road CCTV</strong>: nationwide expressway / national highway cameras and a separate Jeju channel</li>
-    </ul>
-    <img src="/assets/images/satpic/screenshots/01_main_menu.png" alt="App main menu — 12-channel grid for satellite, radar, typhoon, yellow dust, and CCTV" class="app-screenshot">
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Satellite imagery — visible, infrared, water vapor × Korea, East Asia, Earth</h2>
-    <img src="/assets/images/satpic/screenshots/02_visible_korea.png" alt="Visible Korea satellite — auto-playing time-lapse" class="app-screenshot">
-    <p>Imagery from the GEO-KOMPSAT-2A satellite is provided in <strong>nine channel × region combinations</strong>.</p>
-    <ul>
-      <li><strong>Visible</strong> — Shows cloud shape and thickness most intuitively during daytime.</li>
-      <li><strong>Infrared</strong> — Cloud distribution visible at night, with cloud-top temperature indicating storm intensity.</li>
-      <li><strong>Water Vapor</strong> — Upper-tropospheric moisture flow — read the buildup of heavy rain and typhoon systems ahead of time.</li>
-    </ul>
-    <p>Each channel comes in three regions: <strong>Korea / East Asia / Earth</strong>. Pick a tight view of cloud development near the peninsula, a wider East Asia flow, or pull all the way out to near-equator scale.</p>
-    <img src="/assets/images/satpic/screenshots/03_visible_eastasia.png" alt="Visible East Asia — wide view around the peninsula" class="app-screenshot">
-    <img src="/assets/images/satpic/screenshots/04_visible_earth.png" alt="Visible Earth — full disc imagery down toward the equator" class="app-screenshot">
-    <img src="/assets/images/satpic/screenshots/05_infrared_eastasia.png" alt="Infrared East Asia — cloud distribution visible even at night" class="app-screenshot">
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Auto-play from latest, pinch zoom, drag pan</h2>
-    <p>Every imagery screen behaves the same way.</p>
-    <ul>
-      <li>Starts from the <strong>latest image</strong> and <strong>auto-plays time-lapse</strong> so you can watch cloud and precipitation movement at a glance.</li>
-      <li>Bottom controls include <strong>play / pause</strong> and zoom in/out — pause on any frame to look closer.</li>
-      <li><strong>Pinch zoom and drag pan</strong> — zoom into just the area of interest, like the capital region on a Korea view or Japan on a full-Earth view.</li>
-      <li>Each frame shows its <strong>observation timestamp</strong> (KST), so you always know when the image was taken.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Precipitation radar — where the rain is, right now</h2>
-    <img src="/assets/images/satpic/screenshots/06_radar_korea.png" alt="Radar Korea — composite precipitation radar replayed as a time-lapse" class="app-screenshot">
-    <p>Composite precipitation radar imagery from the Meteorological Agency, replayed in time order. Rainfall intensity is color-coded, so heavy-rain zones across the peninsula are visible in one glance.</p>
-    <ul>
-      <li><strong>Radar Korea</strong> — Standard nationwide precipitation radar composite</li>
-      <li><strong>Radar Neighbors</strong> — Wider view including parts of Japan and China</li>
-      <li><strong>Radar Detail</strong> — Higher-resolution close-up of the peninsula</li>
-      <li><strong>Radar Infrared Composite</strong> — Satellite IR blended with radar to show clouds and rainfall together</li>
-    </ul>
-    <img src="/assets/images/satpic/screenshots/07_radar_infrared.png" alt="Radar Infrared composite — clouds and precipitation in one view" class="app-screenshot">
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Local radar — 9 sites from Baengnyeongdo to Jeju</h2>
-    <img src="/assets/images/satpic/screenshots/08_radar_local_list.png" alt="Local radar list — Baengnyeongdo, Hwacheon, Gangneung, Seoul, Gunsan, Cheongsong, Jindo, Busan, Jeju" class="app-screenshot">
-    <p>Watch each of the <strong>9 nationwide radar sites</strong> individually. Useful for <strong>fine-grained precipitation patterns close to home</strong> that the composite imagery can't show.</p>
-    <ul>
-      <li>Baengnyeongdo · Hwacheon (Gwangdeoksan) · Gangneung · Seoul (Gwanaksan) · Gunsan (Oseongsan) · Cheongsong (Myeonbongsan) · Jindo · Busan (Gudeoksan) · Jeju (Gosan / Seongsan)</li>
-      <li>Each site shows precipitation near its location as a <strong>circular Doppler pattern</strong>, the clearest possible view at short range.</li>
-      <li>Pick the one nearest your commute or home, and you'll spot incoming rain bands faster than the composite.</li>
-    </ul>
-    <img src="/assets/images/satpic/screenshots/09_radar_local_seoul.png" alt="Seoul (Gwanaksan) local radar — detailed precipitation over the capital region" class="app-screenshot">
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Typhoon time-lapse — read the track before it arrives</h2>
-    <img src="/assets/images/satpic/screenshots/10_typhoon.png" alt="Typhoon — satellite infrared time-lapse to read the storm's track" class="app-screenshot">
-    <p>When a typhoon is active, the app plays a <strong>satellite infrared time-lapse</strong> so you can follow where it formed, where it's heading, and how fast it's closing in — with your own eyes.</p>
-    <ul>
-      <li>Because it's satellite imagery, you can see the <strong>storm's eye</strong> and outer cloud bands as they actually look.</li>
-      <li>Observation timestamps make it easy to gauge how far the system has traveled from formation to now.</li>
-    </ul>
-    <p>The same time-lapse approach is available for <strong>yellow-dust imagery</strong> in dust season, useful for reading incoming fine-dust paths.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Temperature map · precipitation / snow map · forecast map</h2>
-    <img src="/assets/images/satpic/screenshots/11_temperature_map.png" alt="Temperature map — color-coded temperatures across the peninsula" class="app-screenshot">
-    <p>Beyond satellite and radar, the app also offers map-style data you can use directly for daily decisions.</p>
-    <ul>
-      <li><strong>Temperature map</strong> — Color-coded temperatures across the peninsula — intuitive for deciding what to wear</li>
-      <li><strong>Precipitation / snowfall map</strong> — Current rain and snow distribution on one map</li>
-      <li><strong>Forecast map</strong> — Short-term forecast laid out on a map</li>
-      <li><strong>Weather chart / text forecast</strong> — Official Meteorological Agency materials</li>
-    </ul>
-    <p>A <strong>color legend</strong> is shown on the side of each map so you can read the actual values directly.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Road CCTV — same app, road conditions too</h2>
-    <img src="/assets/images/satpic/screenshots/12_radar_cctv.png" alt="Radar CCTV — precipitation radar and road camera markers on one map" class="app-screenshot">
-    <p>Sometimes the weather alone isn't enough — "I know it's raining, but what does the road actually look like?" That's why nationwide <strong>road CCTV</strong> is built into the same app.</p>
-    <ul>
-      <li><strong>Radar CCTV</strong>: precipitation radar overlaid on a map with CCTV markers — tap any camera in the rainy zone to watch live road conditions.</li>
-      <li>On one map you can also <strong>fan out several nearby cameras as small videos at the same time</strong>.</li>
-    </ul>
-    <img src="/assets/images/satpic/screenshots/13_radar_cctv_multi.png" alt="Multiple nearby CCTV streams shown over the map at the same time" class="app-screenshot">
-    <img src="/assets/images/satpic/screenshots/14_cctv_single.png" alt="Single CCTV stream — Yeongdong Expressway, Imok-dong" class="app-screenshot">
-    <p>Tap a marker to expand a single live feed. Jeju road CCTV is also available as a dedicated channel.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Local forecast · favorite regions</h2>
-    <ul>
-      <li><strong>Current-location short-term forecast</strong> — Grant location permission and your neighborhood's forecast cast loads instantly.</li>
-      <li><strong>Search by address</strong> to look up other areas.</li>
-      <li>Save regions you check often to <strong>Favorites</strong> — workplace, hometown, parents' place — and review them in one pass.</li>
-      <li>Current temperature, wind direction / speed, humidity, plus <strong>precipitation probability / rainfall / snowfall</strong> shown together.</li>
+      <li>Baengnyeongdo · Hwacheon (Gwangdeoksan) · Gangneung · Seoul (Gwanaksan) · Gunsan (Oseongsan)</li>
+      <li>Cheongsong (Myeonbongsan) · Jindo · Busan (Gudeoksan) · Jeju (Gosan / Seongsan)</li>
+      <li>Short-range precipitation as a circular Doppler pattern, which the composite can't show</li>
+      <li>Pick the site nearest your commute or home to spot incoming rain bands faster</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>What makes it different</h2>
+  <div>
+    <h4>Map data</h4>
     <ul>
-      <li><strong>Versus the official Meteorological Agency app</strong> — Same data source, but satellite / radar / typhoon / CCTV / forecast live in <em>one grid menu</em>, and every screen <em>auto-plays time-lapse from the latest frame</em> by default.</li>
-      <li><strong>Versus generic weather apps</strong> — Instead of just numbers like temperature and precipitation probability, you watch <em>where the clouds and rain bands actually are and where they're going</em> — closer to the pre-departure decision.</li>
-      <li><strong>Versus radar-only apps</strong> — Precipitation radar plus <em>satellite visible / infrared / water-vapor channels</em>, so you can read the picture one level higher: where weather is forming and where it's headed.</li>
-      <li><strong>Combined with road CCTV</strong> — In rainy weather, reroute decisions can be wrapped up inside one app: satellite → radar → CCTV.</li>
+      <li>Temperature map — color-coded temperatures across the peninsula</li>
+      <li>Precipitation / snowfall map, forecast map</li>
+      <li>Weather chart and text forecast — official Meteorological Agency materials</li>
+      <li>A color legend beside each map to read actual values</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Privacy</h2>
+  <div>
+    <h4>Local forecast · favorites</h4>
     <ul>
-      <li><strong>No account, no sign-in.</strong> Open the app and you're in.</li>
-      <li>Location permission is used <strong>only for your current-location local forecast</strong>, processed on the device.</li>
-      <li>Images and video are streamed directly from public open APIs and the Meteorological Agency — the app does not store them.</li>
-      <li><strong>Ads disclosure</strong>: the app is free and includes Google AdMob ads. The AdMob SDK sends your advertising ID and impression/click events to Google.</li>
+      <li>Current-location short-term forecast, search by address for other areas</li>
+      <li>Save workplace, hometown or parents' place to Favorites and check them in one pass</li>
+      <li>Temperature · wind direction / speed · humidity · precipitation probability · rainfall · snowfall</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Safety</h2>
-    <p>For safety, please do not use this app while driving. Use it <strong>before departure</strong>, <strong>while parked</strong>, or have <strong>a passenger</strong> operate it.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>App information</h2>
+  <div>
+    <h4>Playback and controls</h4>
     <ul>
-      <li>Platform: Android / iOS</li>
-      <li>Minimum requirement: Android 8.0 or later</li>
-      <li>Languages: English / Korean / Japanese / Chinese (Simplified &amp; Traditional) — auto-detected from device settings</li>
-      <li>Dark mode supported</li>
-      <li>Price: Free (ad-supported, no in-app purchases)</li>
-      <li>Data sources: Korea Meteorological Administration (satellite, radar, forecast, typhoon, yellow dust), National Police UTIC, MOLIT ITS, Jeju open API</li>
+      <li>Every imagery screen works the same — auto-play from the latest, play / pause</li>
+      <li>Zoom in / out buttons, pinch zoom and drag pan</li>
+      <li>Observation timestamp (KST) on each frame, dark mode supported</li>
     </ul>
-    <p style="margin-top: var(--space-xl); text-align: center;">
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.satpic&amp;hl=en&amp;gl=US" class="btn" target="_blank" rel="noopener">
-        Get it on Google Play
-      </a>
-      <a href="https://apps.apple.com/kr/app/%EB%82%A0%EC%94%A8%EC%9C%84%EC%84%B1%EC%98%81%EC%83%81-%EB%9D%BC%EC%9D%B4%EB%B8%8C/id6448864937" class="btn" target="_blank" rel="noopener">
-        Download on the App Store
-      </a>
-    </p>
   </div>
-</section>
+{% endcall %}
+
+{{ m.trust([
+  { icon: 'db', title: 'Data sources', items: ['Korea Meteorological Administration — satellite, radar, forecast, typhoon, yellow dust', 'National Police UTIC, MOLIT ITS — road CCTV', 'Jeju open API — Jeju road CCTV'] },
+  { icon: 'lock', title: 'Privacy', items: ['No account, no sign-in. Open the app and you\'re in', 'Location is used only for your current-location forecast, processed on the device', 'Images and video are streamed from public APIs — the app does not store them', '<strong>Ads disclosure</strong>: the app is free and includes Google AdMob ads. The AdMob SDK sends your advertising ID and impression/click events to Google.'] },
+  { icon: 'warn', title: 'Safety', text: 'For safety, please do not use this app while driving. Use it before departure, while parked, or have a passenger operate it.' }
+]) }}
+
+{{ m.cta({ app: app, lang: 'en', title: 'Check the sky right now',
+  lead: 'No sign-up — open it and the latest imagery starts playing.',
+  playUrl: playUrl, appStoreUrl: app.appStoreUrl,
+  note: 'Free · Ad-supported · No in-app purchases · Android 8.0 or later · English / Korean / Japanese / Chinese' }) }}
