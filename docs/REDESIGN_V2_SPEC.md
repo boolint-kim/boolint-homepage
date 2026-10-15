@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |---|---|
 | 브랜치 | `redesign` (main 에서 분기. 시안은 커밋 `3a89ed2`) |
-| 진행 | **Phase 0·1 완료(2026-10-15)**. v2 가 실제 경로에 들어갔다: `/` `/en/` `/satpic/` `/en/satpic/`. `src/v2/` 시안은 삭제. **다음은 Phase 2** |
+| 진행 | **Phase 0·1·2 완료(2026-10-15)**. v2 페이지: 홈 ko/en + satpic·camlocation·weathertw·universedaily ko/en + transtax·propertytax·seoullife ko + weatherus en. **다음은 Phase 3** |
 | 시안이 건드리지 않은 것 | 기존 페이지 전부. 옛 `base.njk`·`global.css`·`components.css` 는 그대로 살아 있다 |
 | 사용자 확인 | 2026-10-15 Phase 0 에서 사용자가 브라우저로 두 시안 확인 → **변경 없이 OK** |
 
@@ -269,12 +269,12 @@ for p in sys.argv[1:]:
 8. CSS 추가분: `.tile--more` `.app-hero--plain` `.prose`(Phase 4 대비, 지금 만들어도 됨).
 9. §10 검증 전부 → 커밋 제안.
 
-### Phase 2 — 대표 앱 (한 세션, 8쪽)
-순서대로: camlocation ko·en → transtax ko(`.case` 컴포넌트 추가) → weathertw ko·en → propertytax ko → seoullife ko → weatherus en → universedaily ko·en.
+### Phase 2 — 대표 앱 (한 세션, 8쪽) — ✅ 2026-10-15 완료 (main 병합·배포는 사용자 결정 대기)
+순서대로: camlocation ko·en → transtax ko(⚠️ 옛 페이지에 case-box 가 없어 `.case` 는 **Phase 3 의 acqtax 로 미룸**) → weathertw ko·en → propertytax ko → seoullife ko → weatherus en → universedaily ko·en.
 각 쪽은 §9 체크리스트. 끝나면 커밋 제안. **이 시점에 사용자가 원하면 main 병합·배포 가능**(옛 페이지와 새 페이지가 섞여도 깨지지 않는다 — 헤더·푸터만 다르게 보인다. 사용자에게 그 점을 말하고 결정을 받는다).
 
 ### Phase 3 — 나머지 앱 (2~3 세션, 분야별 묶음)
-- realestate ko 8: mysalary, acqtax, gifttax, junsewolse, realestatecal, busanlife, apttradechart, officetradechart
+- realestate ko 8 (**acqtax 를 먼저** — `.case` 컴포넌트를 여기서 추가. case-box 를 쓰는 옛 페이지는 mysalary·acqtax·gifttax 셋): mysalary, acqtax, gifttax, junsewolse, realestatecal, busanlife, apttradechart, officetradechart
 - weather-road: myweather ko·en, myweathertw ko·en(stub), finedustmap ko·en(stub)
 - daily-tool: agemap ko·en(도움말 7×2 쪽은 Phase 4), snapatlas ko·en, iconmixer ko·en
 - learning: englishnumber ko·en
@@ -359,6 +359,10 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 - `.dark` 면 위의 헤더는 흰 반투명이다. 의도된 대비. 헤더를 투명하게 바꾸지 않는다.
 - **`/trend/` 는 앱 소개가 아니라 동작하는 웹앱**이다(trend.css/js). Phase 4 전까지 건드리지 않는다.
 - 개인정보처리방침 **네 판(ko·en·es·cs)은 같은 문서**다. 레이아웃만 바꾸고 문장은 손대지 않는다.
+- **제목의 `<br>` 바로 앞에 `—` 를 두지 말 것.** 좁은 폭에서 `—` 가 혼자 한 줄로 떨어진다(Phase 1·2 에서 세 번). 쉼표·콜론으로 끊는다.
+- **`universedaily/screenshots/en/` 은 02번부터 파일 이름과 화면이 한 칸씩 밀려 있다**(08_saturn=달, 10_gallery=명왕성, 갤러리 화면 없음). 이름을 믿지 말고 화면을 보고 고른다. ko 폴더는 정상.
+- 다른 앱도 스크린샷을 고르기 전에 **컨택트시트로 실제 화면을 확인**한다(PIL 로 한 줄에 이어 붙여 Read).
+- 옛 페이지에 **비교 절·프라이버시 절이 없으면 만들지 않는다.** compare 는 생략, trust 는 `계산 기준`/`앱 정보`/`참고 안내` 처럼 옛 페이지에 있는 절로 채운다. 광고 고지 문장도 옛 페이지에 있을 때만.
 
 ---
 
@@ -385,6 +389,9 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 | 2026-10-15 | 사용자 | 영어 홈 학습 분야 한 줄 English numbers → **Korean numbers** | §4.2 |
 | 2026-10-15 | 사용자 | 영어 홈 '만드는 방식' 첫 카드는 기관명 직역 대신 일반화 문장 유지 | en/index.njk |
 | 2026-10-15 | Claude | 시안 satpic 의 광고 고지가 줄어 있던 것을 §9 규칙대로 옛 문장으로 복원 | satpic ko |
+| 2026-10-15 | 사용자 | Phase 2 부터 "특별한 문제가 없으면 커밋하고 계속" — 쪽마다 검증 통과 시 커밋 | 쪽당 커밋 1개 |
+| 2026-10-15 | Claude | transtax 에 case-box 가 없어 `.case` 를 Phase 3 acqtax 로 미룸 | §8 |
+| 2026-10-15 | Claude | universedaily 영어 스크린샷 파일명 어긋남 발견 → 화면 기준으로 매핑, 파일명은 그대로 | §11 |
 | 2026-10-15 | 사용자 | propertytax 아이콘 원본 = `~/AndroidStudioProjects/PropertyTax/app/src/main/ic_launcher-playstore.png` (512) | `images/propertytax/icon.png` 복사 + `iconReady:true` |
 
 ---
