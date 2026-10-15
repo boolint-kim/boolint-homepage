@@ -1,143 +1,119 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: en
 title: "Korean Numbers — Hear big numbers, ordinals, fractions, dates and times in Korean and English"
+description: "A listening app that shows every number written in Korean and in English, side by side, and reads both aloud with your device's voice."
 alternateLang: ko
 alternateUrl: /englishnumber/
 ---
+{# 앱 소개(영어) — 영어 홈에서는 "Korean Numbers"(영어권이 한국어 숫자를 익힘). 원고는 옛 영어 페이지 본문
+   ⚠️ Auto(연속)는 퀴즈가 아니라 자동 반복 듣기. en 스크린샷에는 Once 화면이 없다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('englishnumber') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
+{% set shots = '/assets/images/englishnumber/screenshots/en/' %}
 
-<div class="container" style="padding-top: var(--space-md);">
-  <p style="font-size: 0.875rem;">
-    <a href="/en/">← Apps</a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'en',
+  category: 'Learning & Knowledge', tags: ['Android · iOS', 'Free'],
+  title: 'Korean Numbers',
+  lead: "For people who can read a number but freeze when it's time to say it. Every number is shown in Korean and in English, side by side, and read aloud in both with your device's voice.",
+  playUrl: playUrl, appStoreUrl: app.appStoreUrl,
+  facts: ['No sign-up', 'Korean and English side by side', 'Uses device voices (TTS)'],
+  shots: [
+    { src: shots + '02_number_auto.webp', w: 720, h: 1560 },
+    { src: shots + '05_date.webp', w: 720, h: 1560 }
+  ]
+}) }}
 
-<section class="landing-hero">
-  <div class="landing-hero__inner">
-    <h1>Korean Numbers</h1>
-    <p class="landing-hero__lead">A listening app for people who can read a number but freeze when it's time to say it out loud. It shows every number written <strong>in Korean and in English, side by side</strong>, and reads <strong>both aloud</strong> with your device's voice. Type a number to hear it once, or let it count up on its own and listen on repeat — across big numbers, ordinals, fractions, dates and times.</p>
-    <p>
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.englishnumber" class="btn" target="_blank" rel="noopener">
-        Download on Google Play
-      </a>
-      <a href="https://apps.apple.com/kr/app/id6788215158" class="btn" target="_blank" rel="noopener">
-        Download on the App Store
-      </a>
-    </p>
-    <img src="/assets/images/englishnumber/feature-banner-en.webp" alt="Korean Numbers" class="landing-hero__banner">
-  </div>
-</section>
+{{ m.facts([
+  { num: '5', label: 'Numbers · Ordinals · Fraction · Date · Time' },
+  { num: '2', label: 'Ways · Once (type it) · Auto (count up on repeat)' },
+  { num: '115×', label: 'Auto repeat, at most' },
+  { num: '2 languages', label: 'Shown and spoken together' }
+]) }}
 
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Why numbers trip you up in another language</h2>
-    <p>The digits are the same everywhere — but saying them out loud follows different rules, and that's where you stall.</p>
+{% call m.feat({ eyebrow: 'Five categories', title: 'Numbers, ordinals, fractions,<br>dates, times — Once · Auto',
+  shots: [ { src: shots + '01_main_menu.webp', alt: 'Home — five categories with Once and Auto buttons', w: 720, h: 1560 } ] }) %}
+  <p>The digits are the same everywhere — but saying them out loud follows different rules, and that's where you stall. Pick one of five categories from the home screen, then listen one of two ways.</p>
+  <ul class="checks">
+    <li><strong>Once</strong> — type any value and hear it read once</li>
+    <li><strong>Auto</strong> — let the number count up on its own and listen on repeat</li>
+    <li>The top of the screen shows whether <strong>voice data</strong> is installed</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Auto', title: 'Not a quiz:<br>relaxed, repeated listening', soft: true, flip: true,
+  shots: [ { src: shots + '02_number_auto.webp', alt: 'Numbers · Auto — 48,500 in Korean and English with step and repeat options', w: 720, h: 1560 } ] }) %}
+  <p>English groups digits by three (thousand · million · billion); Korean groups by four (만 man · 억 eok · 조 jo). Every value appears in both on one line — 48,500 shows as "사만 팔천오백 · forty-eight thousand five hundred." Set a start, press play, and the number climbs while the voice keeps up.</p>
+  <ul class="checks">
+    <li><strong>Step</strong> — +1, +10, +100, +thousand … up to billions</li>
+    <li><strong>Repeat</strong> — 5, 15, 65 or 115 times</li>
+    <li>English always on; turn on Korean to hear <strong>Korean then English</strong></li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Ordinals · Fractions', title: '11th, 12th, 13th,<br>and three fifths',
+  shots: [
+    { src: shots + '03_ordinal.webp', alt: 'Ordinals · Auto — 45,200th', w: 720, h: 1560 },
+    { src: shots + '04_fraction.webp', alt: 'Fraction · Auto — natural number, numerator, denominator', w: 720, h: 1560 }
+  ] }) %}
+  <p>Ordinals are full of exceptions, and fractions follow the cardinal-over-ordinal rule. The app reads both correctly.</p>
+  <ul class="checks">
+    <li><strong>-st / -nd / -rd / -th</strong>, first · second · third, 11th · 12th · 13th, large ordinals like 45,200th</li>
+    <li>Three parts — natural number · numerator · denominator — "3/5" as <strong>"three fifths"</strong></li>
+    <li>Mixed numbers add and — "8 and 3/5"; the Korean reading ("5분의 3") alongside</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Dates · Time', title: 'the first of April<br>twenty twenty-six', soft: true, flip: true,
+  shots: [
+    { src: shots + '05_date.webp', alt: 'Date · Auto — pick from the calendar', w: 720, h: 1560 },
+    { src: shots + '06_time.webp', alt: 'Time · Auto — pick from the clock', w: 720, h: 1560 }
+  ] }) %}
+  <p>Dates are read as "the &lt;ordinal&gt; of &lt;month&gt; &lt;year&gt;"; on the hour, time reads "o'clock," otherwise hour then minutes. The year is the hard part, and it's read the natural way.</p>
+  <ul class="checks">
+    <li>2026 → <strong>"twenty twenty-six"</strong>, 2010 → "twenty ten", 2000 → "two thousand"</li>
+    <li>Type it or pick from the <strong>calendar · clock</strong>; the Korean reading is shown next to it</li>
+    <li>On Auto, step by <strong>+minute / +hour</strong> to hear time expressions on repeat</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Settings', title: 'Fine-tune the voice<br>until it sits right',
+  shots: [ { src: shots + '07_settings.webp', alt: 'Settings — voice pitch, speed, listening interval', w: 720, h: 1560 } ] }) %}
+  <p>Adjust the reading until it sits comfortably in your ear.</p>
+  <ul class="checks">
+    <li><strong>Voice pitch</strong> — a little lower / normal / a little higher</li>
+    <li><strong>Voice speed</strong> — five steps, from slow to very fast</li>
+    <li><strong>Listening interval</strong> — long / normal / short pause before the next number</li>
+  </ul>
+{% endcall %}
+
+{% call m.more('See all features', 'Once mode · Why numbers trip you up') %}
+  <div>
+    <h4>Once mode</h4>
     <ul>
-      <li><strong>The grouping is different</strong> — English breaks numbers every three digits (thousand · million · billion), while Korean breaks every four (만 <em>man</em> · 억 <em>eok</em> · 조 <em>jo</em>). "48,500" is "forty-eight thousand five hundred" but "사만 팔천오백" in Korean.</li>
-      <li><strong>Ordinals are irregular</strong> — first, second, third, plus the 11th/12th/13th exceptions and when to add -st/-nd/-rd/-th.</li>
-      <li><strong>Dates, times and fractions are set phrases</strong> — "the first of April", "o'clock", "three fifths" all look different from the digits.</li>
-    </ul>
-    <p>This app lets you <strong>see it and hear it at the same time</strong>, in both languages. No sign-up — open it and start.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Five categories, two ways — Once · Auto</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/01_main_menu.png" alt="Home screen with Numbers, Ordinals, Fraction, Date and Time categories, each with Once and Auto buttons" class="app-screenshot">
-    <p>Pick one of five categories from the home screen, then listen in one of two ways.</p>
-    <ul>
-      <li><strong>Numbers</strong> (cardinals) · <strong>Ordinals</strong> · <strong>Fraction</strong> · <strong>Date</strong> · <strong>Time</strong></li>
-      <li><strong>Once</strong> — type any value and hear it read once</li>
-      <li><strong>Auto</strong> — let the number count up on its own and listen on repeat</li>
-    </ul>
-    <p>The top of the screen shows whether the <strong>voice data</strong> needed for pronunciation is installed, so you always know you're ready.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Hear it both ways, on repeat — Auto</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/02_number_auto.png" alt="Numbers Auto screen showing 48,500 as '사만 팔천오백 · forty-eight thousand five hundred' with increment, repeat and language chips" class="app-screenshot">
-    <p>Every value appears <strong>in Korean and English on one line</strong> — for example 48,500 shows as "사만 팔천오백 · forty-eight thousand five hundred." In <strong>Once</strong> mode you can also break a big number into digit groups so you hear exactly where it splits at million and thousand.</p>
-    <p><strong>Auto</strong> is not a quiz — it's relaxed, repeated listening. Set a starting value, press play, and the number climbs on its own while the voice keeps up.</p>
-    <ul>
-      <li><strong>Step</strong> — +1, +10, +100, +thousand … up to billions</li>
-      <li><strong>Repeat</strong> — 5, 15, 65 or 115 times</li>
-      <li><strong>Language</strong> — English always on; turn on <strong>Korean</strong> to hear Korean then English</li>
-    </ul>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Ordinals — first, second … and 11th, 12th, 13th</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/03_ordinal.png" alt="Ordinals screen showing 45,200th" class="app-screenshot">
-    <p>Ordinals are full of exceptions. The app attaches <strong>-st / -nd / -rd / -th</strong> correctly, handles first · second · third and the tricky <strong>11th · 12th · 13th</strong>, and reads large ordinals such as 45,200th too.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Fractions — three fifths</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/04_fraction.png" alt="Fraction screen with natural number, numerator and denominator fields" class="app-screenshot">
-    <p>Enter a fraction as three parts — <strong>natural number · numerator · denominator</strong>. It follows the English rule of cardinal-over-ordinal, so "3/5" is read as "three fifths," and mixed numbers add <strong>and</strong>, as in "8 and 3/5." The Korean reading ("5분의 3") is shown alongside.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Dates — the first of April twenty twenty-six</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/05_date.png" alt="Date screen with 2026-07-03 and a calendar picker" class="app-screenshot">
-    <p>Type a date or pick it from the <strong>calendar</strong>, and it's read in English as "the &lt;ordinal&gt; of &lt;month&gt; &lt;year&gt;." The <strong>year</strong> is the hard part, and it's read the natural way: 2026 as "twenty twenty-six," 2010 as "twenty ten," 2000 as "two thousand." The Korean reading is shown next to it.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Time — 3 o'clock</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/06_time.png" alt="Time screen with 07:01 and a clock picker" class="app-screenshot">
-    <p>Enter a time or pick it from the <strong>clock</strong>. On the hour it reads "o'clock," otherwise it reads the hour and minutes in sequence. Leave it on <strong>Auto</strong> to step forward by <strong>minute</strong> or <strong>hour</strong> and hear time expressions on repeat.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Fine-tune the voice — Settings</h2>
-    <img src="/assets/images/englishnumber/screenshots/en/07_settings.png" alt="Settings screen with voice pitch, voice speed and listening interval sliders" class="app-screenshot">
-    <p>Adjust the reading until it sits comfortably in your ear.</p>
-    <ul>
-      <li><strong>Voice pitch</strong> — a little lower / normal / a little higher</li>
-      <li><strong>Voice speed</strong> — five steps, from slow to very fast</li>
-      <li><strong>Listening interval</strong> — the pause before the next number: long / normal / short</li>
+      <li>Type a value and hear it once, in Korean or English</li>
+      <li>Break a big number into digit groups to hear exactly where it splits at million and thousand</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>What you need — device voices (TTS)</h2>
-    <p>Pronunciation uses your device's <strong>text-to-speech (TTS) engine</strong>, so both <strong>Korean and English voice data</strong> need to be installed. If a voice is missing, the app points you to the install screen and jumps straight to your system TTS settings or the Google voice install. You can check the status any time at the top of the home screen.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>App info</h2>
+  <div>
+    <h4>Why numbers trip you up</h4>
     <ul>
-      <li>Platform: Android · iOS</li>
-      <li>Display: Korean and English readings shown together, spoken in both</li>
-      <li>Requires: Korean and English device voice (TTS) data</li>
-      <li>Price: Free (with ads, no in-app purchases)</li>
+      <li>Different grouping — every three digits in English, every four in Korean ("48,500" is "사만 팔천오백")</li>
+      <li>Irregular ordinals — first, second, third, plus 11th/12th/13th</li>
+      <li>Set phrases — "the first of April", "o'clock", "three fifths" look different from the digits</li>
     </ul>
-    <p style="margin-top: var(--space-xl); text-align: center;">
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.englishnumber" class="btn" target="_blank" rel="noopener">
-        Download on Google Play
-      </a>
-      <a href="https://apps.apple.com/kr/app/id6788215158" class="btn" target="_blank" rel="noopener">
-        Download on the App Store
-      </a>
-    </p>
   </div>
-</section>
+{% endcall %}
+
+{{ m.trust([
+  { icon: 'devices', title: 'What you need — device voices (TTS)', items: ["Pronunciation uses your device's TTS engine — Korean and English voice data both needed", 'If a voice is missing, the app jumps to your system TTS settings or the Google voice install', 'Check the status any time at the top of the home screen'] },
+  { icon: 'bolt', title: 'Start right away', items: ['No sign-up — open it and start', 'Korean and English readings shown together', 'Spoken in both languages'] },
+  { icon: 'shield', title: 'App info', items: ['Android · iOS', 'Requires Korean and English device voice (TTS) data', 'Free (with ads, no in-app purchases)'] }
+]) }}
+
+{{ m.cta({ app: app, lang: 'en', title: 'Hear numbers in two languages',
+  lead: 'No sign-up — open it and start.',
+  playUrl: playUrl, appStoreUrl: app.appStoreUrl,
+  note: 'Free · With ads · No in-app purchases · Android · iOS · Device TTS required' }) }}
