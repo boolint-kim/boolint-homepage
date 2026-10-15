@@ -436,6 +436,20 @@ button { font: inherit; }
 }
 .checks strong { color: var(--ink); font-weight: 700; }
 
+/* 계산 사례 (계산기 앱) — 옛 .case-box 를 토큰만 바꿔 이식. 숫자는 옛 페이지 그대로 옮긴다 */
+.case {
+  margin-top: 1.5rem; padding: 1.125rem 1.25rem;
+  background: #fff; border: 1px solid var(--line); border-left: 4px solid var(--brand);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+}
+.case__title { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .04em; color: var(--brand); margin-bottom: .375rem; }
+.case h3 { font-size: 1.0625rem; line-height: 1.4; margin-bottom: .625rem; }
+.case li { position: relative; padding-left: 1rem; margin-bottom: .375rem; font-size: var(--fs-sm); color: var(--ink-2); }
+.case li::before { content: ""; position: absolute; left: 0; top: .7em; width: 5px; height: 5px; border-radius: 50%; background: #c7d2fe; }
+.case strong { color: var(--ink); }
+.case__result { margin-top: .75rem; padding-top: .75rem; border-top: 1px solid var(--line); font-size: var(--fs-sm); color: var(--ink-2); }
+.case__result strong { color: var(--brand-600); }
+
 /* 접힌 전체 기능 */
 .more { border: 1px solid var(--line); border-radius: var(--r-lg); background: #fff; overflow: hidden; }
 .more summary {

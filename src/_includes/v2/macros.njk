@@ -138,6 +138,18 @@
 </section>
 {% endmacro %}
 
+{# 3-1. 계산 사례 — 기능 행 본문 안에서 쓴다. { title, items:[…], result, label? } (숫자는 옛 페이지 그대로) #}
+{% macro case(o) %}
+<div class="case">
+  <p class="case__title">{{ o.label or '실제 계산 사례' }}</p>
+  <h3>{{ o.title | safe }}</h3>
+  <ul>
+    {% for it in o.items %}<li>{{ it | safe }}</li>{% endfor %}
+  </ul>
+  {% if o.result %}<p class="case__result">{{ o.result | safe }}</p>{% endif %}
+</div>
+{% endmacro %}
+
 {# 4. 비교 — { eyebrow, title, cards:[{ vs, title, text }] } 3장 #}
 {% macro compare(o) %}
 <section class="section section--soft">
