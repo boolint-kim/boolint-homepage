@@ -1,111 +1,74 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: ko
 title: "아파트 전월세 실거래가 — 전세·월세 신고가를 차트와 지도 히트맵으로"
+description: "국토교통부에 신고된 전국 아파트 전세·월세 실거래가를 단지별 임대료 추이 차트와 지역별 히트맵으로 살펴보는 아파트 임대 시세 조회 앱입니다."
 ---
+{# 앱 소개 — 홈페이지에 스크린샷이 없어 apttradechart 와 같은 구성(plain 히어로 + 3단 카드, 2026-10-15 사용자 결정 준용)
+   apps.json 에서 hidden 이라 홈에는 노출되지 않는다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('aptrentchart') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
 
-<div class="container" style="padding-top: var(--space-md);">
-  <p style="font-size: 0.875rem;">
-    <a href="/">← 앱 목록</a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'ko',
+  category: '부동산·세금', tags: ['Android', '무료'],
+  title: '아파트 전월세 실거래가',
+  lead: '국토교통부에 신고된 전국 아파트 전세·월세 실거래가를 단지별 임대료 추이 차트와 지역별 히트맵으로 한 앱에서 살펴봅니다.',
+  playUrl: playUrl,
+  facts: ['회원가입 없음', '한국어', '한국 부동산 데이터 전용']
+}) }}
 
-<section class="landing-hero">
-  <div class="landing-hero__inner">
-    <h1>아파트 전월세 실거래가</h1>
-    <p class="landing-hero__lead">국토교통부에 신고된 전국 아파트 전세·월세 실거래가를, 단지별 임대료 추이 차트와 지역별 히트맵으로 한 앱에서 살펴볼 수 있는 아파트 임대 시세 조회 앱입니다.</p>
-    <p>
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.aptrentchart" class="btn" target="_blank" rel="noopener">
-        Google Play에서 다운로드
-      </a>
-    </p>
-  </div>
-</section>
+{{ m.facts([
+  { num: '전세·월세', label: '매매가가 아닌 임대 실거래만' },
+  { num: '4단계', label: '시/도 → 시/군/구 → 읍/면/동 → 단지' },
+  { num: '신규·갱신', label: '계약 구분까지 신고된 경우 표시' },
+  { num: '히트맵', label: '동네별 임대 시세를 지도에' }
+]) }}
 
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>왜 전월세도 따로 봐야 하나요?</h2>
-    <p>2021년 전월세 신고제(주택임대차 신고제) 시행 이후, 일정 규모 이상 아파트의 전세·월세 계약은 국토교통부에 의무 신고됩니다. 그 결과 <strong>전세금·월세·보증금</strong>이 매매가와 마찬가지로 공개 데이터로 누적되고 있습니다.</p>
+{{ m.compare({ eyebrow: '세 단계로', title: '단지를 찾고, 임대료 흐름을 보고,<br>동네와 비교합니다', cards: [
+  { vs: '단지 찾기', title: '매매 앱과 같은 네 단계', text: '시/도 · 시/군/구 · 읍/면/동 · 단지명 순으로 좁혀 갑니다. 전세·월세 시세를 자주 비교하는 단지는 즐겨찾기로 등록해 메인에서 바로 엽니다.' },
+  { vs: '전세·월세 차트', title: '한 차트에서 임대 흐름을', text: '전세·반전세·월세 신고 내역을 시간 순으로. 전세는 전세금 흐름을, 월세는 보증금/월세 비율의 변화를 함께 보며 "전세에서 반전세로 이동 중인가" 같은 추세를 읽습니다.' },
+  { vs: '지도 히트맵', title: '이 동네 30평대 전세는?', text: '단지별 전월세 시세를 색상과 도형으로 표시합니다. 거래 유형·평형 구간·기간 필터를 조합하고, 핀을 탭하면 최근 임대 계약 정보가 펼쳐집니다.' }
+] }) }}
+
+{% call m.more('모든 기능 보기', '왜 전월세인가 · 차트에 표시되는 것 · 히트맵') %}
+  <div>
+    <h4>왜 전월세도 따로 봐야 하나요?</h4>
     <ul>
-      <li>전세 만기가 가까워졌는데 우리 단지 전세 시세가 얼마나 변했는지 모릅니다.</li>
-      <li>이사하려는 동네의 월세 보증금/월세 비율을 가늠하기 어렵습니다.</li>
-      <li>같은 평형이라도 전세와 반전세, 월세의 가격대가 동시에 어떻게 형성되어 있는지 한눈에 보기 어렵습니다.</li>
-    </ul>
-    <p>이 앱은 매매가가 아닌 <strong>전세·월세 실거래</strong>만을 단지별·평형별로 정리해, 임대 의사결정에 필요한 시야를 한 화면에 모아 줍니다.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>단지 찾기 — 매매 앱과 동일한 네 단계</h2>
-    <ol>
-      <li><strong>시/도</strong> — 서울, 경기, 부산 ...</li>
-      <li><strong>시/군/구</strong> — 강남구, 분당구, 해운대구 ...</li>
-      <li><strong>읍/면/동</strong> — 역삼동, 정자동, 우동 ...</li>
-      <li><strong>단지명</strong> — 해당 동의 아파트 목록에서 선택</li>
-    </ol>
-    <p>전세·월세 시세를 자주 비교하는 단지는 즐겨찾기로 등록해 메인에서 바로 열 수 있습니다.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>전세·월세를 한 차트에서</h2>
-    <p>단지를 선택하면 그 단지의 <strong>전세·반전세·월세 신고 내역</strong>이 시간 순으로 정리됩니다. 거래 유형이 섞여 있기 때문에 다음 정보가 함께 표시됩니다.</p>
-    <ul>
-      <li><strong>거래 유형</strong> — 전세 / 월세(보증금+월세)</li>
-      <li><strong>보증금·월세</strong> — 월세 거래는 보증금과 월세가 함께</li>
-      <li><strong>전용면적·층·거래일</strong></li>
-      <li><strong>계약 구분</strong> — 신규 / 갱신 (갱신권 사용 여부 등 신고된 경우)</li>
-    </ul>
-    <p>전세는 전세금의 절대치 흐름을, 월세는 보증금/월세 비율의 변화를 함께 관찰할 수 있어, "전세에서 반전세로 시장이 이동 중인가" 같은 추세도 자연스럽게 드러납니다.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>지도 히트맵 — 동네별 임대 시세</h2>
-    <p>히트맵 화면은 전국 지도 위에 단지별 전월세 시세를 색상과 도형으로 표시합니다. 거래 유형(전세·월세), 평형 구간, 기간 필터를 조합해 "이 동네 30평대 전세는 어느 가격대인가" 같은 질문에 즉시 답할 수 있습니다.</p>
-    <p>핀을 탭하면 그 단지의 최근 임대 계약 정보가 인포윈도우로 펼쳐지고, 인접 단지와 시각적으로 바로 비교됩니다. 매매 시세와 별개로, 임대 시세에 특화된 단면을 보여줍니다.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>데이터 출처</h2>
-    <ul>
-      <li><strong>국토교통부 실거래가 공개시스템</strong>의 아파트 전월세 신고 데이터를 가공해 사용합니다.</li>
-      <li>전월세 신고제는 2021년 6월 시행되어, 보증금 6천만원 초과 또는 월세 30만원 초과 계약이 신고 대상입니다 (제도 변경 시 기준이 바뀔 수 있습니다).</li>
-      <li>신고 시점에 따라 최근 거래는 며칠~몇 주의 시차가 있을 수 있습니다.</li>
+      <li>2021년 전월세 신고제(주택임대차 신고제) 시행 이후 일정 규모 이상 아파트의 전세·월세 계약은 국토교통부에 의무 신고</li>
+      <li>전세금·월세·보증금이 매매가처럼 공개 데이터로 누적</li>
+      <li>전세 만기가 가까운데 우리 단지 전세 시세가 얼마나 변했는지 모를 때</li>
+      <li>이사하려는 동네의 월세 보증금/월세 비율을 가늠하기 어려울 때</li>
+      <li>같은 평형의 전세·반전세·월세 가격대를 한눈에 보기 어려울 때</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>프라이버시 — 정직하게 말씀드립니다</h2>
+  <div>
+    <h4>차트에 표시되는 것</h4>
     <ul>
-      <li><strong>회원가입·로그인 없음.</strong> 앱을 열면 곧장 조회할 수 있습니다.</li>
-      <li><strong>즐겨찾기는 기기에 머무릅니다.</strong> 서버로 전송되지 않습니다.</li>
-      <li>네트워크는 실거래가·히트맵 데이터 수신과 광고 표시 용도로 사용합니다.</li>
-      <li><strong>광고 고지</strong>: 무료 운영을 위해 Google AdMob 배너·전면 광고를 사용합니다. AdMob SDK는 광고 ID와 노출·클릭 데이터를 Google에 전송합니다.</li>
+      <li>거래 유형 — 전세 / 월세(보증금+월세)</li>
+      <li>보증금·월세 — 월세 거래는 함께</li>
+      <li>전용면적·층·거래일</li>
+      <li>계약 구분 — 신규 / 갱신 (갱신권 사용 여부 등 신고된 경우)</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>앱 정보</h2>
+  <div>
+    <h4>지도 히트맵</h4>
     <ul>
-      <li>플랫폼: Android</li>
-      <li>언어: 한국어 (한국 부동산 데이터 전용)</li>
-      <li>요금: 무료 (광고 포함, 인앱 결제 없음)</li>
+      <li>전국 지도 위 단지별 전월세 시세를 색상과 도형으로</li>
+      <li>핀을 탭하면 인포윈도우로 최근 임대 계약, 인접 단지와 바로 비교</li>
+      <li>매매 시세와 별개로 임대 시세에 특화된 단면</li>
     </ul>
-    <p style="margin-top: var(--space-xl); text-align: center;">
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.aptrentchart" class="btn" target="_blank" rel="noopener">
-        Google Play에서 다운로드
-      </a>
-    </p>
   </div>
-</section>
+{% endcall %}
+
+{{ m.trust([
+  { icon: 'db', title: '데이터 출처', items: ['국토교통부 실거래가 공개시스템의 아파트 전월세 신고 데이터를 가공해 사용', '전월세 신고제는 2021년 6월 시행 — 보증금 6천만원 초과 또는 월세 30만원 초과 계약이 신고 대상 (제도 변경 시 기준이 바뀔 수 있음)', '신고 시점에 따라 최근 거래는 며칠~몇 주 시차'] },
+  { icon: 'lock', title: '프라이버시', items: ['회원가입·로그인 없음. 열면 곧장 조회', '즐겨찾기는 기기에 머묾 — 서버로 전송되지 않음', '네트워크는 실거래가·히트맵 데이터 수신과 광고 표시 용도로', '<strong>광고 고지</strong>: 무료 운영을 위해 Google AdMob 배너·전면 광고를 사용합니다. AdMob SDK는 광고 ID와 노출·클릭 데이터를 Google에 전송합니다.'] },
+  { icon: 'devices', title: '앱 정보', items: ['Android', '한국어 (한국 부동산 데이터 전용)', '무료 (광고 포함, 인앱 결제 없음)'] }
+]) }}
+
+{{ m.cta({ app: app, lang: 'ko', title: '전세 만기 전에, 시세부터 확인하세요',
+  lead: '회원가입 없이 앱을 열면 곧장 조회할 수 있습니다.',
+  playUrl: playUrl,
+  note: '무료 · 광고 포함 · 인앱 결제 없음 · Android · 한국어' }) }}

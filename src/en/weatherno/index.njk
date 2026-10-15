@@ -1,19 +1,24 @@
 ---
-layout: layouts/app.njk
+layout: layouts/v2.njk
 lang: en
 title: "Weather Norway"
-appSlug: weatherno
-appName: Weather Norway
-appHasHelp: false
 alternateLang: ko
 alternateUrl: /weatherno/
 ---
+{# stub — 옛 페이지가 두 문장뿐이라 plain 히어로 + CTA 만 (구현서 §5.3). 사이드바(app.njk)는 메뉴가 "소개" 하나뿐이라 걷어냈다.
+   apps.json 에서 hidden 이라 홈에는 노출되지 않는다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('weatherno') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
 
-<p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-  <a href="/en/">← All apps</a>
-</p>
+{{ m.appHero({
+  app: app, lang: 'en',
+  category: 'Weather & Road Live', tags: ['Android'],
+  title: 'Weather Norway',
+  lead: 'A Norway weather app. Check weather information across Norway quickly and easily.',
+  playUrl: playUrl
+}) }}
 
-<h1>Weather Norway</h1>
-<p>A Norway weather app.</p>
-<p>Check weather information across Norway quickly and easily.</p>
-
+{{ m.cta({ app: app, lang: 'en', title: 'Check the weather in Norway',
+  lead: 'Available on Google Play.',
+  playUrl: playUrl, note: 'Android' }) }}
