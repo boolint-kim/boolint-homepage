@@ -1,178 +1,138 @@
 ---
-layout: layouts/base.njk
-mainClass: main--landing
+layout: layouts/v2.njk
 lang: en
 title: "Icon Maker — Your own app icon in three layers"
 description: "Stack two icons and a background to make app icons, logos and profile pictures, browse Style ideas built from your design, and export PNGs in the sizes you need. Free for Android."
 alternateLang: ko
 alternateUrl: /iconmixer/
 ---
+{# 앱 소개(영어) — 한국어 /iconmixer/ 와 같은 구조. 원고는 옛 영어 페이지 본문 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('iconmixer') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
+{% set shots = '/assets/images/iconmixer/screenshots/en/' %}
 
-<div class="container" style="padding-top: var(--space-md);">
-  <p style="font-size: 0.875rem;">
-    <a href="/en/">← All apps</a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'en',
+  category: 'Daily Tools & Maker', tags: ['Android', 'Free'],
+  title: 'Icon Maker',
+  lead: 'Front icon, back icon, background — stack three layers to make your own app icon, logo or profile picture. Let Style ideas suggest variations, then export PNGs in the sizes you need. No design skills required.',
+  playUrl: playUrl,
+  facts: ['No sign-up', 'Designs stay on your device', 'English · Korean', 'Dark mode'],
+  shots: [
+    { src: shots + '01_overview.webp', w: 720, h: 1616 },
+    { src: shots + '08_style_board.webp', w: 720, h: 1616 }
+  ]
+}) }}
 
-<section class="landing-hero">
-  <div class="landing-hero__inner">
-    <h1>Icon Maker</h1>
-    <p class="landing-hero__lead">Front icon, back icon, background — stack three layers to make your own app icon, logo or profile picture. Add colors, gradients and shadows, let Style ideas suggest variations, then export PNGs in the sizes you need. No design skills required.</p>
-    <p>
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.iconmixer" class="btn" target="_blank" rel="noopener">
-        Download on Google Play
-      </a>
-    </p>
-    <img src="/assets/images/iconmixer/feature-banner-en.webp" alt="Icon Maker — Your own app icon in three layers" class="landing-hero__banner" width="1024" height="500">
-  </div>
-</section>
+{{ m.facts([
+  { num: '3', label: 'Layers · front · back · background' },
+  { num: 'Thousands', label: 'Open-source icons + letters + your photos' },
+  { num: '7', label: 'Moods · from Minimal to Pastel, on one board' },
+  { num: '64–1024', label: 'Transparent PNG sizes, all at once' }
+]) }}
 
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>You shouldn't need a design suite for one icon</h2>
-    <p>When you just need an app icon or a simple logo, the same things get in the way.</p>
+{% call m.feat({ eyebrow: 'Three layers', title: "One icon shouldn't need<br>a design suite",
+  shots: [ { src: shots + '01_overview.webp', alt: 'Editor — layers on the left, tools on the right, bottom bar', w: 720, h: 1616 } ] }) %}
+  <p>Professional design tools overwhelm you from the first screen. Icon Maker cuts it down to three layers. Choose Front · Back · Background on the left, and the tools on the right style only that layer.</p>
+  <ul class="checks">
+    <li>Each layer keeps <strong>its own style</strong> — a gradient background with a solid icon and a shadow</li>
+    <li>Top-left <strong>preview</strong> at real icon size; Swap exchanges front and back</li>
+    <li>New · Open · <strong>Save</strong> · Export — keep editing a design later</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Content', title: 'Thousands of icons,<br>letters, even your photos', soft: true, flip: true,
+  shots: [ { src: shots + '02_icons.webp', alt: 'Select Icon — icon font tabs and search', w: 720, h: 1616 } ] }) %}
+  <p>Layer content is organized in tabs, and you can search icons by name. Tap an empty layer to open the picker right away.</p>
+  <ul class="checks">
+    <li><strong>Material Icons · Font Awesome · MDI · Material Symbols</strong> — thousands of open-source glyphs</li>
+    <li><strong>System</strong> — letters or initials in your device fonts for a logo look</li>
+    <li><strong>Photo</strong> — from your gallery or samples; double-tap for position, size, Fit or Fill</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Fill · Shape', title: 'Solid, gradient, photo,<br>and the shape you want',
+  shots: [
+    { src: shots + '03_fill.webp', alt: 'Fill — gradient preset palettes', w: 720, h: 1616 },
+    { src: shots + '04_shape.webp', alt: 'Shape — width, height, radius sliders and shape picker', w: 720, h: 1616 }
+  ] }) %}
+  <p>Changes show up on the canvas instantly, so you pick while looking at the result. Set the base shape and size with sliders.</p>
+  <ul class="checks">
+    <li><strong>Gradient</strong> — linear, radial, sweep; presets like warm, cool, nature, sunset</li>
+    <li>Rectangle · oval · triangle · star · diamond · hexagon · heart — a <strong>squircle or rounded square</strong> is one radius away</li>
+    <li><strong>Transform</strong> to move, rotate, scale, skew; Perspective for a tilted 3D look</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Style ideas', title: 'Not sure about colors?<br>See variations on one board', soft: true, flip: true,
+  shots: [
+    { src: shots + '08_style_board.webp', alt: 'Style ideas — variations around your design and mood cards', w: 720, h: 1616 },
+    { src: shots + '09_style_card.webp', alt: 'Card detail — compare with original, home screen shape preview', w: 720, h: 1616 }
+  ] }) %}
+  <p>Instead of tweaking the same design over and over, tap Style ideas and a board of variation cards built from your current design appears.</p>
+  <ul class="checks">
+    <li><strong>Around your design</strong> — back hue, background hue or front rotation, one change at a time</li>
+    <li><strong>Moods</strong> — Minimal, Gradient, Clay, Glass, Neon, Luxe, Pastel</li>
+    <li>Compare side by side and preview <strong>home screen shapes</strong> (Circle · Squircle · Rounded · Small)</li>
+  </ul>
+{% endcall %}
+
+{% call m.feat({ eyebrow: 'Export', title: 'Every size you need,<br>in one go',
+  shots: [ { src: shots + '07_export.webp', alt: 'Export — size checklist from 64 to 1024', w: 720, h: 1616 } ] }) %}
+  <p>Finished icons are saved as transparent PNG files, without resizing each by hand.</p>
+  <ul class="checks">
+    <li>Check sizes from <strong>64 × 64 up to 1024 × 1024</strong></li>
+    <li>1024 for the store, 512 for the launcher, 64 for a favicon — <strong>all at once</strong></li>
+    <li>Export several Picks from Style ideas together</li>
+  </ul>
+{% endcall %}
+
+{% call m.more('See all features', 'Effects · Fill details · Style ideas · Dark mode · Who it\'s for') %}
+  <div>
+    <h4>Blur · Emboss · Shadow</h4>
     <ul>
-      <li>Professional design tools have so many features that the first screen is already overwhelming.</li>
-      <li>Free icon packs are easy to find, but changing their colors and background still means opening an editor.</li>
-      <li>App icons come in many sizes, and resizing each one by hand is tedious.</li>
-      <li>You can't tell which color combination works, so you tweak the same design over and over.</li>
+      <li>Blur — soft, natural blur</li>
+      <li>Emboss — drag the light direction on a dial, then tune intensity and height for a raised look</li>
+      <li>Shadow — fine control over position, color and blur radius</li>
     </ul>
-    <p>Icon Maker cuts this down to <strong>three layers</strong>. Pick an icon, fill it, and export every size you need in one go. Stuck on colors? <strong>Style ideas</strong> generates variations for you.</p>
   </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Front icon + back icon + background</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/01_overview.png" alt="Icon Maker editor — layer picker on the left, editing tools on the right" class="app-screenshot" loading="lazy">
-    <p>On the left of the editor, choose the <strong>Front · Back · Background</strong> layer; the tools on the right style only that layer. Each layer keeps its own style, so you can mix a gradient background with a solid icon and a drop shadow.</p>
+  <div>
+    <h4>Fill and editing details</h4>
     <ul>
-      <li><strong>Preview</strong> in the top-left shows how it looks at real icon size</li>
-      <li><strong>Swap</strong> exchanges the front and back layers</li>
-      <li>The bottom bar has <strong>New · Open · Save · Export</strong> — save a design and keep editing it later</li>
+      <li>Solid — color picker or recently used colors</li>
+      <li>Gradient — set start/end points and color stops yourself</li>
+      <li>Photo — fill the icon shape with a picture · Stroke — outline color and thickness</li>
       <li>First launch starts with a sample icon and a quick guide</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Thousands of icons, letters, even your photos</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/02_icons.png" alt="Select Icon — Material, System, Awesome, MDI, Symbols and Photo tabs with search by name" class="app-screenshot" loading="lazy">
-    <p>Layer content is organized in tabs, and you can search icons by name.</p>
+  <div>
+    <h4>Style ideas · Dark mode</h4>
     <ul>
-      <li><strong>Material Icons · Font Awesome · MDI · Material Symbols</strong> — thousands of open-source icon glyphs</li>
-      <li><strong>System</strong> — type letters or initials in your device fonts for a logo look</li>
-      <li><strong>Photo</strong> — fill with a photo from your gallery or a sample photo. Double-tap to adjust position and size, and switch between Fit and Fill</li>
-      <li>Tap an empty layer to open the picker right away</li>
+      <li>The middle column is your current design</li>
+      <li>Apply now can be undone right away; More like this explores closer variations</li>
+      <li>Add favorites to Picks</li>
+      <li>Built on Material Design, follows system dark mode — check how icon colors read on dark</li>
     </ul>
   </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Fill — solid, gradient or photo</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/03_fill.png" alt="Gradient fill — preset palettes such as warm, cool, nature and sunset" class="app-screenshot" loading="lazy">
-    <p>Choose what goes inside each layer. Changes show up on the canvas instantly, so you pick while looking at the result.</p>
+  <div>
+    <h4>Who it's for</h4>
     <ul>
-      <li><strong>Solid</strong> — color picker or recently used colors</li>
-      <li><strong>Gradient</strong> — linear, radial and sweep. Start from preset palettes (warm, cool, nature, sunset…) or set start/end points and color stops yourself</li>
-      <li><strong>Photo</strong> — fill the icon shape with a picture</li>
-      <li><strong>Stroke</strong> — outline color and thickness</li>
+      <li>App developers — a custom app icon quickly before launch</li>
+      <li>Designers — prototype ideas and experiment with color and style</li>
+      <li>Everyone — personal profile icons and social media images</li>
+      <li>Small businesses and brand makers — simple logos and stickers</li>
     </ul>
   </div>
-</section>
+{% endcall %}
 
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Shapes and transforms</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/04_shape.png" alt="Shape settings — width, height, corner radius and rectangle, oval, triangle, star, diamond, hexagon, heart" class="app-screenshot" loading="lazy">
-    <p>Pick the base shape — <strong>rectangle, oval, triangle, star, diamond, hexagon or heart</strong> — and set width, height and corner radius with sliders. Common app-icon shapes like the Android squircle or the iOS rounded square are one radius away.</p>
-    <p><strong>Transform</strong> moves, rotates, scales and skews a layer, and <strong>Perspective</strong> adds a tilted 3D look.</p>
-  </div>
-</section>
+{{ m.trust([
+  { icon: 'lock', title: 'Privacy', items: ['No sign-up, no login. Open the app and start making', 'Your designs and chosen photos stay on your device — nothing is uploaded', 'The network is used only to show ads and to fetch the sample photo list', '<strong>Ads</strong>: the app is free and uses Google AdMob. The AdMob SDK sends the advertising ID and impression/click data to Google.'] },
+  { icon: 'shield', title: 'Icon licenses', items: ['Material Icons — Apache License 2.0', 'Font Awesome Free — SIL OFL 1.1', 'MDI / Material Symbols', 'Full details in the in-app license screen'] },
+  { icon: 'devices', title: 'App info', items: ['Android', 'English / Korean', 'Free (contains ads, no in-app purchases)'] }
+]) }}
 
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Blur · Emboss · Shadow</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/05_effect.png" alt="Emboss settings — light direction, intensity and height" class="app-screenshot" loading="lazy">
-    <p>Three effects that add depth to a flat icon.</p>
-    <ul>
-      <li><strong>Blur</strong> — soft, natural blur</li>
-      <li><strong>Emboss</strong> — drag the light direction on a dial, then tune intensity and height for a raised look</li>
-      <li><strong>Shadow</strong> — fine control over position, color and blur radius</li>
-    </ul>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Style ideas — variations of your design at a glance</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/08_style_board.png" alt="Style ideas board — cards around your design and mood variations" class="app-screenshot" loading="lazy">
-    <p>Not sure which colors work best? Tap <strong>Style ideas</strong> in the editor and a board of variation cards built from your current design appears.</p>
-    <ul>
-      <li><strong>Around your design</strong> — cards that change <em>one thing at a time</em>, such as back hue, background hue or front rotation. The middle column is your current design</li>
-      <li><strong>Moods</strong> — the whole design re-styled as Minimal, Gradient, Clay, Glass, Neon, Luxe or Pastel</li>
-      <li>Add favorites to <strong>Picks</strong> and export several at once</li>
-    </ul>
-    <img src="/assets/images/iconmixer/screenshots/en/09_style_card.png" alt="Style card detail — compare with original, home screen previews, Add to picks and Apply now" class="app-screenshot" loading="lazy">
-    <p>Tap a card to compare it side by side with the original and preview it <strong>on your home screen</strong> (Circle · Squircle · Rounded · Small). <strong>Apply now</strong> can be undone right away, and <strong>More like this</strong> explores closer variations around that card.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Export every size you need in one go</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/07_export.png" alt="Export — check multiple sizes from 64 to 1024 and save as PNG" class="app-screenshot" loading="lazy">
-    <p>Finished icons are saved as transparent <strong>PNG</strong> files. Check as many sizes as you need, <strong>from 64 × 64 up to 1024 × 1024</strong>, and they are all generated at once — 1024 for the store listing, 512 for the launcher, 64 for a favicon, without resizing each by hand.</p>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Dark mode</h2>
-    <img src="/assets/images/iconmixer/screenshots/en/06_dark.png" alt="Editor in dark mode" class="app-screenshot" loading="lazy">
-    <p>Built on Material Design, the app follows your system dark mode setting — handy for checking how your icon colors read on a dark background.</p>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>Who it's for</h2>
-    <ul>
-      <li><strong>App developers</strong> — make a custom app icon quickly before launch</li>
-      <li><strong>Designers</strong> — prototype ideas and experiment with color and style variations</li>
-      <li><strong>Everyone</strong> — personal profile icons and social media images</li>
-      <li><strong>Small businesses and brand makers</strong> — simple logos and stickers</li>
-    </ul>
-  </div>
-</section>
-
-<section class="landing-section landing-section--alt">
-  <div class="landing-section__inner">
-    <h2>Privacy — plainly stated</h2>
-    <ul>
-      <li><strong>No sign-up, no login.</strong> Open the app and start making.</li>
-      <li><strong>Your designs and chosen photos stay on your device.</strong> Nothing is uploaded to a server.</li>
-      <li>The network is used only to show ads and to fetch the sample photo list.</li>
-      <li><strong>Ads</strong>: the app is free and uses Google AdMob. The AdMob SDK sends the advertising ID and impression/click data to Google.</li>
-      <li>Icons come from open-source icon fonts (Material Icons — Apache License 2.0, Font Awesome Free — SIL OFL 1.1, MDI / Material Symbols). Full license details are in the in-app license screen.</li>
-    </ul>
-  </div>
-</section>
-
-<section class="landing-section">
-  <div class="landing-section__inner">
-    <h2>App info</h2>
-    <ul>
-      <li>Platform: Android</li>
-      <li>Languages: English / Korean</li>
-      <li>Price: Free (contains ads, no in-app purchases)</li>
-    </ul>
-    <p style="margin-top: var(--space-xl); text-align: center;">
-      <a href="https://play.google.com/store/apps/details?id=com.boolint.iconmixer" class="btn" target="_blank" rel="noopener">
-        Download on Google Play
-      </a>
-    </p>
-  </div>
-</section>
+{{ m.cta({ app: app, lang: 'en', title: 'Your own icon, in three layers',
+  lead: 'No sign-up — open the app and start making.',
+  playUrl: playUrl,
+  note: 'Free · Contains ads · No in-app purchases · Android · English / Korean' }) }}
