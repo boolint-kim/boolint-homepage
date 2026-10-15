@@ -138,11 +138,12 @@
 </section>
 {% endmacro %}
 
-{# 3-1. 계산 사례 — 기능 행 본문 안에서 쓴다. { title, items:[…], result, label? } (숫자는 옛 페이지 그대로) #}
+{# 3-1. 계산 사례 — 기능 행 본문 안에서 쓴다. { title, note?, items:[…], result, label? } (숫자는 옛 페이지 그대로) #}
 {% macro case(o) %}
 <div class="case">
   <p class="case__title">{{ o.label or '실제 계산 사례' }}</p>
   <h3>{{ o.title | safe }}</h3>
+  {% if o.note %}<p class="case__note">{{ o.note | safe }}</p>{% endif %}
   <ul>
     {% for it in o.items %}<li>{{ it | safe }}</li>{% endfor %}
   </ul>

@@ -444,6 +444,7 @@ button { font: inherit; }
 }
 .case__title { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .04em; color: var(--brand); margin-bottom: .375rem; }
 .case h3 { font-size: 1.0625rem; line-height: 1.4; margin-bottom: .625rem; }
+.case__note { font-size: var(--fs-xs); color: var(--muted); margin-bottom: .625rem; }
 .case li { position: relative; padding-left: 1rem; margin-bottom: .375rem; font-size: var(--fs-sm); color: var(--ink-2); }
 .case li::before { content: ""; position: absolute; left: 0; top: .7em; width: 5px; height: 5px; border-radius: 50%; background: #c7d2fe; }
 .case strong { color: var(--ink); }
