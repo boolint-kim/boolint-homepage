@@ -10,7 +10,7 @@
 | 항목 | 값 |
 |---|---|
 | 브랜치 | `redesign` (main 에서 분기. 시안은 커밋 `3a89ed2`) |
-| 진행 | **Phase 0~3 완료(2026-10-15)** — 홈과 모든 앱 소개 페이지가 v2. 옛 레이아웃을 쓰는 것은 privacy 4판·404·agemap 도움말 14쪽·/trend/ 뿐. **다음은 Phase 4** |
+| 진행 | **Phase 0~4 완료(2026-10-15)** — 모든 페이지가 v2. 옛 레이아웃·CSS 삭제. **남은 것: main 병합·배포(사용자 결정)와 데스크톱·모바일 최종 확인(사용자)** |
 | 시안이 건드리지 않은 것 | 기존 페이지 전부. 옛 `base.njk`·`global.css`·`components.css` 는 그대로 살아 있다 |
 | 사용자 확인 | 2026-10-15 Phase 0 에서 사용자가 브라우저로 두 시안 확인 → **변경 없이 OK** |
 
@@ -280,7 +280,7 @@ for p in sys.argv[1:]:
 - learning: englishnumber ko·en
 - hidden 인데 페이지가 있는 것: weatherno ko·en(사이드바형 `app.njk` 사용 — `.doc-layout` 필요), aptrentchart ko. 맨 뒤로.
 
-### Phase 4 — 공통 페이지와 정리
+### Phase 4 — 공통 페이지와 정리 — ✅ 2026-10-15 완료 (`v2.njk → base.njk` 개명은 선택 항목이라 하지 않음. 미참조 PNG 는 스크린샷만 지우고 배너·프리뷰 원본은 남김)
 1. privacy ko·en·es·cs → v2 + `.prose`. **네 판 내용은 건드리지 않는다**(법적 문서. 레이아웃만).
 2. 404 → v2. sitemap 은 그대로.
 3. agemap 도움말 14쪽 → v2 + `.doc-layout`(왼쪽 목차 aside). weatherno 2쪽도 같은 레이아웃.
@@ -368,12 +368,12 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 
 ## 12. 완료 정의
 
-- [ ] 모든 페이지가 `v2.njk` 를 쓰고 `grep -rl "layouts/base.njk\|layouts/app.njk" src` 가 비어 있다
-- [ ] 옛 CSS 2개·옛 레이아웃·`app-card.njk` 삭제, 사이트맵에 `/v2/` 없음
-- [ ] 홈 ko/en 이 §4, 앱 페이지가 §5 구조를 따른다. stub 2개는 plain 히어로 + CTA
-- [ ] 내부 링크 404 = 0, 페이지당 이미지 ≤ 1.5MB, 빌드 경고 0
-- [ ] 데스크톱 1440·모바일 390 캡처를 사용자가 한 번 확인
-- [ ] `CLAUDE.md` 의 기술 스택·디렉토리·CSS 절이 새 구조를 설명하고, 이 문서 §0 이 "완료"
+- [x] 모든 페이지가 `v2.njk` 를 쓰고 `grep -rl "layouts/base.njk\|layouts/app.njk" src` 가 비어 있다
+- [x] 옛 CSS 2개·옛 레이아웃·`app-card.njk` 삭제, 사이트맵에 `/v2/` 없음
+- [x] 홈 ko/en 이 §4, 앱 페이지가 §5 구조를 따른다. stub 2개는 plain 히어로 + CTA
+- [x] 내부 링크 404 = 0, 페이지당 이미지 ≤ 1.5MB, 빌드 경고 0
+- [ ] 데스크톱 1440·모바일 390 캡처를 사용자가 한 번 확인 ← **남음**
+- [x] `CLAUDE.md` 의 기술 스택·디렉토리·CSS 절이 새 구조를 설명하고, 이 문서 §0 이 "완료"
 
 ---
 
@@ -396,6 +396,8 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 | 2026-10-15 | Claude | 옛 페이지에 가격 정보가 없는 앱(agemap·weatherno)은 "무료" 표기를 넣지 않음 | 두 앱 |
 | 2026-10-15 | Claude | weatherno 는 사이드바(app.njk) 메뉴가 "소개" 하나뿐이라 `.doc-layout` 없이 stub 으로 이전 | weatherno ko/en |
 | 2026-10-15 | Claude | 계산 사례가 있는 3쪽(acqtax·mysalary·gifttax)에 `m.case` 사용, 조건 문단용 `note` 추가 | macros |
+| 2026-10-15 | Claude | /trend/ 는 trend.css 를 고치지 않고 레이아웃만 교체 — trend.css 는 크롬 확장이 복사해 쓰고 옛 변수에 폴백이 이미 있다 | /trend/ |
+| 2026-10-15 | Claude | AgeMap 도움말 목차는 `_data/agemapHelp.json` + `layouts/v2-doc.njk`. 본문 이미지는 WebP 로 교체 | 도움말 14쪽 |
 | 2026-10-15 | 사용자 | Phase 2 부터 "특별한 문제가 없으면 커밋하고 계속" — 쪽마다 검증 통과 시 커밋 | 쪽당 커밋 1개 |
 | 2026-10-15 | Claude | transtax 에 case-box 가 없어 `.case` 를 Phase 3 acqtax 로 미룸 | §8 |
 | 2026-10-15 | Claude | universedaily 영어 스크린샷 파일명 어긋남 발견 → 화면 기준으로 매핑, 파일명은 그대로 | §11 |

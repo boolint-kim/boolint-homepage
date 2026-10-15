@@ -1,12 +1,10 @@
 # boolint.com 홈페이지
 
-## ⏩ 다음 세션 시작점 (2026-10-15 — v2 전면 재설계 진행 중)
+## ⏩ 현재 상태 (2026-10-15 — v2 재설계 완료, 미배포)
 
-- **정본: `docs/REDESIGN_V2_SPEC.md`** — 목표·결정·디자인 시스템·홈/앱 페이지 규격·매크로 계약·Phase 계획·검증·함정이 전부 거기 있다. **시작 전에 끝까지 읽을 것.**
-- 브랜치 **`redesign`**. **Phase 0~3 완료** — 홈과 모든 앱 소개 페이지가 v2 다. **다음은 Phase 4(privacy·404·agemap 도움말·/trend/·옛 파일 정리)**, 앱 페이지 본보기는 `src/satpic/index.njk`. 쪽마다 검증 통과 시 커밋하고 계속(사용자 지시).
-- v2 파일: `src/_includes/layouts/v2.njk`, `src/_includes/v2/{header,footer,macros,home}.njk`, `src/assets/css/v2.css`. 옛 레이아웃·CSS 는 미이전 페이지가 남아 있는 동안 유지한다.
-- 아래 "기술 스택·디렉토리·CSS 전략" 절은 **옛 구조 기준**이다. Phase 4 에서 갱신한다.
-
+- **v2 재설계 Phase 0~4 완료** — 모든 페이지가 `layouts/v2.njk` 계열이다. 브랜치 **`redesign`**, **main 병합·배포는 사용자 결정 대기**(Cloudflare Pages 는 main 을 본다).
+- 설계·결정·함정의 정본은 **`docs/REDESIGN_V2_SPEC.md`** (§3 클래스 카탈로그, §5 앱 페이지 규격·매크로 계약, §9 한 쪽 이전 체크리스트, §11 함정, §13 결정 로그).
+- **새 앱 페이지를 만들 때**는 `src/satpic/index.njk` 를 복사해 매크로에 내용만 채운다. 계산 사례는 `m.case`, 스크린샷 없는 앱은 `src/apttradechart/index.njk`, 원고 없는 앱은 stub(`src/finedustmap/index.njk`).
 
 ## 프로젝트 개요
 - boolint.com 개발자 홈페이지 (앱 목록 + 앱별 소개/도움말)
@@ -100,50 +98,51 @@
 ```
 
 ### 랜딩 페이지 깊이
-- **풀랜딩**: satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, apttradechart, weathertw, weatherno, weatherus, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary, gifttax, iconmixer (히어로 + 다단 섹션 + 스크린샷)
-- **stub**: myweathertw, finedustmap (이름 + 한 줄 + Play Store 링크). 추후 풀랜딩으로 확장 예정.
+- **풀랜딩**(히어로 + 숫자 띠 + 기능 행 3~5 + 접힌 전체 기능 + 신뢰 + CTA): satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, weathertw, weatherus, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary, gifttax, iconmixer
+- **글 전용**(스크린샷 없음 — plain 히어로 + 3단 카드): apttradechart, aptrentchart(hidden)
+- **stub**(plain 히어로 + CTA): myweathertw, finedustmap, weatherno(hidden). 원고가 생기면 풀랜딩으로.
 
 ## 디렉토리 구조
 ```
 homepage/
-├── .eleventy.js                 # 11ty 설정 + inEnglishHome/inKoreanHome 필터
-├── wrangler.toml
-├── package.json
-├── public/                      # 빌드 없이 그대로 복사
-│   ├── _headers, _redirects, app-ads.txt, robots.txt
+├── .eleventy.js                 # 11ty 설정 + 필터: inEnglishHome/inKoreanHome · bySlug · visibleIn · inCategory
+├── public/                      # 빌드 없이 그대로 복사 (_headers, _redirects, app-ads.txt, robots.txt)
+├── docs/REDESIGN_V2_SPEC.md     # v2 설계 정본
 ├── src/
 │   ├── _includes/
-│   │   ├── layouts/{base,app}.njk
-│   │   ├── header.njk, footer.njk
-│   │   └── app-card.njk        # 홈 카드 (preview 이미지 or 첫글자 placeholder)
+│   │   ├── layouts/v2.njk       # 모든 페이지의 뼈대 (pageCss·pageJs·bodyClass 지원)
+│   │   ├── layouts/v2-doc.njk   # 문서형 — 왼쪽 목차 + 본문 (AgeMap 도움말)
+│   │   └── v2/
+│   │       ├── header.njk, footer.njk   # 문자열은 i18n.json (nav.* / footer.*)
+│   │       ├── home.njk                 # 홈 본문 ko/en 공용 (페이지는 copy 문구만 set)
+│   │       └── macros.njk               # 앱 페이지 매크로 + tile·appItem·icon·badges·case
 │   ├── _data/
-│   │   ├── site.json
-│   │   ├── apps.json           # 38개 앱 (노출 23 + hidden 15)
-│   │   └── i18n.json
+│   │   ├── site.json, i18n.json (ko·en·es·cs)
+│   │   ├── apps.json            # 앱 목록 — 홈 대표 타일은 tile 필드(tint·shot·w·h)
+│   │   └── agemapHelp.json      # 도움말 목차 (ko/en)
 │   ├── assets/
-│   │   ├── css/{global,components}.css
-│   │   └── images/{slug}/      # 앱별 아이콘·배너·스크린샷
-│   ├── index.njk               # 한국어 홈 (featured + 4 카테고리)
-│   ├── en/index.njk            # 영어 홈 (featuredEn + 3 카테고리, realestate 제외)
-│   ├── 404.njk, sitemap.njk
-│   ├── privacy/                # 개인정보처리방침 (ko)
-│   ├── {slug}/index.njk        # 노출 22개 한국어 페이지
-│   └── en/
-│       ├── privacy/
-│       └── {slug}/index.njk    # 영어 노출 12개 페이지
+│   │   ├── css/v2.css           # 디자인 시스템 전체 (+ trend.css 는 /trend/ 전용)
+│   │   ├── images/badges/       # 스토어 공식 배지
+│   │   └── images/{slug}/       # 아이콘(PNG 512) · 스크린샷(WebP 720폭)
+│   ├── index.njk, en/index.njk  # 홈
+│   ├── {slug}/index.njk, en/{slug}/index.njk   # 앱 소개
+│   ├── agemap/help/, en/agemap/help/           # 도움말 7×2 (v2-doc)
+│   ├── privacy/, en/ es/ cs/privacy/           # 개인정보처리방침 4판 (.prose)
+│   ├── trend/                   # 동작하는 웹앱 (trend.css/js)
+│   └── 404.njk, sitemap.njk
 ```
 
 ## 레이아웃 계층
-- `base.njk` → 모든 페이지의 HTML 뼈대
-  - `app.njk` → 앱 페이지 (base 상속, 사이드바 추가)
+- `v2.njk` → 모든 페이지의 HTML 뼈대 (헤더·푸터 include)
+  - `v2-doc.njk` → 문서형 (v2 상속, 왼쪽 목차)
+- 앱 페이지는 레이아웃이 아니라 **매크로**(`v2/macros.njk`)로 구성한다
 
 ## CSS 전략
-- CSS Custom Properties로 테마 변수 관리
-- 파일 2개: `global.css` (변수, 리셋, 타이포) + `components.css` (컴포넌트)
-- 모바일 퍼스트, 브레이크포인트: 768px, 1024px
-- 폰트: Pretendard (한국어), system-ui 폴백
-- 이미지: `.app-banner` (배너), `.app-screenshot` (스크린샷 max-width: 320px)
-- 프레임워크 없음
+- `v2.css` 한 파일. 토큰은 `:root` 한 곳, 모바일 퍼스트, 브레이크포인트 640 / 900 / 1100
+- 폰트: Pretendard Variable (jsdelivr CDN, 동적 서브셋)
+- 클래스 카탈로그는 구현서 §3. 스크린샷은 베젤이 박혀 있어 CSS 프레임 없이 `drop-shadow` 만
+- CSS 를 고치면 `v2.njk` 의 `?v=` 를 올린다 (캐시 1시간, immutable 금지)
+- 프레임워크 없음, JS 없음 (/trend/ 만 예외)
 
 ## Cloudflare Pages 배포 설정
 - Build command: `npx @11ty/eleventy`
@@ -169,7 +168,7 @@ homepage/
 
 ## 검증
 - 로컬: `npm run dev` → localhost:8080
-- 빌드: `npm run build` → `_site/` 확인 (57개 파일, ~0.3초)
+- 빌드: `npm run build` → `_site/` 확인 (60개 파일, ~0.3초). ⚠️ `_site/` 는 지운 파일이 남으므로 링크 검사는 `--output=<새 폴더>` 로 깨끗하게 빌드해서 할 것
 - 배포: git push → Cloudflare Pages 자동 배포
 
 ## 남은 작업
@@ -180,6 +179,7 @@ homepage/
 - git push 허용
 
 ## 완료된 작업
+- ✅ 2026-10-15 v2 전면 재설계 (redesign 브랜치) — 홈·모든 앱 소개·도움말·privacy·404·/trend/ 가 v2, 옛 레이아웃·CSS 삭제. 정본 `docs/REDESIGN_V2_SPEC.md`
 - ✅ 2026-10-01 체코어 개인정보처리방침 추가 — `/cs/privacy/`. es 와 같은 구조(한 페이지뿐인 로케일, 홈 링크는 영어 홈,
   `i18n.json` 의 `cs` 는 7개 키만). WeatherCz(Radar srážek) 출처 시트가 직접 링크한다. 번역은 Claude — 원어민 검토 전.
   ⚠️ 이제 **ko·en·es·cs 네 판**이 같은 방침이다. **한 판만 고치지 말 것**
