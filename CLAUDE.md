@@ -1,5 +1,14 @@
 # boolint.com 홈페이지
 
+## ⏩ 다음 세션 시작점 (2026-10-15 — v2 전면 재설계 진행 중)
+
+- **정본: `docs/REDESIGN_V2_SPEC.md`** — 목표·결정 4가지·디자인 시스템·홈/앱 페이지 규격·매크로 계약·Phase 0~4 계획·검증·함정이 전부 거기 있다. **시작 전에 끝까지 읽을 것.**
+- 브랜치 **`redesign`** (main 에서 분기, 시안 세션은 커밋하지 않았다 → `git status` 로 작업 트리부터 확인).
+- 시안: `npm run dev` → http://localhost:8080/v2/ (홈) · http://localhost:8080/v2/satpic/ (앱 페이지). 사용자는 아직 브라우저로 안 봤다 → **Phase 0 에서 먼저 보여 주고 피드백을 받는다.**
+- 새 파일: `src/_includes/layouts/v2.njk`, `src/_includes/v2/*`, `src/assets/css/v2.css`, `src/assets/images/badges/`, `src/v2/`. 옛 레이아웃·CSS 는 미이전 페이지가 남아 있는 동안 유지한다.
+- 아래 "기술 스택·디렉토리·CSS 전략" 절은 **옛 구조 기준**이다. Phase 4 에서 갱신한다.
+
+
 ## 프로젝트 개요
 - boolint.com 개발자 홈페이지 (앱 목록 + 앱별 소개/도움말)
 - 배포: GitHub(`boolint-kim/boolint-homepage`) → Cloudflare Pages 자동 배포

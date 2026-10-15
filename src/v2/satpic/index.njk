@@ -1,0 +1,269 @@
+---
+layout: layouts/v2.njk
+lang: ko
+title: "날씨위성영상 라이브 — 위성·레이더·태풍·도로 CCTV를 한 앱에서 (v2 시안)"
+description: "기상청 위성·강수레이더·태풍·황사 영상과 전국 도로 CCTV 를 한 앱에서 최신부터 시간순으로 재생합니다."
+homeUrl: /v2/
+permalink: /v2/satpic/index.html
+eleventyExcludeFromCollections: true
+---
+{# ★ v2 앱 페이지 시안 — 소개는 핵심 5개 블록, 나머지 기능은 하단 접힌 목록에 둔다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('satpic') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
+{% set shots = '/assets/images/satpic/screenshots/' %}
+
+{# ── 히어로 ─────────────────────────────────────────────── #}
+<section class="app-hero dark">
+  <div class="wrap">
+    <a href="/v2/" class="back">← 모든 앱</a>
+    <div class="app-hero__grid">
+      <div>
+        <div class="app-hero__id">
+          <img class="app-hero__icon" src="{{ app.icon }}" alt="" width="72" height="72">
+          <div class="app-hero__meta">
+            <span class="tag tag--brand">날씨·도로 라이브</span>
+            <span class="tag">Android · iOS</span>
+            <span class="tag">무료</span>
+          </div>
+        </div>
+        <h1 class="app-hero__title">날씨위성영상 라이브</h1>
+        <p class="lead app-hero__lead">기상청 위성·레이더·태풍 영상과 전국 도로 CCTV 를 한 앱에서, 최신 장면부터 시간순으로 재생합니다. 비구름이 어디서 생겨 어디로 가는지 눈으로 봅니다.</p>
+        {{ m.badges(playUrl, app.appStoreUrl, 'ko') }}
+        <ul class="app-hero__facts">
+          <li>회원가입 없음</li>
+          <li>Android 8.0 이상</li>
+          <li>한국어·영어·일본어·중국어</li>
+          <li>다크 모드</li>
+        </ul>
+      </div>
+      <div class="app-hero__visual" aria-hidden="true">
+        <div class="phones">
+          <img class="phone phone--r" src="{{ shots }}06_radar_korea.png" alt="" width="1116" height="2376">
+          <img class="phone phone--c" src="{{ shots }}02_visible_korea.png" alt="" width="1116" height="2376">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── 숫자 띠 ────────────────────────────────────────────── #}
+<div class="facts">
+  <div class="wrap facts__grid">
+    <div class="fact"><span class="fact__num">9</span><span class="fact__label">위성 조합 · 가시·적외·수증기 × 한국·동아시아·지구</span></div>
+    <div class="fact"><span class="fact__num">13</span><span class="fact__label">레이더 · 합성 4종 + 지역 레이더 9곳</span></div>
+    <div class="fact"><span class="fact__num">태풍·황사</span><span class="fact__label">위성 시계열로 진로를 재생</span></div>
+    <div class="fact"><span class="fact__num">전국</span><span class="fact__label">도로 CCTV · 고속도로·국도·제주</span></div>
+  </div>
+</div>
+
+{# ── 기능 1 · 한 화면 ──────────────────────────────────── #}
+<section class="feat">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">한 화면</p>
+      <h2>흩어진 기상 자료를<br>한 그리드에 모았습니다</h2>
+      <p>기상청 홈페이지에서는 위성, 레이더, 태풍, 황사, 기온, 동네 예보가 모두 다른 메뉴에 있습니다. 날씨위성영상 라이브는 이 자료를 한 앱의 그리드 메뉴로 모으고, 어디를 눌러도 최신 영상부터 시간순 재생이 시작되게 했습니다.</p>
+      <ul class="checks">
+        <li><strong>12개 채널</strong> 위성·레이더·태풍·황사·CCTV 가 한 화면에</li>
+        <li><strong>최신 장면부터 자동 재생</strong>, 일시정지와 줌 버튼은 화면 아래에</li>
+        <li>모든 프레임에 <strong>관측 시각(KST)</strong> 표시</li>
+      </ul>
+    </div>
+    <div class="feat__media">
+      <img class="shot" src="{{ shots }}01_main_menu.png" alt="앱 메인 메뉴 — 위성·레이더·태풍·황사·CCTV 12개 채널 그리드" width="1116" height="2376" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{# ── 기능 2 · 위성 ─────────────────────────────────────── #}
+<section class="feat feat--soft feat--flip">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">위성</p>
+      <h2>가시광선·적외선·수증기,<br>세 가지 눈으로 봅니다</h2>
+      <p>천리안 2A호 영상을 채널과 영역의 9가지 조합으로 제공합니다. 한반도 근처의 좁은 구름 발달을 볼지, 동아시아 전체의 흐름을 볼지, 적도까지 펼쳐 볼지 고를 수 있습니다.</p>
+      <ul class="checks">
+        <li><strong>가시광선</strong>은 낮의 구름 형태와 두께, <strong>적외선</strong>은 밤에도 구름 분포</li>
+        <li><strong>수증기</strong>는 상층의 흐름 — 폭우와 태풍 발달을 미리 읽을 때</li>
+        <li>한국 · 동아시아 · 지구 세 영역, <strong>핀치 줌과 드래그</strong>로 관심 지역만 확대</li>
+      </ul>
+    </div>
+    <div class="feat__media feat__media--duo">
+      <img class="shot" src="{{ shots }}02_visible_korea.png" alt="가시광선 한국 위성 영상" width="1116" height="2376" loading="lazy">
+      <img class="shot" src="{{ shots }}04_visible_earth.png" alt="가시광선 지구 — 전 지구 영상" width="1116" height="2376" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{# ── 기능 3 · 레이더 ───────────────────────────────────── #}
+<section class="feat">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">레이더</p>
+      <h2>비구름이 지금<br>어디까지 왔는지</h2>
+      <p>기상청 강수레이더 합성 영상을 시간순으로 재생합니다. 강수 강도가 색으로 구분되어 폭우 지역이 어디에 형성됐는지 한눈에 들어옵니다.</p>
+      <ul class="checks">
+        <li><strong>한국 · 주변국 · 상세 · 적외선 합성</strong> 4종</li>
+        <li>백령도부터 제주까지 <strong>지역 레이더 9곳</strong>을 따로 골라 가까운 강수를 자세히</li>
+        <li>위성 적외선과 합친 영상으로 <strong>구름과 비를 동시에</strong></li>
+      </ul>
+    </div>
+    <div class="feat__media">
+      <img class="shot" src="{{ shots }}06_radar_korea.png" alt="레이더 한국 — 강수 분포 시간순 재생" width="1116" height="2376" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{# ── 기능 4 · 태풍·황사 ────────────────────────────────── #}
+<section class="feat feat--soft feat--flip">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">태풍 · 황사</p>
+      <h2>진로를 눈으로<br>따라갑니다</h2>
+      <p>태풍이 발생하면 위성 적외선 시계열을 받아 애니메이션으로 재생합니다. 어디서 생겨 어느 속도로 다가오는지 직접 봅니다. 황사가 오는 시기에는 같은 방식으로 유입 경로를 확인합니다.</p>
+      <ul class="checks">
+        <li>위성 영상이라 <strong>눈 구조와 외곽 구름대</strong>가 그대로</li>
+        <li>관측 시각으로 <strong>이동 폭</strong>을 가늠</li>
+        <li>황사 영상으로 <strong>미세먼지 유입 경로</strong>를 미리</li>
+      </ul>
+    </div>
+    <div class="feat__media">
+      <img class="shot" src="{{ shots }}10_typhoon.png" alt="태풍 — 위성 적외선 시계열 재생" width="1116" height="2376" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{# ── 기능 5 · 도로 CCTV ────────────────────────────────── #}
+<section class="feat">
+  <div class="wrap feat__grid">
+    <div class="feat__text">
+      <p class="eyebrow">도로 CCTV</p>
+      <h2>하늘 다음은 도로입니다</h2>
+      <p>비가 오는 건 알겠는데 우리 동네 도로는 어떨까. 그래서 같은 앱에 전국 도로 CCTV 를 넣었습니다. 위성에서 레이더, 레이더에서 CCTV 로 출발 전 판단을 한 앱에서 끝냅니다.</p>
+      <ul class="checks">
+        <li>강수 레이더 위에 <strong>CCTV 마커</strong> — 비 오는 지역의 도로를 바로 확인</li>
+        <li>지도 한 화면에서 <strong>주변 CCTV 를 미니 영상으로 동시에</strong></li>
+        <li>마커를 탭하면 단일 영상으로 확대, <strong>제주 도로</strong>는 별도 채널</li>
+      </ul>
+    </div>
+    <div class="feat__media feat__media--duo">
+      <img class="shot" src="{{ shots }}12_radar_cctv.png" alt="레이더 위에 CCTV 마커를 겹친 지도" width="1116" height="2376" loading="lazy">
+      <img class="shot" src="{{ shots }}13_radar_cctv_multi.png" alt="주변 CCTV 영상을 동시에 펼친 화면" width="1116" height="2376" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{# ── 비교 ───────────────────────────────────────────────── #}
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="section__head">
+      <p class="eyebrow">다른 날씨 앱과</p>
+      <h2>무엇이 다를까요</h2>
+    </div>
+    <div class="cards3">
+      <div class="card">
+        <p class="card__vs">기상청 공식 앱과 비교하면</p>
+        <h3>같은 출처, 다른 동선</h3>
+        <p>위성·레이더·태풍·CCTV·예보를 한 그리드에 두고, 어떤 화면이든 최신부터 자동 재생합니다. 메뉴를 오갈 일이 없습니다.</p>
+      </div>
+      <div class="card">
+        <p class="card__vs">일반 날씨 앱과 비교하면</p>
+        <h3>숫자가 아니라 영상</h3>
+        <p>기온과 강수 확률 대신 구름과 비구름의 실제 위치와 이동을 봅니다. 출발 전 판단에 더 직접적입니다.</p>
+      </div>
+      <div class="card">
+        <p class="card__vs">레이더 전용 앱과 비교하면</p>
+        <h3>레이더 위의 한 단계</h3>
+        <p>위성 가시·적외·수증기 채널까지 함께 보여, 비구름이 어디서 생기고 어디로 가는지를 한 단계 위에서 읽습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── 접힌 전체 기능 ─────────────────────────────────────── #}
+<section class="section">
+  <div class="wrap">
+    <details class="more">
+      <summary>모든 기능 보기 <small>지역 레이더 · 지도형 자료 · 동네 예보 · 조작</small></summary>
+      <div class="more__body">
+        <div>
+          <h4>지역 레이더 9곳</h4>
+          <ul>
+            <li>백령도 · 화천(광덕산) · 강릉 · 서울(관악산) · 군산(오성산)</li>
+            <li>청송(면봉산) · 진도 · 부산(구덕산) · 제주(고산·성산)</li>
+            <li>합성 영상에서는 보이지 않는 가까운 거리의 강수를 원형 도플러 패턴으로</li>
+          </ul>
+        </div>
+        <div>
+          <h4>지도형 자료</h4>
+          <ul>
+            <li>기온 분포도 — 한반도 전체 기온을 색으로</li>
+            <li>강수·강설 지도, 예보 지도</li>
+            <li>일기도 · 일기예보 텍스트 — 기상청 공식 자료 그대로</li>
+            <li>지도 옆 색상 범례로 수치를 직접 읽기</li>
+          </ul>
+        </div>
+        <div>
+          <h4>동네 예보 · 즐겨찾기</h4>
+          <ul>
+            <li>현재 위치 기반 단기 예보, 주소 검색으로 다른 지역 조회</li>
+            <li>출퇴근지·여행지·부모님 댁을 즐겨찾기로 묶어 한 번에 점검</li>
+            <li>기온 · 풍향 · 풍속 · 습도 · 강수 확률 · 강수량 · 적설</li>
+          </ul>
+        </div>
+        <div>
+          <h4>재생과 조작</h4>
+          <ul>
+            <li>모든 영상 화면이 같은 방식 — 최신부터 자동 재생, 일시정지와 재생</li>
+            <li>줌인·줌아웃 버튼, 핀치 줌과 드래그 팬</li>
+            <li>프레임마다 관측 시각(KST), 다크 모드 지원</li>
+          </ul>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+{# ── 신뢰 ───────────────────────────────────────────────── #}
+<section class="section section--soft">
+  <div class="wrap">
+    <div class="cards3">
+      <div class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <h3>데이터 출처</h3>
+        <ul>
+          <li>기상청 — 위성·레이더·예보·태풍·황사</li>
+          <li>경찰청 UTIC, 국토교통부 ITS — 도로 CCTV</li>
+          <li>제주 Open API — 제주 도로 CCTV</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></div>
+        <h3>프라이버시</h3>
+        <ul>
+          <li>회원가입·로그인 없음. 열면 곧장 시작</li>
+          <li>위치 권한은 동네 예보에만, 기기 안에서만 처리</li>
+          <li>영상은 공공 API 에서 받아 표시만 하고 저장하지 않음</li>
+          <li>무료 운영을 위해 Google AdMob 광고 사용</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9.5 17h-19L12 3z"/><path d="M12 10v4"/><path d="M12 17h0"/></svg></div>
+        <h3>안전 안내</h3>
+        <p>차량 운행 중에는 사용을 자제해 주세요. 출발 전이나 정차 후, 또는 동승자가 사용해 주시기 바랍니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ── 마지막 CTA ─────────────────────────────────────────── #}
+<section class="cta dark">
+  <div class="wrap">
+    <img class="cta__icon" src="{{ app.icon }}" alt="" width="80" height="80">
+    <h2>지금 하늘을 확인해 보세요</h2>
+    <p class="lead">회원가입 없이, 열면 바로 최신 영상부터 재생됩니다.</p>
+    {{ m.badges(playUrl, app.appStoreUrl, 'ko') }}
+    <p class="cta__note">무료 · 광고 포함 · 인앱 결제 없음 · Android 8.0 이상 · 한국어 / 영어 / 일본어 / 중국어</p>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+{# v2 매크로 모음 — import 해서 쓴다: {% import "v2/macros.njk" as m %} #}
+
+{# 스토어 공식 배지 (Google Play PNG 는 투명 여백이 있어 CSS 에서 높이를 보정한다) #}
+{% macro badges(playUrl, appStoreUrl, lang='ko') %}
+<div class="badges">
+  {% if playUrl %}
+  <a class="badge--play" href="{{ playUrl }}" target="_blank" rel="noopener">
+    <img src="/assets/images/badges/google-play-{{ lang }}.png" alt="{{ 'Get it on Google Play' if lang == 'en' else 'Google Play에서 다운로드' }}" width="646" height="250">
+  </a>
+  {% endif %}
+  {% if appStoreUrl %}
+  <a class="badge--appstore" href="{{ appStoreUrl }}" target="_blank" rel="noopener">
+    <img src="/assets/images/badges/app-store-{{ lang }}.svg" alt="{{ 'Download on the App Store' if lang == 'en' else 'App Store에서 다운로드' }}" width="130" height="40">
+  </a>
+  {% endif %}
+</div>
+{% endmacro %}
+
+{# 전체 앱 목록의 한 줄 아이템 — 아이콘(없으면 첫 글자) + 이름 + 한 줄 + 플랫폼 #}
+{% macro appItem(app, lang='ko', prefix='/') %}
+<a class="app-item" href="{{ prefix }}{{ app.slug }}/" data-cat="{{ app.category }}">
+  {% if app.iconReady %}
+  <span class="app-item__icon"><img src="{{ app.icon }}" alt="" width="48" height="48" loading="lazy"></span>
+  {% else %}
+  <span class="app-item__icon app-item__icon--ph" aria-hidden="true">{{ app.name[lang] | first }}</span>
+  {% endif %}
+  <span class="app-item__body">
+    <span class="app-item__name">{{ app.name[lang] }}</span>
+    <span class="app-item__desc">{{ app.description[lang] }}</span>
+    <span class="app-item__meta">{{ 'Android · iOS' if 'ios' in app.platform else 'Android' }}</span>
+  </span>
+</a>
+{% endmacro %}

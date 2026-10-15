@@ -1,0 +1,39 @@
+{# v2 공통 푸터 — 브랜드 한 줄 + 분야 링크 + 정보 #}
+{% set t = i18n[lang or 'ko'] %}
+{% set prefix = '/en/' if lang == 'en' or lang == 'es' or lang == 'cs' else '/' %}
+{% set home = homeUrl or prefix %}
+{% set en = lang == 'en' %}
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a href="{{ home }}" class="footer__brand">
+          <img src="/favicon-192.png" alt="" width="28" height="28">
+          <span>Boolint</span>
+        </a>
+        <p class="footer__tag">{{ 'Small, focused apps built on public data. Open and use, no sign-up.' if en else '공공 데이터로 만든, 열면 바로 쓰는 작은 앱들을 만듭니다.' }}</p>
+      </div>
+      <div>
+        <h2 class="footer__title">{{ 'Categories' if en else '분야' }}</h2>
+        <ul class="footer__links">
+          <li><a href="{{ home }}#cat-weather-road">{{ 'Weather & Road Live' if en else '날씨·도로 라이브' }}</a></li>
+          {% if not en %}<li><a href="{{ home }}#cat-realestate">부동산·세금</a></li>{% endif %}
+          <li><a href="{{ home }}#cat-daily-tool">{{ 'Daily Tools & Maker' if en else '일상 도구·만들기' }}</a></li>
+          <li><a href="{{ home }}#cat-learning">{{ 'Learning & Knowledge' if en else '학습·교양' }}</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="footer__title">{{ 'Info' if en else '정보' }}</h2>
+        <ul class="footer__links">
+          <li><a href="{% if en %}/en{% endif %}/privacy/">{{ t['footer.privacy'] }}</a></li>
+          <li><a href="{{ t['lang.switchUrl'] }}">{{ t['lang.switch'] }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>{{ t['footer.copyright'] | replace('{year}', site.year) }}</span>
+      <span>Android · iOS</span>
+    </div>
+  </div>
+</footer>
