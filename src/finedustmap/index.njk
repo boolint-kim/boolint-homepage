@@ -1,20 +1,23 @@
 ---
-layout: layouts/base.njk
+layout: layouts/v2.njk
 lang: ko
 title: "미세먼지 지도 — 전 세계 대기질을 지도에서"
 alternateLang: en
 alternateUrl: /en/finedustmap/
 ---
+{# stub — 풀랜딩 원고·스크린샷이 없어 plain 히어로 + CTA 만 (구현서 §5.3). 원고가 생기면 §5.1 대로 채운다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('finedustmap') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
 
-<div class="container" style="padding-top: var(--space-md); padding-bottom: var(--space-2xl);">
-  <p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-    <a href="/">← 앱 목록</a>
-  </p>
-  <h1>미세먼지 지도</h1>
-  <p>전 세계 측정소의 실시간 대기질(AQI)을 지도 위에서 한눈에 보여줍니다. PM2.5, PM10, 오존 등 주요 지표를 색상 마커로 표시해, 지금 어디가 깨끗하고 어디가 나쁜지 즉시 비교할 수 있습니다.</p>
-  <p style="margin-top: var(--space-xl);">
-    <a href="https://play.google.com/store/apps/details?id=com.boolint.finedustmap" class="btn" target="_blank" rel="noopener">
-      Google Play에서 다운로드
-    </a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'ko',
+  category: '날씨·도로 라이브', tags: ['Android', '무료'],
+  title: '미세먼지 지도',
+  lead: '전 세계 측정소의 실시간 대기질(AQI)을 지도 위에서 한눈에 보여 줍니다. PM2.5, PM10, 오존 등 주요 지표를 색상 마커로 표시해, 지금 어디가 깨끗하고 어디가 나쁜지 즉시 비교합니다.',
+  playUrl: playUrl
+}) }}
+
+{{ m.cta({ app: app, lang: 'ko', title: '지금 공기, 지도에서 확인하세요',
+  lead: 'Google Play 에서 무료로 받을 수 있습니다.',
+  playUrl: playUrl, note: '무료 · Android' }) }}

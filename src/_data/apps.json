@@ -126,6 +126,8 @@
       "ko": "대만 날씨 + 도로 CCTV를 한 앱에",
       "en": "Taiwan forecasts and road CCTVs in one app"
     },
+    "icon": "/assets/images/myweathertw/icon.png",
+    "iconReady": true,
     "platform": ["android"],
     "hasHelp": false,
     "category": "weather-road"

@@ -1,20 +1,23 @@
 ---
-layout: layouts/base.njk
+layout: layouts/v2.njk
 lang: en
 title: "Fine Dust Map — Worldwide air quality"
 alternateLang: ko
 alternateUrl: /finedustmap/
 ---
+{# stub — 풀랜딩 원고·스크린샷이 없어 plain 히어로 + CTA 만 (구현서 §5.3). 원고가 생기면 §5.1 대로 채운다 #}
+{% import "v2/macros.njk" as m %}
+{% set app = apps | bySlug('finedustmap') %}
+{% set playUrl = 'https://play.google.com/store/apps/details?id=' + app.packageName %}
 
-<div class="container" style="padding-top: var(--space-md); padding-bottom: var(--space-2xl);">
-  <p style="font-size: 0.875rem; margin-bottom: var(--space-md);">
-    <a href="/en/">← Apps</a>
-  </p>
-  <h1>Fine Dust Map</h1>
-  <p>Real-time air quality (AQI) from monitoring stations worldwide, displayed on a single map. Color-coded markers for PM2.5, PM10, and ozone make it easy to compare where the air is clean and where it isn't.</p>
-  <p style="margin-top: var(--space-xl);">
-    <a href="https://play.google.com/store/apps/details?id=com.boolint.finedustmap" class="btn" target="_blank" rel="noopener">
-      Download on Google Play
-    </a>
-  </p>
-</div>
+{{ m.appHero({
+  app: app, lang: 'en',
+  category: 'Weather & Road Live', tags: ['Android', 'Free'],
+  title: 'Fine Dust Map',
+  lead: 'Real-time air quality (AQI) from monitoring stations worldwide on a single map. Color-coded markers for PM2.5, PM10 and ozone make it easy to compare where the air is clean and where it isn\'t.',
+  playUrl: playUrl
+}) }}
+
+{{ m.cta({ app: app, lang: 'en', title: 'See the air on a map',
+  lead: 'Free on Google Play.',
+  playUrl: playUrl, note: 'Free · Android' }) }}
