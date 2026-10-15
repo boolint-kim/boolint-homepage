@@ -37,6 +37,8 @@
 {# 대표 앱 벤토 타일 — app.tile 이 없으면 스크린샷 없이 렌더한다(빌드를 깨지 않는다) #}
 {% macro tile(app, lang='ko', prefix='/', catName='', large=false) %}
 {% set tl = app.tile or {} %}
+{# shot 은 문자열 하나 또는 { ko, en } — 언어별 화면이 있으면 그 언어 것을 쓴다 #}
+{% set shot = (tl.shot[lang] or tl.shot.ko) if (tl.shot and tl.shot.ko) else tl.shot %}
 <a class="tile tile--{{ tl.tint or 'sky' }}{% if large %} tile--large{% endif %}" href="{{ prefix }}{{ app.slug }}/">
   <div class="tile__text">
     <div class="tile__head">
@@ -53,7 +55,7 @@
     <p class="tile__desc">{{ app.description[lang] }}</p>
   </div>
   {% if large %}<span class="tile__cta">{{ 'Learn more →' if lang == 'en' else '자세히 보기 →' }}</span>{% endif %}
-  {% if tl.shot %}<img class="tile__shot" src="{{ tl.shot }}" alt="" width="{{ tl.w }}" height="{{ tl.h }}" loading="lazy">{% endif %}
+  {% if shot %}<img class="tile__shot" src="{{ shot }}" alt="" width="{{ tl.w }}" height="{{ tl.h }}" loading="lazy">{% endif %}
 </a>
 {% endmacro %}
 

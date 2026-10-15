@@ -35,7 +35,7 @@
 
 ### Featured 섹션
 
-- 한국 홈 (6, 2×3): satpic, camlocation, transtax, weathertw, propertytax, seoullife
+- 한국 홈 (6): satpic, camlocation, transtax, propertytax, seoullife, universedaily — 2026-10-15 weathertw(한국어 UI 없음) 대신 universedaily 로 교체. weathertw 는 영어 홈 featuredEn 만 유지
 - 영어 홈 (5): satpic, camlocation, weathertw, weatherus, universedaily — 2열 그리드라 마지막 1개가 홀로 남는 3행 구조
 - featured 앱은 자기 카테고리 섹션에도 그대로 표시 (중복 노출 OK).
 

@@ -97,7 +97,6 @@
     "appStoreUrl": "https://apps.apple.com/app/id6448096335",
     "hasHelp": false,
     "category": "weather-road",
-    "featured": true,
     "featuredEn": true,
     "tile": { "tint": "mint", "shot": "/assets/images/weathertw/screenshots/shot_20260521_160033_framed.webp", "w": 720, "h": 1505 }
   },
@@ -183,7 +182,7 @@
     "koreaOnly": true,
     "category": "realestate",
     "featured": true,
-    "tile": { "tint": "sand", "shot": "/assets/images/propertytax/screenshots/03_find_map.webp", "w": 720, "h": 1434 }
+    "tile": { "tint": "mint", "shot": "/assets/images/propertytax/screenshots/03_find_map.webp", "w": 720, "h": 1434 }
   },
   {
     "slug": "junsewolse",
@@ -326,8 +325,9 @@
     "appStoreUrl": "https://apps.apple.com/kr/app/id6784567518",
     "hasHelp": false,
     "category": "learning",
+    "featured": true,
     "featuredEn": true,
-    "tile": { "tint": "sand", "shot": "/assets/images/universedaily/screenshots/en/01_today_sun.webp", "w": 720, "h": 1454 }
+    "tile": { "tint": "sand", "shot": { "ko": "/assets/images/universedaily/screenshots/ko/01_today_sun.webp", "en": "/assets/images/universedaily/screenshots/en/01_today_sun.webp" }, "w": 720, "h": 1454 }
   },
   {
     "slug": "englishnumber",

@@ -215,7 +215,7 @@ src/_data/apps.json                 transtax·weathertw·junsewolse·seoullife·
 "tile": { "tint": "navy", "shot": "/assets/images/satpic/screenshots/06_radar_korea.webp", "w": 720, "h": 1533 }
 ```
 
-- `tint` ∈ navy · sky · mint · amber · sand · rose · violet. **확정 배정**: satpic **navy** · camlocation **sky** · transtax **amber** · weathertw **mint** · propertytax **sand** · seoullife **rose** · weatherus **violet**(영어 홈 전용) · universedaily **sand**(영어 홈에서만 쓰이므로 propertytax 와 겹쳐도 무방). 한국 홈과 영어 홈에서 같은 앱은 같은 색이다.
+- `tint` ∈ navy · sky · mint · amber · sand · rose · violet. **확정 배정**: satpic **navy** · camlocation **sky** · transtax **amber** · weathertw **mint**(영어 홈만) · propertytax **mint**(한국 홈만) · seoullife **rose** · weatherus **violet**(영어 홈만) · universedaily **sand**(한·영 홈 모두). `shot` 은 문자열 또는 `{ ko, en }`(언어별 화면, universedaily). 한국 홈과 영어 홈에서 같은 앱은 같은 색이다.
 - `shot` 은 **WebP** 경로(§7). `w`/`h` 는 WebP 의 실제 픽셀.
 - 홈 템플릿의 `tiles` 하드코딩 배열을 지우고 `apps | visibleIn(lang)` 중 `featured`(ko)/`featuredEn`(en) 인 것을 순회하며 `app.tile` 을 읽는다. `tile` 이 없으면 빌드 시 `throw` 하지 말고 **스크린샷 없는 타일**로 렌더(배포가 깨지지 않게).
 
@@ -398,6 +398,7 @@ zsh 에 `shot` 별칭이 있어 같은 이름의 함수를 못 만든다. 스크
 | 2026-10-15 | Claude | 계산 사례가 있는 3쪽(acqtax·mysalary·gifttax)에 `m.case` 사용, 조건 문단용 `note` 추가 | macros |
 | 2026-10-15 | Claude | /trend/ 는 trend.css 를 고치지 않고 레이아웃만 교체 — trend.css 는 크롬 확장이 복사해 쓰고 옛 변수에 폴백이 이미 있다 | /trend/ |
 | 2026-10-15 | Claude | AgeMap 도움말 목차는 `_data/agemapHelp.json` + `layouts/v2-doc.njk`. 본문 이미지는 WebP 로 교체 | 도움말 14쪽 |
+| 2026-10-15 | 사용자 | 한국 홈 대표 앱: weathertw(한국어 UI 없음) → universedaily. propertytax 를 mint 로 바꿔 sand 겹침 해소, tile.shot 언어별 지원 | apps.json, macros |
 | 2026-10-15 | 사용자 | Phase 2 부터 "특별한 문제가 없으면 커밋하고 계속" — 쪽마다 검증 통과 시 커밋 | 쪽당 커밋 1개 |
 | 2026-10-15 | Claude | transtax 에 case-box 가 없어 `.case` 를 Phase 3 acqtax 로 미룸 | §8 |
 | 2026-10-15 | Claude | universedaily 영어 스크린샷 파일명 어긋남 발견 → 화면 기준으로 매핑, 파일명은 그대로 | §11 |
