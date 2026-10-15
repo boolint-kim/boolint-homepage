@@ -1,8 +1,8 @@
 # boolint.com 홈페이지
 
-## ⏩ 현재 상태 (2026-10-15 — v2 재설계 완료, 미배포)
+## ⏩ 현재 상태 (2026-10-15 — v2 재설계 완료·배포)
 
-- **v2 재설계 Phase 0~4 완료** — 모든 페이지가 `layouts/v2.njk` 계열이다. 브랜치 **`redesign`**, **main 병합·배포는 사용자 결정 대기**(Cloudflare Pages 는 main 을 본다).
+- **v2 재설계 Phase 0~4 완료** — 모든 페이지가 `layouts/v2.njk` 계열이다. 2026-10-15 `redesign` → main fast-forward 병합·배포 완료(`a522ac1`). 이후 작업은 main 에서.
 - 설계·결정·함정의 정본은 **`docs/REDESIGN_V2_SPEC.md`** (§3 클래스 카탈로그, §5 앱 페이지 규격·매크로 계약, §9 한 쪽 이전 체크리스트, §11 함정, §13 결정 로그).
 - **새 앱 페이지를 만들 때**는 `src/satpic/index.njk` 를 복사해 매크로에 내용만 채운다. 계산 사례는 `m.case`, 스크린샷 없는 앱은 `src/apttradechart/index.njk`, 원고 없는 앱은 stub(`src/finedustmap/index.njk`).
 
