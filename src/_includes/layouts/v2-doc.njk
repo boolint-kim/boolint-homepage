@@ -1,0 +1,20 @@
+---
+layout: layouts/v2.njk
+---
+{# 문서형 레이아웃 — 왼쪽 목차(aside) + 오른쪽 본문(.prose). 목차는 _data/agemapHelp.json (ko/en)
+   지금은 AgeMap 도움말만 쓴다. 다른 문서 묶음이 생기면 docNav 값으로 데이터를 고르게 확장한다 #}
+{% set nav = agemapHelp[lang or 'ko'] %}
+<div class="wrap doc-layout">
+  <aside class="doc-aside" aria-label="{{ nav.title }}">
+    <a class="doc-aside__back" href="{{ nav.back.url }}">{{ nav.back.label }}</a>
+    <p class="doc-aside__title">{{ nav.title }}</p>
+    <ul class="doc-aside__list">
+      {% for it in nav.items %}
+      <li><a href="{{ it.url }}"{% if page.url == it.url %} class="is-active" aria-current="page"{% endif %}>{{ it.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </aside>
+  <article class="prose doc-body">
+    {{ content | safe }}
+  </article>
+</div>

@@ -502,3 +502,35 @@ button { font: inherit; }
 .prose table { width: 100%; border-collapse: collapse; margin-bottom: 1rem; font-size: var(--fs-sm); }
 .prose th, .prose td { border: 1px solid var(--line); padding: .5rem .75rem; text-align: left; vertical-align: top; }
 .prose th { background: var(--bg-soft); color: var(--ink); }
+/* 본문 속 스크린샷·도움말 목록 (옛 페이지 마크업을 그대로 받는다) */
+.prose img.app-screenshot { width: min(100%, 300px); margin: 1.5rem 0; filter: var(--shot-shadow); }
+.prose .help-list { list-style: none; margin: 1.5rem 0 0; display: grid; gap: 12px; }
+.prose .help-list a {
+  display: block; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: var(--r-md);
+  text-decoration: none; color: var(--ink); transition: border-color .15s, box-shadow .15s;
+}
+.prose .help-list a:hover { border-color: rgba(37, 99, 235, .5); box-shadow: var(--shadow-md); }
+.prose .help-list strong { display: block; font-size: 1.0625rem; }
+.prose .help-list p { margin: .25rem 0 0; color: var(--muted); font-size: var(--fs-sm); }
+
+/* 문서형 레이아웃 (AgeMap 도움말) — 왼쪽 목차 + 본문 ---------------------- */
+.doc-layout { display: grid; gap: clamp(20px, 4vw, 48px); padding-block: clamp(32px, 5vw, 64px); }
+@media (min-width: 900px) { .doc-layout { grid-template-columns: 220px 1fr; align-items: start; } }
+.doc-body { padding: 0; margin: 0; max-width: 760px; }
+.doc-aside {
+  border: 1px solid var(--line); border-radius: var(--r-md); padding: 1rem 1.125rem; background: var(--bg-soft);
+}
+@media (min-width: 900px) { .doc-aside { position: sticky; top: calc(var(--header-h) + 24px); } }
+.doc-aside__back { display: inline-block; font-size: var(--fs-xs); font-weight: 600; color: var(--brand); margin-bottom: .75rem; }
+.doc-aside__title { font-size: var(--fs-xs); font-weight: 700; letter-spacing: .06em; color: var(--muted); margin-bottom: .5rem; }
+.doc-aside__list a {
+  display: block; padding: .375rem .625rem; margin: 0 -.625rem; border-radius: var(--r-sm);
+  font-size: var(--fs-sm); color: var(--ink-2);
+}
+.doc-aside__list a:hover { background: #fff; color: var(--ink); }
+.doc-aside__list a.is-active { background: #fff; color: var(--brand); font-weight: 700; box-shadow: var(--shadow-sm); }
+@media (max-width: 899px) {
+  /* 좁은 화면은 목차를 가로로 흘리는 칩 줄로 */
+  .doc-aside__list { display: flex; flex-wrap: wrap; gap: .375rem; }
+  .doc-aside__list a { margin: 0; border: 1px solid var(--line); background: #fff; border-radius: 999px; padding: .3rem .75rem; font-size: var(--fs-xs); }
+}

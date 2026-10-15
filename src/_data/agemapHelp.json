@@ -1,0 +1,28 @@
+{
+  "ko": {
+    "title": "에이지맵 도움말",
+    "back": { "label": "← 에이지맵 소개", "url": "/agemap/" },
+    "items": [
+      { "label": "도움말 목차", "url": "/agemap/help/" },
+      { "label": "에이지맵 사용법", "url": "/agemap/help/agemap-view/" },
+      { "label": "그룹 관리", "url": "/agemap/help/groups/" },
+      { "label": "가계도", "url": "/agemap/help/family-tree/" },
+      { "label": "생일 알림", "url": "/agemap/help/birthday-alarm/" },
+      { "label": "기념일 기록", "url": "/agemap/help/moments/" },
+      { "label": "백업/복원", "url": "/agemap/help/backup/" }
+    ]
+  },
+  "en": {
+    "title": "AgeMap Help",
+    "back": { "label": "← About AgeMap", "url": "/en/agemap/" },
+    "items": [
+      { "label": "Help contents", "url": "/en/agemap/help/" },
+      { "label": "Using By Age", "url": "/en/agemap/help/agemap-view/" },
+      { "label": "Group Management", "url": "/en/agemap/help/groups/" },
+      { "label": "Family Tree", "url": "/en/agemap/help/family-tree/" },
+      { "label": "Birthday Reminders", "url": "/en/agemap/help/birthday-alarm/" },
+      { "label": "Moments", "url": "/en/agemap/help/moments/" },
+      { "label": "Backup & Restore", "url": "/en/agemap/help/backup/" }
+    ]
+  }
+}
