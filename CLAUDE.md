@@ -155,6 +155,7 @@ homepage/
 - 고정 파일명(예: `components.css`)에 `immutable` 캐시 절대 사용 금지 → CSS/JS 변경이 반영되지 않음
 - `immutable`은 파일명에 해시가 포함된 경우(예: `app.a3f2b1.css`)에만 사용
 - 현재 설정: `max-age=3600` (1시간)
+- ⚠️ **Cloudflare 이메일 난독화가 켜져 있다** — 라이브 HTML 에서 `mailto:`·이메일 주소가 `/cdn-cgi/l/email-protection#…` 로 바뀌어 나간다(브라우저에선 정상). curl 로 배포 확인할 때 이메일 문자열로 grep 하면 0 이 나오니 **주변 텍스트(예 '문의: ')로 확인**할 것(2026-11-05 푸터 문의 링크 추가 때 10분을 허비함). pages.dev 미리보기 URL 은 난독화가 없다
 
 ## 도메인 현황
 
