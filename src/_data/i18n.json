@@ -20,6 +20,7 @@
     "footer.tagline": "공공 데이터로 만든, 열면 바로 쓰는 작은 앱들을 만듭니다.",
     "footer.categories": "분야",
     "footer.info": "정보",
+    "footer.contact": "문의",
     "footer.platforms": "Android · iOS",
     "page.home.title": "앱 목록",
     "home.heroTitle": "쏠만한 앱 하나쯤은 분명 있을 거예요",
@@ -54,6 +55,7 @@
     "footer.tagline": "Small, focused apps built on public data. Open and use, no sign-up.",
     "footer.categories": "Categories",
     "footer.info": "Info",
+    "footer.contact": "Contact",
     "footer.platforms": "Android · iOS",
     "page.home.title": "Apps",
     "home.heroTitle": "Find one worth keeping",
@@ -79,6 +81,7 @@
     "footer.tagline": "Apps pequeñas y concretas creadas con datos públicos. Ábrelas y úsalas, sin registro.",
     "footer.categories": "Categorías",
     "footer.info": "Información",
+    "footer.contact": "Contacto",
     "footer.platforms": "Android · iOS"
   },
   "cs": {
@@ -94,6 +97,7 @@
     "footer.tagline": "Malé, praktické aplikace postavené na veřejných datech. Otevřete a používejte, bez registrace.",
     "footer.categories": "Kategorie",
     "footer.info": "Informace",
+    "footer.contact": "Kontakt",
     "footer.platforms": "Android · iOS"
   }
 }
