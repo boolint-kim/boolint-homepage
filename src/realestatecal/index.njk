@@ -18,8 +18,8 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
   playUrl: playUrl, appStoreUrl: app.appStoreUrl,
   facts: ['회원가입 없음', '전국 중개보수 요율 기준'],
   shots: [
-    { src: shots + '01_main_buy.webp', w: 720, h: 1445 },
-    { src: shots + '07_result.webp', w: 720, h: 1445 }
+    { src: shots + '01_main_buy.webp', w: 720, h: 1530 },
+    { src: shots + '07_result.webp', w: 720, h: 1530 }
   ]
 }) }}
 
@@ -31,7 +31,7 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
 ]) }}
 
 {% call m.feat({ eyebrow: '계산', title: '지역·유형·금액만<br>넣으면 끝',
-  shots: [ { src: shots + '01_main_buy.webp', alt: '지역·물건유형·거래유형 선택과 매매가 입력, 중개보수·부가세 포함 결과 메인 화면', w: 720, h: 1445 } ] }) %}
+  shots: [ { src: shots + '01_main_buy.webp', alt: '지역·물건유형·거래유형 선택과 매매가 입력, 중개보수·부가세 포함 결과 메인 화면', w: 720, h: 1530 } ] }) %}
   <p>중개보수는 거래 금액과 물건 종류에 따라 구간별 상한요율이 정해져 있어 직접 계산하면 헷갈립니다. 한 화면에서 조건을 고르고 금액만 넣으면 됩니다. 예를 들어 9억 원 주택 매매는 0.5% 구간이 적용되어 중개보수 450만 원, 부가세 10% 를 더한 495만 원입니다.</p>
   <ul class="checks">
     <li><strong>지역</strong> — 시/도 선택, 지역에 맞는 요율 기준</li>
@@ -42,8 +42,8 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
 
 {% call m.feat({ eyebrow: '전세 · 월세', title: '월세는 환산보증금으로<br>자동 계산', soft: true, flip: true,
   shots: [
-    { src: shots + '02_jeonse.webp', alt: '전세 보증금 입력과 중개보수 계산 결과 화면', w: 720, h: 1445 },
-    { src: shots + '03_wolse.webp', alt: '월세 보증금과 월세를 함께 입력해 환산 보증금으로 중개보수를 계산하는 화면', w: 720, h: 1445 }
+    { src: shots + '02_jeonse.webp', alt: '전세 보증금 입력과 중개보수 계산 결과 화면', w: 720, h: 1530 },
+    { src: shots + '03_wolse.webp', alt: '월세 보증금과 월세를 함께 입력해 환산 보증금으로 중개보수를 계산하는 화면', w: 720, h: 1530 }
   ] }) %}
   <p>전세는 보증금 하나만 넣으면 임대차 요율 구간이 적용됩니다. 월세는 보증금과 월세를 함께 넣으면 환산보증금을 자동으로 계산해 그 금액에 맞는 요율을 적용합니다.</p>
   <ul class="checks">
@@ -55,8 +55,8 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
 
 {% call m.feat({ eyebrow: '오피스텔 · 그 외', title: '주거용 오피스텔과<br>토지·상가도 따로',
   shots: [
-    { src: shots + '04_officetel.webp', alt: '주거용 오피스텔 매매 중개보수 계산 화면', w: 720, h: 1445 },
-    { src: shots + '05_etc.webp', alt: '그 외(토지 등) 물건의 중개보수 계산 화면', w: 720, h: 1445 }
+    { src: shots + '04_officetel.webp', alt: '주거용 오피스텔 매매 중개보수 계산 화면', w: 720, h: 1530 },
+    { src: shots + '05_etc.webp', alt: '그 외(토지 등) 물건의 중개보수 계산 화면', w: 720, h: 1530 }
   ] }) %}
   <p>주거용 오피스텔은 주택과 요율 체계가 다르고, 토지·상가 등 그 외 물건은 거래 금액의 0.9% 이내에서 협의로 정합니다. 헷갈리기 쉬운 구분을 앱이 처리합니다.</p>
   <ul class="checks">
@@ -67,7 +67,7 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
 {% endcall %}
 
 {% call m.feat({ eyebrow: '사용자 요율', title: '협의한 요율로<br>직접 계산', soft: true, flip: true,
-  shots: [ { src: shots + '06_custom_rate.webp', alt: '요율입력 토글을 켜고 사용자가 직접 요율을 입력해 계산하는 화면', w: 720, h: 1445 } ] }) %}
+  shots: [ { src: shots + '06_custom_rate.webp', alt: '요율입력 토글을 켜고 사용자가 직접 요율을 입력해 계산하는 화면', w: 720, h: 1530 } ] }) %}
   <p>중개보수는 상한요율 안에서 중개사와 협의해 정할 수 있습니다. 요율입력 토글을 켜면 법정 상한 대신 실제 협의한 요율을 넣어 계산합니다.</p>
   <ul class="checks">
     <li>토글 하나로 <strong>자동 요율 ↔ 직접 입력</strong></li>
@@ -77,7 +77,7 @@ description: "부동산 중개수수료(중개보수)를 매매·전세·월세�
 {% endcall %}
 
 {% call m.feat({ eyebrow: '결과', title: '부가세까지 포함한<br>실제 지불액',
-  shots: [ { src: shots + '07_result.webp', alt: '지역·물건유형·거래유형·상한요율·한도금액·중개보수·부가세·합계가 정리된 계산 결과 화면', w: 720, h: 1445 } ] }) %}
+  shots: [ { src: shots + '07_result.webp', alt: '지역·물건유형·거래유형·상한요율·한도금액·중개보수·부가세·합계가 정리된 계산 결과 화면', w: 720, h: 1530 } ] }) %}
   <p>중개사무소가 일반과세자라면 중개보수에 부가세 10% 가 더해집니다. 상단에서 부가세율을 고르면 중개보수와 부가세, 둘을 합한 실제 지불 금액까지 보여 줍니다.</p>
   <ul class="checks">
     <li>상단 <strong>부가세 10%</strong> 선택으로 적용 여부·비율 지정</li>
