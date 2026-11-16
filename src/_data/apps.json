@@ -492,14 +492,13 @@
     "slug": "trendvideo",
     "packageName": "com.boolint.trendvideo",
     "name": { "ko": "뜨는영상", "en": "Korea Rising Videos" },
-    "description": { "ko": "카테고리별로 지금 뜨는 유튜브 영상, 안 본 것만 골라 보기", "en": "Korea's YouTube by category, so you can spot what you haven't seen" },
+    "description": { "ko": "쇼츠 피드가 바닥났을 때, 다들 보는데 내 피드엔 안 뜬 영상", "en": "Korea's YouTube by category, so you can spot what you haven't seen" },
     "icon": "/assets/images/trendvideo/icon.png",
     "iconReady": true,
     "preview": "/assets/images/trendvideo/preview.webp",
     "platform": ["android"],
     "hasHelp": false,
     "koreaOnly": true,
-    "category": "daily-tool",
-    "hidden": true
+    "category": "daily-tool"
   }
 ]

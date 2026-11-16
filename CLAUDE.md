@@ -13,7 +13,7 @@
 
 ## 앱 노출 정책
 
-쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 23개(ko 22 + 영문 전용 1) + hidden 15개 = 38개**.
+쇼츠 → 홈페이지 진입을 가정한 첫인상 집중 전략. **노출 24개(ko 23 + 영문 전용 1) + hidden 14개 = 38개**.
 
 ### 카테고리 (4개)
 
@@ -21,14 +21,14 @@
 |---|---|---|---|
 | `weather-road` | 날씨·도로 라이브 | Weather & Road Live | 6 / 7 |
 | `realestate` | 부동산·세금 | (영어 홈 제외) | 11 / 0 |
-| `daily-tool` | 일상 도구·만들기 | Daily Tools & Maker | 3 / 3 |
+| `daily-tool` | 일상 도구·만들기 | Daily Tools & Maker | 4 / 3 |
 | `learning` | 학습·교양 | Learning & Knowledge | 2 / 2 |
 
 ### 노출 앱 (apps.json 배열 순서 = 홈 표시 순서)
 
 **weather-road**: satpic, camlocation, myweather, weathertw, **weatherus**(영어 홈만), myweathertw, finedustmap
 **realestate** (11): mysalary, transtax, acqtax, gifttax, propertytax, junsewolse, realestatecal, seoullife, busanlife, apttradechart, officetradechart
-**daily-tool** (3): agemap, snapatlas, iconmixer
+**daily-tool** (4): agemap, snapatlas, iconmixer, trendvideo(한국 홈만 — koreaOnly)
 **learning** (2): universedaily, englishnumber
 
 - **weatherus(Weather Radar USA)는 영문 전용 앱** — 한국어 페이지가 없어 `showInKorean: false` 로 한국 홈에서만 뺐다(hidden 이 아니다. hidden 은 영어 홈까지 막는다).
@@ -99,7 +99,7 @@
 
 ### 랜딩 페이지 깊이
 - **풀랜딩**(히어로 + 숫자 띠 + 기능 행 3~5 + 접힌 전체 기능 + 신뢰 + CTA): satpic, camlocation, myweather, agemap, snapatlas, universedaily, acqtax, officetradechart, weathertw, weatherus, propertytax, realestatecal, transtax, seoullife, busanlife, junsewolse, englishnumber, mysalary, gifttax, iconmixer
-- **글 전용**(스크린샷 없음 — plain 히어로 + 3단 카드): apttradechart, aptrentchart(hidden)
+- **글 전용**(스크린샷 없음 — plain 히어로 + 3단 카드): apttradechart, aptrentchart(hidden), trendvideo(Play 스크린샷이 목업이라 싣지 않음)
 - **stub**(plain 히어로 + CTA): myweathertw, finedustmap, weatherno(hidden). 원고가 생기면 풀랜딩으로.
 
 ## 디렉토리 구조
